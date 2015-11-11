@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Gerenciador
+        psr4_prefix: Gerenciador
+        src_path: app
