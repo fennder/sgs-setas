@@ -1,10 +1,16 @@
   <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
+    <!-- Alinhado a direita -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Versão 1.0
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    <!-- Padrão alinhado a esquerda -->
+    <strong>
+    	Copyright &copy; 2015 
+    	<a href="http://opensetas.setas.to.gov.br">
+    		 - SITE DESENVOLVIDO PELA EQUIPE SD/GTI - 
+    	</a>
+    	Secretaria do Trabalho e da Assitência Social
+    </strong>
   </footer>
 

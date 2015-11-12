@@ -68,7 +68,7 @@ desired effect
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <!-- Main Header -->
+  <!-- Header -->
   @include('layout-backend.header')
   
   <!-- Sidebar -->
@@ -79,8 +79,8 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Page Header
-        <small>Optional description</small>
+        {{ $page_title or "SGI" }}
+        <small>{{ $page_description or "Sistema de Gerenciamento de Inscrições" }}</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -92,6 +92,7 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
+      @yield('content')
 
     </section>
     <!-- /.content -->

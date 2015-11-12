@@ -16,8 +16,14 @@
 });*/
 
 Route::get('/', function () {
-    return view('layout-backend.admin_template');
+    return view('sgi/tabela');
 });
+
+Route::get('test', 'TestController@index');
+
+Route::get('form', 'FormController@index');
+
+Route::get('tabela', 'TabelaController@index');
 
 Route::get('/home', 'HomeController@index');
 
@@ -27,9 +33,9 @@ Route::get('/contrato/store', 'ContratoController@store');
 
 Route::get('/contrato/create', 'ContratoController@create');
 
-Route::get('/contrato/delete/{$contrato->id_cc}', 'ContratoController@destroy');
+Route::get('/contrato/delete/{id}', 'ContratoController@destroy');
 
-Route::get('/contrato/edit/{$contrato->id_cc}', 'ContratoController@edit');
+Route::get('/contrato/edit/{id}', 'ContratoController@edit');
 
 /* 
 Route::get('','');

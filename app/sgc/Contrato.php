@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador;
+namespace Gerenciador\sgc;
 
 use Illuminate\Database\Eloquent\Model;
 

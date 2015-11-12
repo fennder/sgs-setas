@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador\Http\Controllers;
+namespace Gerenciador\Http\Controllers\sgc;
 
 use Illuminate\Http\Request;
 
@@ -16,11 +16,11 @@ class ContratoController extends Controller
      */
     public function index()
     {
-        $contrato = new \Gerenciador\Contrato();
+        $contrato = new \Gerenciador\sgc\Contrato();
         $contratos = $contrato->all();
 
-        //$contratos = \Gerenciador\Contrato::paginate(5);
-        return view('contrato.contrato', ['contratos' => $contratos]);
+        //$contratos = \Gerenciador\sgc\Contrato::paginate(5);
+        return view('sgc.contrato', ['contratos' => $contratos]);
     }
 
     /**
@@ -30,7 +30,7 @@ class ContratoController extends Controller
      */
     public function create()
     {
-        return view('contrato.create');
+        return view('sgc.create');
     }
 
     /**
@@ -41,10 +41,10 @@ class ContratoController extends Controller
     public function store(Request $request)
     {
         $dado = $request->all();
-        $contrato = new \Gerenciador\Contrato;
+        $contrato = new \Gerenciador\sgc\Contrato;
         $contrato->save($dado);
         
-        return redirect('contrato.contrato');
+        return redirect('sgc.contrato');
 
     }
 
@@ -67,10 +67,10 @@ class ContratoController extends Controller
      */
     public function edit($id)
     {
-        $contrato = new \Gerenciador\Contrato;
+        $contrato = new \Gerenciador\sgc\Contrato;
         $contrato->find($id_cc);
 
-        return view('contrato.edit', ['contrato' => $contrato]);
+        return view('sgc.edit', ['contrato' => $contrato]);
     }
 
     /**
@@ -92,7 +92,7 @@ class ContratoController extends Controller
      */
     public function destroy($id_cc)
     {
-        $contrato = new \Gerenciador\Contrato;
+        $contrato = new \Gerenciador\sgc\Contrato;
         $contrato->find($contrato->$id_cc)->delete();
         return redirect('contrato');
     }
