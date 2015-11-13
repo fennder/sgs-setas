@@ -16,10 +16,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $nome = "Welcome";
+        $page_title = "SGS";
+        $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+
+        $nome = "Edir Pereira";
         $lotacao = "Secretaria do Trabalho e da Assistência Social";
 
-        return view('home',['nome'=>$nome, 'lotacao'=>$lotacao]);
+        return view('/home',['nome'=>$nome, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
     }
 
     /**

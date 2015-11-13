@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador\Http\Controllers\sgc;
+namespace Gerenciador\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -87,13 +87,13 @@ class ContratoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id_cc
+     * @param  int  $id
      * @return Response
      */
-    public function destroy($id_cc)
+    public function destroy($id)
     {
         $contrato = new \Gerenciador\sgc\Contrato;
-        $contrato->find($contrato->$id_cc)->delete();
+        $contrato->find($id)->delete();
         return redirect('contrato');
     }
 }

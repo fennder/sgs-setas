@@ -16,7 +16,11 @@ class TabelaController extends Controller
      */
     public function index()
     {
-        return view('sgi.tabela');
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrição do SUAS";
+
+        return view('sgi.tabela', ['page_title'=>$page_title, 'page_description'=>$page_description]);
+    
     }
 
     /**
