@@ -33,22 +33,22 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="../../index.html" method="post">
+    <form action="/auth/register" method="POST">
     {!! csrf_field() !!}
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Nome Completo">
+        <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Senha">
+        <input type="password" class="form-control" name="password" placeholder="Senha">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Repita a senha">
+        <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
