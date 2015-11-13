@@ -22,7 +22,7 @@ class HomeController extends Controller
         $nome = "Edir Pereira";
         $lotacao = "Secretaria do Trabalho e da Assistência Social";
 
-        return view('/home',['nome'=>$nome, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+        return view('home',['nome'=>$nome, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
     }
 
     /**

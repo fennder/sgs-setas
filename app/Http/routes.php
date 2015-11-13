@@ -25,7 +25,12 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', function () {
-    return view('auth.login');
+	if(Auth::guest()){
+		return Redirect::to('auth/login');
+	} else {
+		return "Bem vindo a página inicial";
+	    //return view('auth.login');
+	}
 });
 
 Route::get('home', 'HomeController@index');

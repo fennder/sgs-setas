@@ -33,7 +33,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Faça o login para iniciar</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="/auth/login" method="POST">
     {!! csrf_field() !!}
       <div class="form-group has-feedback">
         <input type="email" class="form-control" value="{{ old('email') }}" placeholder="Email">
@@ -53,7 +53,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
         </div>
         <!-- /.col -->
       </div>
@@ -69,7 +69,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="register.html" class="text-center">Registrar novo usuário</a>
+    <a href="http://localhost:8000/auth/register" class="text-center">Registrar novo usuário</a>
 
   </div>
   <!-- /.login-box-body -->
