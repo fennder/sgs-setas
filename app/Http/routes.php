@@ -28,8 +28,8 @@ Route::get('/', function () {
 	if(Auth::guest()){
 		return Redirect::to('auth/login');
 	} else {
-		return "Bem vindo a página inicial";
-	    //return view('auth.login');
+		//return "Bem vindo a página inicial";
+	    return view('home');
 	}
 });
 

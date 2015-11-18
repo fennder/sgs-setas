@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Registration Page</title>
+  <title>SGS - SD - GTI - SETAS | Registrar</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
-  <link href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('bower_components/AdminLTE/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <!-- Theme style -->
-  <link href="{{ asset("/bower_components/AdminLTE/dist/css/AdminLTE.min.css") }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('bower_components/AdminLTE/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css">
   <!-- iCheck -->
-  <link href="{{ asset("/bower_components/AdminLTE/plugins/iCheck/square/blue.css") }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('bower_components/AdminLTE/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,11 +27,12 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <img src="{{ asset('/imagens/logo_estado-150x150.png') }}" class="img-circle" alt="User Image">
+    <a href="/auth/register"><b>SGS - </b>SETAS</a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Registrar novo usuário</p>
 
     <form action="/auth/register" method="POST">
     {!! csrf_field() !!}
@@ -75,18 +76,18 @@
         Google+</a>
     </div-->
 
-    <a href="login.html" class="text-center">Já é usuário clique aqui</a>
+    <a href="login" class="text-center">Já é usuário clique aqui</a>
   </div>
   <!-- /.form-box -->
 </div>
 <!-- /.register-box -->
 
 <!-- jQuery 2.1.4 -->
-<script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="{{ asset('bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js') }}" type="text/javascript"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ asset('bower_components/AdminLTE/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="{{ asset('bower_components/AdminLTE/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
 <script>
   $(function () {
     $('input').iCheck({
@@ -98,32 +99,3 @@
 </script>
 </body>
 </html>
-
-
-<form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
-
-    <div>
-        Name
-        <input type="text" name="name" value="{{ old('name') }}">
-    </div>
-
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
-
-    <div>
-        Password
-        <input type="password" name="password">
-    </div>
-
-    <div>
-        Confirm Password
-        <input type="password" name="password_confirmation">
-    </div>
-
-    <div>
-        <button type="submit">Register</button>
-    </div>
-</form>
