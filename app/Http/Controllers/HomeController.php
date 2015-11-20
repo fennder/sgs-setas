@@ -16,6 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $page_title = "SGS";
         $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
 

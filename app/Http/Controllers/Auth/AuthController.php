@@ -62,4 +62,19 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * 
+     * @return array
+     */
+    public function messages()
+    {
+        return[
+            'name.required' => 'O nome é obrigatório',
+            'email.required' => 'Email é obrigatório',
+            'password.required' => 'Senha é necessária',
+        ];
+    }
 }
