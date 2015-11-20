@@ -2,10 +2,13 @@
 
 @section('usuario')
 <div class="login-box">
-  <div class="login-logo">
+<div class="login-logo">
   <img src="{{ asset('/imagens/logo_estado-150x150.png') }}" class="img-circle" alt="User Image">
+  </div>
+  <div class="login-logo">
     <a href="login"><b>SGS - </b>SETAS</a>
   </div>
+
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Faça o login para iniciar</p>
@@ -24,10 +27,11 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox" name="remember"> Remember Me
+              <input type="checkbox" name="remember"> Lembre-me
             </label>
           </div>
         </div>
+
         <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>

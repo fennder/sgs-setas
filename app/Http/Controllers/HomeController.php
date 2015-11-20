@@ -16,11 +16,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        /*$user = new \Gerenciador\User();
+        $users = $users->all();
+
+        $nome = $user->'user';*/
 
         $page_title = "SGS";
         $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
 
-        $nome = "Edir Pereira";
+        $nome = "Guest";
         $lotacao = "Secretaria do Trabalho e da Assistência Social";
 
         return view('home',['nome'=>$nome, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
