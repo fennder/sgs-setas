@@ -68,9 +68,9 @@ class ContratoController extends Controller
     public function edit($id)
     {
         $contrato = new \Gerenciador\sgc\Contrato;
-        $contrato->find($id_cc);
+        $contratos->find($id_cc);
 
-        return view('sgc.edit', ['contrato' => $contrato]);
+        return view('sgc.edit', ['contratos' => $contratos]);
     }
 
     /**

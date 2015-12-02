@@ -3,7 +3,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="bower_components/AdminLTE/index2.html" class="logo">
+    <a href="http://localhost:8000/home" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -121,7 +121,7 @@
               <!-- The user image in the navbar-->
               <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{ $users->name or "Servidor"}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -129,7 +129,7 @@
                 <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  {{ $users->name or "Servidor"}} - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>

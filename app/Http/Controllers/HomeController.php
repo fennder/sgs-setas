@@ -3,9 +3,11 @@
 namespace Gerenciador\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use \Gerenciador\User;
+use Session;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -16,18 +18,29 @@ class HomeController extends Controller
      */
     public function index()
     {
-        /*$user = new \Gerenciador\User();
-        $users = $users->all();
 
-        $nome = $user->'user';*/
+        if(Auth::check()){
 
-        $page_title = "SGS";
-        $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
 
-        $nome = "Guest";
-        $lotacao = "Secretaria do Trabalho e da Assistência Social";
+            $id = Session::get('id');
+            
+            $user = New User();
 
-        return view('home',['nome'=>$nome, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            $users = $user->find($id);
+
+            $lotacao = "Secretaria do Trabalho e da Assistência Social";
+
+            $page_title = "SGS";
+            $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+            
+            return view('home',['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+        
+        }else{
+
+            return view('auth/login');
+            //return view('home');
+
+        }
     }
 
     /**

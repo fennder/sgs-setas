@@ -2,6 +2,9 @@
 
 @section('content')
 
-	<h1><p>Bem vindo!</h1> <h3></p><p><b>{{$nome or "Usuário"}}</b>, você está lotado na <b>{{$lotacao or "SETAS"}}</b>.</p></h3>
-
+	<h1><p>Bem vindo!!!</p></h1>
+	<h3><p>Sr(a), <b>{{ $users->name or "Servidor"}}</b>,
+	você está na <b>{{$lotacao or "SETAS"}}</b>.</p>
+	</h3>
+ 
 @endsection

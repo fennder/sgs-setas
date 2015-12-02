@@ -10,7 +10,7 @@
           <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ $users->name or "Servidor"}}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a>
         </div>
@@ -31,15 +31,15 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">APLICAÇÕES - SGS</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="home"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <!-- Optionally, you can add icons to the links >
+        <li class="active"><a href="auth/lista"><i class="fa fa-link"></i> <span>GERENCIADOR</span></a></li>
         
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li-->
         
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="fa fa-dashboard"></i> <span>GERENCIADOR</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="http://localhost:8000/auth/lista">Lista de usuários</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>

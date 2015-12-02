@@ -12,8 +12,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Faça o login para iniciar</p>
-
-    <form action="/auth/login" method="POST">
+    <form action="auth/login" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
@@ -40,7 +39,7 @@
 
       </div>
     </form>
-
+   
     <!--div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
@@ -55,4 +54,5 @@
 
   </div>
   <!-- /.login-box-body -->
-</div>@endsection
+</div>
+@endsection
