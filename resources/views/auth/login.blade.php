@@ -3,10 +3,10 @@
 @section('usuario')
 <div class="login-box">
 <div class="login-logo">
-  <img src="{{ asset('/imagens/logo_estado-150x150.png') }}" class="img-circle" alt="User Image">
+  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
   </div>
   <div class="login-logo">
-    <a href="login"><b>SGS - </b>SETAS</a>
+    <a href="auth/login"><b>SGS - </b>SETAS</a>
   </div>
 
   <!-- /.login-logo -->
@@ -39,7 +39,7 @@
 
       </div>
     </form>
-   
+  
     <!--div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
@@ -50,7 +50,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="/auth/register" class="text-center">Registrar novo usuário</a>
+    <a href="auth/register" class="text-center">Registrar novo usuário</a>
 
   </div>
   <!-- /.login-box-body -->

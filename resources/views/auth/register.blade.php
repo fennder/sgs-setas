@@ -3,14 +3,16 @@
 @section('usuario')
 <div class="register-box">
   <div class="register-logo">
-    <img src="{{ asset('imagens/logo_estado-150x150.png') }}" class="img-circle" alt="User Image">
-    <a href="/auth/register"><b>SGS - </b>SETAS</a>
+    <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
+  </div>
+  <div class="register-logo"
+    <a href="register"><b>SGS - </b>SETAS</a>
   </div>
 
-  <div class="register-box-body">
+  <div class="auth/register-box-body">
     <p class="login-box-msg">Registrar novo usuário</p>
 
-    <form action="/auth/register" method="POST">
+    <form action="auth/register" method="POST">
     {!! csrf_field() !!}
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">
@@ -38,7 +40,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Cadasatrar</button>
         </div>
         <!-- /.col -->
       </div>
@@ -52,7 +54,7 @@
         Google+</a>
     </div-->
 
-    <a href="login" class="text-center">Já é usuário clique aqui</a>
+    <a href="auth/login" class="text-center">Já é usuário clique aqui</a>
   </div>
   <!-- /.form-box -->
 </div>

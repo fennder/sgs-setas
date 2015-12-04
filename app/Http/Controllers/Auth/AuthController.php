@@ -34,6 +34,7 @@ class AuthController extends Controller
 
     public function postLogin(Request $request){
 
+
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
             Session::set('email', $request->email);

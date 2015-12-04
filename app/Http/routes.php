@@ -1,22 +1,25 @@
 <?php
 
-//Primeiro acesso redirecionamento para a tela de login
-Route::get('/', 'Auth\AuthController@getLogin');
+Route::get('/', 'Auth\AuthController@getLogin'); //Retorna login
 
-//
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
-
-//Página inicial do SGS
-Route::get('/home', 'HomeController@index');
-
+//Login
+Route::get('auth/login', 'Auth\AuthController@getLogin'); //Retorna formulário de login
+Route::post('auth/login', 'Auth\AuthController@postLogin'); //Envia requisição de login
+Route::get('auth/logout', 'Auth\AuthController@getLogout'); //
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+//Página inicial do SGS
+Route::get('home', 'HomeController@index');
+
 //Listar, Deletar e Alterar Usuários
-Route::get('auth/lista', 'Auth\ListaController@index');
-Route::get('auth/user/delete/{id}', 'UserController@destroy');
-Route::get('auth/editar', 'UserController@edit');
+Route::get('user/lista', 'UserController@index');
+Route::get('user/delete/{id}', 'UserController@destroy');
+Route::get('user/editar', function(){
+	return view('user/editar');
+});
+Route::get('perfil', function(){
+	return view('user/perfil');
+});

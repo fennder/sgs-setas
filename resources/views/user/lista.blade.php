@@ -5,11 +5,16 @@
         <div class="col-md-6">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">USUÁRIOS CADASTRADOS</h3>
+              <h3 class="box-title">Lista de usuários cadastrados</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-bordered">
+              <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
                     <th style="width: 10px">Id</th>
@@ -26,11 +31,11 @@
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td align="center">
-                          <a href="user/editar/{{$user->id}}"><i class="glyphicon glyphicon-pencil"></i></a>
+                        <td class="text-center">
+                          <a href="user/edit/{$id}"><i class="glyphicon glyphicon-pencil"></i></a>
   
                         </td>
-                        <td align="center">
+                        <td class="text-center">
 
                           <a href="user/delete/{{$user->id}}"><i class="glyphicon glyphicon-remove-sign"></i></a>
                         </td>

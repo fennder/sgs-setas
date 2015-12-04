@@ -21,15 +21,14 @@ class HomeController extends Controller
 
         if(Auth::check()){
 
-
             $id = Session::get('id');
-            
             $user = New User();
-
             $users = $user->find($id);
 
+            /**
+             *Informações impressos na Home
+             */
             $lotacao = "Secretaria do Trabalho e da Assistência Social";
-
             $page_title = "SGS";
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
             
