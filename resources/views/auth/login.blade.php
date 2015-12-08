@@ -1,18 +1,18 @@
 @extends('layout-backend.layout_login')
 
-@section('usuario')
+@section('content')
 <div class="login-box">
 <div class="login-logo">
   <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
   </div>
   <div class="login-logo">
-    <a href="auth/login"><b>SGS - </b>SETAS</a>
+    <a href="{!! route('a.getLogin') !!}"><b>SGS - </b>SETAS</a>
   </div>
 
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Faça o login para iniciar</p>
-    <form action="auth/login" method="POST">
+    <form action="{!! route('a.postLogin') !!}" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
@@ -50,7 +50,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="auth/register" class="text-center">Registrar novo usuário</a>
+    <a href="{!! route('a.getRegister') !!}" class="text-center">Registrar novo usuário</a>
 
   </div>
   <!-- /.login-box-body -->

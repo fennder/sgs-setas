@@ -1,25 +1,34 @@
 <?php
 
-Route::get('/', 'Auth\AuthController@getLogin'); //Retorna login
-
-//Login
-Route::get('auth/login', 'Auth\AuthController@getLogin'); //Retorna formulário de login
-Route::post('auth/login', 'Auth\AuthController@postLogin'); //Envia requisição de login
-Route::get('auth/logout', 'Auth\AuthController@getLogout'); //
-
-// Registration routes...
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
-
-//Página inicial do SGS
-Route::get('home', 'HomeController@index');
-
-//Listar, Deletar e Alterar Usuários
-Route::get('user/lista', 'UserController@index');
-Route::get('user/delete/{id}', 'UserController@destroy');
-Route::get('user/editar', function(){
-	return view('user/editar');
+Route::get('', function(){
+	return redirect()->route('a.getLogin');
 });
-Route::get('perfil', function(){
-	return view('user/perfil');
+
+Route::group(['as' => 'h.', 'prefix' => 'home'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'UsersController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'UsersController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
+	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'UsersController@edit']);
+	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'UsersController@update']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
+});
+
+Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
+{
+	Route::get('login', 		['as' => 'getLogin', 'uses' => 'Auth\AuthController@getLogin']);
+	Route::post('login', 		['as' => 'postLogin', 'uses' => 'Auth\AuthController@postLogin']);
+	Route::get('logout', 		['as' => 'getLogout', 'uses' => 'Auth\AuthController@getLogout']);
+	Route::get('register', 		['as' => 'getRegister', 'uses' => 'Auth\AuthController@getRegister']);
+	Route::post('register',		['as' => 'postRegister', 'uses' => 'Auth\AuthController@postRegister']); 	
+});
+
+Route::group(['as' => 'u.', 'prefix' => 'users'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'UsersController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'UsersController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
+	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'UsersController@edit']);
+	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'UsersController@update']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
 });

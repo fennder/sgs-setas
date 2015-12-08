@@ -25,7 +25,7 @@
   <![endif]-->
 </head>
 <body class="hold-transition register-page">
-@yield('usuario')
+@yield('content')
 <!-- /.register-box -->
 
 <!-- jQuery 2.1.4 -->

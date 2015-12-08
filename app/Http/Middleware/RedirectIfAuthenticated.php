@@ -36,7 +36,8 @@ class RedirectIfAuthenticated
     {
         if ($this->auth->check()) {
             
-            return redirect('/home');
+            //return redirect('/home');
+            return redirect()->route('h.index');
         }
 
         return $next($request);

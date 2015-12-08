@@ -56,6 +56,64 @@
           </div>
           <!-- /.box -->
 
+
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Editar usuário</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <form role="form">
+            <div class="box-body">
+              
+              <h4>Testes de impressão</h4>
+
+            <form action="auth/login" method="POST">
+    {{ csrf_field() }}
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck"> <!-- Retirar icheck-->
+            <label>
+              <input type="checkbox" name="remember"> Lembre-me </input>
+            </label>
+          </div>
+        </div>
+
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+        </div>
+        <!-- /.col -->
+
+      </div>
+    </form>
+
+
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                <li>{!! $users->render() !!}</li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.box -->
+
+
+
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Condensed Full Width Table</h3>

@@ -10,8 +10,13 @@ use Gerenciador\User;
 use Session;
 use Auth;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +25,11 @@ class UserController extends Controller
     public function index()
     {
         if(Auth::check()){
+
             $id = Session::get('id');
             $user = New User();
 
-            //$users = $user->all();
+            $users = $user->all();
             $users = $user->find($id);
 
             $users = User::paginate(5);
@@ -33,9 +39,13 @@ class UserController extends Controller
             $nav = "Lista";
 
             return view('user/lista',['nav' => $nav, 'users' => $users,'page_title'=>$page_title, 'page_description'=>$page_description]);
+
         }else{
+
             return view('auth/login');
-        }     }
+
+        }     
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -77,8 +87,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $users = new User()->find($id);
-        $users->save();
+        $users = new \User();
+        $users->find($id);
 
         return view('user/editar', ['users' => $users]);    
     }
@@ -104,8 +114,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         
-        $users = new User()->find($id);
-        $users->delete();
+        $users = new \User();
+        $users->find($id)->delete();
         return redirect('user/lista');
     }    
 }
