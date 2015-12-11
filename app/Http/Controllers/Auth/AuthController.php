@@ -84,9 +84,9 @@ class AuthController extends Controller
     public function messages()
     {
         return[
-            'name.required' => 'O nome é obrigatório',
-            'email.required' => 'Email é obrigatório',
-            'password.required' => 'Senha é necessária',
+            'name.required' => 'O seu nome é obrigatório',
+            'email.required' => 'O seu email é obrigatório',
+            'password.required' => 'Sua senha é obrigatória',
         ];
     }
 

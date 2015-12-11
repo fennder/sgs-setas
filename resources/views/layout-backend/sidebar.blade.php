@@ -35,18 +35,22 @@
         <li class="active"><a href="auth/lista"><i class="fa fa-link"></i> <span>GERENCIADOR</span></a></li>
         
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li-->
-        
+
+        <li class="active"><a href="{!! route('h.index') !!}"><i class="fa fa-tv"></i> <span>HOME</span></a></li>
+
         <li class="treeview">
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('u.index') !!}">Lista de usuários</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Grupo de usuários</a></li>
+            <li><a href="#">Grupo de páginas</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-odnoklassniki"></i> <span>INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="fa fa-user-plus"></i> <span>INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('u.index') !!}">Lista de inscritos</a></li>
+            <li><a href="#">Lista de cadastrados</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>

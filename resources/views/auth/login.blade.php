@@ -9,17 +9,31 @@
     <a href="{!! route('a.getLogin') !!}"><b>SGS - </b>SETAS</a>
   </div>
 
+  <!-- ERROS -->
+  @if (count($errors) > 0)
+    <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+  <!-- ERROS -->
+
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Faça o login para iniciar</p>
     <form action="{!! route('a.postLogin') !!}" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Senha">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

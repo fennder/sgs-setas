@@ -5,6 +5,20 @@
     <div class="register-logo">
       <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
     </div>
+
+    <!-- ERROS -->
+    @if (count($errors) > 0)
+      <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+  <!-- ERROS -->
     <div class="register-logo">
       <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
     </div>

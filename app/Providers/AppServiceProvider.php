@@ -4,6 +4,8 @@ namespace Gerenciador\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Gerenciador\User;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        User::creating(function ($user) {
+            if ( ! $user->isValid()) {
+                return false;
+            }
+        });
         /*Blade::directive('date'), function($expression){
             return "{{ with{$expression}->format(Y-m-d); }}"
         }*/

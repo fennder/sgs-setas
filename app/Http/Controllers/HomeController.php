@@ -26,23 +26,25 @@ class HomeController extends Controller
 
         if(Auth::check()){
 
-            $id = Session::get('id');
-            $user = New User();
-            $users = $user->find($id);
+            $users = Auth::user();
 
             /**
-             *Informações impressos na Home
+             * 
              */
-            $lotacao = "Secretaria do Trabalho e da Assistência Social";
             $page_title = "SGS";
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+
+            /**
+             * Informações impressos na Home
+             */
+            $lotacao = "Secretaria do Trabalho e da Assistência Social";
             
-            return view('home',['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            
+            return view('home', ['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
         
         }else{
 
             return view('auth/login');
-            //return view('home');
 
         }
     }

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use \Gerenciador\User;
+use Session;
+use Auth;
 
 class FormController extends Controller
 {
@@ -16,14 +19,19 @@ class FormController extends Controller
      */
     public function index()
     {
-        
-        $cargo = new \Gerenciador\sgi\Cargo();
-        $cargos = $cargo->all();
+        if(Auth::check()){
+            $users = Auth::user();
+            $cargo = new \Gerenciador\sgi\Cargo();
+            $cargos = $cargo->all();
 
-        //$contratos = \Gerenciador\sgi\Cargo::paginate(5);
-        //return view('contrato.contrato', ['contratos' => $contratos]);
-        return view('sgi.form', ['cargos' => $cargos]);
+            //$contratos = \Gerenciador\sgi\Cargo::paginate(5);
+            //return view('contrato.contrato', ['contratos' => $contratos]);
+            return view('sgi.form', ['cargos' => $cargos, 'users' => $users]);
+        }else{
 
+            return view('auth/login');
+
+        }
     }
 
     /**

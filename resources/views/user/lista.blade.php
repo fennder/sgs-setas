@@ -28,16 +28,16 @@
                   @if($users)
                     @foreach($users as $user)
                       <tr>
-                        <td>{{$user->id}}</td>
+                        <td>{{$user->id}}.</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td class="text-center">
-                          <a href="user/edit/{$id}"><i class="glyphicon glyphicon-pencil"></i></a>
+                          <a href="user/edit/{$id}"><i class="glyphicon glyphicon-edit"></i></a>
   
                         </td>
                         <td class="text-center">
 
-                          <a href="user/delete/{{$user->id}}"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                          <a href="user/delete/{{$user->id}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach
