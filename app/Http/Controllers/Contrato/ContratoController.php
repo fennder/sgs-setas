@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador\Http\Controllers;
+namespace Gerenciador\Http\Controllers\Contrato;
 
 use Illuminate\Http\Request;
 

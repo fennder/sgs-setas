@@ -29,16 +29,16 @@ class UsersController extends Controller
             $id = Session::get('id');
             $user = New User();
 
-            $users = $user->all();
-            $users = $user->find($id);
+            //$users = $user->all();
+            //$users = $user->find($id);
 
-            $users = User::paginate(5);
+            $users = User::paginate(10);
 
             $page_title = "SGS";
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
             $nav = "Lista";
 
-            return view('user/lista',['nav' => $nav, 'users' => $users,'page_title'=>$page_title, 'page_description'=>$page_description]);
+            return view('user/lista',['nav' => $nav, 'users' => $users, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
         }else{
 

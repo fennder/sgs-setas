@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador\sgi;
+namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 

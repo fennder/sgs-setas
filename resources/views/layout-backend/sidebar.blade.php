@@ -49,7 +49,7 @@
         <li class="treeview">
           <a href="#"><i class="fa fa-user-plus"></i> <span>INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="{!! route('u.index') !!}">Lista de inscritos</a></li>
+            <li><a href="{!! route('i.index') !!}">Lista de inscritos</a></li>
             <li><a href="#">Lista de cadastrados</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
