@@ -20,7 +20,7 @@
                     <th style="width: 10px">Id</th>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th style="width: 40px" rowspan="2">Ação</th>
+                    <th style="width: 40px" colspan="2">Ação</th>
                     <!--th style="width: 40px">Excluir</th-->
                   </tr>
                 </thead>
@@ -32,13 +32,10 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td class="text-center">
-                          <a href="user/edit/{{$user->id}}"><i class="glyphicon glyphicon-edit"></i></a>
-         
+                          <a href="users/editar/{{$user->id}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="users/remover/{{$user->id}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
-                        <td class="text-center">
-
-                          <a href="user/delete/{{$user->id}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                      
                       </tr>
                     @endforeach
                   @else

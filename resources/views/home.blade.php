@@ -2,35 +2,25 @@
 
 @section('content')
 	
-		<h1><p>Bem vindo!!!</p></h1>
-		<h3><p>Sr(a), <b>{{ $users->name or "Servidor"}}</b>,
-		você está na <b>{{$lotacao or "SETAS"}}</b>.</p>
-		</h3>
- 	<!--div class="row">
-    <div class="col-md-8">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">Panel content
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">Panel content
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Panel title</h3>
-            </div>
-            <div class="panel-body">Panel content
-            </div>
-        </div>
-    </div>
-</div-->
+	<h3>
+		<p>Bem vindo(a), Sr(a), <b>{{ $users->name or "Servidor"}}</b>,
+	</h3>
+	<h4>
+        Você está na <b>{{$lotacao or "SETAS"}}</b>.</p>
+	</h4>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+    <div class="row">
+  		<div class="col-md-4" ><a href="mailto:ti@setas.to.gov.br" target="_blank">Envia Email</a></div>
+  		<div class="col-md-4"><a href="{{asset("/bower_components/AdminLTE/index2.html")}}">Help</a></div>
+  		<div class="col-md-4"></div>
+	</div>
+
 @endsection

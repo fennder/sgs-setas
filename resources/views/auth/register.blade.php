@@ -6,6 +6,10 @@
       <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
     </div>
 
+    <div class="register-logo">
+      <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
+    </div>
+
     <!-- ERROS -->
     @if (count($errors) > 0)
       <div class="alert alert-danger alert-dismissible">
@@ -19,15 +23,12 @@
       </div>
     @endif
   <!-- ERROS -->
-    <div class="register-logo">
-      <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
-    </div>
 
     <div class="register-box-body">
       <p class="login-box-msg">Registrar novo usuário</p>
 
       <form action="{!! route('a.postRegister') !!}" method="POST">
-      {!! csrf_field() !!}
+        {!! csrf_field() !!}
         <div class="form-group has-feedback">
           <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>

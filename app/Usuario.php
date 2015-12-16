@@ -50,8 +50,4 @@ class Usuario extends Model
     	'id_deficiencia'
     ];
 
-    /*public function ()
-    {
-    	//
-    }*/
 }

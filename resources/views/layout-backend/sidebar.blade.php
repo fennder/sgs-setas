@@ -11,8 +11,8 @@
         </div>
         <div class="pull-left info">
           <p>{{ $users->name or "Servidor"}}</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a>
+          <!-- Status >
+          <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a-->
         </div>
       </div>
 
@@ -30,13 +30,13 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">APLICAÇÕES - SGS</li>
+        <li class="header">SISTEMAS GERENCIÁVEIS - SETAS</li>
         <!-- Optionally, you can add icons to the links >
         <li class="active"><a href="auth/lista"><i class="fa fa-link"></i> <span>GERENCIADOR</span></a></li>
         
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li-->
 
-        <li class="active"><a href="{!! route('h.index') !!}"><i class="fa fa-tv"></i> <span>HOME</span></a></li>
+        <li class="active"><a href="{!! route('h.index') !!}"><i class="glyphicon glyphicon-home"></i> <span>HOME</span></a></li>
 
         <li class="treeview">
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -47,11 +47,11 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-user-plus"></i> <span>INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="fa fa-user-plus"></i> <span>GERENCIAR INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('i.index') !!}">Lista de inscritos</a></li>
-            <li><a href="#">Lista de cadastrados</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="{!! route('i.create') !!}">Inscrever</a></li>
+            <li><a href="{!! route('i.edit') !!}">Link in level 2</a></li>
           </ul>
         </li>
       </ul>

@@ -1,17 +1,17 @@
 <?php
 
-namespace Gerenciador\Inscriao;
+namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Funcao extends Model
+class Cargo extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'funcao';
+    protected $table = 'cargo';
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +19,6 @@ class Funcao extends Model
      * @var array
      */
     protected $fillable = [
-    	'',
+        'desricao'
     ];
 }

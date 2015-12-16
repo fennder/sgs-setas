@@ -6,15 +6,15 @@ use Illuminate\Http\Request;
 
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Inscricao\Usuario;
 use Auth;
 use Session;
-use Gerenciador\Inscricao\Usuario;
 
 class UsuarioController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -24,20 +24,19 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        if(Auth::check()){
+       
+            if(Auth::check()){
 
-            $id_usuario = Session::get('id_usuario');
-            $usuario = New Usuario();
+            $id = Session::get('id');
+            //$usuarios = new Usuario();
 
-            $inscritos = $inscrito->all();
-            $inscritos = $inscrito->find($id_usuario);
+            $usuarios = Usuario::paginate(10);
 
-            $inscritos = Usuario::paginate(10);
+            $page_title = "SGS";
+            $page_description = "Cadastro de Usuários";
+            $nav = "Lista";
 
-            $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
-            $nav = "Inscritos";
-
-            return view('inscricao/lista',['nav' => $nav, 'inscritos' => $inscritos, 'page_description'=>$page_description]);
+            return view('inscricao/index',['nav' => $nav, 'usuarios' => $usuarios, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
         }else{
 
@@ -53,7 +52,11 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $page_title = "SGS";
+            $page_description = "Cadastro de Usuários";
+            $nav = "Cadastro";
+
+            return view('inscricao/create',['nav' => $nav,'page_title'=>$page_title, 'page_description'=>$page_description]);    
     }
 
     /**
@@ -64,7 +67,12 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = new Usuario;
+        $usuarios = $usuario->$request;
+
+        $usuarios->save();
+
+        return redirect()->back();
     }
 
     /**

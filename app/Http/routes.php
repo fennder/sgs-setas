@@ -1,18 +1,17 @@
 <?php
 
-Route::get('', function(){
-
-	return redirect()->route('a.getLogin');
-
+Route::get('', function()
+{
+	return redirect()->route('h.index');
 });
 
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
-	Route::get('login', 		['as' => 'getLogin', 'uses' => 'Auth\AuthController@getLogin']);
-	Route::post('login', 		['as' => 'postLogin', 'uses' => 'Auth\AuthController@postLogin']);
-	Route::get('logout', 		['as' => 'getLogout', 'uses' => 'Auth\AuthController@getLogout']);
-	Route::get('register', 		['as' => 'getRegister', 'uses' => 'Auth\AuthController@getRegister']);
-	Route::post('register',		['as' => 'postRegister', 'uses' => 'Auth\AuthController@postRegister']); 	
+	Route::get('login', 		['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login
+	Route::post('login', 		['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //login
+	Route::get('logout', 		['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //logout
+	Route::get('register', 		['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register
+	Route::post('register',		['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //register
 });
 
 Route::group(['as' => 'h.', 'prefix' => 'home'], function()
@@ -35,7 +34,7 @@ Route::group(['as' => 'u.', 'prefix' => 'users'], function()
 	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
 });
 
-Route::group(['as' => 'i.', 'prefix' => 'usuario'], function()
+Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\UsuarioController@create']);

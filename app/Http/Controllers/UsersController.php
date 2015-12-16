@@ -27,10 +27,7 @@ class UsersController extends Controller
         if(Auth::check()){
 
             $id = Session::get('id');
-            $user = New User();
-
-            //$users = $user->all();
-            //$users = $user->find($id);
+            $users = New User();
 
             $users = User::paginate(10);
 
@@ -59,7 +56,7 @@ class UsersController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -87,8 +84,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $users = new \User();
-        $users->find($id);
+        $users = \User::find($id);
+        $users->save();
 
         return view('user/editar', ['users' => $users]);    
     }
@@ -102,7 +99,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //$users = User::findOrFail($id);
+        //$users->fill($request->all());
+
+        //$users->save();
+
+        //return redirect()->back();
     }
 
     /**
@@ -114,8 +116,8 @@ class UsersController extends Controller
     public function destroy($id)
     {
         
-        $users = new \User();
-        $users->find($id)->delete();
-        return redirect('user/lista');
+        User::destroy($id);
+
+        return redirect()->back();
     }    
 }
