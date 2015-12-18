@@ -7,7 +7,7 @@
     </div>
 
     <div class="register-logo">
-      <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
+      <a href="{!! route('a.postRegister') !!}"><b>SGS - </b>SETAS</a>
     </div>
 
     <!-- ERROS -->

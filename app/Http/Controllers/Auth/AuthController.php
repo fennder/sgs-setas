@@ -26,25 +26,6 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
-    /*public function getLogin(){
-
-        return view('auth/login');
-        
-    }*/
-
-    /*public function postLogin(Request $request){
-
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password]))
-        {
-            Session::set('email', $request->email);
-
-            Session::set('id', Auth::id());
-
-            return redirect()->action('HomeController@index');
-        }
-    }*/
-
     /**
      * Get a validator for an incoming registration request.
      *

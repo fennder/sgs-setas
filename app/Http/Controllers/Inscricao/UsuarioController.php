@@ -25,12 +25,7 @@ class UsuarioController extends Controller
     public function index()
     {
        
-            if(Auth::check()){
-
-            $id = Session::get('id');
-            //$usuarios = new Usuario();
-
-            $usuarios = Usuario::paginate(10);
+            $usuarios = Usuario::paginate(1);
 
             $page_title = "SGS";
             $page_description = "Cadastro de Usuários";
@@ -38,11 +33,6 @@ class UsuarioController extends Controller
 
             return view('inscricao/index',['nav' => $nav, 'usuarios' => $usuarios, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
-        }else{
-
-            return view('auth/login');
-
-        }
     }
 
     /**
@@ -53,10 +43,10 @@ class UsuarioController extends Controller
     public function create()
     {
         $page_title = "SGS";
-            $page_description = "Cadastro de Usuários";
-            $nav = "Cadastro";
+        $page_description = "Cadastro de Usuários";
+        $nav = "Cadastro";
 
-            return view('inscricao/create',['nav' => $nav,'page_title'=>$page_title, 'page_description'=>$page_description]);    
+        return view('inscricao/create',['nav' => $nav,'page_title'=>$page_title, 'page_description'=>$page_description]);    
     }
 
     /**
@@ -83,7 +73,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        $usuarios = Usuario::find($id_usuario);
+
+        return view('inscricao.show')->with(compact('usuarios'));
     }
 
     /**

@@ -94,6 +94,20 @@
       </div>
 
       <div class="form-group has-feedback">
+        {!! Form::text('telefone_pessoal', null, ['class'=> 'form-control', 'id'=> 'telefone_pessoal', 'placeholder' => '(00)0000-0000']) !!}
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        {!! Form::text('telefone_institucional', null, ['class'=> 'form-control', 'id'=> 'telefone_institucional', 'placeholder' => '(00)0000-0000']) !!}
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        {!! Form::select('id_escolaridade', array('EM' => 'Ensino Médio', 'ES' => 'Ensino Superior'), ['class'=> 'form-control', 'placeholder' => '(00)0000-0000']) !!}
+      </div>
+
+      <div class="form-group has-feedback">
         {!! Form::submit('Cadastrar!', ['class' => 'btn btn-primary']) !!}
       </div>
 

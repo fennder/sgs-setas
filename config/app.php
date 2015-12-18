@@ -201,7 +201,6 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Carbon'    => Carbon\Carbon::class,
         
-
     ],
 
 ];
