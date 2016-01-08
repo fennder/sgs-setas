@@ -49,6 +49,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -62,13 +63,13 @@ class AuthController extends Controller
      * 
      * @return array
      */
-    public function messages()
+    /*public function messages()
     {
-        return[
+        return [
             'name.required' => 'O seu nome é obrigatório',
             'email.required' => 'O seu email é obrigatório',
             'password.required' => 'Sua senha é obrigatória',
         ];
-    }
+    }*/
 
 }

@@ -63,7 +63,7 @@
     </div-->
     <!-- /.social-auth-links -->
 
-    <a href="#">Esqueci minha senha</a><br>
+    <a href="{!! route('p.getEmail') !!}">Esqueci minha senha</a><br>
     <a href="{!! route('a.getRegister') !!}" class="text-center">Registrar novo usuário</a>
 
   </div>

@@ -14,6 +14,14 @@ Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 	Route::post('register',		['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //register
 });
 
+Route::group(['as' => 'p.', 'prefix' => 'password'], function()
+{
+	Route::get('email', 		['as' => 'getEmail', 	'uses' => 'Auth\PasswordController@getEmail']);
+	Route::post('email', 		['as' => 'postEmail', 	'uses' => 'Auth\PasswordController@postEmail']);
+	Route::get('reset/{token}', ['as' => 'getReset', 	'uses' => 'Auth\PasswordController@getReset']);
+	Route::post('reset', 		['as' => 'postReset', 	'uses' => 'Auth\PasswordController@postReset']);
+});
+
 Route::group(['as' => 'h.', 'prefix' => 'home'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'HomeController@index']);

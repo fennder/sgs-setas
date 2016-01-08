@@ -15,7 +15,7 @@
 
     <div class="col-md-4">
       <div class="form-group has-feedback">
-        {!! Form::text('nome_cracha', null, ['class'=> 'form-control', 'id'=> 'nome_cracha', 'placeholder' => 'Nome Crachá']) !!}
+        {!! Form::text('nome_cracha', null, ['class'=> 'form-control span6', 'id'=> 'nome_cracha', 'placeholder' => 'Nome Crachá']) !!}
         <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
       </div><!-- Nome Crachá -->
     </div><!-- Col 4 -->
@@ -108,7 +108,7 @@
 
   <div class="col-md-4">
     <div class="form-group has-feedback">
-      {!! Form::select('id_escolaridade', array('EM' => 'Ensino Médio', 'ES' => 'Ensino Superior'), ['class'=> 'form-control', 'placeholder' => '(00)0000-0000']) !!}
+      {!! Form::select('id_escolaridade', array('EM' => 'Ensino Médio', 'ES' => 'Ensino Superior'), ['class'=> 'form-control', 'placeholder' => '']) !!}
     </div><!-- Escolaridade -->
   </div>
 

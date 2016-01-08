@@ -7,14 +7,14 @@
     </div>
 
     <div class="register-logo">
-      <a href="{!! route('a.postRegister') !!}"><b>SGS - </b>SETAS</a>
+      <a href="register"><b>SGS - </b>SETAS</a>
     </div>
 
     <!-- ERROS -->
     @if (count($errors) > 0)
       <div class="alert alert-danger alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Opa!</strong> Existem campos obrigatórios em branco.<br><br>
         <ul>
           @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -27,7 +27,7 @@
     <div class="register-box-body">
       <p class="login-box-msg">Registrar novo usuário</p>
 
-      <form action="{!! route('a.postRegister') !!}" method="POST">
+      <form action="register" method="POST">
         {!! csrf_field() !!}
         <div class="form-group has-feedback">
           <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">

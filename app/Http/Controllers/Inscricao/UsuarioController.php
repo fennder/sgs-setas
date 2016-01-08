@@ -25,7 +25,7 @@ class UsuarioController extends Controller
     public function index()
     {
        
-            $usuarios = Usuario::paginate(1);
+            $usuarios = Usuario::paginate(0);
 
             $page_title = "SGS";
             $page_description = "Cadastro de Usuários";
@@ -107,8 +107,10 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_usuario)
     {
-        //
+        Usuario::destroy($id_usuario);
+
+        return redirect()->back();
     }
 }

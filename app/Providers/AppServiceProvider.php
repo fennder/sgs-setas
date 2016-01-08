@@ -15,12 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        User::creating(function ($user) {
-            if ( ! $user->isValid()) {
+        /*User::creating(function ($user) {
+            if ( ! $user->get()->isValid()) {
                 return false;
             }
         });
-        /*Blade::directive('date'), function($expression){
+        Blade::directive('date'), function($expression){
             return "{{ with{$expression}->format(Y-m-d); }}"
         }*/
     }
