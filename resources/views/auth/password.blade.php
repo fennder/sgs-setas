@@ -14,6 +14,7 @@
     <p class="login-box-msg">Faça o login para iniciar</p>
     <form action="{!! route('p.postEmail') !!}" method="POST">
     {{ csrf_field() }}
+    
     <!-- ERROS -->
     @if (count($errors) > 0)
       <div class="alert alert-danger alert-dismissible">

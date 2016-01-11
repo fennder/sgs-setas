@@ -41,6 +41,7 @@ return [
     |
     */
 
+    //'port' => env('MAIL_PORT', 465),
     'port' => env('MAIL_PORT', 465),
 
     /*
@@ -54,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'fennder@gmail.com', 'name' => 'SGS-Sistema de Gerenciamente de Sistemas SETAS'],
+    'from' => ['address' => 'teste.ti@setas.to.gov.br', 'name' => 'SGS - Sistema de Gerenciamente de Sistemas SETAS'],
     //'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
 
     /*

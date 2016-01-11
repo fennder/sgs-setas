@@ -7,7 +7,8 @@
   <!--img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image"-->
   </div>
   <div class="login-logo">
-    <a href="#"><b>SGS - </b>SETAS</a>
+    <!--a href="#"><b>SGS - </b>SETAS</a-->
+    <b>SGS - </b>SETAS
   </div>
 
   <!-- /.login-logo -->

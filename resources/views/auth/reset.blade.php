@@ -11,29 +11,28 @@
       <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
     </div>
 
-    <!-- ERROS -->
-    @if (count($errors) > 0)
-      <div class="alert alert-danger alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Opa!</strong> Existem campos obrigatórios em branco.<br><br>
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
-  <!-- ERROS -->
-
     <div class="register-box-body">
       <p class="login-box-msg">Redefina sua senha, por favor!</p>
 
       <form action="{!! route('p.postReset') !!}" method="POST">
         {!! csrf_field() !!}
         <input type="hidden" name="token" value="{{ $token }}">
+        <!-- ERROS -->
+        @if (count($errors) > 0)
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Opa!</strong> Existem campos obrigatórios em branco.<br><br>
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+        <!-- ERROS -->
         
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+          <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -54,7 +53,7 @@
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Refazer</button>
+            <button type="submit" class="btn btn-primary btn-block ">Refazer</button>
           </div>
           <!-- /.col -->
         </div>
@@ -63,43 +62,5 @@
       <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a>
     </div>
     <!-- /.form-box -->
-  </div>
-
-
-<!-- resources/views/auth/reset.blade.php -->
-
-<form method="POST" action="/password/reset">
-    {!! csrf_field() !!}
-    <input type="hidden" name="token" value="{{ $token }}">
-
-    @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
-
-    <div>
-        Password
-        <input type="password" name="password">
-    </div>
-
-    <div>
-        Confirm Password
-        <input type="password" name="password_confirmation">
-    </div>
-
-    <div>
-        <button type="submit">
-            Reset Password
-        </button>
-    </div>
-</form>
-  
+  </div>  
 @endsection

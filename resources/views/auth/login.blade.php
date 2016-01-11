@@ -13,7 +13,7 @@
   @if (count($errors) > 0)
     <div class="alert alert-danger alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <strong>Whoops!</strong> There were some problems with your input.<br><br>
+      <strong>Opa!</strong> Existem campos obrigatórios em branco.<br><br>
       <ul>
         @foreach ($errors->all() as $error)
           <li>{{ $error }}</li>
@@ -47,7 +47,7 @@
 
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
         </div>
         <!-- /.col -->
 
