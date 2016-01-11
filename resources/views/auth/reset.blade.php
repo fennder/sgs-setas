@@ -1,3 +1,4 @@
+<!-- resources/views/auth/reset.blade.php -->
 @extends('layout-backend.layout_login')
 
 @section('content')
@@ -25,14 +26,12 @@
   <!-- ERROS -->
 
     <div class="register-box-body">
-      <p class="login-box-msg">Registrar novo usuário</p>
+      <p class="login-box-msg">Redefina sua senha, por favor!</p>
 
-      <form action="register" method="POST">
+      <form action="{!! route('p.postReset') !!}" method="POST">
         {!! csrf_field() !!}
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome Completo">
-          <span class="glyphicon glyphicon-user form-control-feedback"></span>
-        </div>
+        <input type="hidden" name="token" value="{{ $token }}">
+        
         <div class="form-group has-feedback">
           <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -48,29 +47,59 @@
         <div class="row">
           <div class="col-xs-8">
             <div class="checkbox icheck">
-              <label>
+              <!--label>
                 <input type="checkbox"> Aceite os <a href="#">termos</a>
-              </label>
+              </label-->
             </div>
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Cadasatrar</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Refazer</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
-      <!--div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-          Facebook</a>
-        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-          Google+</a>
-      </div-->
-
       <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a>
     </div>
     <!-- /.form-box -->
   </div>
+
+
+<!-- resources/views/auth/reset.blade.php -->
+
+<form method="POST" action="/password/reset">
+    {!! csrf_field() !!}
+    <input type="hidden" name="token" value="{{ $token }}">
+
+    @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
+    <div>
+        Email
+        <input type="email" name="email" value="{{ old('email') }}">
+    </div>
+
+    <div>
+        Password
+        <input type="password" name="password">
+    </div>
+
+    <div>
+        Confirm Password
+        <input type="password" name="password_confirmation">
+    </div>
+
+    <div>
+        <button type="submit">
+            Reset Password
+        </button>
+    </div>
+</form>
+  
 @endsection

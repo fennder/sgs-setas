@@ -14,13 +14,19 @@
     <p class="login-box-msg">Faça o login para iniciar</p>
     <form action="{!! route('p.postEmail') !!}" method="POST">
     {{ csrf_field() }}
+    <!-- ERROS -->
     @if (count($errors) > 0)
+      <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Opa!</strong> Existem campos obrigatórios em branco.<br><br>
         <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
         </ul>
+      </div>
     @endif
+  <!-- ERROS -->
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

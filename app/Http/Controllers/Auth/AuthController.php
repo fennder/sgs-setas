@@ -65,11 +65,11 @@ class AuthController extends Controller
      */
     /*public function messages()
     {
-        return [
+        return User::create([
             'name.required' => 'O seu nome é obrigatório',
             'email.required' => 'O seu email é obrigatório',
             'password.required' => 'Sua senha é obrigatória',
-        ];
+        ]);
     }*/
 
 }
