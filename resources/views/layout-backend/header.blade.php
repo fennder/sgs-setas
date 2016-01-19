@@ -134,6 +134,7 @@
                 </p>
               </li>
               <!-- Menu Body -->
+
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
@@ -154,7 +155,7 @@
                   <a href="http://localhost:8000/perfil" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="http://localhost:8000/auth/logout" class="btn btn-default btn-flat">Deslogar</a>
+                  <a href="{!! route('a.getLogout') !!}" class="btn btn-default btn-flat">Deslogar</a>
                 </div>
               </li>
             </ul>

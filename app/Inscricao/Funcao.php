@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerenciador\Inscriao;
+namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,4 +21,9 @@ class Funcao extends Model
     protected $fillable = [
     	'descricao',
     ];
+
+    public function usuario()
+    {
+        return $this->hasMany('Gerenciador\Usuario');   
+    }
 }

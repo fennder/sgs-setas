@@ -49,5 +49,4 @@ class Usuario extends Model
     	'possui_deficiencia',
     	'id_deficiencia'
     ];
-
 }

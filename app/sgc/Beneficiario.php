@@ -6,7 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Beneficiario extends Model
 {
-    //protected $table = 'beneficiario';
+	/**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'beneficiario';
 
-    //protected
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['', '', ''];
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
-use \Gerenciador\User;
+use Gerenciador\User;
 use Session;
 use Auth;
 

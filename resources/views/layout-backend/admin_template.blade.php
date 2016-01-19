@@ -85,7 +85,7 @@ desired effect
         <small>{{ $page_description or "Sistema de Gerenciamento de Sistemas da SETAS" }}</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="http://localhost:8000/home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{!! route('h.index') !!}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">{{ $nav or "Here" }}</li>
       </ol>
     </section>

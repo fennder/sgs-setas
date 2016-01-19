@@ -2,14 +2,14 @@
 
 namespace Gerenciador\Http\Controllers\Auth;
 
-use Gerenciador\User;
-use Illuminate\Http\Request;
-use Validator;
-use Gerenciador\Http\Controllers\Controller;
-use Auth;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Gerenciador\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Gerenciador\User;
+use Validator;
 use Session;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -17,7 +17,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $redirectPath = '/home';
-    protected $loginPath = '/login';
+    protected $loginPath = 'auth/login';
     /**
      * Create a new authentication controller instance.
      *

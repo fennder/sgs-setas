@@ -20,10 +20,10 @@
                 <thead>
                   <tr>
                     <th style="width: 10px">Id</th>
-                    <th>Nome</th>
-                    <th>Nome do Crachá</th>                    
-                    <th>Data de Nascimento</th>
-                    <th>E-mail Profissional</th>
+                    <th>Nome</th>        
+                    <th>Email institucional</th>            
+                    <th>Telefone Pessoal</th>
+                    <th>Início de Serviço</th>            
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
@@ -32,13 +32,13 @@
                     @foreach($usuarios as $usuario)
                       <tr>
                         <td>{{$usuario->id_usuario}}.</td>
-                        <td>{{$usuario->nome}}</td>
-                        <td>{{$usuario->nome_cracha}}</td>                      
-                        <td>{{$usuario->data_nascimento}}</td>
+                        <td>{{$usuario->nome}}</td> 
                         <td>{{$usuario->email_institucional}}</td>
+                        <td>{{$usuario->telefone_pessoal}}</td>
+                        <td>{{$usuario->inicio_servico}}</td>                  
                         <td class="text-center">
-                          <a href="{{ route('i.edit') }}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{ route('i.destroy') }}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('i.edit')}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="{{route('i.destroy')}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>                        
                       </tr>
                     @endforeach

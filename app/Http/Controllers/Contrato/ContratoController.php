@@ -2,10 +2,9 @@
 
 namespace Gerenciador\Http\Controllers\Contrato;
 
-use Illuminate\Http\Request;
-
-use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
 
 class ContratoController extends Controller
 {
@@ -21,6 +20,7 @@ class ContratoController extends Controller
      */
     public function index()
     {
+
         $contrato = new \Gerenciador\sgc\Contrato();
         $contratos = $contrato->all();
 

@@ -7,11 +7,11 @@ Route::get('', function()
 
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
-	Route::get('login', 		['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login
-	Route::post('login', 		['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //login
-	Route::get('logout', 		['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //logout
-	Route::get('register', 		['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register
-	Route::post('register',		['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //register
+	Route::get('login', 		['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
+	Route::post('login', 		['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //envio login formulário
+	Route::get('logout', 		['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //saída logout
+	Route::get('register', 		['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register formulário
+	Route::post('register',		['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //envio register formulário
 });
 
 Route::group(['as' => 'p.', 'prefix' => 'password'], function()

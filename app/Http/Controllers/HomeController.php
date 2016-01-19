@@ -2,19 +2,19 @@
 
 namespace Gerenciador\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
-use \Gerenciador\User;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
+use Gerenciador\User;
 use Session;
 use Auth;
 
 class HomeController extends Controller
 {
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
     
     /**
      * Display a listing of the resource.

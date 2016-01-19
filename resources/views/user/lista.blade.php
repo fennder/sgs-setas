@@ -35,7 +35,6 @@
                           <a href="users/editar/{{$user->id}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="users/remover/{{$user->id}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
-                      
                       </tr>
                     @endforeach
                   @else

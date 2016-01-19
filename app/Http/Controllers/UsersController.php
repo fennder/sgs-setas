@@ -26,7 +26,7 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $id = Session::get('id');
+            //$id = Session::get('id');
             $users = New User();
 
             $users = User::paginate(10);
@@ -35,7 +35,7 @@ class UsersController extends Controller
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
             $nav = "Lista";
 
-            return view('user/lista',['nav' => $nav, 'users' => $users, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            return view('user.lista',['nav' => $nav, 'users' => $users, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
         }else{
 

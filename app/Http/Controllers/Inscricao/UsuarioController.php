@@ -2,13 +2,12 @@
 
 namespace Gerenciador\Http\Controllers\Inscricao;
 
-use Illuminate\Http\Request;
+use Gerenciador\Http\Controllers\Controller;
 
 use Gerenciador\Http\Requests;
-use Gerenciador\Http\Controllers\Controller;
-use Gerenciador\Inscricao\Usuario;
-use Auth;
+use Illuminate\Http\Request;
 use Session;
+use Auth;
 
 class UsuarioController extends Controller
 {
@@ -24,14 +23,13 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-       
-            $usuarios = Usuario::paginate(0);
-
+            $usuarios = \Gerenciador\Inscricao\Usuario::paginate(5);
+            
             $page_title = "SGS";
             $page_description = "Cadastro de Usuários";
             $nav = "Lista";
 
-            return view('inscricao/index',['nav' => $nav, 'usuarios' => $usuarios, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            return view('inscricao.index',['nav' => $nav,'usuarios' => $usuarios, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
     }
 
@@ -58,9 +56,11 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $usuario = new Usuario;
-        $usuarios = $usuario->$request;
+        $usuario = $request;
 
-        $usuarios->save();
+        //dd($request);
+
+        $usuario->save();
 
         return redirect()->back();
     }
