@@ -3,7 +3,7 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Gerenciador\Http\Controllers\Controller;
-
+use Gerenciador\Inscricao\Usuario;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
@@ -11,8 +11,11 @@ use Auth;
 
 class UsuarioController extends Controller
 {
-    public function __construct()
+    private $usuario;
+
+    public function __construct(Usuario $usuario)
     {
+        $this->usuario = $usuario;
         $this->middleware('auth');
     }
 
@@ -23,7 +26,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-            $usuarios = \Gerenciador\Inscricao\Usuario::paginate(5);
+            
+            $usuarios = $this->usuario->paginate(5);
             
             $page_title = "SGS";
             $page_description = "Cadastro de Usuários";
@@ -55,12 +59,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario = new Usuario;
-        $usuario = $request;
-
-        //dd($request);
-
-        $usuario->save();
+        $this->usuario->create($request->all());
 
         return redirect()->back();
     }

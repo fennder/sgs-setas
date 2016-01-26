@@ -10,7 +10,7 @@
     <div class="row">
   
       <div class="col-md-5">
-        <div class="form-group has-feedback" >
+        <div class="form-group has-feedback">
           <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome Completo">
           <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
         </div><!-- Nome Completo -->

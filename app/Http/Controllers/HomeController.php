@@ -11,10 +11,14 @@ use Auth;
 
 class HomeController extends Controller
 {
-    /*public function __construct()
+
+    private $user;
+
+    public function __construct(User $user)
     {
-        $this->middleware('auth');
-    }*/
+        $this->user = $user;
+        //$this->middleware('auth');
+    }
     
     /**
      * Display a listing of the resource.
@@ -28,9 +32,6 @@ class HomeController extends Controller
 
             $users = Auth::user();
 
-            /**
-             * 
-             */
             $page_title = "SGS";
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
 

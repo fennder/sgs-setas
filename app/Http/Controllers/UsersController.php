@@ -12,8 +12,11 @@ use Auth;
 
 class UsersController extends Controller
 {
-    public function __construct()
+    private $user;
+
+    public function __construct(User $user)
     {
+        $this->user = $user;
         $this->middleware('auth');
     }
     
@@ -26,10 +29,7 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            //$id = Session::get('id');
-            $users = New User();
-
-            $users = User::paginate(10);
+            $users = $this->user->paginate(10);
 
             $page_title = "SGS";
             $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
@@ -84,7 +84,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $users = \User::find($id);
+        $users = $this->user->find($id);
         $users->save();
 
         return view('user/editar', ['users' => $users]);    

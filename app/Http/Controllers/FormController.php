@@ -10,7 +10,7 @@ use Gerenciador\User;
 use Session;
 use Auth;
 
-class FormController extends Controller
+//class FormController extends Controller
 {
     /**
      * Display a listing of the resource.

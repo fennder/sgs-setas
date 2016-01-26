@@ -1,8 +1,18 @@
 <?php
 
-Route::get('', function()
+/*Route::get('', function()
 {
 	return redirect()->route('h.index');
+});*/
+
+Route::group(['as' => 'h.', 'prefix' => 'home'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'HomeController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'HomeController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'HomeController@store']);
+	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'HomeController@edit']);
+	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'HomeController@update']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'HomeController@destroy']);
 });
 
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
@@ -20,16 +30,6 @@ Route::group(['as' => 'p.', 'prefix' => 'password'], function()
 	Route::post('email', 		['as' => 'postEmail', 	'uses' => 'Auth\PasswordController@postEmail']);
 	Route::get('reset/{token}', ['as' => 'getReset', 	'uses' => 'Auth\PasswordController@getReset']);
 	Route::post('reset', 		['as' => 'postReset', 	'uses' => 'Auth\PasswordController@postReset']);
-});
-
-Route::group(['as' => 'h.', 'prefix' => 'home'], function()
-{
-	Route::get('', 					['as' => 'index', 	'uses' => 'HomeController@index']);
-	Route::get('novo', 				['as' => 'create', 	'uses' => 'HomeController@create']);
-	Route::post('inserir', 			['as' => 'store', 	'uses' => 'HomeController@store']);
-	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'HomeController@edit']);
-	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'HomeController@update']);
-	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'HomeController@destroy']);
 });
 
 Route::group(['as' => 'u.', 'prefix' => 'users'], function()

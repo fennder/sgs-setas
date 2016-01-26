@@ -1,14 +1,18 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Dados do Inscrito</h3>
+      </div>
 <div class="box-body clearfix">
 
   <form action="{!! route('i.store') !!}" method="POST">
     {!! csrf_field() !!}
     
     <div class="row">
-  
+
+    
       <div class="col-md-5">
         <div class="form-group has-feedback" >
           <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome Completo">
@@ -32,6 +36,67 @@
           </select>
         </div> <!-- Sexo -->
       </div><!-- Col 3 -->
+
+    </div><!-- row -->
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
+          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
+        </div><!-- CPF -->
+
+      </div><!-- Col 4 -->
+
+      <div class="col-md-4" >
+        <div class="form-group has-feedback">
+            <input type="date" class="form-control" name="data_nascimento" id="data_nascimento" placeholder="00">
+            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+          </div><!--Data Nascimento -->
+        </div><!-- Col 4 -->
+
+        <div class="col-md-4">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS">
+          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
+        </div><!-- Identidade -->
+
+      </div><!-- Col 4 -->
+
+    </div><!-- row -->
+    
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" name="rg" id="rg" placeholder="Identidade">
+          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
+        </div><!-- Identidade -->
+
+      </div><!-- Col 4 -->
+    
+      <div class="col-md-4" >  
+
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" name="orão_emissor" id="orgao_emissor" placeholder="Órgão Emissor">
+          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
+        </div><!-- Órgão Emissor -->
+        
+      </div><!-- Col 4 -->
+
+      <div class="col-md-4" >  
+
+        <div class="form-group has-feedback">
+          <select class="form-control" name="id_estado_rg" id="id_estado_rg">
+            <option>Estado do RG</option>
+            <option>Palmas</option>
+            <option>Taguatinga</option>
+          </select>
+        </div><!-- Estado do RG -->
+        
+      </div><!-- Col 4 -->
 
     </div><!-- row -->
 
@@ -110,21 +175,21 @@
 
     <div class="row">
     
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" placeholder="(00)0000-0000">
           <span class="glyphicon glyphicon-phone form-control-feedback"></span>
         </div><!-- Telefone Pessoal -->
-      </div>
+      </div> <!-- Col 3-->
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" name="telefone_institucional" id="telefone_institucional" placeholder="(00)0000-0000">
           <span class="glyphicon glyphicon-phone form-control-feedback"></span>
         </div><!-- Telefone Trabalho -->
-      </div>
+      </div><!-- Col 3 -->
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="form-group has-feedback">
           <select class="form-control" name="id_escolaridade" id="id_escolaridade">
             <option>Escolaridade</option>
@@ -134,67 +199,7 @@
             <option>ENSINO MÉDIO INCOMPLETO</option>
           </select>
         </div><!-- Escolaridade -->
-      </div>
-
-    </div><!-- row -->
-
-    <div class="row">
-
-      <div class="col-md-4">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
-          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
-        </div><!-- CPF -->
-
-      </div><!-- Col 4 -->
-
-      <div class="col-md-4" >
-        <div class="form-group has-feedback">
-            <input type="date" class="form-control" name="data_nascimento" id="data_nascimento" placeholder="00">
-            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          </div><!--Data Nascimento -->
-        </div><!-- Col 4 -->
-
-        <div class="col-md-4">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS">
-          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
-        </div><!-- Identidade -->
-
-      </div><!-- Col 4 -->
-
-    </div><!-- row -->
-
-    <div class="row">
-
-      <div class="col-md-4">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="rg" id="rg" placeholder="Identidade">
-          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
-        </div><!-- Identidade -->
-
-      </div><!-- Col 4 -->
-    
-      <div class="col-md-4" >  
-
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="orão_emissor" id="orgao_emissor" placeholder="Órgão Emissor">
-          <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
-        </div><!-- Órgão Emissor -->
-        
-      </div><!-- Col 4 -->
-
-      <div class="col-md-4" >  
-
-        <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado_rg" id="id_estado_rg">
-            <option>Estado do RG</option>
-            <option>Palmas</option>
-            <option>Taguatinga</option>
-          </select>
-        </div><!-- Estado do RG -->
-        
-      </div><!-- Col 4 -->
+      </div><!-- Col 6 -->
 
     </div><!-- row -->
 
@@ -209,7 +214,7 @@
 
 </div>  
 
-
+</div>
 @endsection
 
 <!-- 
