@@ -24,6 +24,6 @@ class Funcao extends Model
 
     public function usuario()
     {
-        return $this->hasMany('Gerenciador\Usuario');   
+        return $this->hasMany('Gerenciador\Usuario');//Tem vários usuários
     }
 }

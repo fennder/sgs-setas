@@ -49,4 +49,54 @@ class Usuario extends Model
     	'possui_deficiencia',
     	'id_deficiencia'
     ];
+
+    public function inscricao()
+    {
+        return $this->hasMany('Gerenciador\Inscricao\Inscricao'); //Tem vários inscritos
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Estado'); //Tem apenas um Estado
+    }
+
+    public function cidade()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Cidade');//Tem apenas uma cidade
+    }
+
+    public function cargo()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Cargo');//Tem apenas um cargo
+    }
+
+    public function funcao()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Funcao');// Tem apenas uma função
+    }
+
+    public function departamento()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Usuario'); //Tem apenas um departamento
+    }
+
+    public function orgao()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Orgao');// Tem apenas um órgão
+    }
+
+    public function vinculoinstitucional()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\VinculoInstitucional'); //Tem apenas um vinculo
+    }
+
+    public function escolaridade()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Escolaridade');//Tem uma escolaridade
+    }
+
+    public function perfil()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Perfil');//Tem um perfil
+    }
 }

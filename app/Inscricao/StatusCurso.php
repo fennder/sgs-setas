@@ -21,4 +21,9 @@ class StatusCurso extends Model
     protected $fillable = [
     	'descricao'
     ];
+
+    public function curso()
+    {
+    	return $this->hasMany('Gerenciador\Curso'); //O status do curso tem vários cursos
+    }
 }

@@ -21,4 +21,9 @@ class Cargo extends Model
     protected $fillable = [
         'desricao'
     ];
+
+    public function usuario()
+    {
+        return $this->hasMany('Gerenciador\Usuario');//Tem Vários usuários
+    }
 }
