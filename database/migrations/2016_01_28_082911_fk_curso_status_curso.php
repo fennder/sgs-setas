@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class FkUsuarioDepartamento extends Migration
+class FkCursoStatusCurso extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,8 @@ class FkUsuarioDepartamento extends Migration
      */
     public function up()
     {
-        Schema::table('usuario', function (Blueprint $table) {
-            
-            $table->foreign('id_departamento')->references('id_departamento')->on('departamento');
-
+        Schema::table('curso', function (Blueprint $table) {
+            $table->foreign('id_status_curso')->references('id_status_curso')->on('status_curso');
         });
     }
 
@@ -26,7 +24,7 @@ class FkUsuarioDepartamento extends Migration
      */
     public function down()
     {
-        Schema::table('usuario', function (Blueprint $table) {
+        Schema::table('curso', function (Blueprint $table) {
             //
         });
     }

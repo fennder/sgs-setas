@@ -42,8 +42,8 @@
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('u.index') !!}">Lista de usuários</a></li>
-            <li><a href="#">Grupo de usuários</a></li>
-            <li><a href="#">Grupo de páginas</a></li>
+            <!--li><a href="#">Grupo de usuários</a></li>
+            <li><a href="#">Grupo de páginas</a></li-->
           </ul>
         </li>
         <li class="treeview">
@@ -51,7 +51,7 @@
           <ul class="treeview-menu">
             <li><a href="{!! route('i.index') !!}">Lista de inscritos</a></li>
             <li><a href="{!! route('i.create') !!}">Inscrever</a></li>
-            <li><a href="{!! route('i.edit') !!}">Link in level 2</a></li>
+            <li><a href="{!! route('i.edit') !!}">Editar inscrito</a></li>
           </ul>
         </li>
       </ul>

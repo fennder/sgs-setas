@@ -27,11 +27,11 @@ class Departamento extends Model
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscriao\Usuario');
+    	return $this->hasMany('Gerenciador\Inscricao\Usuario');
     }
 
     public function orgao()
     {
-    	return $this->belongsTo('Gerenciador\Inscriao\Orgao');
+    	return $this->belongsTo('Gerenciador\Inscricao\Orgao');
     }
 }

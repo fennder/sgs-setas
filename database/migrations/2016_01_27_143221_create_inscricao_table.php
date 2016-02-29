@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableInscricao extends Migration
+class CreateInscricaoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,10 @@ class CreateTableInscricao extends Migration
     {
         Schema::create('inscricao', function (Blueprint $table) {
             $table->increments('id_inscricao');
-            $table->integer('id_curso')->unsigned();
-            $table->integer('id_usuario')->unsigned();
+            $table->integer('id_curso')->unsigned()->nullable();
+            $table->foreign('id_curso')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_usuario')->unsigned()->nullable();
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuario')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

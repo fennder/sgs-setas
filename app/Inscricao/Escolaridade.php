@@ -11,7 +11,7 @@ class Escolaridade extends Model
      *
      * @var string
      */
-    protected $table = 'curso';
+    protected $table = 'escolaridade';
 
     /**
      * The attributes that are mass assignable.

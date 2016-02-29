@@ -16,6 +16,8 @@
         </div>
         <div class="box-body">
           <a class="btn btn-primary" href="{{route('i.create')}}">Novo</a>
+          </br>
+          </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
@@ -23,11 +25,11 @@
                     <th>Nome</th>        
                     <th>Email institucional</th>            
                     <th>Telefone Pessoal</th>
-                    <th>Início de Serviço</th>            
+                    <th>Data Nascimento</th>            
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
-                <!--tbody-->
+                <tbody>
                   @if($usuarios)
                     @foreach($usuarios as $usuario)
                       <tr>
@@ -35,11 +37,11 @@
                         <td>{{$usuario->nome}}</td> 
                         <td>{{$usuario->email_institucional}}</td>
                         <td>{{$usuario->telefone_pessoal}}</td>
-                        <td>{{$usuario->inicio_servico}}</td>                  
+                        <td>{{$usuario->data_nascimento}}</td>                  
                         <td class="text-center">
-                          <a href="{{route('i.edit')}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('i.destroy')}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>                        
+                          <a href="inscritos/editar/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="inscritos/remover/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
                       </tr>
                     @endforeach
                   @else
@@ -47,16 +49,13 @@
                   @endif
                 </tbody>
               </table>
-        </div>
-        <!-- /.box-body -->
+        </div><!-- /.box-body -->
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
                 <li>{!!$usuarios->render()!!}</li>
               </ul>
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box -->
+        </div><!-- /.box-footer-->
+      </div><!-- /.box -->
 
 <div class="row">
   <div class="col-md-8">
@@ -71,17 +70,16 @@
         <!-- /.box-header -->
         <div class="box-body">
               
-        </div>
-        <!-- /.box-body -->
+        </div><!-- /.box-body -->
+        
         <div class="box-footer clearfix">
-              <ul class="pagination pagination-sm no-margin pull-right">
-                <li>{!!$usuarios->render()!!}</li>
-              </ul>
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li>{!!$usuarios->render()!!}</li>
+          </ul>
         </div>
-    </div>
-          <!-- /.box -->
-  </div>
-        <!-- /.col -->
+    </div><!-- /.box -->
+          
+  </div><!-- /.col 8 -->
   <div class="col-md-4">
     <div class="box">
       <div class="box-header with-border">
@@ -92,8 +90,16 @@
             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
           </div>
       </div>
-    </div>
-    <!-- /.col -->
+      <div class="box-body">
+              
+      </div><!-- /.box-body -->
+        <div class="box-footer clearfix">
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li>{!!$usuarios->render()!!}</li>
+          </ul>
+        </div>
+    </div><!-- /.col -->
+    
   </div>
 </div>
 

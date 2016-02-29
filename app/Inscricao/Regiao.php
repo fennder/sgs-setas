@@ -24,6 +24,6 @@ class Regiao extends Model
 
     public function cidade()
     {
-    	return $this->hasMany('Gerenciador\Cidade'); //Tem várias Cidades
+    	return $this->hasMany('Gerenciador\Instrucao\Cidade'); //Tem várias Cidades
     }
 }

@@ -20,7 +20,9 @@ class Cidade extends Model
      */
     protected $fillable = [
     	'nome',
-    	'cod_ibge'
+    	'cod_ibge',
+        'id_estado',
+        'id_regiao'
     ];
 
     public function regiao()
@@ -35,6 +37,6 @@ class Cidade extends Model
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Usuario');
+    	return $this->hasMany('Gerenciador\Usuario');//Tem vários usuários
     }
 }

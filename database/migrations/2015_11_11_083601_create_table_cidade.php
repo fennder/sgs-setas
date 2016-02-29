@@ -14,12 +14,13 @@ class CreateTableCidade extends Migration
     {
         Schema::create('cidade', function (Blueprint $table) {
             $table->increments('id_cidade');
-            $table->string('nome')->unique();
+            $table->string('nome');
             $table->string('cod_ibge')->unique();
             $table->integer('id_estado')->unsigned();
             $table->integer('id_regiao')->unsigned();
             $table->timestamps();
         });
+
     }
 
     /**

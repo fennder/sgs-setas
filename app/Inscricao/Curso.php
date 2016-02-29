@@ -27,16 +27,16 @@ class Curso extends Model
 
     public function statuscurso()
     {
-    	return $this->belongsTo('Gerenciador\StatusCurso'); //O curso tem apenas um status
+    	return $this->belongsTo('Gerenciador\Insccricao\StatusCurso'); //O curso tem apenas um status
     }
 
     public function modulo()
     {
-    	return $this->hasMany('Gerenciador\Modulo'); //O Curso tem vários modulos
+    	return $this->hasMany('Gerenciador\Inscricao\Modulo'); //O Curso tem vários modulos
     }
 
-    public function inscricao()
+    public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao'); //O Curso tem várias inscrições
+    	return $this->belongsToMany('Gerenciador\Inscricao\Usuario', 'inscricao'); //O Curso tem várias inscrições
     }
 }

@@ -24,6 +24,6 @@ class StatusCurso extends Model
 
     public function curso()
     {
-    	return $this->hasMany('Gerenciador\Curso'); //O status do curso tem vários cursos
+    	return $this->hasMany('Gerenciador\Instrucao\Curso'); //O status do curso tem vários cursos
     }
 }

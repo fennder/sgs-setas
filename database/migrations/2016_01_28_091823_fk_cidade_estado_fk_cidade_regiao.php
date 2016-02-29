@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class FkCidadeEstadoRegiao extends Migration
+class FkCidadeEstadoFkCidadeRegiao extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class FkCidadeEstadoRegiao extends Migration
     public function up()
     {
         Schema::table('cidade', function (Blueprint $table) {
-            
             $table->foreign('id_estado')->references('id_estado')->on('estado');
-            
             $table->foreign('id_regiao')->references('id_regiao')->on('regiao');
-            
         });
     }
 

@@ -4,6 +4,9 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\Inscricao\Usuario;
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Escolaridade;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
@@ -12,29 +15,42 @@ use Auth;
 class UsuarioController extends Controller
 {
     private $usuario;
+    private $estado;
+    private $cidade;
+    private $escolaridade;
+    private $estado_rg;
 
-    public function __construct(Usuario $usuario)
+    public function __construct(Usuario $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
     {
         $this->usuario = $usuario;
+        $this->estado = $estado;
+        $this->estado_rg = $estado_rg;
+        $this->cidade = $cidade;
+        $this->escolaridade = $escolaridade;
+
         $this->middleware('auth');
     }
 
     /**
      * Display a listing of the resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-            
-            $usuarios = $this->usuario->paginate(5);
-            
-            $page_title = "SGS";
-            $page_description = "Cadastro de Usuários";
-            $nav = "Lista";
+        $usuarios = $this->usuario->paginate(5);
+    
+        $page_title = "SGS";
+        $page_description = "Cadastro de Usuários";
+        $nav = "Lista";
 
-            return view('inscricao.index',['nav' => $nav,'usuarios' => $usuarios, 'page_title'=>$page_title, 'page_description'=>$page_description]);
-
+        return view('inscricao.index',
+        [
+            'nav' => $nav,
+            'usuarios' => $usuarios, 
+            'page_title'=>$page_title, 
+            'page_description'=>$page_description
+        ]);
     }
 
     /**
@@ -44,11 +60,32 @@ class UsuarioController extends Controller
      */
     public function create()
     {
+        $estados = $this->estado->lists('nome', 'id_estado');
+        $cidades = $this->cidade->lists('nome', 'id_cidade');
+        $estado_rgs = $this->estado_rg->lists('uf', 'id_estado');
+        $escolaridades = $this->escolaridade->lists('descricao', 'id_escolaridade'); 
+        
         $page_title = "SGS";
         $page_description = "Cadastro de Usuários";
         $nav = "Cadastro";
 
-        return view('inscricao/create',['nav' => $nav,'page_title'=>$page_title, 'page_description'=>$page_description]);    
+        return view('inscricao.create',
+        [
+            'nav' => $nav, 
+            'escolaridades' => $escolaridades, 
+            'estados' => $estados, 
+            'cidades' => $cidades,
+            'estado_rgs' => $estado_rgs,
+            'page_title'=>$page_title, 
+            'page_description'=>$page_description
+        ]);    
+    }
+
+    public function getCidades($id_estado)
+    {
+        $estado = $this->estado->find($id_estado);
+        $cidades = $estado->cidades()->getQuery->get(['id', 'cidade']);
+        return Response::json($cidades);
     }
 
     /**
@@ -59,7 +96,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        $this->usuario->create($request->all());
+        $usuarios = $this->usuario->create($request->all());
 
         return redirect()->back();
     }
@@ -72,9 +109,12 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        $usuarios = Usuario::find($id_usuario);
+        $usuarios = $this->usuario->find($id);
 
-        return view('inscricao.show')->with(compact('usuarios'));
+        return view('inscricao.show',
+        [
+            'usuarios' => $usuarios
+        ]);
     }
 
     /**
@@ -85,7 +125,24 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nav = "Editar";
+
+        $estados = $this->estado->lists('nome', 'id_estado');
+        $cidades = $this->cidade->lists('nome', 'id_cidade');
+        $estado_rgs = $this->estado_rg->lists('uf', 'id_estado');
+        $escolaridades = $this->escolaridade->lists('descricao', 'id_escolaridade');
+
+        $usuarios = $this->usuario->find($id);
+        
+        return view('inscricao.edit',
+        [
+            'nav' => $nav,
+            'usuarios' => $usuarios,
+            'escolaridades' => $escolaridades, 
+            'estados' => $estados, 
+            'cidades' => $cidades,
+            'estado_rgs' => $estado_rgs
+        ]);
     }
 
     /**
@@ -97,7 +154,7 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->usuario->find($id)->update($request->all());
     }
 
     /**
@@ -106,9 +163,11 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_usuario)
+    public function destroy($id)
     {
-        Usuario::destroy($id_usuario);
+        $estado = $this->estado->find($id);
+
+        $estado->destroy($id);
 
         return redirect()->back();
     }

@@ -27,11 +27,11 @@ class Orgao extends Model
 
     public function departamento()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Departamento');
+    	return $this->hasMany('Gerenciador\Inscricao\Departamento'); //Tem muitos departamento
     }
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario');
+    	return $this->hasMany('Gerenciador\Inscricao\Usuario'); //Tem muitos usuários
     }
 }

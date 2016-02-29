@@ -14,6 +14,8 @@ class Usuario extends Model
      */
     protected $table = 'usuario';
 
+    protected $primaryKey = 'id_usuario';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -50,9 +52,9 @@ class Usuario extends Model
     	'id_deficiencia'
     ];
 
-    public function inscricao()
+    public function curso()
     {
-        return $this->hasMany('Gerenciador\Inscricao\Inscricao'); //Tem vários inscritos
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'inscricao'); //Tem vários Cursos
     }
 
     public function estado()
@@ -98,5 +100,10 @@ class Usuario extends Model
     public function perfil()
     {
         return $this->belongsTo('Gerenciador\Inscricao\Perfil');//Tem um perfil
+    }
+
+    public function deficiencia()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Deficiencia');//Tem apenas um deficiencia
     }
 }

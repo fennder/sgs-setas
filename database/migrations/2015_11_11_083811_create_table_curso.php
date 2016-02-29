@@ -17,7 +17,7 @@ class CreateTableCurso extends Migration
             $table->string('descricao')->unique();
             $table->date('data_inicio');
             $table->date('data_termino');
-            $table->integer('id_status_curso')->unsigned();
+            $table->integer('id_status_curso')->unsigned()->nullable();
             $table->timestamps();
         });
     }
