@@ -12,6 +12,13 @@ class Cargo extends Model
      * @var string
      */
     protected $table = 'cargo';
+    
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_cargo';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +26,7 @@ class Cargo extends Model
      * @var array
      */
     protected $fillable = [
-        'desricao'
+        'descricao'
     ];
 
     public function usuario()

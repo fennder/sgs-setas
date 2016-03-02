@@ -12,11 +12,11 @@ class CreateTableEscolaridade extends Migration
      */
     public function up()
     {
-        Schema::create('escolaridade', function (Blueprint $table) {
+        /*Schema::create('escolaridade', function (Blueprint $table) {
             $table->increments('id_escolaridade');
             $table->string('descricao')->unique();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

@@ -12,11 +12,11 @@ class CreateTablePerfil extends Migration
      */
     public function up()
     {
-        Schema::create('perfil', function (Blueprint $table) {
+        /*Schema::create('perfil', function (Blueprint $table) {
             $table->increments('id_perfil');
             $table->string('descricao')->unique();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

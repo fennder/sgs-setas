@@ -12,11 +12,11 @@ class CreateTableOrgao extends Migration
      */
     public function up()
     {
-        Schema::create('orgao', function (Blueprint $table) {
+        /*Schema::create('orgao', function (Blueprint $table) {
             $table->increments('id_orgao');
             $table->string('descricao')->unique();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

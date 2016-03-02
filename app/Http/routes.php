@@ -16,11 +16,11 @@ Route::group(['as' => 'h.', 'prefix' => 'home'], function()
 
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
-	Route::get('login', 		['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
-	Route::post('login', 		['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //envio login formulário
-	Route::get('logout', 		['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //saída logout
-	Route::get('register', 		['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register formulário
-	Route::post('register',		['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //envio register formulário
+	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
+	Route::post('login', 	['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //envio login formulário
+	Route::get('logout', 	['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //saída logout
+	Route::get('register', 	['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register formulário
+	Route::post('register',	['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //envio register formulário
 });
 
 Route::group(['as' => 'p.', 'prefix' => 'password'], function()
@@ -38,15 +38,26 @@ Route::group(['as' => 'u.', 'prefix' => 'users'], function()
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
 	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'UsersController@edit']);
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'UsersController@update']);
-	Route::delete('remover/{id}', 	['as' => 'destroy', 'uses' => 'UsersController@destroy']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
+});
+
+Route::group(['as' => 'c.', 'prefix' => 'cargo'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CargoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CargoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CargoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CargoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CargoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CargoController@destroy']);
 });
 
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 {
-	Route::get('', 							['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);
-	Route::get('novo', 						['as' => 'create', 	'uses' => 'Inscricao\UsuarioController@create']);
-	Route::post('inserir', 					['as' => 'store', 	'uses' => 'Inscricao\UsuarioController@store']);
-	Route::get('editar/{id_usuario}',		['as' => 'edit', 	'uses' => 'Inscricao\UsuarioController@edit']);
-	Route::post('atualizar/{id_usuario}', 	['as' => 'update', 	'uses' => 'Inscricao\UsuarioController@update']);
-	Route::delete('remover/{id_usuario}', 	['as' => 'destroy', 'uses' => 'Inscricao\UsuarioController@destroy']);
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\UsuarioController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\UsuarioController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\UsuarioController@edit']);
+	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'Inscricao\UsuarioController@update']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'Inscricao\UsuarioController@destroy']);
 });
+

@@ -12,11 +12,11 @@ class CreateTableStatusCurso extends Migration
      */
     public function up()
     {
-        Schema::create('status_curso', function (Blueprint $table) {
+        /*Schema::create('status_curso', function (Blueprint $table) {
             $table->increments('id_status_curso');
             $table->string('descricao')->unique();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

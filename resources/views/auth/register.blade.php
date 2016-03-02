@@ -45,6 +45,10 @@
           <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
+        <div class="form-group has-feedback">
+          <input type="hidden" class="form-control" name="dados_atualizados" value="0" placeholder="Email">
+          
+        </div>
         <div class="row">
           <div class="col-xs-8">
             <div class="checkbox icheck">

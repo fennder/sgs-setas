@@ -12,9 +12,9 @@ class FkCursoStatusCurso extends Migration
      */
     public function up()
     {
-        Schema::table('curso', function (Blueprint $table) {
+        /*Schema::table('curso', function (Blueprint $table) {
             $table->foreign('id_status_curso')->references('id_status_curso')->on('status_curso');
-        });
+        });*/
     }
 
     /**

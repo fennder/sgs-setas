@@ -12,7 +12,7 @@ class FkUsuarioEstadoCidadeEscolaridadePerfilVinculoOrgaoDepartamentoCargoFuncao
      */
     public function up()
     {
-        Schema::table('usuario', function (Blueprint $table) {
+        /*Schema::table('usuario', function (Blueprint $table) {
             //$table->foreign('id_estado_rg')->references('id_estado')->on('estado');
             $table->foreign('id_estado')->references('id_estado')->on('estado');
             $table->foreign('id_cidade')->references('id_cidade')->on('cidade');
@@ -24,7 +24,7 @@ class FkUsuarioEstadoCidadeEscolaridadePerfilVinculoOrgaoDepartamentoCargoFuncao
             $table->foreign('id_cargo')->references('id_cargo')->on('cargo');
             $table->foreign('id_funcao')->references('id_funcao')->on('funcao');
             $table->foreign('id_deficiencia')->references('id_deficiencia')->on('deficiencia');
-        });
+        });*/
     }
 
     /**

@@ -12,9 +12,9 @@ class FkModuloCurso extends Migration
      */
     public function up()
     {
-        Schema::table('modulo', function (Blueprint $table) {
+        /*Schema::table('modulo', function (Blueprint $table) {
             $table->foreign('id_curso')->references('id_curso')->on('curso');
-        });
+        });*/
     }
 
     /**

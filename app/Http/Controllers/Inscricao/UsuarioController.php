@@ -38,7 +38,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = $this->usuario->paginate(5);
+        $usuarios = $this->usuario->paginate(3);
     
         $page_title = "SGS";
         $page_description = "Cadastro de Usuários";
@@ -81,12 +81,12 @@ class UsuarioController extends Controller
         ]);    
     }
 
-    public function getCidades($id_estado)
+    /*public function getCidades($id_estado)
     {
         $estado = $this->estado->find($id_estado);
         $cidades = $estado->cidades()->getQuery->get(['id', 'cidade']);
         return Response::json($cidades);
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -165,9 +165,7 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $estado = $this->estado->find($id);
-
-        $estado->destroy($id);
+        $this->usuario->destroy($id);
 
         return redirect()->back();
     }

@@ -85,8 +85,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $users = $this->user->find($id);
-        $users->save();
-
+        //dd($users);
         return view('user/editar', ['users' => $users]);    
     }
 
@@ -99,12 +98,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //$users = User::findOrFail($id);
-        //$users->fill($request->all());
+        $users = User::findOrFail($id);
+        $users->fill($request->all());
 
-        //$users->save();
+        $users->save();
 
-        //return redirect()->back();
+        return redirect()->back();
     }
 
     /**

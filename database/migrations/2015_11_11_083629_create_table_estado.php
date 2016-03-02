@@ -12,13 +12,13 @@ class CreateTableEstado extends Migration
      */
     public function up()
     {
-        Schema::create('estado', function (Blueprint $table) {
+        /*Schema::create('estado', function (Blueprint $table) {
             $table->increments('id_estado');
             $table->string('nome')->unique();
             $table->string('uf')->unique();
             $table->integer('status');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

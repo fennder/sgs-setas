@@ -19,14 +19,14 @@
 
     <div class="col-md-7">
       <div class="form-group has-feedback" >
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome Completo">
+        <input type="text" class="form-control" value="{{ $usuarios->nome }}" name="nome" id="nome">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Completo -->
     </div><!-- Col 7 -->
 
     <div class="col-md-5">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha" placeholder="Nome do Crachá">
+        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Crachá -->
     </div><!-- Col 5 -->
@@ -37,14 +37,14 @@
 
     <div class="col-md-4">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
+        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
 
     <div class="col-md-3" >
       <div class="form-group has-feedback">
-        <input type="date" class="form-control" name="data_nascimento" id="data_nascimento">
+        <input type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento">
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         <small class="text-muted">Data de Nascimento</small>
       </div><!--Data Nascimento -->
@@ -54,7 +54,7 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input type="email" class="form-control" name="email_pessoal" id="email_pessoal" placeholder="e-mail@pessoal.com">
+          <input type="email" class="form-control" name="email_pessoal" id="email_pessoal" value="{{ $usuarios->email_pessoal }}">
         </div>
       </div><!-- Email pessoal -->
     </div><!-- Col 5 -->
@@ -65,21 +65,21 @@
 
     <div class="col-md-4">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="rg" id="rg" placeholder="Identidade">
+        <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Identidade -->
     </div><!-- Col 4 -->
     
      <div class="col-md-3" >  
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="orão_emissor" id="orgao_emissor" placeholder="Órgão Emissor">
+        <input type="text" class="form-control" name="orão_emissor" id="orgao_emissor" value="{{ $usuarios->orgao_emissor }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
 
     <div class="col-md-2">
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_estado_rg" id="id_estado_rg">
+        <select class="form-control" name="id_estado_rg" id="id_estado_rg" value="{{ $usuarios->id_estado_rg }}">
             <option disabled selected> - UF - </option>
               @foreach ($estado_rgs as $estado_rg)
                 <option>{{ $estado_rg }}</option>
@@ -91,7 +91,7 @@
 
     <div class="col-md-3">
       <div class="form-group has-feedback">
-        <select class="form-control" name="sexo" id="sexo">
+        <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}">
           <option disabled selected> - Sexo - </option>
           <option>F</option>
           <option>M</option>
@@ -105,7 +105,7 @@
     
     <div class="col-md-3">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cep" id="cep" placeholder="77.100-100" >
+        <input type="text" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" >
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
         <small class="text-muted">CEP residêncial</small>
       </div><!-- CEP -->
@@ -113,7 +113,7 @@
 
     <div class="col-md-9">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Quadra 110 Norte, Alamenda">
+        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $usuarios->endereco }}">
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Endereço -->
     </div><!-- Col 9 -->
@@ -124,14 +124,14 @@
       
     <div class="col-md-5">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Plano Diretor">
+        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}">
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
 
     <div class="col-md-4">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_cidade" id="id_cidade">
+        <select class="form-control" name="id_cidade" id="id_cidade" value="{{ $usuarios->id_cidade }}">
           <option disabled selected> - Cidade - </option>
             @foreach ($cidades as $cidade)
               <option>{{ $cidade }}</option>
@@ -142,7 +142,7 @@
 
     <div class="col-md-3">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_estado" id="id_estado">
+        <select class="form-control" name="id_estado" id="id_estado" value="{{ $usuarios->id_estado }}">
           <option disabled selected> - Estado - </option>
             @foreach ($estados as $estado)
               <option>{{ $estado }}</option>
@@ -160,13 +160,13 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" placeholder="(00)0000-0000">
+        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}">
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
     <div class="col-md-5">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_escolaridade" id="id_escolaridade">
+        <select class="form-control" name="id_escolaridade" id="id_escolaridade" value="{{ $usuarios->id_escolaridade }}">
           <option disabled selected> - Escolaridade - </option>
           @foreach ($escolaridades as $escolaridade)
             <option>{{ $escolaridade }}</option>
@@ -177,7 +177,7 @@
 
     <div class="col-md-4">
       <div class="form-group">
-        <input class="form-control" type="file" class="form-control-file" name="foto" id="foto">
+        <input class="form-control" type="file" class="form-control-file" name="foto" id="foto" value="{{ $usuarios->foto }}">
         <small class="text-muted">Foto do Inscrito</small>
       </div>
     </div><!-- Col 4 -->
@@ -202,7 +202,7 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="nis" id="nis" placeholder="NIS">
+          <input type="text" class="form-control" name="nis" id="nis" value="{{ $usuarios->nis }}">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           <small class="text-muted">Número de Identificação Social</small>
         </div><!-- NIS -->
@@ -210,7 +210,7 @@
 
       <div class="col-md-3" >
         <div class="form-group has-feedback">
-          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico">
+          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico }}">
           <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
           <small class="text-muted">Data de Início no Serviço</small>
         </div><!--Data Nascimento -->
@@ -220,7 +220,7 @@
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input type="email" class="form-control" value="{{ old('email_institucional') }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br">
+            <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br">
           </div>
         </div><!-- Email trabalho -->
       </div><!-- Col 5 -->
@@ -234,13 +234,13 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_institucional" id="telefone_institucional" placeholder="(00)0000-0000">
+          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_institucional" id="telefone_institucional" value="{{ $usuarios->telefone_institucional }}">
         </div><!-- Telefone Trabalho -->
       </div><!-- Col 3 -->
 
       <div class="col-md-3">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
+          <select class="form-control" name="id_cidade" id="id_cidade" value="{{ $usuarios->id_cidade }}">
             <option disabled selected> - Perfil - </option>
               @foreach ($cidades as $cidade)
                 <option>{{ $cidade }}</option>
@@ -324,7 +324,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Inscrever</button>
+  <button type="submit" class="btn btn-primary btn-large">Salvar</button>
 </form><!-- Form -->
 @endsection
 

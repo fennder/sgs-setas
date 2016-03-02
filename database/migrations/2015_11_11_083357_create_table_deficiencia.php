@@ -12,11 +12,11 @@ class CreateTableDeficiencia extends Migration
      */
     public function up()
     {
-        Schema::create('deficiencia', function (Blueprint $table) {
+        /*Schema::create('deficiencia', function (Blueprint $table) {
             $table->increments('id_deficiencia')->nullable();
             $table->string('descricao')->unique();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

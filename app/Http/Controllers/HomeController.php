@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function __construct(User $user)
     {
         $this->user = $user;
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
     
     /**
@@ -32,16 +32,23 @@ class HomeController extends Controller
 
             $users = Auth::user();
 
-            $page_title = "SGS";
-            $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+            if($users->dados_atualizados == 0){
+                
+                return view('user/editar', ['users' => $users]);
+            }else{
 
-            /**
-             * Informações impressos na Home
-             */
-            $lotacao = "Secretaria do Trabalho e da Assistência Social";
+                $page_title = "SGS";
+                $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+
+                $lotacao = "Secretaria do Trabalho e da Assistência Social";
+
+                return view('home', ['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+
+            }
+
             
             
-            return view('home', ['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            
         
         }else{
 

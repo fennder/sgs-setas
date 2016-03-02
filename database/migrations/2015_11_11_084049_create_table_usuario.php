@@ -12,13 +12,13 @@ class CreateTableUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        /*Schema::create('usuario', function (Blueprint $table) {
             $table->increments('id_usuario')->unsigned();
             $table->string('nome', 100);
             $table->string('nome_cracha', 50);
             $table->string('sexo', 1);
             $table->string('foto', 200);
-            $table->string('cpf', 14);
+            $table->string('cpf', 14)->unique();
             $table->string('rg', 45);
             $table->string('nis')->nullable();
             $table->string('orgao_emissor', 45);
@@ -44,8 +44,7 @@ class CreateTableUsuario extends Migration
             $table->integer('id_funcao')->unsigned()->nullable();
             $table->integer('id_deficiencia')->unsigned()->nullable();
             $table->timestamps();
-            
-        });
+        });*/
     }
 
     /**

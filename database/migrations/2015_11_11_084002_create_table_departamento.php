@@ -12,12 +12,12 @@ class CreateTableDepartamento extends Migration
      */
     public function up()
     {
-        Schema::create('departamento', function (Blueprint $table) {
+        /*Schema::create('departamento', function (Blueprint $table) {
             $table->increments('id_departamento');
             $table->string('descricao')->unique();
             $table->integer('id_orgao')->unsigned()->nullable();
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
