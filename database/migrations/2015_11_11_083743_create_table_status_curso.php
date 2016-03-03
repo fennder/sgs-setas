@@ -26,6 +26,6 @@ class CreateTableStatusCurso extends Migration
      */
     public function down()
     {
-        Schema::drop('status_curso');
+        //Schema::drop('status_curso');
     }
 }

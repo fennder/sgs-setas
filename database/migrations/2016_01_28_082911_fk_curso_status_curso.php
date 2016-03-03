@@ -24,8 +24,8 @@ class FkCursoStatusCurso extends Migration
      */
     public function down()
     {
-        Schema::table('curso', function (Blueprint $table) {
+        /*Schema::table('curso', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

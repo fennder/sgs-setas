@@ -26,6 +26,6 @@ class CreateTableFuncao extends Migration
      */
     public function down()
     {
-        Schema::drop('funcao');
+        //Schema::drop('funcao');
     }
 }

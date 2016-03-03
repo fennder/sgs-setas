@@ -29,6 +29,6 @@ class CreateInscricaoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('inscricao');
+        //Schema::drop('inscricao');
     }
 }

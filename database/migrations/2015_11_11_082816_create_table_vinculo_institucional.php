@@ -26,6 +26,6 @@ class CreateTableVinculoInstitucional extends Migration
      */
     public function down()
     {
-        Schema::drop('vinculo_institucional');
+        //Schema::drop('vinculo_institucional');
     }
 }

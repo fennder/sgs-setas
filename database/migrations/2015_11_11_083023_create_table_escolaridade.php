@@ -26,6 +26,6 @@ class CreateTableEscolaridade extends Migration
      */
     public function down()
     {
-        Schema::drop('escolaridade');
+        //Schema::drop('escolaridade');
     }
 }

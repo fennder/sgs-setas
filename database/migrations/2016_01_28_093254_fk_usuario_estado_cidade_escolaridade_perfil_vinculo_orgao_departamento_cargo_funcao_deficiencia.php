@@ -34,8 +34,8 @@ class FkUsuarioEstadoCidadeEscolaridadePerfilVinculoOrgaoDepartamentoCargoFuncao
      */
     public function down()
     {
-        Schema::table('usuario', function (Blueprint $table) {
+        /*Schema::table('usuario', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

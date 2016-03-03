@@ -25,8 +25,8 @@ class FkCidadeEstadoFkCidadeRegiao extends Migration
      */
     public function down()
     {
-        Schema::table('cidade', function (Blueprint $table) {
+        /*Schema::table('cidade', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

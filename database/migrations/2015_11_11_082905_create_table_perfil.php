@@ -26,6 +26,6 @@ class CreateTablePerfil extends Migration
      */
     public function down()
     {
-        Schema::drop('perfil');
+        //Schema::drop('perfil');
     }
 }

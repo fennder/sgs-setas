@@ -30,6 +30,6 @@ class CreateTableCidade extends Migration
      */
     public function down()
     {
-        Schema::drop('cidade');
+        //Schema::drop('cidade');
     }
 }

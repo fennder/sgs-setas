@@ -32,8 +32,8 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td class="text-center">
-                          <a href="users/editar/{{$user->id}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="users/remover/{{$user->id}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach

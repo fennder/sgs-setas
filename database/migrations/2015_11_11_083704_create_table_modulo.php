@@ -27,6 +27,6 @@ class CreateTableModulo extends Migration
      */
     public function down()
     {
-        Schema::drop('modulo');
+        //Schema::drop('modulo');
     }
 }

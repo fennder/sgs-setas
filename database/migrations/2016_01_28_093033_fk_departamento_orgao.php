@@ -24,8 +24,8 @@ class FkDepartamentoOrgao extends Migration
      */
     public function down()
     {
-        Schema::table('departamento', function (Blueprint $table) {
+        /*Schema::table('departamento', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

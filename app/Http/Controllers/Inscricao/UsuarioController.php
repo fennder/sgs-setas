@@ -98,7 +98,7 @@ class UsuarioController extends Controller
     {
         $usuarios = $this->usuario->create($request->all());
 
-        return redirect()->back();
+        return redirect()->route('u.index');
     }
 
     /**

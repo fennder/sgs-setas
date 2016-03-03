@@ -14,6 +14,13 @@ class Estado extends Model
     protected $table = 'estado';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_estado';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

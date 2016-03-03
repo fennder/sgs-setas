@@ -51,6 +51,46 @@ Route::group(['as' => 'c.', 'prefix' => 'cargo'], function()
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CargoController@destroy']);
 });
 
+Route::group(['as' => 'o.', 'prefix' => 'orgao'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\OrgaoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\OrgaoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\OrgaoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\OrgaoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\OrgaoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\OrgaoController@destroy']);
+});
+
+Route::group(['as' => 'r.', 'prefix' => 'regiao'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\RegiaoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\RegiaoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\RegiaoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\RegiaoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\RegiaoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\RegiaoController@destroy']);
+});
+
+Route::group(['as' => 'est.', 'prefix' => 'estado'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\EstadoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\EstadoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\EstadoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\EstadoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\EstadoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\EstadoController@destroy']);
+});
+
+Route::group(['as' => 'cid.', 'prefix' => 'cidade'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CidadeController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CidadeController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CidadeController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CidadeController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CidadeController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CidadeController@destroy']);
+});
+
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);

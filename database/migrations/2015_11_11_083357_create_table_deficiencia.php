@@ -26,6 +26,6 @@ class CreateTableDeficiencia extends Migration
      */
     public function down()
     {
-        Schema::drop('deficiencia');
+        //Schema::drop('deficiencia');
     }
 }

@@ -11,7 +11,14 @@ class Orgao extends Model
      *
      * @var string
      */
-    protected $table = 'curso';
+    protected $table = 'orgao';
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_orgao';
 
     /**
      * The attributes that are mass assignable.
@@ -19,10 +26,7 @@ class Orgao extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao',
-    	'data_inicio',
-    	'data_fim',
-    	'id_status_curso'
+    	'descricao'
     ];
 
     public function departamento()

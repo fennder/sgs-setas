@@ -24,8 +24,8 @@ class FkModuloCurso extends Migration
      */
     public function down()
     {
-        Schema::table('modulo', function (Blueprint $table) {
+        /*Schema::table('modulo', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 }

@@ -34,7 +34,7 @@ class HomeController extends Controller
 
             if($users->dados_atualizados == 0){
                 
-                return view('user/editar', ['users' => $users]);
+                return view('user.editar', ['users' => $users]);
             }else{
 
                 $page_title = "SGS";
@@ -45,10 +45,6 @@ class HomeController extends Controller
                 return view('home', ['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
             }
-
-            
-            
-            
         
         }else{
 

@@ -35,7 +35,3 @@
 </form><!-- Form -->
 @endsection
 
-<!-- 
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-  <input type="file" class="form-control" name="foto" value="{{ old('foto') }}/>
--->

@@ -55,7 +55,10 @@
             <li class="treeview">
             <a href="#"><i class="fa fa-user-plus"></i> <span>GERENCIAR</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{!! route('c.index') !!}">Cargo</a></li>                
+                <li><a href="{!! route('c.index') !!}">Cargo</a></li>
+                <li><a href="{!! route('o.index') !!}">Órgão</a></li> 
+                <li><a href="{!! route('r.index') !!}">Região</a></li>
+                <li><a href="{!! route('est.index') !!}">Estado</a></li>             
               </ul>
             </li>
           </ul>

@@ -14,6 +14,13 @@ class Regiao extends Model
     protected $table = 'regiao';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_regiao';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

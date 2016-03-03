@@ -4,7 +4,6 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Cargo;
-
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 

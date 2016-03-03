@@ -20,7 +20,7 @@
     <div class="register-box-body">
       <p class="login-box-msg">Alterar usuário</p>
 
-      <form action="/users/atualizar/{{ $users->id }}" method="POST">
+      <form action="{{route('u.update', ['id' => $users->id])}}" method="POST">
         {!! csrf_field() !!}
         <div class="form-group has-feedback">
           <input type="text" class="form-control" name="name" value="{{ $users->name }}" placeholder="Nome Completo">
