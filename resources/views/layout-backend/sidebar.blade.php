@@ -52,6 +52,12 @@
             <li><a href="{!! route('i.index') !!}">Lista de inscritos</a></li>
             <li><a href="{!! route('i.create') !!}">Inscrever</a></li>
             <li><a href="{!! route('i.edit') !!}">Editar inscrito</a></li>
+            <li class="treeview">
+            <a href="#"><i class="fa fa-user-plus"></i> <span>GERENCIAR</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{!! route('c.index') !!}">Cargo</a></li>                
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

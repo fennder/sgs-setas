@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{!! route('c.store') !!}" method="POST" enctype="multipart/form-data">
+<form action="{!! route('c.store') !!}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">

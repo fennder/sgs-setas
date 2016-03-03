@@ -8,7 +8,7 @@
     <strong>
     	Copyright &copy; 2015 
     	<a href="http://opensetas.setas.to.gov.br">
-    		 - SITE DESENVOLVIDO PELA EQUIPE SD/GTI - 
+    		 - DESENVOLVIDO PELA EQUIPE SD/GTI - 
     	</a>
     	Secretaria do Trabalho e da Assitência Social
     </strong>

@@ -16,7 +16,7 @@ class CargoController extends Controller
     {
         $this->cargo = $cargo;
         
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -26,7 +26,7 @@ class CargoController extends Controller
      */
     public function index()
     {
-        $cargos = $this->cargo->paginate(5);
+        $cargos = $this->cargo->paginate(4);
     
         $page_title = "SGS";
         $page_description = "Lista de Cargos";
@@ -82,11 +82,14 @@ class CargoController extends Controller
      */
     public function show($id)
     {
-        $usuarios = $this->usuario->find($id);
+        $cargos = $this->cargos->find($id);
 
         return view('cargo.show',
         [
-            'usuarios' => $usuarios
+            'cargos' => $cargos,
+            'nav' => $nav, 
+            'page_title' => $page_title, 
+            'page_description' => $page_description
         ]);
     }
 
@@ -99,13 +102,14 @@ class CargoController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-
+        $page_description = "Editar Cargo";
         $cargos = $this->cargo->find($id);
         
         return view('cargo.edit',
         [
             'nav' => $nav,
-            'cargos' => $cargos
+            'cargos' => $cargos, 
+            'page_description' => $page_description
         ]);
 
     }
@@ -119,8 +123,8 @@ class CargoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $this->cargo->find($id)->updte($request->all());
+        $cargos = $this->cargo->find($id);
+        $cargos->update($request->all());
 
         return redirect()->back(); 
     }
@@ -139,5 +143,3 @@ class CargoController extends Controller
         return redirect()->back();
     }
 }
-
-/*{!! route('c.store') !!}*/

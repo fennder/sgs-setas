@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{{ route('c.create')}}">Novo</a>
+          <a class="btn btn-primary" href="{!! route('c.create')!!}">Novo</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
@@ -35,8 +35,8 @@
                         <td>{{$cargo->id_cargo}}.</td>
                         <td>{{$cargo->descricao}}</td>
                         <td class="text-center">
-                          <a href="/cargo/editar/{id}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="/cargo/remover/{id}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('c.edit', ['id' => $cargo->id_cargo])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="{{route('c.destroy', ['id' => $cargo->id_cargo])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach
