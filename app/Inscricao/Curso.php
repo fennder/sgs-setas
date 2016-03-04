@@ -14,6 +14,13 @@ class Curso extends Model
     protected $table = 'curso';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_curso';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -21,7 +28,7 @@ class Curso extends Model
     protected $fillable = [
     	'descricao',
     	'data_inicio',
-    	'data_fim',
+    	'data_termino',
     	'id_status_curso'
     ];
 

@@ -14,6 +14,14 @@ class Escolaridade extends Model
     protected $table = 'escolaridade';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_escolaridade';
+
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -12,14 +12,14 @@ class CreateTableCurso extends Migration
      */
     public function up()
     {
-        /*Schema::create('curso', function (Blueprint $table) {
+        Schema::create('curso', function (Blueprint $table) {
             $table->increments('id_curso');
             $table->string('descricao')->unique();
             $table->date('data_inicio');
             $table->date('data_termino');
             $table->integer('id_status_curso')->unsigned()->nullable();
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateTableCurso extends Migration
      */
     public function down()
     {
-        //Schema::drop('curso');
+        Schema::drop('curso');
     }
 }

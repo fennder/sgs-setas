@@ -14,6 +14,13 @@ class Deficiencia extends Model
     protected $table = 'deficiencia';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_deficiencia';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -23,7 +30,7 @@ class Deficiencia extends Model
     	'id_curso'
     ];
 
-    public fucntion usuario()
+    public function usuario()
     {
     	return $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem vários usuários
     }

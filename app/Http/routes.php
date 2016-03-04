@@ -121,6 +121,46 @@ Route::group(['as' => 'sc.', 'prefix' => 'status_curso'], function()
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\StatusCursoController@destroy']);
 });
 
+Route::group(['as' => 'cu.', 'prefix' => 'curso'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CursoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CursoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CursoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CursoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CursoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CursoController@destroy']);
+});
+
+Route::group(['as' => 'd.', 'prefix' => 'deficiencia'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\DeficienciaController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\DeficienciaController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\DeficienciaController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\DeficienciaController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\DeficienciaController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\DeficienciaController@destroy']);
+});
+
+Route::group(['as' => 'e.', 'prefix' => 'escolaridade'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\EscolaridadeController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\EscolaridadeController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\EscolaridadeController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\EscolaridadeController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\EscolaridadeController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\EscolaridadeController@destroy']);
+});
+
+Route::group(['as' => 'dep.', 'prefix' => 'departamento'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\DepartamentoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\DepartamentoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\DepartamentoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\DepartamentoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\DepartamentoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\DepartamentoController@destroy']);
+});
+
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);

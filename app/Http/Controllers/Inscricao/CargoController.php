@@ -81,7 +81,7 @@ class CargoController extends Controller
      */
     public function show($id)
     {
-        $cargos = $this->cargos->find($id);
+        $cargos = $this->cargo->find($id);
 
         return view('cargo.show',
         [
