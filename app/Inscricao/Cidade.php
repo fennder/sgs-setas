@@ -14,6 +14,13 @@ class Cidade extends Model
     protected $table = 'cidade';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_cidade';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

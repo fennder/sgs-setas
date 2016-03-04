@@ -155,6 +155,8 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $this->usuario->find($id)->update($request->all());
+
+        return redirect()->route('u.index')
     }
 
     /**

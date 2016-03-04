@@ -14,6 +14,13 @@ class Modulo extends Model
     protected $table = 'modulo';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_modulo';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -1,7 +1,6 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<!-- <form action="/cargo/atualizar/{{$cargos->id_cargo}}" method="POST"> -->
 <form action="{{route('c.update', ['id' => $cargos->id_cargo])}}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
@@ -32,11 +31,6 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Salvar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
-
-<!-- 
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-  <input type="file" class="form-control" name="foto" value="{{ old('foto') }}/>
--->

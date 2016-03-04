@@ -14,6 +14,13 @@ class StatusCurso extends Model
     protected $table = 'status_curso';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_status_curso';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

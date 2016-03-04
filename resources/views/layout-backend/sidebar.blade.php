@@ -42,8 +42,6 @@
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('u.index') !!}">Lista de usuários</a></li>
-            <!--li><a href="#">Grupo de usuários</a></li>
-            <li><a href="#">Grupo de páginas</a></li-->
           </ul>
         </li>
         <li class="treeview">
@@ -53,14 +51,23 @@
             <li><a href="{!! route('i.create') !!}">Inscrever</a></li>
             <li><a href="{!! route('i.edit') !!}">Editar inscrito</a></li>
             <li class="treeview">
-            <a href="#"><i class="fa fa-user-plus"></i> <span>GERENCIAR</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-user-plus"></i> <span>GERENCIAR</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{!! route('c.index') !!}">Cargo</a></li>
                 <li><a href="{!! route('o.index') !!}">Órgão</a></li> 
                 <li><a href="{!! route('r.index') !!}">Região</a></li>
-                <li><a href="{!! route('est.index') !!}">Estado</a></li>             
+                <li><a href="{!! route('est.index') !!}">Estado</a></li>
+                <li><a href="{!! route('cid.index') !!}">Cidade</a></li>            
               </ul>
             </li>
+            <li class="treeview">
+          <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a href="{!! route('i.index') !!}">Cursos</a></li>
+            <li><a href="{!! route('m.index') !!}">Modulo</a></li>
+            <li><a href="{!! route('sc.index') !!}">Status Curso</a></li>
+          </ul>
+        </li>
           </ul>
         </li>
       </ul>

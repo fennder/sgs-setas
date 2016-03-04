@@ -12,11 +12,11 @@ class CreateTableFuncao extends Migration
      */
     public function up()
     {
-        /*Schema::create('funcao', function (Blueprint $table) {
+        Schema::create('funcao', function (Blueprint $table) {
             $table->increments('id_funcao');
             $table->string('descricao')->unique();
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -26,6 +26,6 @@ class CreateTableFuncao extends Migration
      */
     public function down()
     {
-        //Schema::drop('funcao');
+        Schema::drop('funcao');
     }
 }

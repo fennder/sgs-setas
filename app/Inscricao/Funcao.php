@@ -14,6 +14,14 @@ class Funcao extends Model
     protected $table = 'funcao';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_funcao';
+
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -125,7 +125,7 @@ class CargoController extends Controller
         $cargos = $this->cargo->find($id);
         $cargos->update($request->all());
 
-        return redirect()->back(); 
+        return redirect()->route('c.index'); 
     }
 
     /**

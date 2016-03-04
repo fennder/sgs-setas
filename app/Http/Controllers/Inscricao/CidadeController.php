@@ -3,12 +3,25 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
-
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
 class CidadeController extends Controller
 {
+    private $estado;
+    private $cidade;
+
+    public function __construct(Estado $estado, Cidade $cidade)
+    {
+    
+        $this->estado = $estado;
+        $this->cidade = $cidade;
+
+        //$this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +29,19 @@ class CidadeController extends Controller
      */
     public function index()
     {
-        //
+        $cidades = $this->cidade->paginate(4);
+    
+        $page_title = "SGS";
+        $page_description = "Lista de Cidades";
+        $nav = "Cidades";
+
+        return view('cidade.index',
+        [
+            'nav' => $nav,
+            'cidades' => $cidades, 
+            'page_title'=>$page_title, 
+            'page_description'=>$page_description
+        ]);
     }
 
     /**
@@ -26,7 +51,16 @@ class CidadeController extends Controller
      */
     public function create()
     {
-        //
+        $page_title = "SGS";
+        $page_description = "Cadastro de Cidades";
+        $nav = "Cidade";
+
+        return view('cidade.create',
+        [
+            'nav' => $nav, 
+            'page_title' => $page_title, 
+            'page_description' => $page_description
+        ]);
     }
 
     /**
@@ -37,7 +71,10 @@ class CidadeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->cidade->create($request->all());
+
+        return redirect()->route('cid.index');
+
     }
 
     /**
@@ -59,7 +96,16 @@ class CidadeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nav = "Editar";
+        $page_description = "Editar Cidade";
+        $cidades = $this->cidade->find($id);
+        
+        return view('cidade.edit',
+        [
+            'nav' => $nav,
+            'cidades' => $cidades, 
+            'page_description' => $page_description
+        ]);
     }
 
     /**
@@ -71,7 +117,10 @@ class CidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cidades = $this->cidade->find($id);
+        $cidades->update($request->all());
+
+        return redirect()->route('cid.index'); 
     }
 
     /**
@@ -82,6 +131,9 @@ class CidadeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->cidade->destroy($id);
+
+        return redirect()->back();
+
     }
 }

@@ -12,12 +12,12 @@ class CreateTableModulo extends Migration
      */
     public function up()
     {
-        /*Schema::create('modulo', function (Blueprint $table) {
+        Schema::create('modulo', function (Blueprint $table) {
             $table->increments('id_modulo');
             $table->longText('descricao');
-            $table->integer('id_curso')->unsigned()->nullable();
+            $table->integer('id_curso')->unsigned();
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateTableModulo extends Migration
      */
     public function down()
     {
-        //Schema::drop('modulo');
+        Schema::drop('modulo');
     }
 }

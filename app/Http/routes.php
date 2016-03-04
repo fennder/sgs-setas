@@ -91,6 +91,36 @@ Route::group(['as' => 'cid.', 'prefix' => 'cidade'], function()
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CidadeController@destroy']);
 });
 
+Route::group(['as' => 'm.', 'prefix' => 'modulo'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\ModuloController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\ModuloController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\ModuloController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\ModuloController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\ModuloController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\ModuloController@destroy']);
+});
+
+Route::group(['as' => 'f.', 'prefix' => 'funcao'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\FuncaoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\FuncaoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\FuncaoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\FuncaoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\FuncaoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\FuncaoController@destroy']);
+});
+
+Route::group(['as' => 'sc.', 'prefix' => 'status_curso'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\StatusCursoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\StatusCursoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\StatusCursoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\StatusCursoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\StatusCursoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\StatusCursoController@destroy']);
+});
+
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\UsuarioController@index']);
@@ -100,4 +130,3 @@ Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'Inscricao\UsuarioController@update']);
 	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'Inscricao\UsuarioController@destroy']);
 });
-
