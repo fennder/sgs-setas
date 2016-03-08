@@ -12,7 +12,7 @@ class CreateTableUsuario extends Migration
      */
     public function up()
     {
-        /*Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('usuario', function (Blueprint $table) {
             $table->increments('id_usuario')->unsigned();
             $table->string('nome', 100);
             $table->string('nome_cracha', 50);
@@ -43,7 +43,7 @@ class CreateTableUsuario extends Migration
             $table->integer('id_funcao')->unsigned()->nullable();
             $table->integer('id_deficiencia')->unsigned()->nullable();
             $table->timestamps();
-        });*/
+        });
     }
 
     /**

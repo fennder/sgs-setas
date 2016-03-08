@@ -3,7 +3,6 @@
 @section('content')
 <form action="{!! route('o.store') !!}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-  
 <!-- Box formulario dados pessoais -->
 <div class="box">
   <div class="box-header with-border">

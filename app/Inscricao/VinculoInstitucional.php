@@ -3,8 +3,10 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Gerenciador\Inscricao\Usuario;
 
-class VinculoIntitucional extends Model
+class VinculoInstitucional extends Model
 {
     /**
      * The database table used by the model.
@@ -31,6 +33,6 @@ class VinculoIntitucional extends Model
 
     public function usuario()
     {
-    	rerurn $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem muitos usuários
+    	//rerurn $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem muitos usuários
     }
 }

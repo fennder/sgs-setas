@@ -32,10 +32,10 @@
                   @if($vinculos)
                     @foreach($vinculos as $vinculo)
                       <tr>
-                        <td>{{$vinculo->id_vinculo}}.</td>
+                        <td>{{$vinculo->id_vinculo_institucional}}.</td>
                         <td>{{$vinculo->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>

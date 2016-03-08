@@ -28,7 +28,7 @@ class UsuarioController extends Controller
         $this->cidade = $cidade;
         $this->escolaridade = $escolaridade;
 
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -156,7 +156,7 @@ class UsuarioController extends Controller
     {
         $this->usuario->find($id)->update($request->all());
 
-        return redirect()->route('u.index')
+        return redirect()->route('u.index');
     }
 
     /**
