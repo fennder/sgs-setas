@@ -60,7 +60,8 @@
                 <li><a href="{!! route('cid.index') !!}">Cidade</a></li>
                 <li><a href="{!! route('e.index') !!}">Escolaridade</a></li>
                 <li><a href="{!! route('d.index') !!}">Deficiência</a></li>
-                <li><a href="{!! route('dep.index') !!}">Departamento</a></li>   
+                <li><a href="{!! route('dep.index') !!}">Departamento</a></li>
+                <li><a href="{!! route('vi.index') !!}">Vinculo Institucional</a></li>   
               </ul>
             </li>
             <li class="treeview">

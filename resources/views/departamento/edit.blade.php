@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{!! route('dep.update', ['id'=>$departamentos->id_departamento]) !!}" method="POST">
+<form action="{{ route('dep.update', ['id'=>$departamentos->id_departamento]) }}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">
@@ -27,11 +27,17 @@
     </div><!-- Col 6 -->
 
     <div class="col-md-6">
-      <div class="form-group has-feedback" >
+      <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$departamentos->id_orgao}}" name="id_orgao" id="id_orgao">
+          <select class="form-control" name="id_orgao" id="id_orgao">
+            @foreach($orgaos as $orgao)
+                <option value="{{ $orgao->id_orgao}}">{{ $orgao->descricao}}</option>
+            @endforeach
+            
+          </select>
         </div>
+        <small class="text-muted">Órgão</small>
       </div><!-- Órgão -->
     </div><!-- Col 6 -->
 
@@ -40,7 +46,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
 

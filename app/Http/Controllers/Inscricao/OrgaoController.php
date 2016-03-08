@@ -4,16 +4,19 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Orgao;
+//use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
 class OrgaoController extends Controller
 {
     private $orgao;
+    //private $departamento;
 
     public function __construct(Orgao $orgao)
     {
         $this->orgao = $orgao;
+        //$this->departamento = $departamento;
         
         //$this->middleware('guest');
     }
@@ -26,6 +29,7 @@ class OrgaoController extends Controller
     public function index()
     {
         $orgaos = $this->orgao->paginate(4);
+        //$departamentos = $this->departamento->lists('descricao', 'id_departamento');
     
         $page_title = "SGS";
         $page_description = "Lista de Órgaos";
@@ -34,7 +38,8 @@ class OrgaoController extends Controller
         return view('orgao.index',
         [
             'nav' => $nav,
-            'orgaos' => $orgaos, 
+            'orgaos' => $orgaos,
+            //'departamento' => $departamentos,
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);

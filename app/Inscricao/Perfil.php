@@ -11,7 +11,7 @@ class Perfil extends Model
      *
      * @var string
      */
-    protected $table = 'curso';
+    protected $table = 'perfil';
 
     /**
      * The attributes that are mass assignable.

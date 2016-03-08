@@ -3,6 +3,9 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Regiao;
 
 class Cidade extends Model
 {
@@ -42,8 +45,8 @@ class Cidade extends Model
     	return $this->belongsTo('Gerenciador\Estado'); //Tem apenas um estado 
     }
 
-    public function usuario()
+    /*public function usuario()
     {
     	return $this->hasMany('Gerenciador\Usuario');//Tem vários usuários
-    }
+    }*/
 }

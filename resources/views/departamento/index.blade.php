@@ -35,7 +35,9 @@
                       <tr>
                         <td>{{$departamento->id_departamento}}.</td>
                         <td>{{$departamento->descricao}}</td>
-                        <td>{{$departamento->id_orgao}}</td>
+                        
+                        <td>{{$orgaos}}</td>
+                        
                         <td class="text-center">
                           <a href="{{route('dep.edit', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-trash"></i></a>

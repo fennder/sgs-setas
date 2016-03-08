@@ -11,7 +11,14 @@ class VinculoIntitucional extends Model
      *
      * @var string
      */
-    protected $table = 'curso';
+    protected $table = 'vinculo_institucional';
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_vinculo_institucional';
 
     /**
      * The attributes that are mass assignable.
@@ -19,10 +26,7 @@ class VinculoIntitucional extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao',
-    	'data_inicio',
-    	'data_fim',
-    	'id_status_curso'
+    	'descricao'
     ];
 
     public function usuario()

@@ -24,7 +24,7 @@
                 <thead>
                   <tr>
                     <th style="width: 10px">Id</th>
-                    <th>Descrição</th>                    
+                    <th>Descrição</th>
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
@@ -33,11 +33,11 @@
                     @foreach($orgaos as $orgao)
                       <tr>
                         <td>{{$orgao->id_orgao}}.</td>
-                        <td>{{$orgao->descricao}}</td>
-                        <td class="text-center">
-                          <a href="{{route('o.edit', ['id' => $orgao->id_orgao])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('o.destroy', ['id' => $orgao->id_orgao])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                        <td>{{$orgao->descricao}}</td>                        
+                          <td class="text-center">
+                            <a href="{{route('o.edit', ['id' => $orgao->id_orgao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{route('o.destroy', ['id' => $orgao->id_orgao])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          </td>
                       </tr>
                     @endforeach
                   @else

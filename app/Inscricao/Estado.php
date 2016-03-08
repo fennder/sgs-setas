@@ -3,6 +3,9 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Usuario;
 
 class Estado extends Model
 {

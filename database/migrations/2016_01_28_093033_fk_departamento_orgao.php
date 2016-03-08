@@ -12,9 +12,9 @@ class FkDepartamentoOrgao extends Migration
      */
     public function up()
     {
-        /*Schema::table('departamento', function (Blueprint $table) {
+        Schema::table('departamento', function (Blueprint $table) {
             $table->foreign('id_orgao')->references('id_orgao')->on('orgao');
-        });*/
+        });
     }
 
     /**
@@ -24,8 +24,8 @@ class FkDepartamentoOrgao extends Migration
      */
     public function down()
     {
-        /*Schema::table('departamento', function (Blueprint $table) {
+        Schema::table('departamento', function (Blueprint $table) {
             //
-        });*/
+        });
     }
 }
