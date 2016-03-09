@@ -2,10 +2,12 @@
 
 @section('content')
 
+  <div class="row">
+    <div class="col-md-6">
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Lista de usuários cadastrados</h3>
+          <h3 class="box-title">Lista de Inscrições</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -15,32 +17,28 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{{route('i.create')}}">Novo</a>
+          <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
                     <th style="width: 10px">Id</th>
-                    <th>Nome</th>        
-                    <th>Email institucional</th>            
-                    <th>Telefone Pessoal</th>
-                    <th>Data Nascimento</th>            
+                    <th>Cursos</th>
+                    <th>Usuarios</th>
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
                 <tbody>
-                  @if($usuarios)
-                    @foreach($usuarios as $usuario)
+                  @if($inscricoes)
+                    @foreach($inscricoes as $inscricao)
                       <tr>
-                        <td>{{$usuario->id_usuario}}.</td>
-                        <td>{{$usuario->nome}}</td> 
-                        <td>{{$usuario->email_institucional}}</td>
-                        <td>{{$usuario->telefone_pessoal}}</td>
-                        <td>{{$usuario->data_nascimento}}</td>                  
+                        <td>{{$inscricao->id_inscricao}}.</td>
+                        <td>{{$inscricao->id_curso}}</td>
+                        <td>{{$inscricao->id_usuario}}</td>
                         <td class="text-center">
-                          <a href="inscritos/editar/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="inscritos/remover/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach
@@ -52,11 +50,12 @@
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
-                <li>{!!$usuarios->render()!!}</li>
+                <li>{!!$inscricoes->render()!!}</li>
               </ul>
         </div><!-- /.box-footer-->
       </div><!-- /.box -->
-
+    </div><!-- Col 6 -->
+  </div> <!-- Row -->
 <div class="row">
   <div class="col-md-8">
     <div class="box">
@@ -74,28 +73,29 @@
         
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
-            <li>{!!$usuarios->render()!!}</li>
+            <li>#</li>
           </ul>
         </div>
     </div><!-- /.box -->
           
   </div><!-- /.col 8 -->
+
   <div class="col-md-4">
     <div class="box">
       <div class="box-header with-border">
-          <h3 class="box-title">Mais informações</h3>
-          <!-- Inserir conteúdo aqui -->
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-          </div>
+        <h3 class="box-title">Mais informações</h3>
+        <!-- Inserir conteúdo aqui -->
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        </div>
       </div>
       <div class="box-body">
               
       </div><!-- /.box-body -->
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
-            <li>{!!$usuarios->render()!!}</li>
+            <li>#</li>
           </ul>
         </div>
     </div><!-- /.col -->

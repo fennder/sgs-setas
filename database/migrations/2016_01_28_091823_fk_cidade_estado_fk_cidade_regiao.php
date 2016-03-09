@@ -12,10 +12,10 @@ class FkCidadeEstadoFkCidadeRegiao extends Migration
      */
     public function up()
     {
-        /*Schema::table('cidade', function (Blueprint $table) {
+        Schema::table('cidade', function (Blueprint $table) {
             $table->foreign('id_estado')->references('id_estado')->on('estado');
             $table->foreign('id_regiao')->references('id_regiao')->on('regiao');
-        });*/
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class FkCidadeEstadoFkCidadeRegiao extends Migration
      */
     public function down()
     {
-        /*Schema::table('cidade', function (Blueprint $table) {
+        Schema::table('cidade', function (Blueprint $table) {
             //
-        });*/
+        });
     }
 }

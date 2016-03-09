@@ -132,7 +132,8 @@ class OrgaoController extends Controller
     public function destroy($id)
     {
         $this->orgao->destroy($id);
-
+        
         return redirect()->back();
+        
     }
 }

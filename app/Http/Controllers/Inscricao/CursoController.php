@@ -4,16 +4,19 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Curso;
+use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
 class CursoController extends Controller
 {
     private $curso;
+    private $scurso;
 
-    public function __construct(Curso $curso)
+    public function __construct(Curso $curso, StatusCurso $scurso)
     {
         $this->curso = $curso;
+        $this->scurso = $scurso;
 
         //$this->middleware('guest');
     }
@@ -25,6 +28,7 @@ class CursoController extends Controller
      */
     public function index()
     {
+        
         $cursos = $this->curso->paginate(4);
     
         $page_title = "SGS";
@@ -34,7 +38,7 @@ class CursoController extends Controller
         return view('curso.index',
         [
             'nav' => $nav,
-            'cursos' => $cursos, 
+            'cursos' => $cursos,  
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);
@@ -52,9 +56,12 @@ class CursoController extends Controller
         $page_description = "Cadastro de Cursos";
         $nav = "Curso";
 
+        $scursos = $this->scurso->lists('descricao', 'id_status_curso');
+
         return view('curso.create',
         [
-            'nav' => $nav, 
+            'nav' => $nav,
+            'scursos'=>$scursos,
             'page_title' => $page_title, 
             'page_description' => $page_description
         ]);
@@ -68,9 +75,10 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->curso->create($request->all());
-
-        return redirect()->route('cu.index');
+        
+        return redirect()->route('cs.index');
     }
 
     /**
@@ -94,12 +102,15 @@ class CursoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Curso";
+
         $cursos = $this->curso->find($id);
+        $scursos = $this->scurso->lists('descricao', 'id_status_curso');
         
         return view('curso.edit',
         [
             'nav' => $nav,
             'cursos' => $cursos, 
+            'scursos' => $scursos, 
             'page_description' => $page_description
         ]);
     }
@@ -116,7 +127,7 @@ class CursoController extends Controller
         $cursos = $this->curso->find($id);
         $cursos->update($request->all());
 
-        return redirect()->route('cu.index');
+        return redirect()->route('cs.index');
     }
 
     /**
@@ -127,8 +138,10 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        $this->curso->destroy($id);
 
+        $this->curso->destroy($id);
+        
         return redirect()->back();
+        
     }
 }

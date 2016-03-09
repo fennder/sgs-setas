@@ -32,6 +32,6 @@ class Modulo extends Model
 
     public function curso()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Curso'); // O módulo tem apenas um curso
+    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso'); // O módulo tem apenas um curso
     }
 }

@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\Curso;
 
 class StatusCurso extends Model
 {
@@ -31,6 +32,6 @@ class StatusCurso extends Model
 
     public function curso()
     {
-    	return $this->hasMany('Gerenciador\Instrucao\Curso'); //O status do curso tem vários cursos
+    	return $this->hasMany('Gerenciador\Instrucao\Curso', 'id_curso'); //O status do curso tem vários cursos
     }
 }

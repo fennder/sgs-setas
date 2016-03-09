@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{!! route('cu.store') !!}" method="POST">
+<form action="{!! route('cs.store') !!}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">
@@ -42,14 +42,17 @@
       </div><!--Data Término do Curso -->
     </div><!-- Col 3 -->
 
-    <div class="col-md-4">
-      <div class="form-group has-feedback" >
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="id_status_curso" id="id_status_curso" placeholder="Status Curso">
-        </div>
-      </div><!-- Status do Curso -->
-    </div><!-- Col 4 -->
+    <div class="col-md-6">
+        <div class="form-group has-feedback">
+        <select class="form-control" name="id_status_curso" id="id_status_curso">
+            <option disabled selected> - Status Curso - </option>
+              <!-- @foreach ($cursos as $curso)
+                <option value="{{ $curso->statuscurso->id_status_curso }}">{{ $curso }}</option>
+              @endforeach -->
+          </select>
+          <small class="text-muted">Status Curso</small>
+      </div><!-- Curso -->
+    </div><!-- Col 6 -->
 
   </div><!-- row -->
 

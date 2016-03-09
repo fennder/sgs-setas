@@ -37,16 +37,16 @@ class Cidade extends Model
 
     public function regiao()
     {
-    	return $this->belongsTo('Gerenciador\Regiao'); //Tem apenas uma regiao
+    	return $this->belongsTo('Gerenciador\Inscricao\Regiao', 'id_regiao'); //Tem apenas uma regiao
     }
 
     public function estado()
     {
-    	return $this->belongsTo('Gerenciador\Estado'); //Tem apenas um estado 
+    	return $this->belongsTo('Gerenciador\Inscricao\Estado', 'id_estado'); //Tem apenas um estado 
     }
 
-    /*public function usuario()
+    public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Usuario');//Tem vários usuários
-    }*/
+    	return $this->hasMany('Gerenciador\Inscricao\Usuario', 'id_usuario');//Tem vários usuários
+    }
 }

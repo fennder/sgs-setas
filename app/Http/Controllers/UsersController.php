@@ -86,7 +86,7 @@ class UsersController extends Controller
     {
         $users = $this->user->find($id);
         //dd($users);
-        return view('user/editar', ['users' => $users]);    
+        return view('user.editar', ['users' => $users]);    
     }
 
     /**

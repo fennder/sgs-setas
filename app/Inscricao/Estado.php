@@ -36,7 +36,7 @@ class Estado extends Model
 
     public function cidade()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Cidade'); //Tem várias cidades
+    	return $this->hasMany('Gerenciador\Inscricao\Cidade', 'id_cidade'); //Tem várias cidades
     }
 
     public function usuario()

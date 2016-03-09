@@ -14,19 +14,23 @@ class Perfil extends Model
     protected $table = 'perfil';
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_perfil';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-    	'descricao',
-    	'data_inicio',
-    	'data_fim',
-    	'id_status_curso'
+    	'descricao'
     ];
 
-    public function usuario()
+    /*public function usuario()
     {
     	return $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem vários usuários
-    }
+    }*/
 }

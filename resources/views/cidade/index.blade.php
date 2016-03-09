@@ -38,8 +38,8 @@
                         <td>{{$cidade->id_cidade}}.</td>
                         <td>{{$cidade->nome}}</td>
                         <td>{{$cidade->cod_ibge}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$cidade->estado->nome}}</td>
+                        <td>{{$cidade->regiao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('cid.edit', ['id' => $cidade->id_cidade])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('cid.destroy', ['id' => $cidade->id_cidade])}}"><i class="glyphicon glyphicon-trash"></i></a>

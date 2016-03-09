@@ -31,16 +31,17 @@ class Departamento extends Model
      */
     protected $fillable = [
     	'descricao',
-    	'id_orgao'
+    	'id_orgao',
+        'id_usuario'
     ];
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario'); //Tem muitos usuários
+    	return $this->hasMany('Gerenciador\Inscricao\Usuario', 'id_usuario'); //Tem muitos usuários
     }
 
     public function orgao()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Orgao'); //Tem apenas um orgao
+    	return $this->belongsTo('Gerenciador\Inscricao\Orgao', 'id_orgao'); //Tem apenas um orgao
     }
 }

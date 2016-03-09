@@ -121,7 +121,7 @@ Route::group(['as' => 'sc.', 'prefix' => 'status_curso'], function()
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\StatusCursoController@destroy']);
 });
 
-Route::group(['as' => 'cu.', 'prefix' => 'curso'], function()
+Route::group(['as' => 'cs.', 'prefix' => 'curso'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CursoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CursoController@create']);
@@ -169,6 +169,16 @@ Route::group(['as' => 'vi.', 'prefix' => 'vinculo_institucional'], function()
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\VinculoInstitucionalController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\VinculoInstitucionalController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\VinculoInstitucionalController@destroy']);
+});
+
+Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\InscricaoController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\InscricaoController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\InscricaoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\InscricaoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\InscricaoController@destroy']);
 });
 
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()

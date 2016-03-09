@@ -44,7 +44,7 @@ class UsuarioController extends Controller
         $page_description = "Cadastro de Usuários";
         $nav = "Lista";
 
-        return view('inscricao.index',
+        return view('inscrito.index',
         [
             'nav' => $nav,
             'usuarios' => $usuarios, 
@@ -69,7 +69,7 @@ class UsuarioController extends Controller
         $page_description = "Cadastro de Usuários";
         $nav = "Cadastro";
 
-        return view('inscricao.create',
+        return view('inscrito.create',
         [
             'nav' => $nav, 
             'escolaridades' => $escolaridades, 
@@ -98,7 +98,7 @@ class UsuarioController extends Controller
     {
         $usuarios = $this->usuario->create($request->all());
 
-        return redirect()->route('u.index');
+        return redirect()->route('i.index');
     }
 
     /**
@@ -111,7 +111,7 @@ class UsuarioController extends Controller
     {
         $usuarios = $this->usuario->find($id);
 
-        return view('inscricao.show',
+        return view('inscrito.show',
         [
             'usuarios' => $usuarios
         ]);
@@ -134,7 +134,7 @@ class UsuarioController extends Controller
 
         $usuarios = $this->usuario->find($id);
         
-        return view('inscricao.edit',
+        return view('inscrito.edit',
         [
             'nav' => $nav,
             'usuarios' => $usuarios,
@@ -154,9 +154,12 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->usuario->find($id)->update($request->all());
 
-        return redirect()->route('u.index');
+        $usuarios = $this->usuario->find($id);
+        $usuarios->update($request->all());
+
+        return redirect()->route('i.index');
+
     }
 
     /**

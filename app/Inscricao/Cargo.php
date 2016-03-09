@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\Usuario;
 
 class Cargo extends Model
 {
@@ -31,6 +32,6 @@ class Cargo extends Model
 
     public function usuario()
     {
-        return $this->hasMany('Gerenciador\Usuario');//Tem Vários usuários
+        return $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem Vários usuários
     }
 }

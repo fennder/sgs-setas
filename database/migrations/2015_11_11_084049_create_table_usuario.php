@@ -20,7 +20,7 @@ class CreateTableUsuario extends Migration
             $table->string('foto', 200);
             $table->string('cpf', 14)->unique();
             $table->string('rg', 45);
-            $table->string('nis')->nullable();
+            $table->string('nis')->unique();
             $table->string('orgao_emissor', 45);
             $table->date('data_nascimento');
             $table->string('email_pessoal', 100);
@@ -36,7 +36,7 @@ class CreateTableUsuario extends Migration
             $table->integer('id_estado')->unsigned()->nullable();
             $table->integer('id_cidade')->unsigned()->nullable();
             $table->integer('id_escolaridade')->unsigned()->nullable();
-            $table->integer('id_perfil')->unsigned()->nullable();
+            //$table->integer('id_perfil')->unsigned()->nullable();
             $table->integer('id_vinculo_institucional')->unsigned()->nullable();
             $table->integer('id_departamento')->unsigned()->nullable();
             $table->integer('id_cargo')->unsigned()->nullable();

@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -35,7 +35,7 @@
                       <tr>
                         <td>{{$modulo->id_modulo}}.</td>
                         <td>{{$modulo->descricao}}</td>
-                        <td>{{$modulo->id_curso}}</td>
+                        <td>{{$modulo->curso->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('m.edit', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('m.destroy', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-trash"></i></a>

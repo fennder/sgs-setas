@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{!! route('cu.update', ['id'=>$cursos->id_curso]) !!}" method="POST">
+<form action="{!! route('cs.update', ['id'=>$cursos->id_curso]) !!}" method="POST">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">
@@ -42,14 +42,19 @@
       </div><!--Data Término do Curso -->
     </div><!-- Col 3 -->
 
-    <div class="col-md-4">
-      <div class="form-group has-feedback" >
+    <div class="col-md-6">
+      <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cursos->id_status_curso}}" name="id_status_curso" id="id_status_curso" placeholder="Status Curso">
+          <select class="form-control" name="id_status_curso" id="id_status_curso">
+          @foreach($cursos->statuscurso as $statuscurso)
+            <option value="{{$statuscurso->id_status_curso}}">{{$statuscurso->descricao}}</option>
+          @endforeach
+          </select>
         </div>
-      </div><!-- Status do Curso -->
-    </div><!-- Col 4 -->
+        <small class="text-muted">Órgão</small>
+      </div><!-- Órgão
+    </div><!-- Col 6 -->
 
   </div><!-- row -->
 

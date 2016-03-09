@@ -25,7 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>
-                    <th>Órgão</th>                   
+                    <th>Órgao</th>                  
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
@@ -35,9 +35,7 @@
                       <tr>
                         <td>{{$departamento->id_departamento}}.</td>
                         <td>{{$departamento->descricao}}</td>
-                        
-                        <td>{{$orgaos}}</td>
-                        
+                        <td>{{$departamento->orgao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('dep.edit', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-trash"></i></a>
@@ -70,7 +68,7 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
-              
+          
         </div><!-- /.box-body -->
         
         <div class="box-footer clearfix">

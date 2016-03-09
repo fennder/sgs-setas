@@ -13,6 +13,13 @@ class Inscricao extends Model
      * @var string
      */
     protected $table = 'inscricao';
+    
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_inscricao';
 
     public function curso()
     {

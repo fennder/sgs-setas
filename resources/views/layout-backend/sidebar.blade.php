@@ -68,7 +68,7 @@
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
             <li><a href="{!! route('m.index') !!}">Modulo</a></li>
-            <li><a href="{!! route('cu.index') !!}">Curso</a></li>
+            <li><a href="{!! route('cs.index') !!}">Curso</a></li>
             <li><a href="{!! route('sc.index') !!}">Status Curso</a></li>
           </ul>
         </li>

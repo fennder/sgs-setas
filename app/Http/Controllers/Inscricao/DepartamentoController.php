@@ -31,7 +31,6 @@ class DepartamentoController extends Controller
     {
         
         $departamentos = $this->departamento->paginate(4);
-        $orgaos = $this->orgao->lists('descricao', 'id_orgao');
 
         $page_title = "SGS";
         $page_description = "Lista de Departamentos";
@@ -41,7 +40,6 @@ class DepartamentoController extends Controller
         [
             'nav' => $nav,
             'departamentos' => $departamentos, 
-            'orgaos' => $orgaos,
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);
@@ -58,13 +56,9 @@ class DepartamentoController extends Controller
         $page_description = "Cadastro de Departamento";
         $nav = "Departamento";
 
-        //$orgaos = $this->orgao->lists('descricao', 'id_orgao');
-        $orgaos = $this->orgao->all();
-
         return view('departamento.create',
         [
             'nav' => $nav,
-            'orgaos'=> $orgaos,
             'page_title' => $page_title, 
             'page_description' => $page_description
         ]);
@@ -79,7 +73,6 @@ class DepartamentoController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request->all());
         $this->departamento->create($request->all());
 
         return redirect()->route('dep.index');
@@ -104,7 +97,6 @@ class DepartamentoController extends Controller
      */
     public function edit($id)
     {
-        $orgaos = $this->orgao->all();
 
         $nav = "Editar";
         $page_description = "Editar Departamento";
@@ -113,7 +105,6 @@ class DepartamentoController extends Controller
         return view('departamento.edit',
         [
             'nav' => $nav,
-            'orgaos'=>$orgaos,
             'departamentos' => $departamentos, 
             'page_description' => $page_description
         ]);

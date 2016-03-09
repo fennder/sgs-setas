@@ -26,8 +26,7 @@ class Deficiencia extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao',
-    	'id_curso'
+    	'descricao'
     ];
 
     public function usuario()

@@ -27,10 +27,7 @@ class Escolaridade extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao',
-    	'data_inicio',
-    	'data_fim',
-    	'id_status_curso'
+    	'descricao'
     ];
 
     public function usuario()

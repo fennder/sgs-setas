@@ -12,14 +12,14 @@ class CreateInscricaoTable extends Migration
      */
     public function up()
     {
-        /*Schema::create('inscricao', function (Blueprint $table) {
+        Schema::create('inscricao', function (Blueprint $table) {
             $table->increments('id_inscricao');
             $table->integer('id_curso')->unsigned()->nullable();
-            $table->foreign('id_curso')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_curso')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('Set Null');
             $table->integer('id_usuario')->unsigned()->nullable();
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuario')->onDelete('cascade')->onUpdate('Set Null');
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateInscricaoTable extends Migration
      */
     public function down()
     {
-        //Schema::drop('inscricao');
+        Schema::drop('inscricao');
     }
 }

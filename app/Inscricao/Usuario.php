@@ -14,6 +14,11 @@ class Usuario extends Model
      */
     protected $table = 'usuario';
 
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id_usuario';
 
     /**
@@ -28,6 +33,7 @@ class Usuario extends Model
     	'foto',
     	'cpf',
     	'rg',
+        'nis',
     	'orgao_emissor',
     	'id_estado_rg',
     	'data_nascimento',
@@ -97,10 +103,10 @@ class Usuario extends Model
         return $this->belongsTo('Gerenciador\Inscricao\Escolaridade');//Tem uma escolaridade
     }
 
-    public function perfil()
+    /*public function perfil()
     {
         return $this->belongsTo('Gerenciador\Inscricao\Perfil');//Tem um perfil
-    }
+    }*/
 
     public function deficiencia()
     {

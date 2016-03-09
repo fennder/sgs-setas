@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\Cidade;
 
 class Regiao extends Model
 {
@@ -31,6 +32,6 @@ class Regiao extends Model
 
     public function cidade()
     {
-    	return $this->hasMany('Gerenciador\Instrucao\Cidade'); //Tem várias Cidades
+    	return $this->hasMany('Gerenciador\Instrucao\Cidade', 'id_cidade'); //Tem várias Cidades
     }
 }

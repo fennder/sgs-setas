@@ -34,7 +34,7 @@ class Orgao extends Model
 
     public function departamento()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Departamento'); //Tem muitos departamento
+    	return $this->hasMany('Gerenciador\Inscricao\Departamento', 'id_orgao'); //Tem muitos departamento
     }
 
     /*public function usuario()

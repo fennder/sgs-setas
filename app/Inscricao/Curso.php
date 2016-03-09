@@ -3,6 +3,10 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\StatusCurso;
+use Gerenciador\Inscricao\Usuario;
+use Gerenciador\Inscricao\Inscricao;
+use Gerenciador\Inscricao\Modulo;
 
 class Curso extends Model
 {
@@ -29,21 +33,21 @@ class Curso extends Model
     	'descricao',
     	'data_inicio',
     	'data_termino',
-    	'id_status_curso'
+        'id_status_curso'
     ];
 
     public function statuscurso()
     {
-    	return $this->belongsTo('Gerenciador\Insccricao\StatusCurso'); //O curso tem apenas um status
+    	return $this->belongsTo('Gerenciador\Inscricao\StatusCurso', 'id_status_curso'); //O curso tem apenas um status
     }
 
     public function modulo()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Modulo'); //O Curso tem vários modulos
+    	return $this->hasMany('Gerenciador\Inscricao\Modulo', 'id_modulo'); //O Curso tem vários modulos
     }
 
     public function usuario()
     {
-    	return $this->belongsToMany('Gerenciador\Inscricao\Usuario', 'inscricao'); //O Curso tem várias inscrições
+    	return $this->belongsToMany('Gerenciador\Inscricao\Inscricao', 'id_usuario'); //O Curso tem várias inscrições
     }
 }

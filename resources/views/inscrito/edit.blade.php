@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{!! route('i.update') !!}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('i.update', ['id'=>$usuarios->id_usuario]) }}" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">
@@ -72,7 +72,7 @@
     
      <div class="col-md-3" >  
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="orão_emissor" id="orgao_emissor" value="{{ $usuarios->orgao_emissor }}">
+        <input type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
@@ -202,7 +202,7 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" name="nis" id="nis" value="{{ $usuarios->nis }}">
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           <small class="text-muted">Número de Identificação Social</small>
         </div><!-- NIS -->
@@ -324,7 +324,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Salvar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
 
