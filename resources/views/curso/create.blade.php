@@ -46,9 +46,9 @@
         <div class="form-group has-feedback">
         <select class="form-control" name="id_status_curso" id="id_status_curso">
             <option disabled selected> - Status Curso - </option>
-              <!-- @foreach ($cursos as $curso)
-                <option value="{{ $curso->statuscurso->id_status_curso }}">{{ $curso }}</option>
-              @endforeach -->
+              @foreach($scursos as $scurso)
+                <option value="{{ $scurso->id_status_curso }}">{{ $scurso->descricao }}</option>
+              @endforeach
           </select>
           <small class="text-muted">Status Curso</small>
       </div><!-- Curso -->

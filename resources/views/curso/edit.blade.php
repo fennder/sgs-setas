@@ -47,13 +47,16 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_status_curso" id="id_status_curso">
-          @foreach($cursos->statuscurso as $statuscurso)
-            <option value="{{$statuscurso->id_status_curso}}">{{$statuscurso->descricao}}</option>
-          @endforeach
+            <option value="{{$cursos->id_status_curso}}">{{$cursos->statuscurso->descricao}}</option>
+            @foreach ($scursos as $scurso)
+              @if($cursos->id_status_curso != $scurso->id_status_curso)
+                <option value="{{$scurso->id_status_curso}}">{{$scurso->descricao}}</option>
+              @endif
+            @endforeach
           </select>
         </div>
-        <small class="text-muted">Órgão</small>
-      </div><!-- Órgão
+        <small class="text-muted">Status do Curso</small>
+      </div><!-- Órgão -->
     </div><!-- Col 6 -->
 
   </div><!-- row -->

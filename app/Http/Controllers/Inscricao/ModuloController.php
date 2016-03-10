@@ -4,17 +4,20 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Modulo;
+use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
 class ModuloController extends Controller
 {
     private $modulo;
+    private $curso;
 
-    public function __construct(Modulo $modulo)
+    public function __construct(Modulo $modulo, Curso $curso)
     {
     
         $this->modulo = $modulo;
+        $this->curso = $curso;
 
         //$this->middleware('auth');
     }
@@ -52,11 +55,14 @@ class ModuloController extends Controller
         $page_description = "Cadastro de Modulos";
         $nav = "Modulos";
 
+        $cursos = $this->curso->all();
+
         return view('modulo.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'cursos' => $cursos
         ]);
     }
 
@@ -92,13 +98,17 @@ class ModuloController extends Controller
      */
     public function edit($id)
     {
+        
         $nav = "Editar";
         $page_description = "Editar Módulo";
+        
         $modulos = $this->modulo->find($id);
+        $cursos = $this->curso->all();
         
         return view('modulo.edit',
         [
             'nav' => $nav,
+            'cursos' => $cursos,
             'modulos' => $modulos, 
             'page_description' => $page_description
         ]);

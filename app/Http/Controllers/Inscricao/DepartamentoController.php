@@ -29,19 +29,21 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        
-        $departamentos = $this->departamento->paginate(4);
 
         $page_title = "SGS";
         $page_description = "Lista de Departamentos";
         $nav = "Departamento";
 
+        $departamentos = $this->departamento->paginate(4);
+        $orgaos = $this->orgao->all();
+
         return view('departamento.index',
         [
-            'nav' => $nav,
-            'departamentos' => $departamentos, 
+            'nav' => $nav, 
             'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'departamentos' => $departamentos,
+            'orgaos' => $orgaos
         ]);
     }
 
@@ -56,11 +58,15 @@ class DepartamentoController extends Controller
         $page_description = "Cadastro de Departamento";
         $nav = "Departamento";
 
+        $orgaos = $this->orgao->all();
+
         return view('departamento.create',
         [
             'nav' => $nav,
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'orgaos' => $orgaos
+
         ]);
     }
 
@@ -100,13 +106,16 @@ class DepartamentoController extends Controller
 
         $nav = "Editar";
         $page_description = "Editar Departamento";
+
         $departamentos = $this->departamento->find($id);
+        $orgaos = $this->orgao->all();
         
         return view('departamento.edit',
         [
-            'nav' => $nav,
-            'departamentos' => $departamentos, 
-            'page_description' => $page_description
+            'nav' => $nav, 
+            'page_description' => $page_description,
+            'departamentos' => $departamentos,
+            'orgaos' => $orgaos
         ]);
     }
 

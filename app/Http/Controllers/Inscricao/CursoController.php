@@ -56,7 +56,7 @@ class CursoController extends Controller
         $page_description = "Cadastro de Cursos";
         $nav = "Curso";
 
-        $scursos = $this->scurso->lists('descricao', 'id_status_curso');
+        $scursos = $this->scurso->all();
 
         return view('curso.create',
         [
@@ -104,7 +104,7 @@ class CursoController extends Controller
         $page_description = "Editar Curso";
 
         $cursos = $this->curso->find($id);
-        $scursos = $this->scurso->lists('descricao', 'id_status_curso');
+        $scursos = $this->scurso->all();
         
         return view('curso.edit',
         [

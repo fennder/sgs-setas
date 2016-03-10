@@ -34,8 +34,8 @@
                     @foreach($inscricoes as $inscricao)
                       <tr>
                         <td>{{$inscricao->id_inscricao}}.</td>
-                        <td>{{$inscricao->id_curso}}</td>
-                        <td>{{$inscricao->id_usuario}}</td>
+                        <td>{{$inscricao->curso->descricao}}</td>
+                        <td>{{$inscricao->usuario->nome_cracha}}</td>
                         <td class="text-center">
                           <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>

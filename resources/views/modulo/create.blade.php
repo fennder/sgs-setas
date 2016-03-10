@@ -17,23 +17,26 @@
 
   <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Módulo do Curso">
         </div>
       </div><!-- Módulo -->
-    </div><!-- Col 12 -->
+    </div><!-- Col 6 -->
 
-    <div class="col-md-12">
-      <div class="form-group has-feedback" >
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="id_curso" id="id_curso" placeholder="Curso">
-        </div>
-      </div><!-- Módulo -->
-    </div><!-- Col 12 -->
+    <div class="col-md-6">
+        <div class="form-group has-feedback">
+        <select class="form-control" name="id_curso" id="id_curso">
+            <option disabled selected> - Status Curso - </option>
+              @foreach($cursos as $curso)
+                <option value="{{ $curso->id_curso }}">{{ $curso->descricao }}</option>
+              @endforeach
+          </select>
+          <small class="text-muted">Curso</small>
+      </div><!-- Curso -->
+    </div><!-- Col 6 -->
 
   </div><!-- row -->
 

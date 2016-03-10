@@ -5,6 +5,7 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
@@ -12,12 +13,14 @@ class CidadeController extends Controller
 {
     private $estado;
     private $cidade;
+    private $regiao;
 
-    public function __construct(Estado $estado, Cidade $cidade)
+    public function __construct(Estado $estado, Cidade $cidade, Regiao $regiao)
     {
     
         $this->estado = $estado;
         $this->cidade = $cidade;
+        $this->regiao = $regiao;
 
         //$this->middleware('auth');
     }
@@ -30,6 +33,8 @@ class CidadeController extends Controller
     public function index()
     {
         $cidades = $this->cidade->paginate(4);
+        $estados = $this->estado->all();
+        $regioes = $this->regiao->all();
     
         $page_title = "SGS";
         $page_description = "Lista de Cidades";
@@ -38,9 +43,11 @@ class CidadeController extends Controller
         return view('cidade.index',
         [
             'nav' => $nav,
-            'cidades' => $cidades, 
             'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'cidades' => $cidades,
+            'estados' => $estados,
+            'regioes' => $regioes
         ]);
     }
 
@@ -55,11 +62,16 @@ class CidadeController extends Controller
         $page_description = "Cadastro de Cidades";
         $nav = "Cidade";
 
+        $estados = $this->estado->all();
+        $regioes = $this->regiao->all();
+
         return view('cidade.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'estados' => $estados,
+            'regioes' => $regioes
         ]);
     }
 
@@ -98,13 +110,18 @@ class CidadeController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Cidade";
+
         $cidades = $this->cidade->find($id);
+        $estados = $this->estado->all();
+        $regioes = $this->regiao->all();
         
         return view('cidade.edit',
         [
             'nav' => $nav,
             'cidades' => $cidades, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'estados' => $estados,
+            'regioes' => $regioes
         ]);
     }
 

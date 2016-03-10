@@ -26,32 +26,48 @@
       </div><!-- Nome Completo -->
     </div><!-- Col 6 -->
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <input type="text" class="form-control" value="{{$cidades->cod_ibge}}" name="cod_ibge" id="cod_ibge">
         </div>
       </div><!-- Código do IBGE -->
-    </div><!-- Col 4 -->
+    </div><!-- Col 6 -->
 
-    <div class="col-md-4">
-      <div class="form-group has-feedback" >
+    <div class="col-md-6">
+      <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->id_estado}}" name="id_estado" id="id_estado">
+          <select class="form-control" name="id_estado" id="id_estado">
+            <option value="{{$cidades->id_estado}}">{{$cidades->estado->nome}}</option>
+            @foreach ($estados as $estado)
+              @if($cidades->id_estado != $estado->id_estado)
+                <option value="{{$estado->id_estado}}">{{$estado->nome}}</option>
+              @endif
+            @endforeach
+          </select>
         </div>
-      </div><!-- Estado -->
-    </div><!-- Col 4 -->
+        <small class="text-muted">Estado</small>
+      </div><!-- Órgão -->
+    </div><!-- Col 6 -->
 
-    <div class="col-md-4">
-      <div class="form-group has-feedback" >
+    <div class="col-md-6">
+      <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->id_regiao}}" name="id_regiao" id="id_regiao">
+          <select class="form-control" name="id_regiao" id="id_regiao">
+            <option value="{{$cidades->id_regiao}}">{{$cidades->regiao->descricao}}</option>
+            @foreach ($regioes as $regiao)
+              @if($cidades->id_regiao != $regiao->id_regiao)
+                <option value="{{$regiao->id_regiao}}">{{$regiao->descricao}}</option>
+              @endif
+            @endforeach
+          </select>
         </div>
-      </div><!-- Região -->
-    </div><!-- Col 4 -->  
+        <small class="text-muted">Região</small>
+      </div><!-- Órgão -->
+    </div><!-- Col 6 -->
 
   </div><!-- row -->
 

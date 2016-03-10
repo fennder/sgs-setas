@@ -35,15 +35,17 @@ class InscricaoController extends Controller
         $inscricoes = $this->inscricao->paginate(4);
     
         $page_title = "SGS";
-        $page_description = "Lista de Inscrição";
+        $page_description = "Lista de Inscrições";
         $nav = "Inscrição";
 
         return view('inscricao.index',
         [
-            'nav' => $nav,
-            'inscricoes' => $inscricoes, 
+            'nav' => $nav, 
             'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'inscricoes' => $inscricoes,
+            'inscricoes' => $inscricoes,
+            'inscricoes' => $inscricoes
         ]); 
     }
 
@@ -58,8 +60,8 @@ class InscricaoController extends Controller
         $page_description = "Cadastro de Inscrições";
         $nav = "Inscrição";
 
-        $cursos = $this->curso->lists('id_curso', 'descricao');
-        $usuarios = $this->usuario->lists('id_usuario', 'nome');
+        $cursos = $this->curso->all();
+        $usuarios = $this->usuario->all();
 
         return view('inscricao.create',
         [

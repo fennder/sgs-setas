@@ -28,18 +28,15 @@
     </div><!-- Col 6 -->
 
     <div class="col-md-6">
-      <div class="form-group has-feedback">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_orgao" id="id_orgao">
-            <option disabled selected> - Órgao - </option>
-             @foreach ($orgaos as $orgao)
-              <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
-            @endforeach
+        <div class="form-group has-feedback">
+        <select class="form-control" name="id_orgao" id="id_orgao">
+            <option disabled selected> - Orgao - </option>
+              @foreach($orgaos as $orgao)
+                <option value="{{ $orgao->id_orgao }}">{{ $orgao->descricao }}</option>
+              @endforeach
           </select>
-        </div>
-        <small class="text-muted">Departamento</small>
-      </div><!-- Órgão -->
+          <small class="text-muted">Órgão</small>
+      </div><!-- Curso -->
     </div><!-- Col 6 -->
 
   </div><!-- row -->

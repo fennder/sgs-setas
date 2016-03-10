@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Inscricao extends Model
 {
@@ -23,11 +24,11 @@ class Inscricao extends Model
 
     public function curso()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'curso'); // Tem apenas um curso
+    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso'); // Tem apenas um curso
     }
 
     public function usuario()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Usuario', 'usuario'); // Tem apenas um usuario
+    	return $this->belongsTo('Gerenciador\Inscricao\Usuario', 'id_usuario'); // Tem apenas um usuario
     }
 }

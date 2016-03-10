@@ -37,8 +37,8 @@ class Orgao extends Model
     	return $this->hasMany('Gerenciador\Inscricao\Departamento', 'id_orgao'); //Tem muitos departamento
     }
 
-    /*public function usuario()
+    public function usuario()
     {
     	return $this->hasMany('Gerenciador\Inscricao\Usuario'); //Tem muitos usuários
-    }*/
+    }
 }

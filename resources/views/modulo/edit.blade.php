@@ -17,23 +17,32 @@
 
   <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao">
         </div>
-      </div><!-- Nome Completo -->
-    </div><!-- Col 12 -->
+        <small class="text-muted">Nome do Modulo</small>
+      </div><!-- Nome do Módulo -->
+    </div><!-- Col 6 -->
 
-    <div class="col-md-12">
-      <div class="form-group has-feedback" >
+    <div class="col-md-6">
+      <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="id_curso" id="id_curso" value="{{$modulos->id_curso}}">
-        </div>
-      </div><!-- Módulo -->
-    </div><!-- Col 12 -->
+          <select class="form-control" name="id_curso" id="id_curso">
+                <option value="{{$modulos->id_cruso}}">{{$modulos->curso->descricao}}</option>
+              @foreach ($cursos as $curso)
+                @if($modulos->id_curso != $curso->id_curso)
+                  <option value="{{$curso->id_curso}}">{{$curso->descricao}}</option>
+                @endif
+              @endforeach
+            </select>
+        </div><!-- Input -->
+        <small class="text-muted">Nome do Curso</small>
+      </div><!-- Form -->
+    </div><!-- Col 6 -->
 
   </div><!-- row -->
 

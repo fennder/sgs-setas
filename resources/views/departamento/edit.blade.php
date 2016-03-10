@@ -23,6 +23,7 @@
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <input type="text" class="form-control" value="{{$departamentos->descricao}}" name="descricao" id="descricao">
         </div>
+        <small class="text-muted">Departamento</small>
       </div><!-- Nome do Departamento -->
     </div><!-- Col 6 -->
 
@@ -30,10 +31,14 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input class="form-control" value="{{$orgao->id_orgao}}" name="id_orgao" id="id_orgao">
-            <!-- @foreach($orgaos as $orgao)
+          <select class="form-control" name="id_orgao" id="id_orgao">
+            <option value="{{$departamentos->id_orgao}}">{{$departamentos->orgao->descricao}}</option>
+            @foreach ($orgaos as $orgao)
+              @if($departamentos->id_orgao != $orgao->id_orgao)
                 <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
-            @endforeach -->
+              @endif
+            @endforeach
+          </select>
         </div>
         <small class="text-muted">Órgão</small>
       </div><!-- Órgão -->

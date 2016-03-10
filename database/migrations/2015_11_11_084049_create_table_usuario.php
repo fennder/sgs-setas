@@ -38,6 +38,7 @@ class CreateTableUsuario extends Migration
             $table->integer('id_escolaridade')->unsigned()->nullable();
             //$table->integer('id_perfil')->unsigned()->nullable();
             $table->integer('id_vinculo_institucional')->unsigned()->nullable();
+            $table->integer('id_orgao')->unsigned()->nullable();
             $table->integer('id_departamento')->unsigned()->nullable();
             $table->integer('id_cargo')->unsigned()->nullable();
             $table->integer('id_funcao')->unsigned()->nullable();

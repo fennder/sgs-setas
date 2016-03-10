@@ -21,23 +21,23 @@
         <div class="form-group has-feedback">
         <select class="form-control" name="id_curso" id="id_curso">
             <option disabled selected> - Curso - </option>
-              @foreach ($cursos as $curso)
-                <option>{{ $curso }}</option>
+              @foreach($cursos as $curso)
+                <option value="{{ $curso->id_curso }}">{{ $curso->descricao }}</option>
               @endforeach
           </select>
-          <small class="text-muted">Cursos</small>
+          <small class="text-muted">Curso</small>
       </div><!-- Curso -->
     </div><!-- Col 6 -->
 
     <div class="col-md-6">
         <div class="form-group has-feedback">
         <select class="form-control" name="id_usuario" id="id_usuario">
-            <option disabled selected> - Usuario - </option>
-              @foreach ($usuarios as $usuario)
-                <option>{{ $usuario }}</option>
+            <option disabled selected> - Inscrito - </option>
+              @foreach($usuarios as $usuario)
+                <option value="{{ $usuario->id_usuario }}">{{ $usuario->nome_cracha }}</option>
               @endforeach
           </select>
-          <small class="text-muted">Usuarios</small>
+          <small class="text-muted">Nome do Inscrito</small>
       </div><!-- Curso -->
     </div><!-- Col 6 -->
 
