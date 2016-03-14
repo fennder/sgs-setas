@@ -33,6 +33,6 @@ class VinculoInstitucional extends Model
 
     public function usuario()
     {
-    	//rerurn $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem muitos usuários
+    	return $this->hasMany('Gerenciador\Inscricao\Usuario', 'id_usuario');//Tem muitos usuários
     }
 }

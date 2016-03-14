@@ -3,15 +3,15 @@
 @section('content')
 <div class="login-box">
 <div class="login-logo">
-  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
+  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" width="250" height="200">
   </div>
   <div class="login-logo">
-    <a href="{!! route('p.getEmail') !!}"><b>SGS - </b>SETAS</a>
+    <a href="{!! route('p.getEmail') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
   </div>
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Faça o login para iniciar</p>
+  <h4><b><p class="login-box-msg">Digite aqui o se email</p></b></h4>
     <form action="{!! route('p.postEmail') !!}" method="POST">
     {{ csrf_field() }}
     
@@ -35,17 +35,20 @@
 
       <div class="row">
         <!-- /.col -->
-        <div class="col-xs-12" align="right">
-          <button type="submit" class="btn btn-primary "> Enviar link e reseta senha</button>
+        <div class="col-xs-8" align="left">
+          <button type="submit" class="btn btn-primary ">Recuperar senha</button>
         </div>
         <!-- /.col -->
-
+        <div class="col-xs-4" align="right">
+          <a  href="{!! route('a.getLogin') !!}" class="btn btn-default ">Voltar</a>
+        </div>
       </div>
+
     </form>
 
-    <a href="{!! route('a.getLogin') !!}">Tela de login de usuário</a><br>
-    <a href="{!! route('a.getRegister') !!}" class="text-center">Tela de registro de usuário</a>
 
+    <!-- <a href="{!! route('a.getLogin') !!}" class="text-center"><h3 style="color:blue">Tela de login</h3></a>
+    <a href="{!! route('a.getRegister') !!}" class="text-center"><h3 style="color:blue">Tela de registro de usuário</h3></a> -->
   </div>
   <!-- /.login-box-body -->
 </div>

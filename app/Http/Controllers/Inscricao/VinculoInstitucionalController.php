@@ -115,7 +115,8 @@ class VinculoInstitucionalController extends Controller
         $vinculos = $this->vinculo->find($id);
         $vinculos->update($request->all());
 
-        return redirect()->route('vi.index'); 
+        //return redirect()->route('vi.index');
+        return redirect()->back();
     }
 
     /**

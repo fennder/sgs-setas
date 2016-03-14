@@ -6,10 +6,10 @@
 <!-- Box formulario dados pessoais -->
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Dados Pessoais do Inscrito</h3>
+    <h3 class="box-title">Dados Pessoais</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-      <i class="fa fa-minus"></i></button>
+      <!-- <i class="fa fa-minus"></i></button> -->
     </div>
   </div>
 
@@ -18,15 +18,17 @@
   <div class="row">
 
     <div class="col-md-7">
+    <small class="text-muted">Nome Completo</small>
       <div class="form-group has-feedback" >
-        <input type="text" class="form-control" value="{{ $usuarios->nome }}" name="nome" id="nome">
+        <input type="text" class="form-control" value="{{ $users->name }}" name="name" id="name" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Completo -->
     </div><!-- Col 7 -->
 
     <div class="col-md-5">
+    <small class="text-muted">Nome para o crachá</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}">
+        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Crachá -->
     </div><!-- Col 5 -->
@@ -36,25 +38,28 @@
   <div class="row">
 
     <div class="col-md-4">
+    <small class="text-muted">CPF</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}">
+        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
 
     <div class="col-md-3" >
+    <small class="text-muted">Data de Nascimento</small>
       <div class="form-group has-feedback">
-        <input type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento">
+        <input type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-        <small class="text-muted">Data de Nascimento</small>
+        
       </div><!--Data Nascimento -->
     </div><!-- Col 3 -->
 
     <div class="col-md-5">
+    <small class="text-muted">Email pessoal</small>
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input type="email" class="form-control" name="email_pessoal" id="email_pessoal" value="{{ $usuarios->email_pessoal }}">
+          <input type="email" class="form-control" name="email_pessoal" id="email_pessoal" value="{{ $users->email }}" required>
         </div>
       </div><!-- Email pessoal -->
     </div><!-- Col 5 -->
@@ -64,37 +69,48 @@
   <div class="row">
 
     <div class="col-md-4">
+    <small class="text-muted">Identidade</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}">
+        <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Identidade -->
     </div><!-- Col 4 -->
     
-     <div class="col-md-3" >  
+     <div class="col-md-3" > 
+     <small class="text-muted">Órgão Emissor</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor">
+        <input type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
 
     <div class="col-md-2">
-        <div class="form-group has-feedback">
-        <select class="form-control" name="id_estado_rg" id="id_estado_rg" value="{{ $usuarios->id_estado_rg }}">
-            <option disabled selected> - UF - </option>
-              @foreach ($estado_rgs as $estado_rg)
-                <option>{{ $estado_rg }}</option>
-              @endforeach
+      <div class="form-group has-feedback">
+        <small class="text-muted">UF - RG</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_estado_rg" id="id_estado_rg" required>
+            <option value="{{$usuarios->id_estado_rg}}">{{$usuarios->estado_rg->uf}}</option>
+            @foreach ($estado_rgs as $estado_rg)
+              @if($usuarios->id_estado_rg != $estado_rg->id_estado)
+                <option value="{{$estado_rg->id_estado}}">{{$estado_rg->uf}}</option>
+              @endif
+            @endforeach
           </select>
-          <small class="text-muted">Estado do RG</small>
-      </div><!-- UF Emissor -->
-      </div><!-- Col 2 -->
+        </div>
+      </div><!-- Estado RG -->
+    </div><!-- Col 2 -->
 
     <div class="col-md-3">
+    <small class="text-muted">Sexo</small>
       <div class="form-group has-feedback">
-        <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}">
-          <option disabled selected> - Sexo - </option>
-          <option>F</option>
-          <option>M</option>
+        <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}" required>
+          <option value="{{$usuarios->sexo}}">{{$usuarios->sexo}}</option>
+            @if($usuarios->sexo == "F")
+              <option value="M">Masculino</option>
+            @else
+              <option value="F">Feminino</option>
+            @endif
         </select>
       </div> <!-- Sexo -->
     </div><!-- Col 3 -->
@@ -104,16 +120,18 @@
   <div class="row">
     
     <div class="col-md-3">
+    <small class="text-muted">CEP Residencial</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" >
+        <input type="text" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
-        <small class="text-muted">CEP residêncial</small>
+        
       </div><!-- CEP -->
     </div><!-- Col 3 -->
 
     <div class="col-md-9">
+    <small class="text-muted">Endereço</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $usuarios->endereco }}">
+        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $usuarios->endereco }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Endereço -->
     </div><!-- Col 9 -->
@@ -123,31 +141,46 @@
   <div class="row">
       
     <div class="col-md-5">
+    <small class="text-muted">Complemento</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}">
+        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
 
     <div class="col-md-4">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_cidade" id="id_cidade" value="{{ $usuarios->id_cidade }}">
-          <option disabled selected> - Cidade - </option>
+      <small class="text-muted">Cidade</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_cidade" id="id_cidade" required>
+            <option value="{{$usuarios->id_cidade}}">{{$usuarios->cidade->nome}}</option>
             @foreach ($cidades as $cidade)
-              <option>{{ $cidade }}</option>
+              @if($usuarios->id_cidade != $cidade->id_cidade)
+                <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
+              @endif
             @endforeach
-        </select>
+          </select>
+        </div>
+        
       </div><!-- Cidade -->
     </div><!-- Col 4 -->
 
     <div class="col-md-3">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_estado" id="id_estado" value="{{ $usuarios->id_estado }}">
-          <option disabled selected> - Estado - </option>
+      <small class="text-muted">Estado</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_estado" id="id_estado" required>
+            <option value="{{$usuarios->id_estado}}">{{$usuarios->estado->nome}}</option>
             @foreach ($estados as $estado)
-              <option>{{ $estado }}</option>
+              @if($usuarios->id_estado != $estado->id_estado)
+                <option value="{{$estado->id_estado}}">{{$estado->nome}}</option>
+              @endif
             @endforeach
-        </select>
+          </select>
+        </div>
+        
       </div><!-- Estado -->
     </div><!-- Col 3 -->
 
@@ -156,26 +189,34 @@
   <div class="row">
 
     <div class="col-md-3">
+    <small class="text-muted">Telefone Pessoal</small>
       <div class="form-group has-feedback input-group">
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}">
+        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
     <div class="col-md-5">
       <div class="form-group has-feedback">
-        <select class="form-control" name="id_escolaridade" id="id_escolaridade" value="{{ $usuarios->id_escolaridade }}">
-          <option disabled selected> - Escolaridade - </option>
-          @foreach ($escolaridades as $escolaridade)
-            <option>{{ $escolaridade }}</option>
-          @endforeach
-        </select>
+      <small class="text-muted">Escolaridade</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_escolaridade" id="id_escolaridade" required>
+            <option value="{{$usuarios->id_escolaridade}}">{{$usuarios->escolaridade->descricao}}</option>
+            @foreach ($escolaridades as $escolaridade)
+              @if($usuarios->id_escolaridade != $escolaridade->id_escolaridade)
+                <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option>
+              @endif
+            @endforeach
+          </select>
+        </div>
+        
       </div><!-- Escolaridade -->
     </div><!-- Col 5 -->
 
-    <div class="col-md-4">
+    <!-- <div class="col-md-4">
       <div class="form-group">
         <input class="form-control" type="file" class="form-control-file" name="foto" id="foto" value="{{ $usuarios->foto }}">
         <small class="text-muted">Foto do Inscrito</small>
@@ -189,10 +230,10 @@
 <!-- Box formulario dados institucionais -->
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Dados Profissionais do Inscrito</h3>
+    <h3 class="box-title">Dados Profissionais</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-      <i class="fa fa-minus"></i></button>
+      <!-- <i class="fa fa-minus"></i></button> -->
     </div>
   </div>
 
@@ -201,26 +242,29 @@
     <div class="row">    
 
       <div class="col-md-4">
+      <small class="text-muted">Número de Identificação Social</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis">
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          <small class="text-muted">Número de Identificação Social</small>
+          
         </div><!-- NIS -->
       </div><!-- Col 4 -->
 
       <div class="col-md-3" >
+      <small class="text-muted">Data de Início no Serviço</small>
         <div class="form-group has-feedback">
-          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico }}">
+          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico }}" required>
           <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          <small class="text-muted">Data de Início no Serviço</small>
+          
         </div><!--Data Nascimento -->
       </div><!-- Col 3 -->
 
       <div class="col-md-5">
+      <small class="text-muted">Email Institucional</small>
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br">
+            <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br" required>
           </div>
         </div><!-- Email trabalho -->
       </div><!-- Col 5 -->
@@ -229,94 +273,109 @@
 
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-4">
+      <small class="text-muted">Telefone do Trabalho</small>
         <div class="form-group has-feedback input-group">
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_institucional" id="telefone_institucional" value="{{ $usuarios->telefone_institucional }}">
+          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
         </div><!-- Telefone Trabalho -->
+        
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade" value="{{ $usuarios->id_cidade }}">
-            <option disabled selected> - Perfil - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
+        <small class="text-muted">Vinculo</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional" required>
+              <option value="{{$usuarios->id_vinculo_institucional}}">{{$usuarios->vinculoinstitucional->descricao}}</option>
+              @foreach ($vinculos as $vinculo)
+                @if($usuarios->id_vinculo_institucional != $vinculo->id_vinculo_institucional)
+                  <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
+                @endif
               @endforeach
-          </select>
-        </div><!-- Cidade -->
+            </select>
+          </div>
+          
+        </div><!-- Órgão -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
-            <option disabled selected> - Vinculo - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
+        <small class="text-muted">Órgão</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_orgao" id="id_orgao" required>
+              <option value="{{$usuarios->id_orgao}}">{{$usuarios->orgao->descricao}}</option>
+              @foreach ($orgaos as $orgao)
+                @if($usuarios->id_orgao != $orgao->id_orgao)
+                  <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
+                @endif
               @endforeach
-          </select>
-        </div><!-- Estado -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-3">
-        <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
-            <option disabled selected> - Órgão - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
-              @endforeach
-          </select>
-        </div><!-- Estado -->
+            </select>
+          </div>
+          
+        </div><!-- Órgão -->
       </div><!-- Col 3 -->
 
     </div><!-- row -->
 
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
-            <option disabled selected> - Departamento - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
+        <small class="text-muted">Departamento</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_departamento" id="id_departamento" required>
+              <option value="{{$usuarios->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
+              @foreach ($departamentos as $departamento)
+                @if($usuarios->id_departamento != $departamento->id_departamento)
+                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+                @endif
               @endforeach
-          </select>
-        </div><!-- Cidade -->
+            </select>
+          </div>
+          
+        </div><!-- Departamento -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
-            <option disabled selected> - Cargo - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
+        <small class="text-muted">Cargo</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_cargo" id="id_cargo" required>
+              <option value="{{$usuarios->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
+              @foreach ($cargos as $cargo)
+                @if($usuarios->id_cargo != $cargo->id_cargo)
+                  <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
+                @endif
               @endforeach
-          </select>
-        </div><!-- Cidade -->
+            </select>
+          </div>
+          
+        </div><!-- Departamento -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
-            <option disabled selected> - Função - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
+        <small class="text-muted">Função</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_funcao" id="id_funcao" required>
+              <option value="{{$usuarios->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
+              @foreach ($funcoes as $funcao)
+                @if($usuarios->id_funcao != $funcao->id_funcao)
+                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
+                @endif
               @endforeach
-          </select>
-        </div><!-- Estado -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-3">
-        <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
-            <option disabled selected> - Órgão - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
-              @endforeach
-          </select>
-        </div><!-- Estado -->
+            </select>
+          </div>
+          
+        </div><!-- Departamento -->
       </div><!-- Col 3 -->
 
     </div><!-- row -->

@@ -5,9 +5,12 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Curso;
-use Gerenciador\Inscricao\Usuario;
+use Gerenciador\User;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
+Use Session;
+
 
 class InscricaoController extends Controller
 {
@@ -15,12 +18,12 @@ class InscricaoController extends Controller
     private $curso;
     private $usuario;
 
-    public function __construct(Inscricao $inscricao, Curso $curso, Usuario $usuario)
+    public function __construct(Inscricao $inscricao, Curso $curso, User $usuario)
     {
         $this->inscricao = $inscricao;
         $this->curso = $curso;
         $this->usuario = $usuario;
-        
+        $this->middleware('auth');
         
         //$this->middleware('guest');
     }
@@ -61,7 +64,10 @@ class InscricaoController extends Controller
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
-        $usuarios = $this->usuario->all();
+        
+        $usuarios = Auth::user();
+
+        //$usuarios = $this->usuario->all();
 
         return view('inscricao.create',
         [
@@ -81,6 +87,9 @@ class InscricaoController extends Controller
      */
     public function store(Request $request)
     {
+        
+        //dd($request->all());
+
         $this->inscricao->create($request->all());
 
         return redirect()->route('ins.index');

@@ -22,6 +22,8 @@ class Inscricao extends Model
      */
     protected $primaryKey = 'id_inscricao';
 
+    protected $fillable = ['id', 'id_curso'];
+
     public function curso()
     {
     	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso'); // Tem apenas um curso
@@ -29,6 +31,6 @@ class Inscricao extends Model
 
     public function usuario()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Usuario', 'id_usuario'); // Tem apenas um usuario
+    	return $this->belongsTo('Gerenciador\User', 'id'); // Tem apenas um usuario
     }
 }

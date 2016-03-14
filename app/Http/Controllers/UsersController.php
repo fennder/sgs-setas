@@ -7,17 +7,44 @@ use Illuminate\Http\Request;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\User;
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Orgao;
+use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\VinculoInstitucional;
+use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Cargo;
+use Gerenciador\Inscricao\Funcao;
 use Session;
 use Auth;
 
 class UsersController extends Controller
 {
+    private $estado_rg;
     private $user;
+    private $cidade;
+    private $estado;
+    private $escolaridade;
+    private $vinculo;
+    private $orgao;
+    private $departamento;
+    private $cargo;
+    private $funcao;
 
-    public function __construct(User $user)
+    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
     {
         $this->user = $user;
-        $this->middleware('auth');
+        $this->estado_rg = $estado_rg;
+        $this->cidade = $cidade;
+        $this->estado = $estado;
+        $this->escolaridade = $escolaridade;
+        $this->vinculo = $vinculo;
+        $this->orgao = $orgao;
+        $this->departamento = $departamento;
+        $this->cargo = $cargo;
+        $this->funcao = $funcao;
+
+        //$this->middleware('auth');
     }
     
     /**
@@ -29,10 +56,10 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $users = $this->user->paginate(10);
+            $users = $this->user->paginate(5);
 
-            $page_title = "SGS";
-            $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+            $page_title = "SGI";
+            $page_description = "Sistema de Gerenciamento de Inscrição";
             $nav = "Lista";
 
             return view('user.lista',['nav' => $nav, 'users' => $users, 'page_title'=>$page_title, 'page_description'=>$page_description]);
@@ -85,8 +112,29 @@ class UsersController extends Controller
     public function edit($id)
     {
         $users = $this->user->find($id);
-        //dd($users);
-        return view('user.editar', ['users' => $users]);    
+        $estado_rgs = $this->estado_rg->all();
+        $cidades = $this->cidade->all();
+        $estados = $this->estado->all();
+        $escolaridades = $this->escolaridade->all();
+        $vinculos = $this->vinculo->all();
+        $orgaos = $this->orgao->all();
+        $departamentos = $this->departamento->all();
+        $cargos = $this->cargo->all();
+        $funcoes = $this->funcao->all();
+
+        return view('user.editar', 
+            [
+                'users' => $users,
+                'estado_rgs' => $estado_rgs,
+                'cidades' => $cidades,
+                'estados' => $estados,
+                'escolaridades' => $escolaridades,
+                'vinculos' => $vinculos,
+                'departamentos' => $departamentos,
+                'cargos' => $cargos,
+                'funcoes' => $funcoes,
+                'orgaos' => $orgaos
+            ]);    
     }
 
     /**
@@ -103,7 +151,7 @@ class UsersController extends Controller
 
         $users->save();
 
-        return redirect()->back();
+        return redirect()->route('h.index');
     }
 
     /**

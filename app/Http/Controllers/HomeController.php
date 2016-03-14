@@ -2,21 +2,50 @@
 
 namespace Gerenciador\Http\Controllers;
 
+use Gerenciador\User;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Deficiencia;
+use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\VinculoInstitucional;
+use Gerenciador\Inscricao\Funcao;
+use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Orgao;
+use Gerenciador\Inscricao\Cargo;
+use Gerenciador\Inscricao\Usuario;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
-use Gerenciador\User;
 use Session;
 use Auth;
+
 
 class HomeController extends Controller
 {
 
-    private $user;
+    private $usuario;
+    private $estado;
+    private $cidade;
+    private $escolaridade;
+    private $estado_rg;
+    private $vinculo;
+    private $orgao;
+    private $departamento;
+    private $cargo;
+    private $funcao;
 
-    public function __construct(User $user)
+    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
     {
-        $this->user = $user;
+        $this->usuario = $usuario;
+        $this->estado = $estado;
+        $this->estado_rg = $estado_rg;
+        $this->cidade = $cidade;
+        $this->escolaridade = $escolaridade;
+        $this->vinculo = $vinculo;
+        $this->orgao = $orgao;
+        $this->departamento = $departamento;
+        $this->cargo = $cargo;
+        $this->funcao = $funcao;
         $this->middleware('auth');
     }
     
@@ -30,19 +59,47 @@ class HomeController extends Controller
 
         if(Auth::check()){
 
-            $users = Auth::user();
+            $usuario = Auth::user();          
 
-            if($users->dados_atualizados == 0){
+            if($usuario->dados_atualizados == 0){
                 
-                return view('user.editar', ['users' => $users]);
+                $nav = "Editar";
+
+                $usuarios = $usuario;
+                $estados = $this->estado->all();
+                $cidades = $this->cidade->all();
+                $estado_rgs = $this->estado_rg->all();
+                $escolaridades = $this->escolaridade->all(); 
+                $vinculos = $this->vinculo->all();
+                $orgaos = $this->orgao->all();
+                $departamentos = $this->departamento->all();
+                $cargos = $this->cargo->all();
+                $funcoes = $this->funcao->all();
+
+               
+                return view('user.editar',
+                [
+                    'nav' => $nav,
+                    'escolaridades' => $escolaridades, 
+                    'estados' => $estados, 
+                    'cidades' => $cidades,
+                    'vinculos' => $vinculos,
+                    'usuarios' => $usuarios,
+                    'orgaos' => $orgaos,
+                    'departamentos' => $departamentos,
+                    'cargos' => $cargos,
+                    'funcoes' => $funcoes,
+                    'estado_rgs' => $estado_rgs
+                ]);
+
             }else{
 
                 $page_title = "SGS";
-                $page_description = "Sistema de Gerenciamento de Sistemas da SETAS";
+                $page_description = "Sistema de Gerenciamento de Inscrições";
 
                 $lotacao = "Secretaria do Trabalho e da Assistência Social";
 
-                return view('home', ['users' => $users, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+                return view('home', ['usuarios' => $usuario, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
 
             }
         

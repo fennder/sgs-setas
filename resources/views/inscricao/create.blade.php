@@ -17,29 +17,32 @@
 
   <div class="row">
 
-    <div class="col-md-6">
+      <div class="col-md-6">
+        <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_curso" id="id_curso">
-            <option disabled selected> - Curso - </option>
-              @foreach($cursos as $curso)
-                <option value="{{ $curso->id_curso }}">{{ $curso->descricao }}</option>
-              @endforeach
+        <select class="form-control" name="id" id="id">
+         
+          <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
+
           </select>
-          <small class="text-muted">Curso</small>
+
       </div><!-- Curso -->
     </div><!-- Col 6 -->
 
     <div class="col-md-6">
+        <small class="text-muted">Curso</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_usuario" id="id_usuario">
-            <option disabled selected> - Inscrito - </option>
-              @foreach($usuarios as $usuario)
-                <option value="{{ $usuario->id_usuario }}">{{ $usuario->nome_cracha }}</option>
+        <select class="form-control" name="id_curso" id="id_curso" required>
+            <option disabled selected value=""> - Escolha um curso - </option>
+              @foreach($cursos as $curso)
+                <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - {{$curso->statuscurso->descricao}}</option>
               @endforeach
           </select>
-          <small class="text-muted">Nome do Inscrito</small>
+
       </div><!-- Curso -->
     </div><!-- Col 6 -->
+
+
 
   </div><!-- row -->
 

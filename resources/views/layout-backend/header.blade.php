@@ -5,9 +5,9 @@
     <!-- Logo -->
     <a href="{!! route('h.index') !!}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>S</b>GI</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>SGI </b>- SETAS</span>
     </a>
 
     <!-- Header Navbar -->
@@ -27,7 +27,7 @@
               <span class="label label-success">10997</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10997 messages</li>
+              <li class="header">Você tem mensagens</li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -39,7 +39,7 @@
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
-                        Support Team
+                        Mensagens
                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
                       </h4>
                       <!-- The message -->
@@ -121,7 +121,7 @@
               <!-- The user image in the navbar-->
               <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{ $users->name or "Servidor"}}</span>
+              <span class="hidden-xs">{{ $usuarios->name or "Servidor"}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -129,7 +129,7 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ $users->name or "Servidor"}} - Web Developer
+                  {{ $usuarios->name or "Servidor"}} - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -161,9 +161,9 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>

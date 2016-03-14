@@ -21,26 +21,32 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th>Nome</th>        
-                    <th>Email institucional</th>            
-                    <th>Telefone Pessoal</th>
-                    <th>Data Nascimento</th>            
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 10px">ID</th>
+                    <th>NOME</th>        
+                    <th>SEXO</th>        
+                    <th>CPF</th>                    
+                    <th>TELEFONE PESSOAL</th>
+                    <th>DATA NASCIMENTO</th>            
+                    <th>EMAIL PESSOAL</th> 
+                    <th>EMAIL TRABALHO</th>                      
+                    <th style="width: 40px" colspan="2">AÇÃO</th>                    
                   </tr>
                 </thead>
                 <tbody>
                   @if($usuarios)
                     @foreach($usuarios as $usuario)
                       <tr>
-                        <td>{{$usuario->id_usuario}}.</td>
-                        <td>{{$usuario->nome}}</td> 
-                        <td>{{$usuario->email_institucional}}</td>
+                        <td>{{$usuario->id}}.</td>
+                        <td>{{$usuario->name}}</td>
+                        <td>{{$usuario->sexo}}</td>
+                        <td>{{$usuario->cpf}}</td> 
                         <td>{{$usuario->telefone_pessoal}}</td>
                         <td>{{$usuario->data_nascimento}}</td>                  
+                        <td>{{$usuario->email}}</td>
+                        <td>{{$usuario->email_institucional}}</td>                 
                         <td class="text-center">
-                          <a href="inscritos/editar/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="inscritos/remover/{{$usuario->id_usuario}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('i.edit'), ['id' => $usuario->id]}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href="inscritos/remover/{{$usuario->id}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach
@@ -69,7 +75,7 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
-              
+          
         </div><!-- /.box-body -->
         
         <div class="box-footer clearfix">

@@ -6,9 +6,9 @@
     </div>
     <!-- Padrão alinhado a esquerda -->
     <strong>
-    	Copyright &copy; 2015 
-    	<a href="http://opensetas.setas.to.gov.br">
-    		 - DESENVOLVIDO PELA EQUIPE SD/GTI - 
+    	Copyright &copy; 2016 
+    	<a href="http://opensetas.setas.to.gov.br/portal">
+    		 - SETOR DE DESENVOLVIMENTO DE SISTEMAS - GTI - 
     	</a>
     	Secretaria do Trabalho e da Assitência Social
     </strong>

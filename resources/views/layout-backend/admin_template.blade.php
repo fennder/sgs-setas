@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>SG Sistemas - SD - GTI - SETAS</title>
+  <title>Sistema de Gerenciamento de Inscrições - SGI</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -82,7 +82,7 @@ desired effect
     <section class="content-header">
       <h1>
         {{ $page_title or "SGS" }}
-        <small>{{ $page_description or "Sistema de Gerenciamento de Sistemas da SETAS" }}</small>
+        <small>{{ $page_description or "Sistema de Gerenciamento de Inscrições" }}</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="{!! route('h.index') !!}"><i class="fa fa-dashboard"></i> Home</a></li>

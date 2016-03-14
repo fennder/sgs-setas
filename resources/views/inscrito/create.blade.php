@@ -82,7 +82,7 @@
         <select class="form-control" name="id_estado_rg" id="id_estado_rg">
             <option disabled selected> - UF - </option>
               @foreach ($estado_rgs as $estado_rg)
-                <option>{{ $estado_rg }}</option>
+                <option value="{{ $estado_rg->id_estado }}">{{ $estado_rg->uf }}</option>
               @endforeach
           </select>
           <small class="text-muted">Estado do RG</small>
@@ -107,7 +107,7 @@
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="cep" id="cep" placeholder="77.100-100" >
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
-        <small class="text-muted">CEP residêncial</small>
+        <small class="text-muted">CEP Residêncial</small>
       </div><!-- CEP -->
     </div><!-- Col 3 -->
 
@@ -134,7 +134,7 @@
         <select class="form-control" name="id_cidade" id="id_cidade">
           <option disabled selected> - Cidade - </option>
             @foreach ($cidades as $cidade)
-              <option>{{ $cidade }}</option>
+              <option value="{{ $cidade->id_cidade }}">{{ $cidade->nome }}</option>
             @endforeach
         </select>
       </div><!-- Cidade -->
@@ -145,7 +145,7 @@
         <select class="form-control" name="id_estado" id="id_estado">
           <option disabled selected> - Estado - </option>
             @foreach ($estados as $estado)
-              <option>{{ $estado }}</option>
+              <option value="{{ $estado->id_estado }}">{{ $estado->nome }}</option>
             @endforeach
         </select>
       </div><!-- Estado -->
@@ -169,7 +169,7 @@
         <select class="form-control" name="id_escolaridade" id="id_escolaridade">
           <option disabled selected> - Escolaridade - </option>
           @foreach ($escolaridades as $escolaridade)
-            <option>{{ $escolaridade }}</option>
+            <option value="{{ $escolaridade->id_escolaridade }}">{{ $escolaridade->descricao }}</option>
           @endforeach
         </select>
       </div><!-- Escolaridade -->
@@ -229,43 +229,32 @@
 
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback input-group">
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_institucional" id="telefone_institucional" placeholder="(00)0000-0000">
+          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" placeholder="(00)0000-0000">
         </div><!-- Telefone Trabalho -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
-            <option disabled selected> - Perfil - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
-              @endforeach
-          </select>
-        </div><!-- Cidade -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-3">
-        <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
+          <select class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional">
             <option disabled selected> - Vinculo - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
+              @foreach ($vinculos as $vinculo)
+                <option value="{{ $vinculo->id_vinculo_institucional }}">{{ $vinculo->descricao }}</option>
               @endforeach
           </select>
         </div><!-- Estado -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
+          <select class="form-control" name="id_orgao" id="id_orgao">
             <option disabled selected> - Órgão - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
+              @foreach ($orgaos as $orgao)
+                <option value="{{ $orgao->id_orgao }}">{{ $orgao->descricao }}</option>
               @endforeach
           </select>
         </div><!-- Estado -->
@@ -275,45 +264,34 @@
 
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
+          <select class="form-control" name="id_departamento" id="id_departamento">
             <option disabled selected> - Departamento - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
+              @foreach ($departamentos as $departamento)
+                <option value="{{ $departamento->id_departamento }}">{{ $departamento->descricao }}</option>
               @endforeach
           </select>
         </div><!-- Cidade -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_cidade" id="id_cidade">
+          <select class="form-control" name="id_cargo" id="id_cargo">
             <option disabled selected> - Cargo - </option>
-              @foreach ($cidades as $cidade)
-                <option>{{ $cidade }}</option>
+              @foreach ($cargos as $cargo)
+                <option value="{{ $cargo->id_cargo }}">{{ $cargo->descricao }}</option>
               @endforeach
           </select>
         </div><!-- Cidade -->
       </div><!-- Col 3 -->
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
+          <select class="form-control" name="id_funcao" id="id_funcao">
             <option disabled selected> - Função - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
-              @endforeach
-          </select>
-        </div><!-- Estado -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-3">
-        <div class="form-group has-feedback">
-          <select class="form-control" name="id_estado" id="id_estado">
-            <option disabled selected> - Órgão - </option>
-              @foreach ($estados as $estado)
-                <option>{{ $estado }}</option>
+              @foreach ($funcoes as $funcao)
+                <option value="{{ $funcao->id_funcao }}">{{ $funcao->descricao }}</option>
               @endforeach
           </select>
         </div><!-- Estado -->
@@ -327,8 +305,3 @@
   <button type="submit" class="btn btn-primary btn-large">Inscrever</button>
 </form><!-- Form -->
 @endsection
-
-<!-- 
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-  <input type="file" class="form-control" name="foto" value="{{ old('foto') }}/>
--->

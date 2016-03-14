@@ -3,10 +3,10 @@
 @section('content')
 <div class="login-box">
 <div class="login-logo">
-  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
+  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" width="250" height="200">
   </div>
   <div class="login-logo">
-    <a href="{!! route('a.getLogin') !!}"><b>SGS - </b>SETAS</a>
+    <a href="{!! route('a.getLogin') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
   </div>
 
   <!-- ERROS -->
@@ -25,7 +25,7 @@
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Faça o login para iniciar</p>
+    <h4><b><p class="login-box-msg">Já é cadastrado? Faça o login</p></b></h4>
     <form action="{!! route('a.postLogin') !!}" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
@@ -53,19 +53,23 @@
 
       </div>
     </form>
-  
-    <!--div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-        Google+</a>
-    </div-->
-    <!-- /.social-auth-links -->
 
-    <a href="{!! route('p.getEmail') !!}">Esqueci minha senha</a><br>
-    <a href="{!! route('a.getRegister') !!}" class="text-center">Registrar novo usuário</a>
+    <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-12" align="left">
+           <a href="{!! route('p.getEmail') !!}" class="btn btn-success btn-block">Esqueci minha senha</a>
+        </div>
+    </div>
 
+   <br>
+
+    <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-12" align="rigth">
+           <a href="{!! route('a.getRegister') !!}"  class="btn btn-danger btn-block">Ainda não sou cadastrado</a>
+        </div>
+    </div>
+    
   </div>
   <!-- /.login-box-body -->
 </div>

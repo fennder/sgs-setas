@@ -15,6 +15,7 @@ class CreateTableVinculoInstitucional extends Migration
         Schema::create('vinculo_institucional', function (Blueprint $table) {
             $table->increments('id_vinculo_institucional');
             $table->string('descricao')->unique();
+            $table->date('inicio_vinculo');
             $table->timestamps();
         });
     }

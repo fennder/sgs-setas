@@ -4,11 +4,11 @@
 @section('content')
   <div class="register-box">
     <div class="register-logo">
-      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
+      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" width="250" height="200">
     </div>
 
     <div class="register-logo">
-      <a href="{!! route('a.getRegister') !!}"><b>SGS - </b>SETAS</a>
+      <a href="{!! route('a.getRegister') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
     </div>
 
     <div class="register-box-body">

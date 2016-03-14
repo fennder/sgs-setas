@@ -3,11 +3,11 @@
 @section('content')
   <div class="register-box">
     <div class="register-logo">
-      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" class="img-circle" alt="User Image">
+      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" width="250" height="200">
     </div>
 
     <div class="register-logo">
-      <a href="register"><b>SGS - </b>SETAS</a>
+      <a href="register"><b>Sistema de Inscrições</b></br>SETAS</a>
     </div>
 
     <!-- ERROS -->
@@ -25,7 +25,7 @@
   <!-- ERROS -->
 
     <div class="register-box-body">
-      <p class="login-box-msg">Registrar novo usuário</p>
+      <h4><b><p class="login-box-msg">Registrar novo usuário</p></b></h4>
 
       <form action="register" method="POST">
         {!! csrf_field() !!}
@@ -50,30 +50,15 @@
           
         </div>
         <div class="row">
-          <div class="col-xs-8">
-            <div class="checkbox icheck">
-              <label>
-                <input type="checkbox"> Aceite os <a href="#">termos</a>
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+          <div class="col-xs-12" align="center">
+            <button type="submit" class="btn btn-primary btn-block text-center">Registrar</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      <!--div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-          Facebook</a>
-        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-          Google+</a>
-      </div-->
-
-      <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a>
+<br>
+      <a href="{!! route('a.getLogin') !!}" class="btn btn-default btn-block text-center">Voltar</a>
     </div>
     <!-- /.form-box -->
   </div>

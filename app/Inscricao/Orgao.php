@@ -4,8 +4,9 @@ namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Inscricao\Departamento;
-use Gerenciador\Inscricao\Usuario;
+use Gerenciador\User;
 
 class Orgao extends Model
 {
@@ -39,6 +40,6 @@ class Orgao extends Model
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario'); //Tem muitos usuários
+    	return $this->hasMany('Gerenciador\User', 'id'); //Tem muitos usuários
     }
 }

@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+use Gerenciador\Inscricao\Estado;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Deficiencia;
+use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\VinculoInstitucional;
+use Gerenciador\Inscricao\Funcao;
+use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Orgao;
+use Gerenciador\Inscricao\Cargo;
+
 class Usuario extends Model
 {
 
@@ -112,7 +122,7 @@ class Usuario extends Model
 
     /*public function perfil()
     {
-        return $this->belongsTo('Gerenciador\Inscricao\Perfil');//Tem um perfil
+        return $this->belongsTo('Gerenciador\Inscricao\Perfil', 'id_perfil');//Tem um perfil
     }*/
 
     public function deficiencia()
