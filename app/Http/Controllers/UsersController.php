@@ -111,7 +111,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $users = $this->user->find($id);
+        $usuarios = $this->user->find($id);
         $estado_rgs = $this->estado_rg->all();
         $cidades = $this->cidade->all();
         $estados = $this->estado->all();
@@ -124,7 +124,7 @@ class UsersController extends Controller
 
         return view('user.editar', 
             [
-                'users' => $users,
+                'usuarios' => $usuarios,
                 'estado_rgs' => $estado_rgs,
                 'cidades' => $cidades,
                 'estados' => $estados,
@@ -146,6 +146,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $users = User::findOrFail($id);
         $users->fill($request->all());
 

@@ -15,7 +15,7 @@ class EscolaridadeController extends Controller
     {
         $this->escolaridade = $escolaridade;
         
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

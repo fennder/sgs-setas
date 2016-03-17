@@ -18,7 +18,7 @@ class OrgaoController extends Controller
         $this->orgao = $orgao;
         //$this->departamento = $departamento;
         
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

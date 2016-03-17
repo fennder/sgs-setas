@@ -26,7 +26,8 @@ class Modulo extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao',
+        'descricao',
+    	'conteudo',
     	'id_curso'
     ];
 

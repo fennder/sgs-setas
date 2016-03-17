@@ -15,7 +15,7 @@ class DeficienciaController extends Controller
     {
         $this->deficiencia = $deficiencia;
 
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -25,6 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>                    
+                    <th>Início</th>                    
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
@@ -34,6 +35,7 @@
                       <tr>
                         <td>{{$vinculo->id_vinculo_institucional}}.</td>
                         <td>{{$vinculo->descricao}}</td>
+                        <td>{{$vinculo->inicio_vinculo}}</td>
                         <td class="text-center">
                           <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-trash"></i></a>

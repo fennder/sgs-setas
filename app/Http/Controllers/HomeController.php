@@ -46,6 +46,7 @@ class HomeController extends Controller
         $this->departamento = $departamento;
         $this->cargo = $cargo;
         $this->funcao = $funcao;
+        
         $this->middleware('auth');
     }
     

@@ -1,7 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
-<form action="{{ route('u.update', ['id'=>$users->id]) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('u.update', ['id'=>$usuarios->id]) }}" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
 <div class="box">
@@ -20,7 +20,7 @@
     <div class="col-md-7">
     <small class="text-muted">Nome Completo</small>
       <div class="form-group has-feedback" >
-        <input disabled type="text" class="form-control" value="{{ $users->name }}" name="name" id="name" required>
+        <input disabled type="text" class="form-control" value="{{ $usuarios->name }}" name="name" id="name" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Completo -->
     </div><!-- Col 7 -->
@@ -28,7 +28,7 @@
     <div class="col-md-5">
     <small class="text-muted">Nome para o crachá</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $users->nome_cracha }}" required>
+        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Crachá -->
     </div><!-- Col 5 -->
@@ -40,7 +40,7 @@
     <div class="col-md-4">
     <small class="text-muted">CPF</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $users->cpf }}" required>
+        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
@@ -48,7 +48,7 @@
     <div class="col-md-3" >
     <small class="text-muted">Data de Nascimento</small>
       <div class="form-group has-feedback">
-        <input type="date" class="form-control" value="{{ $users->data_nascimento }}" name="data_nascimento" id="data_nascimento" required>
+        <input type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         
       </div><!--Data Nascimento -->
@@ -59,7 +59,7 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input disabled type="email" class="form-control" name="email" id="email" value="{{ $users->email }}" required>
+          <input disabled type="email" class="form-control" name="email" id="email" value="{{ $usuarios->email }}" required>
         </div>
       </div><!-- Email pessoal -->
     </div><!-- Col 5 -->
@@ -71,7 +71,7 @@
     <div class="col-md-4">
     <small class="text-muted">Identidade</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="rg" id="rg" value="{{ $users->rg }}" required>
+        <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Identidade -->
     </div><!-- Col 4 -->
@@ -79,7 +79,7 @@
      <div class="col-md-3" > 
      <small class="text-muted">Órgão Emissor</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" value="{{ $users->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor" required>
+        <input type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
@@ -101,7 +101,7 @@
     <div class="col-md-3">
     <small class="text-muted">Sexo</small>
       <div class="form-group has-feedback">
-        <select class="form-control" name="sexo" id="sexo" value="{{ $users->sexo }}" required>
+        <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}" required>
       
           <option value="M">Masculino</option>
 
@@ -118,7 +118,7 @@
     <div class="col-md-3">
     <small class="text-muted">CEP Residencial</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cep" id="cep" value="{{ $users->cep }}" required>
+        <input type="text" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
         
       </div><!-- CEP -->
@@ -127,7 +127,7 @@
     <div class="col-md-9">
     <small class="text-muted">Endereço</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $users->endereco }}" required>
+        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $usuarios->endereco }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Endereço -->
     </div><!-- Col 9 -->
@@ -139,7 +139,7 @@
     <div class="col-md-5">
     <small class="text-muted">Complemento</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $users->complemento }}" required>
+        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
@@ -190,7 +190,7 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $users->telefone_pessoal }}" required>
+        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
@@ -214,7 +214,7 @@
 
     <!-- <div class="col-md-4">
       <div class="form-group">
-        <input class="form-control" type="file" class="form-control-file" name="foto" id="foto" value="{{ $users->foto }}">
+        <input class="form-control" type="file" class="form-control-file" name="foto" id="foto" value="{{ $usuarios->foto }}">
         <small class="text-muted">Foto do Inscrito</small>
       </div>
     </div><!-- Col 4 -->
@@ -240,19 +240,19 @@
       <div class="col-md-4">
       <small class="text-muted">Número de Identificação Social</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $users->nis }}" name="nis" id="nis" required>
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
       </div><!-- Col 4 -->
 
       <div class="col-md-3" >
-      <small class="text-muted">Data de Início no Serviço</small>
+      <small class="text-muted">Data de Início do Serviço</small>
         <div class="form-group has-feedback">
-          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $users->inicio_servico }}" required>
+          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico }}" required>
           <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
           
-        </div><!--Data Nascimento -->
+        </div><!--Data Início de Serviço -->
       </div><!-- Col 3 -->
 
       <div class="col-md-5">
@@ -260,7 +260,7 @@
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input type="email" class="form-control" value="{{ $users->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br" required>
+            <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br" required>
           </div>
         </div><!-- Email trabalho -->
       </div><!-- Col 5 -->
@@ -275,7 +275,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $users->telefone_trabalho }}" required>
+          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
         </div><!-- Telefone Trabalho -->
         
       </div><!-- Col 3 -->
@@ -289,13 +289,17 @@
              
               @foreach ($vinculos as $vinculo)
                   <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
-                
               @endforeach
             </select>
+
           </div>
-          
-        </div><!-- Órgão -->
-      </div><!-- Col 3 -->
+          <small class="text-muted">Data de Início do Vínculo</small>
+            <div class="form-group has-feedback">
+              <input type="date" class="form-control" name="inicio_vinculo" id="inicio_vinculo" value="{{$usuarios->vinculoinstitucional->inicio_vinculo}}" required>
+              <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+            </div><!--Data Início de Serviço -->
+        </div><!-- Vinculo Institucional -->
+      </div><!-- Col 4 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">

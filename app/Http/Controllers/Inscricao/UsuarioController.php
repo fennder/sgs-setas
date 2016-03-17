@@ -44,7 +44,7 @@ class UsuarioController extends Controller
         $this->cargo = $cargo;
         $this->funcao = $funcao;
 
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

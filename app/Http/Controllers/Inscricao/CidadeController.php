@@ -22,7 +22,7 @@ class CidadeController extends Controller
         $this->cidade = $cidade;
         $this->regiao = $regiao;
 
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

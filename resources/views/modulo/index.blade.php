@@ -25,6 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>
+                    <th>Conteúdo</th>
                     <th>Curso</th>
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
@@ -35,6 +36,7 @@
                       <tr>
                         <td>{{$modulo->id_modulo}}.</td>
                         <td>{{$modulo->descricao}}</td>
+                        <td>{!!$modulo->conteudo!!}</td>
                         <td>{{$modulo->curso->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('m.edit', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-edit"></i></a>

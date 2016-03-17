@@ -15,7 +15,7 @@ class VinculoInstitucionalController extends Controller
     {
         $this->vinculo = $vinculo;
         
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -116,7 +116,7 @@ class VinculoInstitucionalController extends Controller
         $vinculos->update($request->all());
 
         //return redirect()->route('vi.index');
-        return redirect()->back();
+        return redirect()->route('vi.index');
     }
 
     /**

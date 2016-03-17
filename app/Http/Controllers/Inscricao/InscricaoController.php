@@ -23,9 +23,8 @@ class InscricaoController extends Controller
         $this->inscricao = $inscricao;
         $this->curso = $curso;
         $this->usuario = $usuario;
-        $this->middleware('auth');
         
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -117,11 +116,15 @@ class InscricaoController extends Controller
         $nav = "Editar";
         $page_description = "Editar Inscrição";
         $inscricoes = $this->inscricao->find($id);
+        $usuarios = Auth::user();
+        $cursos = $this->curso->all();
         
         return view('inscricao.edit',
         [
             'nav' => $nav,
             'inscricoes' => $inscricoes, 
+            'usuarios' => $usuarios, 
+            'cursos' => $cursos, 
             'page_description' => $page_description
         ]);
     }

@@ -15,7 +15,7 @@ class CargoController extends Controller
     {
         $this->cargo = $cargo;
         
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

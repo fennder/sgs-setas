@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">

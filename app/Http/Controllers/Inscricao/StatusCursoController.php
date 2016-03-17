@@ -15,7 +15,7 @@ class StatusCursoController extends Controller
     {
         $this->scurso = $scurso;
 
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

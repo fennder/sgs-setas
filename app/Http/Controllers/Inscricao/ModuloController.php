@@ -19,7 +19,7 @@ class ModuloController extends Controller
         $this->modulo = $modulo;
         $this->curso = $curso;
 
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -102,6 +102,7 @@ class ModuloController extends Controller
         $nav = "Editar";
         $page_description = "Editar Módulo";
         
+        //dd($this->modulo->find($id));
         $modulos = $this->modulo->find($id);
         $cursos = $this->curso->all();
         

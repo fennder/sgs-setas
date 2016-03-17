@@ -38,7 +38,7 @@
 
         <li class="active"><a href="{!! route('h.index') !!}"><i class="glyphicon glyphicon-home"></i> <span>HOME</span></a></li>
         <li class="treeview">
-                <a href="#"><i class="fa fa-graduation-cap"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="glyphicon glyphicon-education"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">                  
                   <li><a href="{!! route('cs.index') !!}">Cursos</a></li>
                   <li><a href="{!! route('m.index') !!}">Módulos</a></li>
@@ -48,19 +48,19 @@
         <li class="treeview">
           <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="{!! route('u.index') !!}">Usuários</a></li>
+            <li><a href="{!! route('u.index') !!}">Relação de Usuários</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-pencil-square-o"></i> <span>GERENCIAR INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="glyphicon glyphicon-edit"></i> <span>GERENCIAR INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="{!! route('ins.index') !!}">Inscritos</a></li>
+            <li><a href="{!! route('ins.index') !!}">Relação de Inscritos</a></li>
             <li><a href="{!! route('ins.create') !!}">Inscrever</a></li>
             
           </ul>
         </li>
         <li class="treeview">
-              <a href="#"><i class="fa fa-gear"></i> <span>CONFIGURAÇÕES</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="glyphicon glyphicon-cog"></i> <span>CONFIGURAÇÕES</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{!! route('c.index') !!}">Cargo</a></li>
                 <li><a href="{!! route('cid.index') !!}">Cidade</a></li>
@@ -76,7 +76,7 @@
                  
               </ul>
             </li>
-            <li><a href="{!! route('a.getLogout') !!}"><i class="fa fa-sign-out"></i> <span>Sair</span></a></li>
+            <li><a href="{!! route('a.getLogout') !!}"><i class="glyphicon glyphicon-log-out"></i> <span>Sair</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

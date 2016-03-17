@@ -69,4 +69,64 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function curso()
+    {
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'id_curso'); //Tem vários Cursos
+    }
+
+    public function estado()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Estado', 'id_estado'); //Tem apenas um Estado
+    }
+
+    public function estado_rg()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Estado', 'id_estado_rg'); //Tem apenas um Estado
+    }
+
+    public function cidade()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Cidade', 'id_cidade');//Tem apenas uma cidade
+    }
+
+    public function cargo()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Cargo', 'id_cargo');//Tem apenas um cargo
+    }
+
+    public function funcao()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Funcao', 'id_funcao');// Tem apenas uma função
+    }
+
+    public function departamento()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Departamento', 'id_departamento'); //Tem apenas um departamento
+    }
+
+    public function orgao()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Orgao', 'id_orgao');// Tem apenas um órgão
+    }
+
+    public function vinculoinstitucional()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\VinculoInstitucional', 'id_vinculo_institucional'); //Tem apenas um vinculo
+    }
+
+    public function escolaridade()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Escolaridade', 'id_escolaridade');//Tem uma escolaridade
+    }
+
+    /*public function perfil()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Perfil', 'id_perfil');//Tem um perfil
+    }*/
+
+    public function deficiencia()
+    {
+        return $this->belongsTo('Gerenciador\Inscricao\Deficiencia', 'id_deficiencia');//Tem apenas um deficiencia
+    }
 }

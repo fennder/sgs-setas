@@ -15,7 +15,7 @@ class EstadoController extends Controller
     {
         $this->estado = $estado;
         
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**

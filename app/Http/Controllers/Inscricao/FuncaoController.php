@@ -15,7 +15,7 @@ class FuncaoController extends Controller
     {
         $this->funcao = $funcao;
 
-        //$this->middleware('guest');
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.

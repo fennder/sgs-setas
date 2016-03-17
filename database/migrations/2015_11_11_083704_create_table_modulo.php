@@ -14,7 +14,8 @@ class CreateTableModulo extends Migration
     {
         Schema::create('modulo', function (Blueprint $table) {
             $table->increments('id_modulo');
-            $table->longText('descricao');
+            $table->string('descricao');
+            $table->longText('conteudo');
             $table->integer('id_curso')->unsigned();
             $table->timestamps();
         });

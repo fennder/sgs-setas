@@ -4,7 +4,7 @@ namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Gerenciador\Inscricao\Usuario;
+use Gerenciador\User;
 
 class VinculoInstitucional extends Model
 {
@@ -28,11 +28,12 @@ class VinculoInstitucional extends Model
      * @var array
      */
     protected $fillable = [
-    	'descricao'
+    	'descricao',
+        'inicio_vinculo'
     ];
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario', 'id_usuario');//Tem muitos usuários
+    	return $this->hasMany('Gerenciador\User', 'id');//Tem muitos usuários
     }
 }
