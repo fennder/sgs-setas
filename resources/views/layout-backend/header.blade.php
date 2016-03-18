@@ -121,7 +121,7 @@
               <!-- The user image in the navbar-->
               <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{ $usuarios->name or "Servidor"}}</span>
+              <span class="hidden-xs">{{ $usuarios->nome_cracha or "Servidor"}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -129,7 +129,7 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ $usuarios->name or "Servidor"}} - Web Developer
+                  {{ $usuarios->nome_cracha or "Servidor"}} - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>

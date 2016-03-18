@@ -35,7 +35,8 @@ class InscricaoController extends Controller
     public function index()
     {
         $inscricoes = $this->inscricao->paginate(4);
-    
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Lista de Inscrições";
         $nav = "Inscrição";
@@ -45,9 +46,9 @@ class InscricaoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
-            'inscricoes' => $inscricoes,
-            'inscricoes' => $inscricoes,
+            'usuarios'=>$usuarios,
             'inscricoes' => $inscricoes
+            
         ]); 
     }
 
@@ -86,8 +87,6 @@ class InscricaoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        //dd($request->all());
 
         $this->inscricao->create($request->all());
 

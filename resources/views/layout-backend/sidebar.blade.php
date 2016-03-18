@@ -10,7 +10,7 @@
           <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{ $usuarios->name or "Nome do Servidor"}}</p>
+          <p>{{ $usuarios->nome_cracha or "Nome do Servidor"}}</p>
           <!-- Status >
           <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a-->
         </div>
@@ -42,7 +42,7 @@
                 <ul class="treeview-menu">                  
                   <li><a href="{!! route('cs.index') !!}">Cursos</a></li>
                   <li><a href="{!! route('m.index') !!}">Módulos</a></li>
-                  <li><a href="{!! route('sc.index') !!}">Status</a></li>
+                  <li><a href="{!! route('sc.index') !!}">Status Curso</a></li>
                 </ul>
             </li>
         <li class="treeview">

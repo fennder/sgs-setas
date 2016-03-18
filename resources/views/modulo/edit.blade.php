@@ -35,7 +35,7 @@
               <option value="{{$modulos->id_curso}}">{{$modulos->curso->descricao}}</option>
               @foreach ($cursos as $curso)
                 @if($modulos->id_curso != $curso->id_curso)
-                  <option value="{{$curso->id_curso}}">{{$curso->descricao}}</option>
+                  <option value="{{$curso->id_curso}}">{{$curso->descricao}} - {{$curso->statuscurso->descricao}}</option>
                 @endif
               @endforeach
             </select>
@@ -64,7 +64,7 @@
   <!-- /.box-header -->
   <div class="box-body pad">
     
-      <textarea name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" value="{{ $modulos->conteudo }}"></textarea>
+      <textarea value="{{ $modulos->conteudo }}" name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
     
   </div>
 </div><!--box -->

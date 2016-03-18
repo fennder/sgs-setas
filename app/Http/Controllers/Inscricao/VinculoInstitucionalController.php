@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class VinculoInstitucionalController extends Controller
 {
@@ -26,6 +27,7 @@ class VinculoInstitucionalController extends Controller
     public function index()
     {
         $vinculos = $this->vinculo->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Vinculos Institucionais";
@@ -36,6 +38,7 @@ class VinculoInstitucionalController extends Controller
             'nav' => $nav,
             'vinculos' => $vinculos,
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);  
     }
@@ -47,6 +50,8 @@ class VinculoInstitucionalController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Cadastro de Vinculo Institucional";
         $nav = "Vinculo Institucional";
@@ -55,6 +60,7 @@ class VinculoInstitucionalController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -91,6 +97,8 @@ class VinculoInstitucionalController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = Auth::user();
+
         $nav = "Editar";
         $page_description = "Editar Vinculo Institucional";
         $vinculos = $this->vinculo->find($id);
@@ -99,6 +107,7 @@ class VinculoInstitucionalController extends Controller
         [
             'nav' => $nav,
             'vinculos' => $vinculos, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

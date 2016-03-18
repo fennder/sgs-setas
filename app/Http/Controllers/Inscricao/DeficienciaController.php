@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class DeficienciaController extends Controller
 {
@@ -27,6 +28,7 @@ class DeficienciaController extends Controller
     {
         
         $deficiencias = $this->deficiencia->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Deficiências";
@@ -37,6 +39,7 @@ class DeficienciaController extends Controller
             'nav' => $nav,
             'deficiencias' => $deficiencias, 
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }
@@ -48,6 +51,8 @@ class DeficienciaController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Cadastro de Deficiência";
         $nav = "Deficiência";
@@ -56,6 +61,7 @@ class DeficienciaController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -95,11 +101,14 @@ class DeficienciaController extends Controller
         $nav = "Editar";
         $page_description = "Editar Deficência";
         $deficiencias = $this->deficiencia->find($id);
+
+        $usuarios = Auth::user();
         
         return view('deficiencia.edit',
         [
             'nav' => $nav,
             'deficiencias' => $deficiencias, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

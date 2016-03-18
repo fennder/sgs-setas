@@ -4,19 +4,17 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Orgao;
-//use Gerenciador\Inscricao\Departamento;
+use Auth;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 
 class OrgaoController extends Controller
 {
     private $orgao;
-    //private $departamento;
 
     public function __construct(Orgao $orgao)
     {
         $this->orgao = $orgao;
-        //$this->departamento = $departamento;
         
         $this->middleware('auth');
     }
@@ -29,7 +27,7 @@ class OrgaoController extends Controller
     public function index()
     {
         $orgaos = $this->orgao->paginate(4);
-        //$departamentos = $this->departamento->lists('descricao', 'id_departamento');
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Órgaos";
@@ -39,7 +37,7 @@ class OrgaoController extends Controller
         [
             'nav' => $nav,
             'orgaos' => $orgaos,
-            //'departamento' => $departamentos,
+            'usuarios' => $usuarios,
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);
@@ -52,6 +50,8 @@ class OrgaoController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Cadastro de Órgão";
         $nav = "Órgão";
@@ -60,6 +60,7 @@ class OrgaoController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -96,6 +97,8 @@ class OrgaoController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = Auth::user();
+
         $nav = "Editar";
         $page_description = "Editar Órgão";
         $orgaos = $this->orgao->find($id);
@@ -104,6 +107,7 @@ class OrgaoController extends Controller
         [
             'nav' => $nav,
             'orgaos' => $orgaos, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

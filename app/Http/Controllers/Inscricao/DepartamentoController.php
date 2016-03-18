@@ -7,6 +7,7 @@ use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class DepartamentoController extends Controller
 {
@@ -36,6 +37,7 @@ class DepartamentoController extends Controller
 
         $departamentos = $this->departamento->paginate(4);
         $orgaos = $this->orgao->all();
+        $usuarios = Auth::user();
 
         return view('departamento.index',
         [
@@ -43,6 +45,7 @@ class DepartamentoController extends Controller
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
             'departamentos' => $departamentos,
+            'usuarios' => $usuarios,
             'orgaos' => $orgaos
         ]);
     }
@@ -59,12 +62,14 @@ class DepartamentoController extends Controller
         $nav = "Departamento";
 
         $orgaos = $this->orgao->all();
+        $usuarios = Auth::user();
 
         return view('departamento.create',
         [
             'nav' => $nav,
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'usuarios' => $usuarios,
             'orgaos' => $orgaos
 
         ]);
@@ -109,12 +114,14 @@ class DepartamentoController extends Controller
 
         $departamentos = $this->departamento->find($id);
         $orgaos = $this->orgao->all();
+        $usuarios = Auth::user();
         
         return view('departamento.edit',
         [
             'nav' => $nav, 
             'page_description' => $page_description,
             'departamentos' => $departamentos,
+            'usuarios' => $usuarios,
             'orgaos' => $orgaos
         ]);
     }

@@ -7,6 +7,7 @@ use Gerenciador\Inscricao\Curso;
 use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class CursoController extends Controller
 {
@@ -30,6 +31,7 @@ class CursoController extends Controller
     {
         
         $cursos = $this->curso->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Cursos";
@@ -40,6 +42,7 @@ class CursoController extends Controller
             'nav' => $nav,
             'cursos' => $cursos,  
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }
@@ -57,12 +60,14 @@ class CursoController extends Controller
         $nav = "Curso";
 
         $scursos = $this->scurso->all();
+        $usuarios = Auth::user();
 
         return view('curso.create',
         [
             'nav' => $nav,
             'scursos'=>$scursos,
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -105,12 +110,14 @@ class CursoController extends Controller
 
         $cursos = $this->curso->find($id);
         $scursos = $this->scurso->all();
+        $usuarios = Auth::user();
         
         return view('curso.edit',
         [
             'nav' => $nav,
             'cursos' => $cursos, 
             'scursos' => $scursos, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

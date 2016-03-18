@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Escolaridade;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class EscolaridadeController extends Controller
 {
@@ -25,16 +26,19 @@ class EscolaridadeController extends Controller
      */
     public function index()
     {
-        $escolaridades = $this->escolaridade->paginate(4);
-    
+
         $page_title = "SGS";
         $page_description = "Lista de Escolaridades";
         $nav = "Escolaridade";
+
+        $escolaridades = $this->escolaridade->paginate(4);
+        $usuarios = Auth::user();
 
         return view('escolaridade.index',
         [
             'nav' => $nav,
             'escolaridades' => $escolaridades, 
+            'usuarios' => $usuarios, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);
@@ -51,10 +55,13 @@ class EscolaridadeController extends Controller
         $page_description = "Cadastro de Escolaridade";
         $nav = "Escolaridade";
 
+        $usuarios = Auth::user();
+
         return view('escolaridade.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -95,11 +102,14 @@ class EscolaridadeController extends Controller
         $nav = "Editar";
         $page_description = "Editar Escolaridade";
         $escolaridades = $this->escolaridade->find($id);
+
+        $usuarios = Auth::user();
         
         return view('escolaridade.edit',
         [
             'nav' => $nav,
             'escolaridades' => $escolaridades, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

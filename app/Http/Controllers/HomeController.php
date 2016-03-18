@@ -100,7 +100,13 @@ class HomeController extends Controller
 
                 $lotacao = "Secretaria do Trabalho e da Assistência Social";
 
-                return view('home', ['usuarios' => $usuario, 'lotacao'=>$lotacao, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+                return view('home', 
+                    [
+                        'usuarios' => $usuario, 
+                        'lotacao'=>$lotacao, 
+                        'page_title'=>$page_title, 
+                        'page_description'=>$page_description
+                    ]);
 
             }
         

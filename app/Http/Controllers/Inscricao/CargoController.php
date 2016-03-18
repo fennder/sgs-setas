@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class CargoController extends Controller
 {
@@ -26,6 +27,7 @@ class CargoController extends Controller
     public function index()
     {
         $cargos = $this->cargo->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Cargos";
@@ -34,7 +36,8 @@ class CargoController extends Controller
         return view('cargo.index',
         [
             'nav' => $nav,
-            'cargos' => $cargos, 
+            'cargos' => $cargos,
+            'usuarios' => $usuarios, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description
         ]);    
@@ -47,6 +50,7 @@ class CargoController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
 
         $page_title = "SGS";
         $page_description = "Cadastro de Cargo";
@@ -56,6 +60,7 @@ class CargoController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -82,12 +87,14 @@ class CargoController extends Controller
     public function show($id)
     {
         $cargos = $this->cargo->find($id);
+        $usuarios = Auth::user();
 
         return view('cargo.show',
         [
             'cargos' => $cargos,
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -100,6 +107,8 @@ class CargoController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = Auth::user();
+
         $nav = "Editar";
         $page_description = "Editar Cargo";
         $cargos = $this->cargo->find($id);
@@ -108,6 +117,7 @@ class CargoController extends Controller
         [
             'nav' => $nav,
             'cargos' => $cargos, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
 

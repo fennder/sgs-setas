@@ -7,6 +7,7 @@ use Gerenciador\Inscricao\Modulo;
 use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class ModuloController extends Controller
 {
@@ -30,6 +31,7 @@ class ModuloController extends Controller
     public function index()
     {
         $modulos = $this->modulo->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Modulos";
@@ -40,6 +42,7 @@ class ModuloController extends Controller
             'nav' => $nav,
             'modulos' => $modulos, 
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }
@@ -51,6 +54,8 @@ class ModuloController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Cadastro de Modulos";
         $nav = "Modulos";
@@ -62,6 +67,7 @@ class ModuloController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'usuarios' => $usuarios,
             'cursos' => $cursos
         ]);
     }
@@ -98,11 +104,11 @@ class ModuloController extends Controller
      */
     public function edit($id)
     {
-        
+        $usuarios = Auth::user();
+
         $nav = "Editar";
         $page_description = "Editar Módulo";
         
-        //dd($this->modulo->find($id));
         $modulos = $this->modulo->find($id);
         $cursos = $this->curso->all();
         
@@ -111,6 +117,7 @@ class ModuloController extends Controller
             'nav' => $nav,
             'cursos' => $cursos,
             'modulos' => $modulos, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

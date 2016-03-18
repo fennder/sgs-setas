@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Funcao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class FuncaoController extends Controller
 {
@@ -24,18 +25,21 @@ class FuncaoController extends Controller
      */
     public function index()
     {
-        $funcoes = $this->funcao->paginate(4);
-    
+
         $page_title = "SGS";
         $page_description = "Lista de Funções";
         $nav = "Função";
 
+        $funcoes = $this->funcao->paginate(4);
+        $usuarios = Auth::user();
+
         return view('funcao.index',
         [
-            'nav' => $nav,
-            'funcoes' => $funcoes, 
-            'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'nav' => $nav, 
+            'page_title'=>$page_title,  
+            'page_description'=>$page_description,
+            'funcoes' => $funcoes,
+            'usuarios'=>$usuarios
         ]);
     }
 
@@ -50,11 +54,14 @@ class FuncaoController extends Controller
         $page_description = "Cadastro de Função";
         $nav = "Função";
 
+        $usuarios = Auth::user();
+
         return view('funcao.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'usuarios' => $usuarios
         ]);
     }
 
@@ -92,13 +99,16 @@ class FuncaoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Função";
+
         $funcoes = $this->funcao->find($id);
+        $usuarios = Auth::user();
         
         return view('funcao.edit',
         [
             'nav' => $nav,
             'funcoes' => $funcoes, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'usuarios' => $usuarios
         ]);
     }
 

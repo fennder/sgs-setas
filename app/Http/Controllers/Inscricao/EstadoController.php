@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class EstadoController extends Controller
 {
@@ -25,17 +26,20 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados = $this->estado->paginate(4);
     
         $page_title = "SGS";
         $page_description = "Lista de Estados";
         $nav = "Estado";
+
+        $estados = $this->estado->paginate(4);
+        $usuarios = Auth::user();
 
         return view('estado.index',
         [
             'nav' => $nav,
             'estados' => $estados, 
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }
@@ -51,10 +55,13 @@ class EstadoController extends Controller
         $page_description = "Cadastro de Estado";
         $nav = "Estado";
 
+        $usuarios = Auth::user();
+
         return view('estado.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -93,11 +100,14 @@ class EstadoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Estado";
+        
         $estados = $this->estado->find($id);
+        $usuarios = Auth::user();
         
         return view('estado.edit',
         [
             'nav' => $nav,
+            'estados' => $estados, 
             'estados' => $estados, 
             'page_description' => $page_description
         ]);

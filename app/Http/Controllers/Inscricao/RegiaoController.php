@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class RegiaoController extends Controller
 {
@@ -26,6 +27,7 @@ class RegiaoController extends Controller
     public function index()
     {
         $regioes = $this->regiao->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Região";
@@ -36,6 +38,7 @@ class RegiaoController extends Controller
             'nav' => $nav,
             'regioes' => $regioes, 
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }
@@ -47,6 +50,8 @@ class RegiaoController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
+
         $page_title = "SGS";
         $page_description = "Cadastro de Região";
         $nav = "Região";
@@ -55,6 +60,7 @@ class RegiaoController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }
@@ -91,6 +97,8 @@ class RegiaoController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = Auth::user();
+
         $nav = "Editar";
         $page_description = "Editar Região";
         $regioes = $this->regiao->find($id);
@@ -99,6 +107,7 @@ class RegiaoController extends Controller
         [
             'nav' => $nav,
             'regioes' => $regioes, 
+            'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
     }

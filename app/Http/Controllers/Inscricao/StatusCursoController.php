@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class StatusCursoController extends Controller
 {
@@ -27,6 +28,7 @@ class StatusCursoController extends Controller
     {
        
         $scursos = $this->scurso->paginate(4);
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Listas de Status de Curso";
@@ -37,6 +39,7 @@ class StatusCursoController extends Controller
             'nav' => $nav,
             'scursos' => $scursos, 
             'page_title'=>$page_title, 
+            'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
     }

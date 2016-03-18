@@ -8,6 +8,7 @@ use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Auth;
 
 class CidadeController extends Controller
 {
@@ -35,6 +36,7 @@ class CidadeController extends Controller
         $cidades = $this->cidade->paginate(4);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
+        $usuarios = Auth::user();
     
         $page_title = "SGS";
         $page_description = "Lista de Cidades";
@@ -47,6 +49,7 @@ class CidadeController extends Controller
             'page_description'=>$page_description,
             'cidades' => $cidades,
             'estados' => $estados,
+            'usuarios' => $usuarios,
             'regioes' => $regioes
         ]);
     }
@@ -64,6 +67,7 @@ class CidadeController extends Controller
 
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
+        $usuarios = Auth::user();
 
         return view('cidade.create',
         [
@@ -71,6 +75,7 @@ class CidadeController extends Controller
             'page_title' => $page_title, 
             'page_description' => $page_description,
             'estados' => $estados,
+            'usuarios' => $usuarios,
             'regioes' => $regioes
         ]);
     }
@@ -114,6 +119,7 @@ class CidadeController extends Controller
         $cidades = $this->cidade->find($id);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
+        $usuarios = Auth::user();
         
         return view('cidade.edit',
         [
@@ -121,6 +127,7 @@ class CidadeController extends Controller
             'cidades' => $cidades, 
             'page_description' => $page_description,
             'estados' => $estados,
+            'usuarios' => $usuarios,
             'regioes' => $regioes
         ]);
     }

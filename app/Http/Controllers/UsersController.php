@@ -57,12 +57,20 @@ class UsersController extends Controller
         if(Auth::check()){
 
             $users = $this->user->paginate(5);
+            $usuarios = Auth::user();
 
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $nav = "Lista";
 
-            return view('user.lista',['nav' => $nav, 'users' => $users, 'page_title'=>$page_title, 'page_description'=>$page_description]);
+            return view('user.lista',
+                [
+                    'nav' => $nav, 
+                    'users' => $users, 
+                    'page_title'=>$page_title, 
+                    'usuarios'=>$usuarios, 
+                    'page_description'=>$page_description
+                ]);
 
         }else{
 
@@ -146,7 +154,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        
         $users = User::findOrFail($id);
         $users->fill($request->all());
 
