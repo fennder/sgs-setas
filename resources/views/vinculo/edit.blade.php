@@ -26,6 +26,14 @@
       </div><!-- Vinculo Institucional -->
     </div><!-- Col 12 -->
 
+    <div class="col-md-3" >
+      <div class="form-group has-feedback">
+        <input type="date" class="form-control" value="{{$vinculos->inicio_vinculo}}" name="inicio_vinculo" id="inicio_vinculo">
+        <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+        <small class="text-muted">Data de Vinculo</small>
+      </div><!--Data Inicio do Curso -->
+    </div><!-- Col 3 -->
+
   </div><!-- row -->
 
   </div>

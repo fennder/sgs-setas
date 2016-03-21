@@ -130,7 +130,7 @@
 
                 <p>
                   {{ $usuarios->nome_cracha or "Servidor"}} - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <small>Usuário desde {{$usuarios->created_at or Null}}</small>
                 </p>
               </li>
               <!-- Menu Body -->
