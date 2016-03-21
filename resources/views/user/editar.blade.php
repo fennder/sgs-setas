@@ -293,11 +293,11 @@
             </select>
 
           </div>
-          <!-- <small class="text-muted">Data de Início do Vínculo</small>
+          <small class="text-muted">Data de Início do Vínculo</small>
           <div class="form-group has-feedback">
-            <input type="date" class="form-control" name="inicio_vinculo" id="inicio_vinculo" value="{{$usuarios->vinculoinstitucional->inicio_vinculo}}">
+            <input type="date" class="form-control" name="inicio_vinculo" id="inicio_vinculo" value="{{$usuarios->vinculoinstitucional}}">
             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          </div><!--Data Início de Serviço --> -->
+          </div><!--Data Início de Serviço -->
         </div><!-- Vinculo Institucional -->
       </div><!-- Col 4 -->
 
@@ -306,7 +306,7 @@
         <small class="text-muted">Órgão</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_orgao" id="id_orgao" required>
+            <select class="form-control" name="id_orgao" id="id_orgao">
              
               @foreach ($orgaos as $orgao)
                   <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>

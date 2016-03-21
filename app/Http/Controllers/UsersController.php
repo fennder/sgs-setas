@@ -119,6 +119,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
+        
         $usuarios = $this->user->find($id);
         $estado_rgs = $this->estado_rg->all();
         $cidades = $this->cidade->all();

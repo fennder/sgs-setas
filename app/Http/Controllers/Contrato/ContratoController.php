@@ -21,10 +21,6 @@ class ContratoController extends Controller
     public function index()
     {
 
-        $contrato = new \Gerenciador\sgc\Contrato();
-        $contratos = $contrato->all();
-
-        //$contratos = \Gerenciador\sgc\Contrato::paginate(5);
         return view('sgc.contrato', ['contratos' => $contratos]);
     }
 
@@ -45,10 +41,7 @@ class ContratoController extends Controller
      */
     public function store(Request $request)
     {
-        $dado = $request->all();
-        $contrato = new \Gerenciador\sgc\Contrato;
-        $contrato->save($dado);
-        
+                
         return redirect('sgc.contrato');
 
     }
@@ -72,9 +65,7 @@ class ContratoController extends Controller
      */
     public function edit($id)
     {
-        $contrato = new \Gerenciador\sgc\Contrato;
-        $contratos->find($id_cc);
-
+    
         return view('sgc.edit', ['contratos' => $contratos]);
     }
 
@@ -97,8 +88,7 @@ class ContratoController extends Controller
      */
     public function destroy($id)
     {
-        $contrato = new \Gerenciador\sgc\Contrato;
-        $contrato->find($id)->delete();
+
         return redirect('contrato');
     }
 }
