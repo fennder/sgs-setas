@@ -67,7 +67,7 @@ class InscricaoController extends Controller
         
         $usuarios = Auth::user();
 
-        //$usuarios = $this->usuario->all();
+        //$inscricoes = $this->inscricao->all();
 
         return view('inscricao.create',
         [
@@ -76,7 +76,8 @@ class InscricaoController extends Controller
             'usuarios' => $usuarios,
             'page_title' => $page_title, 
             'page_description' => $page_description
-        ]);
+        ]);      
+
     }
 
     /**
