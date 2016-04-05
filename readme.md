@@ -1,16 +1,16 @@
 ## Sistema de Gerenciamento de Inscrição do SUAS
 
-Inicialmente, este aplicativo faz parte como um modulo de um projeto de agrupar todas as atividades da Superintendência de Assistência Social. Parte integrante da Secretaria do Trabalho e da Assistência Social do Estado do Tocantins.
+Inicialmente, este aplicativo faz parte como um modulo de um projeto que visa agrupar todas as aplicações da Superintendência de Assistência Social. Parte integrante da Secretaria do Trabalho e da Assistência Social do Estado do Tocantins.
 
-Visa e propõe a unificação, o gerenciamento e o desenho dos processos que hoje correm via papel. Transformando os fluxos de autorização, cessão e deliberação mais organizada a Gerência de Tecnologia da Informa por intermédio do Setor de Desenvolvimento, viu a necessidade de desenvolver aplicações que no dia-a-dia possam desonerar os gastos com papel e subsidiar as decisões como estratégia forte. 
+Visa e propõe a unificação, o gerenciamento e execução dos processos que hoje correm via papel. Transformando os fluxos de autorização, cessão e deliberação mais organizada, a Gerência de Tecnologia da Informação por intermédio do Setor de Desenvolvimento, viu a necessidade de desenvolver aplicações que no dia-a-dia possam desonerar os gastos com papel e outros insumos, sobre tudo subsidiar as tomadas de decisões como informações estratégicas fortes. 
 
-O alcance às pessoas por projetos de estado e governo quanto a melhoria da dignidade humana passa muito pelo bom trabalho e assistência de setores meios. 
+O alcance às pessoas por projetos de estado e governo, quanto a melhoria da dignidade da vida humana passa muito pelo bom trabalho e assistência de setores meios. 
 
-As aplicações web vem não só para dar esse poder de decisão mais para dar mobilidade as ações.
+As aplicações web vem não só para dar esse poder de decisão mais para dar mobilidade as ações. Escolhemos o [PHP](https://secure.php.net/manual/pt_BR/index.php) como linguagem de programação e usamos o [Laravel](http://laravel.com/docs) como Framework para subsidiar o desenvolvimento mais ágil.
 
 ## Documentação Oficial do Sistema
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the framework can be found on the [PHP](https://secure.php.net/manual/pt_BR/index.php).
 
 ## Contributing
 
