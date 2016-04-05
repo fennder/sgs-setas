@@ -1,16 +1,14 @@
-## Laravel PHP Framework
+## Sistema de Gerenciamento de Inscrição do SUAS
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Inicialmente, este aplicativo faz parte como um modulo de um projeto de agrupar todas as atividades da Superintendência de Assistência Social. Parte integrante da Secretaria do Trabalho e da Assistência Social do Estado do Tocantins.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Visa e propõe a unificação, o gerenciamento e o desenho dos processos que hoje correm via papel. Transformando os fluxos de autorização, cessão e deliberação mais organizada a Gerência de Tecnologia da Informa por intermédio do Setor de Desenvolvimento, viu a necessidade de desenvolver aplicações que no dia-a-dia possam desonerar os gastos com papel e subsidiar as decisões como estratégia forte. 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+O alcance às pessoas por projetos de estado e governo quanto a melhoria da dignidade humana passa muito pelo bom trabalho e assistência de setores meios. 
 
-## Official Documentation
+As aplicações web vem não só para dar esse poder de decisão mais para dar mobilidade as ações.
+
+## Documentação Oficial do Sistema
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
