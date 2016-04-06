@@ -3,7 +3,7 @@
 @section('content')
   <div class="register-box">
     <div class="register-logo">
-      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}" width="250" height="200">
+      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}">
     </div>
 
     <div class="register-logo">

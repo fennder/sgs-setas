@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Gerenciador\User::class,
+    'model' => Gerenciador\Entrust::class,
 
     /*
     |--------------------------------------------------------------------------
