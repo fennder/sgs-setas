@@ -15,6 +15,7 @@ use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Inscricao\Funcao;
+use Gerenciador\Inscricao\Perfil;
 use Session;
 use Auth;
 
@@ -30,8 +31,9 @@ class UsersController extends Controller
     private $departamento;
     private $cargo;
     private $funcao;
+    private $perfil;
 
-    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
+    public function __construct(Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
     {
         $this->user = $user;
         $this->estado_rg = $estado_rg;
@@ -43,6 +45,7 @@ class UsersController extends Controller
         $this->departamento = $departamento;
         $this->cargo = $cargo;
         $this->funcao = $funcao;
+        $this->perfil = $perfil;
 
         //$this->middleware('auth');
     }
@@ -119,19 +122,23 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        
-        $usuarios = $this->user->find($id);
-        $estado_rgs = $this->estado_rg->all();
-        $cidades = $this->cidade->all();
-        $estados = $this->estado->all();
-        $escolaridades = $this->escolaridade->all();
-        $vinculos = $this->vinculo->all();
-        $orgaos = $this->orgao->all();
-        $departamentos = $this->departamento->all();
-        $cargos = $this->cargo->all();
-        $funcoes = $this->funcao->all();
 
-        return view('user.editar', 
+        $verifica = Auth::user();
+
+        if($verifica->id_perfil == 1){
+            $usuarios = $this->user->find($id);
+            $estado_rgs = $this->estado_rg->all();
+            $cidades = $this->cidade->all();
+            $estados = $this->estado->all();
+            $escolaridades = $this->escolaridade->all();
+            $vinculos = $this->vinculo->all();
+            $orgaos = $this->orgao->all();
+            $departamentos = $this->departamento->all();
+            $cargos = $this->cargo->all();
+            $funcoes = $this->funcao->all();
+            $perfis = $this->perfil->all();
+
+            return view('user.admin_editar', 
             [
                 'usuarios' => $usuarios,
                 'estado_rgs' => $estado_rgs,
@@ -142,8 +149,39 @@ class UsersController extends Controller
                 'departamentos' => $departamentos,
                 'cargos' => $cargos,
                 'funcoes' => $funcoes,
-                'orgaos' => $orgaos
-            ]);    
+                'orgaos' => $orgaos,
+                'perfis' => $perfis,
+                'verifica' => $verifica
+            ]);
+        }else{
+            $usuarios = $this->user->find($id);
+            $estado_rgs = $this->estado_rg->all();
+            $cidades = $this->cidade->all();
+            $estados = $this->estado->all();
+            $escolaridades = $this->escolaridade->all();
+            $vinculos = $this->vinculo->all();
+            $orgaos = $this->orgao->all();
+            $departamentos = $this->departamento->all();
+            $cargos = $this->cargo->all();
+            $funcoes = $this->funcao->all();
+            $perfis = $this->perfil->all();
+
+            return view('user.editar', 
+            [
+                'usuarios' => $usuarios,
+                'estado_rgs' => $estado_rgs,
+                'cidades' => $cidades,
+                'estados' => $estados,
+                'escolaridades' => $escolaridades,
+                'vinculos' => $vinculos,
+                'departamentos' => $departamentos,
+                'cargos' => $cargos,
+                'funcoes' => $funcoes,
+                'orgaos' => $orgaos,
+                'perfis' => $perfis,
+                'verifica' => $verifica
+            ]);
+        }
     }
 
     /**

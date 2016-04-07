@@ -12,11 +12,11 @@ class CreateTablePerfil extends Migration
      */
     public function up()
     {
-        /*Schema::create('perfil', function (Blueprint $table) {
+        Schema::create('perfil', function (Blueprint $table) {
             $table->increments('id_perfil');
-            $table->string('descricao')->unique();
+            $table->string('descricao')->unique()->nullable();
             $table->timestamps();
-        });*/
+        });
     }
 
     /**
@@ -26,6 +26,6 @@ class CreateTablePerfil extends Migration
      */
     public function down()
     {
-        //Schema::drop('perfil');
+        Schema::drop('perfil');
     }
 }

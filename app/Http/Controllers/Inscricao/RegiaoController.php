@@ -16,7 +16,7 @@ class RegiaoController extends Controller
     {
         $this->regiao = $regiao;
         
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**

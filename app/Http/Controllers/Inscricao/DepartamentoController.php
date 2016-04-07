@@ -20,7 +20,7 @@ class DepartamentoController extends Controller
         $this->departamento = $departamento;
         $this->orgao = $orgao;
         
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**

@@ -19,7 +19,7 @@ class CursoController extends Controller
         $this->curso = $curso;
         $this->scurso = $scurso;
 
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**

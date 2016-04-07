@@ -20,7 +20,7 @@ class ModuloController extends Controller
         $this->modulo = $modulo;
         $this->curso = $curso;
 
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**

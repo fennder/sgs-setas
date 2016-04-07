@@ -44,7 +44,7 @@ class UsuarioController extends Controller
         $this->cargo = $cargo;
         $this->funcao = $funcao;
 
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -130,7 +130,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        dd($request->all());
         $usuarios = $this->usuario->create($request->all());
 
         return redirect()->route('i.index');
@@ -144,7 +144,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        $usuarios = $this->usuario->find($id);
+        /*$usuarios = $this->usuario->find($id);
 
         $estados = $this->estado->all();
         $usuarios = $this->usuario->all();
@@ -169,7 +169,7 @@ class UsuarioController extends Controller
             'cargos' => $cargos,
             'funcoes' => $funcoes,
             'estado_rgs' => $estado_rgs
-        ]);
+        ]);*/
     }
 
     /**
@@ -192,6 +192,7 @@ class UsuarioController extends Controller
         $departamentos = $this->departamento->all();
         $cargos = $this->cargo->all();
         $funcoes = $this->funcao->all();
+        $perfis = $this->perfil->all();
         
         return view('inscrito.edit',
         [
@@ -205,7 +206,8 @@ class UsuarioController extends Controller
             'departamentos' => $departamentos,
             'cargos' => $cargos,
             'funcoes' => $funcoes,
-            'estado_rgs' => $estado_rgs
+            'estado_rgs' => $estado_rgs,
+            'perfis' => $perfis
         ]);
     }
 
@@ -218,12 +220,11 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        dd($request->all());
         $usuarios = $this->usuario->find($id);
         $usuarios->update($request->all());
 
         return redirect()->route('i.index');
-
     }
 
     /**

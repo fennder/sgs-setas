@@ -190,3 +190,13 @@ Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'Inscricao\UsuarioController@update']);
 	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'Inscricao\UsuarioController@destroy']);
 });
+
+Route::group(['as' => 'pf.', 'prefix' => 'perfil'], function()
+{
+	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\PerfilController@index']);
+	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\PerfilController@create']);
+	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\PerfilController@store']);
+	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\PerfilController@edit']);
+	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'Inscricao\PerfilController@update']);
+	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'Inscricao\PerfilController@destroy']);
+});

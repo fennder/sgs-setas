@@ -29,8 +29,8 @@ class Perfil extends Model
     	'descricao'
     ];
 
-    /*public function usuario()
+    public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario');//Tem vários usuários
-    }*/
+    	return $this->hasMany('Gerenciador\User');//Tem vários usuários
+    }
 }

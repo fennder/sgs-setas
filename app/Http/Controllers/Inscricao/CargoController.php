@@ -16,7 +16,7 @@ class CargoController extends Controller
     {
         $this->cargo = $cargo;
         
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -38,8 +38,8 @@ class CargoController extends Controller
             'nav' => $nav,
             'cargos' => $cargos,
             'usuarios' => $usuarios, 
-            'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'page_title' => $page_title, 
+            'page_description' => $page_description
         ]);    
     }
 

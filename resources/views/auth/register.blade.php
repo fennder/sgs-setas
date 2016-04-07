@@ -46,9 +46,10 @@
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="hidden" class="form-control" name="dados_atualizados" value="0" placeholder="Email">
-          
+          <input type="hidden" class="form-control" name="dados_atualizados" value="0">
+          <input type="hidden" class="form-control" name="id_perfil" value="3">  
         </div>
+
         <div class="row">
           <!-- /.col -->
           <div class="col-xs-12" align="center">

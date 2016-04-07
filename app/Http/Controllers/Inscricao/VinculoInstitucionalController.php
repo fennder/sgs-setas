@@ -16,7 +16,7 @@ class VinculoInstitucionalController extends Controller
     {
         $this->vinculo = $vinculo;
         
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**

@@ -9,18 +9,25 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+// use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
+    // use EntrustUserTrait;
 
     /**
-     * The database table used by the model.
+     * The database table used by the model.w
      *
      * @var string
      */
     protected $table = 'users';
 
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -120,10 +127,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->belongsTo('Gerenciador\Inscricao\Escolaridade', 'id_escolaridade');//Tem uma escolaridade
     }
 
-    /*public function perfil()
+    public function perfil()
     {
         return $this->belongsTo('Gerenciador\Inscricao\Perfil', 'id_perfil');//Tem um perfil
-    }*/
+    }
 
     public function deficiencia()
     {

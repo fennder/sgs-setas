@@ -68,7 +68,7 @@
 
   <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-md-3">
     <small class="text-muted">Identidade</small>
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}" required>
@@ -84,7 +84,7 @@
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
 
-    <div class="col-md-2">
+    <div class="col-md-3">
       <div class="form-group has-feedback">
         <small class="text-muted">UF - RG</small>
         <div class="input-group">
@@ -144,24 +144,6 @@
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
 
-    <div class="col-md-4">
-      <div class="form-group has-feedback">
-      <small class="text-muted">Cidade</small>
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_cidade" id="id_cidade" required>
-           
-            @foreach ($cidades as $cidade)
-              
-                <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
-              
-            @endforeach
-          </select>
-        </div>
-        
-      </div><!-- Cidade -->
-    </div><!-- Col 4 -->
-
     <div class="col-md-3">
       <div class="form-group has-feedback">
       <small class="text-muted">Estado</small>
@@ -179,6 +161,24 @@
         
       </div><!-- Estado -->
     </div><!-- Col 3 -->
+
+    <div class="col-md-4">
+      <div class="form-group has-feedback">
+      <small class="text-muted">Cidade</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_cidade" id="id_cidade" required>
+           
+            @foreach ($cidades as $cidade)
+              
+                <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
+              
+            @endforeach
+          </select>
+        </div>
+        
+      </div><!-- Cidade -->
+    </div><!-- Col 4 -->
 
   </div><!-- row -->
 
@@ -211,6 +211,17 @@
         
       </div><!-- Escolaridade -->
     </div><!-- Col 5 -->
+
+    <div class="col-md-4">
+      <small class="text-muted">Telefone do Trabalho</small>
+        <div class="form-group has-feedback input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-phone"></i>
+          </div>
+          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
+        </div><!-- Telefone Trabalho -->
+        
+      </div><!-- Col 3 -->
 
     <!-- <div class="col-md-4">
       <div class="form-group">
@@ -246,16 +257,7 @@
         </div><!-- NIS -->
       </div><!-- Col 4 -->
 
-      <div class="col-md-3" >
-      <small class="text-muted">Data de Início do Serviço</small>
-        <div class="form-group has-feedback">
-          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico }}" required>
-          <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          
-        </div><!--Data Início de Serviço -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-5">
+      <div class="col-md-4">
       <small class="text-muted">Email Institucional</small>
         <div class="form-group has-feedback">
           <div class="input-group">
@@ -263,22 +265,27 @@
             <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br" required>
           </div>
         </div><!-- Email trabalho -->
-      </div><!-- Col 5 -->
+      </div><!-- Col 4 -->
+
+      <div class="col-md-4">
+        <div class="form-group has-feedback">
+        <small class="text-muted">Função</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_funcao" id="id_funcao" required>
+              
+              @foreach ($funcoes as $funcao)
+                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
+              @endforeach
+            </select>
+          </div>
+          
+        </div><!-- Função -->
+      </div><!-- Col 4 -->
     
     </div><!-- row -->
 
     <div class="row">
-
-      <div class="col-md-4">
-      <small class="text-muted">Telefone do Trabalho</small>
-        <div class="form-group has-feedback input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-phone"></i>
-          </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
-        </div><!-- Telefone Trabalho -->
-        
-      </div><!-- Col 3 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
@@ -291,35 +298,19 @@
                   <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
               @endforeach
             </select>
-
-          </div>
-          <!--small class="text-muted">Data de Início do Vínculo</small>
-          <div class="form-group has-feedback">
-            <input type="date" class="form-control" name="inicio_vinculo" id="inicio_vinculo" value="{{$usuarios->vinculoinstitucional}}">
-            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          </div><!--Data Início de Serviço
-        </div> Vinculo Institucional -->
-      </div><!-- Col 4 -->
-
-      <div class="col-md-4">
-        <div class="form-group has-feedback">
-        <small class="text-muted">Órgão</small>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_orgao" id="id_orgao">
-             
-              @foreach ($orgaos as $orgao)
-                  <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
-              @endforeach
-            </select>
           </div>
           
-        </div><!-- Órgão -->
-      </div><!-- Col 3 -->
+        </div><!-- Vinculo Institucional -->
+      </div><!-- Col 4 -->
 
-    </div><!-- row -->
-
-    <div class="row">
+      <div class="col-md-4" >
+      <small class="text-muted">Data de Início do Serviço</small>
+        <div class="form-group has-feedback">
+          <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico}}" required>
+          
+        </div><!--Data Início de Serviço -->
+      </div><!-- Col 4 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
@@ -335,7 +326,27 @@
           </div>
           
         </div><!-- Departamento -->
-      </div><!-- Col 3 -->
+      </div><!-- Col 4 -->
+
+    </div><!-- row -->
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <div class="form-group has-feedback">
+        <small class="text-muted">Órgão</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_orgao" id="id_orgao">
+             
+              @foreach ($orgaos as $orgao)
+                  <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
+              @endforeach
+            </select>
+          </div>
+          
+        </div><!-- Órgão -->
+      </div><!-- Col 8 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
@@ -350,30 +361,14 @@
             </select>
           </div>
           
-        </div><!-- Departamento -->
-      </div><!-- Col 3 -->
-
-      <div class="col-md-4">
-        <div class="form-group has-feedback">
-        <small class="text-muted">Função</small>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_funcao" id="id_funcao" required>
-              
-              @foreach ($funcoes as $funcao)
-                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
-              @endforeach
-            </select>
-          </div>
-          
-        </div><!-- Departamento -->
+        </div><!-- Cargo -->
       </div><!-- Col 3 -->
 
     </div><!-- row -->
 
   </div>
 </div>
-
+  <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
