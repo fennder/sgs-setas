@@ -5,7 +5,7 @@ namespace Gerenciador\Inscricao;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Gerenciador\Inscricao\Cidade;
-use Gerenciador\Inscricao\Usuario;
+use Gerenciador\User;
 
 class Estado extends Model
 {
@@ -36,12 +36,12 @@ class Estado extends Model
 
     public function cidade()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Cidade', 'id_cidade'); //Tem várias cidades
+    	return $this->hasMany('Gerenciador\Inscricao\Cidade', 'id_estado'); //Tem várias cidades
     }
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Usuario'); //Tem vários usuários
+    	return $this->hasMany('Gerenciador\User', 'id'); //Tem vários usuários
     }
 
 }

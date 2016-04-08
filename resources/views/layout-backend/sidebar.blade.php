@@ -11,6 +11,7 @@
         </div>
         <div class="pull-left info">
           <p>{{ $usuarios->nome_cracha or "Nome do Servidor"}}</p>
+          <small>{{ $usuarios->perfil->descricao or "Tipo de permissão"}}</small>
            <!-- Status -->
           <!-- <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a -->
         </div>

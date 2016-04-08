@@ -136,15 +136,15 @@
 
   <div class="row">
       
-    <div class="col-md-5">
+    <div class="col-md-3">
     <small class="text-muted">Complemento</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}" required>
+        <input disabled type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}">
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="form-group has-feedback">
       <small class="text-muted">Estado</small>
         <div class="input-group">
@@ -162,7 +162,7 @@
       </div><!-- Estado -->
     </div><!-- Col 3 -->
 
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="form-group has-feedback">
       <small class="text-muted">Cidade</small>
         <div class="input-group">

@@ -129,13 +129,13 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ $usuarios->nome_cracha or "Servidor"}} - Web Developer
+                  {{ $usuarios->nome_cracha or "Servidor"}} - {{ $usuarios->perfil->descricao or "Ocupação"}}
                   <small>Usuário desde {{$usuarios->created_at or Null}}</small>
                 </p>
               </li>
               <!-- Menu Body -->
 
-              <li class="user-body">
+              <!-- <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -147,8 +147,7 @@
                     <a href="#">Friends</a>
                   </div>
                 </div>
-                <!-- /.row -->
-              </li>
+              </li> -->
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">

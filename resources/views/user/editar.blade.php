@@ -89,7 +89,8 @@
         <small class="text-muted">UF - RG</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_estado_rg" id="id_estado_rg" >            
+          <select class="form-control" name="id_estado_rg" id="id_estado_rg" >  
+            <option value=""></option>          
             @foreach ($estado_rgs as $estado_rg)              
                 <option value="{{$estado_rg->id_estado}}">{{$estado_rg->uf}}</option>
             @endforeach
@@ -102,9 +103,8 @@
     <small class="text-muted">Sexo</small>
       <div class="form-group has-feedback">
         <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}" required>
-      
+          <option value=""></option>
           <option value="M">Masculino</option>
-
           <option value="F">Feminino</option>
            
         </select>
@@ -136,7 +136,7 @@
 
   <div class="row">
       
-    <div class="col-md-5">
+    <div class="col-md-3">
     <small class="text-muted">Complemento</small>
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}" required>
@@ -144,13 +144,13 @@
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="form-group has-feedback">
       <small class="text-muted">Estado</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_estado" id="id_estado" required>
-            
+            <option value=""></option>
             @foreach ($estados as $estado)
               
                 <option value="{{$estado->id_estado}}">{{$estado->nome}}</option>
@@ -162,19 +162,21 @@
       </div><!-- Estado -->
     </div><!-- Col 3 -->
 
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="form-group has-feedback">
       <small class="text-muted">Cidade</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_cidade" id="id_cidade" required>
-           
-            @foreach ($cidades as $cidade)
-              
-                <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
-              
-            @endforeach
+           <option value=""></option>
+
+              @foreach ($cidades as $cidade)
+                
+                  <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
+                {{var_dump($cidade->id_estado)}}
+              @endforeach
           </select>
+          
         </div>
         
       </div><!-- Cidade -->
@@ -200,7 +202,7 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_escolaridade" id="id_escolaridade" required>
-            
+            <option value=""></option>
             @foreach ($escolaridades as $escolaridade)
               
                 <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option>
@@ -251,7 +253,7 @@
       <div class="col-md-4">
       <small class="text-muted">Número de Identificação Social</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" required>
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
@@ -273,7 +275,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_funcao" id="id_funcao" required>
-              
+              <option value=""></option>
               @foreach ($funcoes as $funcao)
                   <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
               @endforeach
@@ -293,7 +295,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional" required>
-             
+             <option value=""></option>
               @foreach ($vinculos as $vinculo)
                   <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
               @endforeach
@@ -318,7 +320,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_departamento" id="id_departamento" required>
-              
+              <option value=""></option>
               @foreach ($departamentos as $departamento)
                   <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
               @endforeach
@@ -338,7 +340,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_orgao" id="id_orgao">
-             
+             <option value=""></option>
               @foreach ($orgaos as $orgao)
                   <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
               @endforeach
@@ -354,7 +356,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_cargo" id="id_cargo" required>
-              
+              <option value=""></option>
               @foreach ($cargos as $cargo)
                   <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
               @endforeach
@@ -372,8 +374,3 @@
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
-
-<!-- 
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-  <input type="file" class="form-control" name="foto" value="{{ old('foto') }}/>
--->

@@ -27,7 +27,7 @@
                     <th>Nome</th>
                     <th>UF</th> 
                     <th>Status</th>                    
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <!-- <th style="width: 40px" colspan="2">Ação</th> -->                    
                   </tr>
                 </thead>
                 <tbody>
@@ -38,10 +38,10 @@
                         <td>{{$estado->nome}}</td>
                         <td>{{$estado->uf}}</td>
                         <td>{{$estado->status}}</td>
-                        <td class="text-center">
+                        <!-- <td class="text-center">
                           <a href="{{route('est.edit', ['id' => $estado->id_estado])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('est.destroy', ['id' => $estado->id_estado])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                        </td> -->
                       </tr>
                     @endforeach
                   @else

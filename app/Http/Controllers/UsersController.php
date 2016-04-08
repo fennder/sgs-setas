@@ -59,7 +59,7 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $users = $this->user->paginate(5);
+            $users = $this->user->paginate(10);
             $usuarios = Auth::user();
 
             $page_title = "SGI";
@@ -114,6 +114,17 @@ class UsersController extends Controller
         //
     }
 
+    public function getCidades($id_estado)
+    {
+
+        $estados = $this->estado->find($id_estado);
+
+        $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);
+
+        return Response::json($cidades);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -137,26 +148,27 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-
-            return view('user.admin_editar', 
-            [
-                'usuarios' => $usuarios,
-                'estado_rgs' => $estado_rgs,
-                'cidades' => $cidades,
-                'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
-                'cargos' => $cargos,
-                'funcoes' => $funcoes,
-                'orgaos' => $orgaos,
-                'perfis' => $perfis,
-                'verifica' => $verifica
-            ]);
+            
+                return view('user.admin_editar', 
+                [
+                    'usuarios' => $usuarios,
+                    'estado_rgs' => $estado_rgs,
+                    'cidades' => $cidades,
+                    'estados' => $estados,
+                    'escolaridades' => $escolaridades,
+                    'vinculos' => $vinculos,
+                    'departamentos' => $departamentos,
+                    'cargos' => $cargos,
+                    'funcoes' => $funcoes,
+                    'orgaos' => $orgaos,
+                    'perfis' => $perfis,
+                    'verifica' => $verifica
+                ]);
+    
         }else{
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            $cidades = $this->cidade->all();
+            //$cidades = $this->cidade->all();
             $estados = $this->estado->all();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
@@ -165,6 +177,12 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
+
+            /*$estados = $this->estado->find($id_estado);
+            dd($estados);
+            $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);*/
+
+            $cidades = getCidades();
 
             return view('user.editar', 
             [
