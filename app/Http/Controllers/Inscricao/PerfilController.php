@@ -16,7 +16,7 @@ class PerfilController extends Controller
     {
         $this->perfil = $perfil;
         
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**

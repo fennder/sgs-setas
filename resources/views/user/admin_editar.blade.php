@@ -89,7 +89,8 @@
         <small class="text-muted">UF - RG</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select disabled class="form-control" name="id_estado_rg" id="id_estado_rg" >            
+          <select disabled class="form-control" name="id_estado_rg" id="id_estado_rg" required>
+            <option value="{{$usuarios->estado->id_estado}}">{{$usuarios->estado->uf}}</option>            
             @foreach ($estado_rgs as $estado_rg)              
                 <option value="{{$estado_rg->id_estado}}">{{$estado_rg->uf}}</option>
             @endforeach
@@ -102,10 +103,13 @@
     <small class="text-muted">Sexo</small>
       <div class="form-group has-feedback">
         <select disabled class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}" required>
-      
-          <option value="M">Masculino</option>
-
-          <option value="F">Feminino</option>
+          
+          <option value="">{{$usuarios->sexo}}</option>
+         <!--  @if($usuarios->sexo == "Masculino") -->
+            <option value="Feminino">Feminino</option>
+          <!-- @elseif($usuarios->sexo == "Feminino") -->
+            <option value="Masculino">Masculino</option>
+         <!--  @endif -->
            
         </select>
       </div> <!-- Sexo -->
@@ -150,7 +154,7 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select disabled class="form-control" name="id_estado" id="id_estado" required>
-            
+            <option value="{{$usuarios->estado->id_estado}}">{{$usuarios->estado->nome}}</option>
             @foreach ($estados as $estado)
               
                 <option value="{{$estado->id_estado}}">{{$estado->nome}}</option>
@@ -168,7 +172,7 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select disabled class="form-control" name="id_cidade" id="id_cidade" required>
-           
+            <option value="{{$usuarios->cidade->id_cidade}}">{{$usuarios->cidade->nome}}</option>
             @foreach ($cidades as $cidade)
               
                 <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
@@ -200,7 +204,7 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select disabled class="form-control" name="id_escolaridade" id="id_escolaridade" required>
-            
+            <option value="{{$usuarios->escolaridade->id_escolaridade}}">{{$usuarios->escolaridade->descricao}}</option>
             @foreach ($escolaridades as $escolaridade)
               
                 <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option>
@@ -273,7 +277,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select disabled class="form-control" name="id_funcao" id="id_funcao" required>
-              
+              <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
               @foreach ($funcoes as $funcao)
                   <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
               @endforeach
@@ -293,7 +297,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select disabled class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional" required>
-             
+              <option value="{{$usuarios->vinculoinstitucional->id_vinculo_institucional}}">{{$usuarios->vinculoinstitucional->descricao}}</option>
               @foreach ($vinculos as $vinculo)
                   <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
               @endforeach
@@ -318,7 +322,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select disabled class="form-control" name="id_departamento" id="id_departamento" required>
-              
+              <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
               @foreach ($departamentos as $departamento)
                   <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
               @endforeach
@@ -338,7 +342,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select disabled class="form-control" name="id_orgao" id="id_orgao">
-             
+             <option value="{{$usuarios->orgao->id_orgao}}">{{$usuarios->orgao->descricao}}</option>
               @foreach ($orgaos as $orgao)
                   <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
               @endforeach
@@ -354,7 +358,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select disabled class="form-control" name="id_cargo" id="id_cargo" required>
-              
+              <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
               @foreach ($cargos as $cargo)
                   <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
               @endforeach
@@ -389,15 +393,15 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_perfil" id="id_perfil" value="{{$usuarios->vinculoinstitucional->descricao}}" required>
-              
+                <option value="{{$usuarios->perfil->id_perfil}}">{{$usuarios->perfil->descricao}}</option>
                 @foreach ($perfis as $perfil)
-                  <option value="{{$perfil->id_perfil}}">{{$perfil->descricao}}</option>
+                  @if($usuarios->perfil->id_perfil == 1)
+                    <option value="{{$perfil->id_perfil}}">{{$perfil->descricao}}</option>
+                  @endif
                 @endforeach
               
             </select>
-
           </div>
-          
         </div><!-- Função -->
       </div><!-- Col 4 -->
     

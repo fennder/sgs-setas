@@ -89,7 +89,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function estado_rg()
     {
-        return $this->belongsTo('Gerenciador\Inscricao\Estado', 'id_estado_rg'); //Tem apenas um Estado
+        return $this->belongsTo('Gerenciador\Inscricao\Estado', 'id_estado'); //Tem apenas um Estado
     }
 
     public function cidade()

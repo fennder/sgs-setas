@@ -90,7 +90,11 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_estado_rg" id="id_estado_rg" >  
-            <option value=""></option>          
+            @if($usuarios->estado_rg)
+              <option value="{{$usuarios->estado_rg->id_estado}}">{{$usuarios->estado_rg->uf}}</option>
+            @else
+              <option value=""></option>
+            @endif
             @foreach ($estado_rgs as $estado_rg)              
                 <option value="{{$estado_rg->id_estado}}">{{$estado_rg->uf}}</option>
             @endforeach
@@ -102,10 +106,14 @@
     <div class="col-md-3">
     <small class="text-muted">Sexo</small>
       <div class="form-group has-feedback">
-        <select class="form-control" name="sexo" id="sexo" value="{{ $usuarios->sexo }}" required>
-          <option value=""></option>
-          <option value="M">Masculino</option>
-          <option value="F">Feminino</option>
+        <select class="form-control" name="sexo" id="sexo" required>
+            @if($usuarios->sexo)
+              <option value="{{$usuarios->sexo}}">{{$usuarios->sexo}}</option>
+            @else
+              <option value=""></option>
+            @endif
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
            
         </select>
       </div> <!-- Sexo -->
@@ -150,7 +158,11 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_estado" id="id_estado" required>
-            <option value=""></option>
+            @if($usuarios->estado)
+              <option value="{{$usuarios->estado->id_estado}}">{{$usuarios->estado->nome}}</option>
+            @else
+              <option value=""></option>
+            @endif
             @foreach ($estados as $estado)
               
                 <option value="{{$estado->id_estado}}">{{$estado->nome}}</option>
@@ -168,12 +180,15 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_cidade" id="id_cidade" required>
-           <option value=""></option>
-
+              @if($usuarios->cidade)
+                <option value="{{$usuarios->cidade->id_cidade}}">{{$usuarios->cidade->nome}}</option>
+              @else
+              <option value=""></option>
+              @endif
               @foreach ($cidades as $cidade)
                 
                   <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
-                {{var_dump($cidade->id_estado)}}
+                
               @endforeach
           </select>
           
@@ -202,11 +217,13 @@
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_escolaridade" id="id_escolaridade" required>
-            <option value=""></option>
-            @foreach ($escolaridades as $escolaridade)
-              
-                <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option>
-              
+            @if($usuarios->escolaridade)
+              <option value="{{$usuarios->escolaridade->id_escolaridade}}">{{$usuarios->escolaridade->descricao}}</option>
+            @else
+              <option value="">- Selecione -</option>
+            @endif
+            @foreach ($escolaridades as $escolaridade) 
+              <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option> 
             @endforeach
           </select>
         </div>
@@ -253,7 +270,7 @@
       <div class="col-md-4">
       <small class="text-muted">Número de Identificação Social</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis">
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" >
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
@@ -275,7 +292,11 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_funcao" id="id_funcao" required>
-              <option value=""></option>
+              @if($usuarios->funcao)
+                <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
+              @else
+              <option value="">- Selecione -</option>
+              @endif
               @foreach ($funcoes as $funcao)
                   <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
               @endforeach
@@ -295,7 +316,11 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional" required>
-             <option value=""></option>
+              @if($usuarios->vinculoinstitucional)
+                <option value="{{$usuarios->vinculoinstitucional->id_vinculo_institucional}}">{{$usuarios->vinculoinstitucional->descricao}}</option>
+              @else
+              <option value="">- Selecione -</option>
+              @endif
               @foreach ($vinculos as $vinculo)
                   <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
               @endforeach
@@ -320,7 +345,11 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_departamento" id="id_departamento" required>
-              <option value=""></option>
+              @if($usuarios->departamento)
+                <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
+              @else
+              <option value="">- Selecione -</option>
+              @endif
               @foreach ($departamentos as $departamento)
                   <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
               @endforeach
@@ -339,8 +368,12 @@
         <small class="text-muted">Órgão</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_orgao" id="id_orgao">
-             <option value=""></option>
+            <select class="form-control" name="id_orgao" id="id_orgao" required>
+              @if($usuarios->orgao)
+                <option value="{{$usuarios->orgao->id_orgao}}">{{$usuarios->orgao->descricao}}</option>
+              @else
+              <option value="">- Selecione -</option>
+              @endif
               @foreach ($orgaos as $orgao)
                   <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
               @endforeach
@@ -356,7 +389,11 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_cargo" id="id_cargo" required>
-              <option value=""></option>
+              @if($usuarios->cargo)
+                <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
+              @else
+              <option value="">- Selecione -</option>
+              @endif
               @foreach ($cargos as $cargo)
                   <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
               @endforeach

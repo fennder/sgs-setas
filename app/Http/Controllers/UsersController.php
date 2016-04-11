@@ -118,11 +118,10 @@ class UsersController extends Controller
     {
 
         $estados = $this->estado->find($id_estado);
-
         $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);
 
         return Response::json($cidades);
-
+        dd($cidades);
     }
 
     /**
@@ -139,7 +138,7 @@ class UsersController extends Controller
         if($verifica->id_perfil == 1){
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            $cidades = $this->cidade->all();
+            //$cidades = $this->cidade->all();
             $estados = $this->estado->all();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
@@ -148,7 +147,8 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-            
+
+            $cidades = getCidades();
                 return view('user.admin_editar', 
                 [
                     'usuarios' => $usuarios,
@@ -168,7 +168,7 @@ class UsersController extends Controller
         }else{
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            //$cidades = $this->cidade->all();
+            $cidades = $this->cidade->all();
             $estados = $this->estado->all();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
@@ -182,7 +182,7 @@ class UsersController extends Controller
             dd($estados);
             $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);*/
 
-            $cidades = getCidades();
+            /*$cidades = getCidades();*/
 
             return view('user.editar', 
             [
