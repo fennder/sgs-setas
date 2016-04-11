@@ -7,42 +7,41 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+          <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p>{{ $usuarios->nome_cracha or "Nome do Servidor"}}</p>
+          <small>{{ $usuarios->perfil->descricao or "Tipo de permissão"}}</small>
+           <!-- Status -->
+          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a -->
         </div>
       </div>
 
       <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <input type="text" name="q" class="form-control" placeholder="Procurar...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
-
-      <!-- Sidebar Menu -->
-      <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- /.sidebar-menu -->
+      @if($usuarios->dados_atualizados == 0)
+        @include('layout-backend.menu.menu')
+      @else
+        @if($usuarios->id_perfil == 1)
+          @include('layout-backend.menu.menu1')
+        @endif
+        @if($usuarios->id_perfil == 2)
+          @include('layout-backend.menu.menu2')
+        @endif
+        @if($usuarios->id_perfil == 3)
+          @include('layout-backend.menu.menu3')
+        @endif
+      @endif
+      
     </section>
     <!-- /.sidebar -->
   </aside>

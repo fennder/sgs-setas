@@ -2,27 +2,22 @@
 
 namespace Gerenciador\Http\Controllers\Auth;
 
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Gerenciador\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Gerenciador\User;
 use Validator;
-use Gerenciador\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Session;
+use Auth;
 
 class AuthController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
-
+    
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectPath = '/home';
+    protected $loginPath = 'auth/login';
     /**
      * Create a new authentication controller instance.
      *
@@ -56,10 +51,27 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * 
+     * @return array
+     */
+    /*public function messages()
+    {
+        return User::create([
+            'name.required' => 'O seu nome é obrigatório',
+            'email.required' => 'O seu email é obrigatório',
+            'password.required' => 'Sua senha é obrigatória',
+        ]);
+    }*/
+
 }

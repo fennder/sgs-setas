@@ -3,3 +3,6 @@
 Homestead.yaml
 .env
 .php~
+/nbproject/private/
+/nbproject/project.properties
+/nbproject/project.xml

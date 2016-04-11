@@ -36,8 +36,8 @@
                             <td>{{ $contrato->created_at }}</td>
                             <td>{{ $contrato->updated_at }}</td>
                             <td>
-                                <a class="btn btn-primary" href="/contrato/edit/{id}"><i class="glyphicon glyphicon-pencil">Editar</i></a>
-                                <a class="btn btn-danger" href="/contrato/delete/{id}"><i class="glyphicon glyphicon-remove-sign">Deletar</i></a>
+                                <a class="btn btn-primary" href="/contrato/edit/{$id_cc}"><i class="glyphicon glyphicon-pencil">Editar</i></a>
+                                <a class="btn btn-danger" href="/contrato/delete/{$id_cc}"><i class="glyphicon glyphicon-remove-sign">Deletar</i></a>
                             </td>
                         </tr>                              
                     @endforeach
