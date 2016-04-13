@@ -30,10 +30,9 @@
                   </tr>
                 </thead>
                 <tbody>
-
                     @foreach($inscricoes as $inscricao)
                       <tr>
-                        <td>{{$inscricao->curso->descricao}}</td>
+                        <td>{{$inscricao->cursos->descricao}}</td>
                         <td>{{$inscricao->usuario->name}}</td>
                         <td>{{$inscricao->usuario->funcao->descricao}}</td>
                         <td class="text-center">
