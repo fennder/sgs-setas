@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cea146ce716b03291084ec61e0f4bf8a",
-    "content-hash": "119b740794edaa6a4da6b95081c7ad58",
+    "hash": "c8f086805feb61c8c369ed4e0d1f622f",
+    "content-hash": "d7cc2bb59c7cffa856912bfcedd0b0ac",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -404,55 +404,6 @@
             "time": "2015-12-05 17:17:57"
         },
         {
-            "name": "kennedytedesco/validation",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KennedyTedesco/Validation.git",
-                "reference": "581326e7dfb4f3baf097707dd5c5bed56cb8e420"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KennedyTedesco/Validation/zipball/581326e7dfb4f3baf097707dd5c5bed56cb8e420",
-                "reference": "581326e7dfb4f3baf097707dd5c5bed56cb8e420",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.0.*|5.1.*",
-                "php": ">=5.4",
-                "respect/validation": "1.0.*"
-            },
-            "require-dev": {
-                "laravel/framework": "5.1.*",
-                "orchestra/testbench": "3.1.*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "KennedyTedesco\\Validation\\": "src/Validation"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kennedy Tedesco",
-                    "email": "kennedyt.tw@gmail.com"
-                }
-            ],
-            "description": "The power of 'Respect Validation' on Laravel.",
-            "keywords": [
-                "laravel",
-                "respect",
-                "rules",
-                "validation"
-            ],
-            "time": "2015-11-29 15:55:18"
-        },
-        {
             "name": "laravel/framework",
             "version": "v5.1.34",
             "source": {
@@ -715,16 +666,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.2",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/064b38c16790249488e7a8b987acf1c9d7383c09",
-                "reference": "064b38c16790249488e7a8b987acf1c9d7383c09",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -789,7 +740,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-02 13:12:58"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1124,70 +1075,6 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
-        },
-        {
-            "name": "respect/validation",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Respect/Validation.git",
-                "reference": "294368294f9cd207f81474bab27d99875a19ac55"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/294368294f9cd207f81474bab27d99875a19ac55",
-                "reference": "294368294f9cd207f81474bab27d99875a19ac55",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "egulias/email-validator": "~1.2",
-                "malkusch/bav": "~1.0",
-                "mikey179/vfsstream": "^1.5",
-                "phpunit/phpunit": "~4.0",
-                "symfony/validator": "~2.6.9",
-                "zendframework/zend-validator": "~2.3"
-            },
-            "suggest": {
-                "egulias/email-validator": "Strict (RFC compliant) email validation",
-                "ext-bcmath": "Arbitrary Precision Mathematics",
-                "ext-mbstring": "Multibyte String Functions",
-                "fabpot/php-cs-fixer": "Fix PSR2 and other coding style issues",
-                "malkusch/bav": "German bank account validation",
-                "symfony/validator": "Use Symfony validator through Respect\\Validation",
-                "zendframework/zend-validator": "Use Zend Framework validator through Respect\\Validation"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Respect\\Validation\\": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD Style"
-            ],
-            "authors": [
-                {
-                    "name": "Respect/Validation Contributors",
-                    "homepage": "https://github.com/Respect/Validation/graphs/contributors"
-                }
-            ],
-            "description": "The most awesome validation engine ever created for PHP",
-            "homepage": "http://respect.li",
-            "keywords": [
-                "respect",
-                "validation",
-                "validator"
-            ],
-            "time": "2016-03-31 17:39:15"
         },
         {
             "name": "swiftmailer/swiftmailer",
