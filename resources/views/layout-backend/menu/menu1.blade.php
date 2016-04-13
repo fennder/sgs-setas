@@ -27,6 +27,7 @@
             <ul class="treeview-menu">
               <li><a href="{!! route('ins.index') !!}">Relação de Inscritos</a></li>
               <li><a href="{!! route('ins.create') !!}">Inscrever</a></li>
+              <li><a href="{!! route('ins.show') !!}">Minhas Inscrições</a></li>
               
             </ul>
           </li>

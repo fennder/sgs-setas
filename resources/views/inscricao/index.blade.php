@@ -30,7 +30,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @if($inscricoes)
+
                     @foreach($inscricoes as $inscricao)
                       <tr>
                         <td>{{$inscricao->curso->descricao}}</td>
@@ -42,9 +42,7 @@
                         </td>
                       </tr>
                     @endforeach
-                  @else
-                    <p>Nenhum registro encontrado!</p>
-                  @endif
+
                 </tbody>
               </table>
         </div><!-- /.box-body -->
