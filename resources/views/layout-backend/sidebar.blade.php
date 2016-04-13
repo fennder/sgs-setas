@@ -29,6 +29,7 @@
       </form> -->
       <!-- /.search form -->
       @if($usuarios->dados_atualizados == 0)
+        
         @include('layout-backend.menu.menu')
       @else
         @if($usuarios->id_perfil == 1)

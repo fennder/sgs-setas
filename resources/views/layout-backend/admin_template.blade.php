@@ -39,33 +39,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- bootstrap wysihtml5 - text editor -->
   <link href="{{ asset("/bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}" rel="stylesheet" type="text/css" >
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <script type="text/javascript">
+     function mascara(t, mask){
+       var i = t.value.length;
+       var saida = mask.substring(1,0);
+       var texto = mask.substring(i)
+      if (texto.substring(0,1) != saida){
+        t.value += texto.substring(0,1);
+      }
+      }
+  </script>
+
+
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -95,6 +82,7 @@ desired effect
 
       <!-- Your Page Content Here -->
       @yield('content')
+
 
     </section>
 
@@ -225,5 +213,6 @@ desired effect
     });
   });
 </script>
+@yield('post-script')
 </body>
 </html>

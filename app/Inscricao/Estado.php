@@ -34,9 +34,10 @@ class Estado extends Model
     	'status'
     ];
 
-    public function cidade()
+    public function cidades()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Cidade', 'id_estado'); //Tem várias cidades
+    	//return $this->hasMany('Gerenciador\Inscricao\Cidade'); //Tem várias cidades
+        return $this->hasMany('Gerenciador\Inscricao\Cidade', 'id_estado'); //Tem várias cidades
     }
 
     public function usuario()

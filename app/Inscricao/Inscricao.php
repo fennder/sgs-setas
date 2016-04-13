@@ -13,7 +13,7 @@ class Inscricao extends Model
      *
      * @var string
      */
-    protected $table = 'inscricao';
+    protected $table = 'curso_user';
     
     /**
      * The primary key for the model.
@@ -22,15 +22,15 @@ class Inscricao extends Model
      */
     protected $primaryKey = 'id_inscricao';
 
-    protected $fillable = ['id', 'id_curso'];
+    protected $fillable = ['user_id', 'curso_id'];
 
     public function curso()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso'); // Tem apenas um curso
+    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso');
     }
 
     public function usuario()
     {
-    	return $this->belongsTo('Gerenciador\User', 'id'); // Tem apenas um usuario
+    	return $this->belongsTo('Gerenciador\User', 'id');
     }
 }

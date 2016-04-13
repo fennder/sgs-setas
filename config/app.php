@@ -142,7 +142,8 @@ return [
         /*
          * Instalações efetuadas
          */
-        Collective\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,   
+        KennedyTedesco\Validation\ValidationServiceProvider::class,
 
         /*
          * Application Service Providers...

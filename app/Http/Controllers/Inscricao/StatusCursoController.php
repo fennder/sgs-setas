@@ -54,12 +54,15 @@ class StatusCursoController extends Controller
         $page_title = "SGS";
         $page_description = "Cadastro de Status do Curso";
         $nav = "Status Curso";
+        $usuarios = Auth::user();
 
+        
         return view('status_curso.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'usuarios'=> $usuarios
         ]);
     }
 
@@ -99,12 +102,15 @@ class StatusCursoController extends Controller
         $nav = "Editar";
         $page_description = "Editar Status de Curso";
         $scursos = $this->scurso->find($id);
+        $usuarios = Auth::user();
+
         
         return view('status_curso.edit',
         [
             'nav' => $nav,
             'scursos' => $scursos, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'usuarios' => $usuarios
         ]);
     }
 

@@ -1,8 +1,12 @@
 <?php
+
+Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
+
 Route::get('', function()
 {
 	return redirect()->route('h.index');
 });
+
 
 Route::group(['as' => 'h.', 'prefix' => 'home'], function()
 {
@@ -176,6 +180,7 @@ Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\InscricaoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\InscricaoController@store']);
+	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\InscricaoController@show']);
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\InscricaoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\InscricaoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\InscricaoController@destroy']);

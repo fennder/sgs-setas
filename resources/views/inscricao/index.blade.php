@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -23,9 +23,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th>Cursos</th>
-                    <th>Usuarios</th>
+                    <th>Curso</th>
+                    <th>Inscrito</th>
+                    <th>Função</th>
                     <th style="width: 40px" colspan="2">Ação</th>                    
                   </tr>
                 </thead>
@@ -33,9 +33,9 @@
                   @if($inscricoes)
                     @foreach($inscricoes as $inscricao)
                       <tr>
-                        <td>{{$inscricao->id_inscricao}}.</td>
                         <td>{{$inscricao->curso->descricao}}</td>
                         <td>{{$inscricao->usuario->name}}</td>
+                        <td>{{$inscricao->usuario->funcao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
@@ -56,51 +56,6 @@
       </div><!-- /.box -->
     </div><!-- Col 6 -->
   </div> <!-- Row -->
-<div class="row">
-  <div class="col-md-8">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Informações Complementares</h3>
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-        </div>
-      </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-              
-        </div><!-- /.box-body -->
-        
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination-sm no-margin pull-right">
-            <li>#</li>
-          </ul>
-        </div>
-    </div><!-- /.box -->
-          
-  </div><!-- /.col 8 -->
 
-  <div class="col-md-4">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Mais informações</h3>
-        <!-- Inserir conteúdo aqui -->
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-        </div>
-      </div>
-      <div class="box-body">
-              
-      </div><!-- /.box-body -->
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination-sm no-margin pull-right">
-            <li>#</li>
-          </ul>
-        </div>
-    </div><!-- /.col -->
-    
-  </div>
-</div>
 
 @endsection

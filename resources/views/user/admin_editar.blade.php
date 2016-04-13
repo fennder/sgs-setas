@@ -395,9 +395,9 @@
             <select class="form-control" name="id_perfil" id="id_perfil" value="{{$usuarios->vinculoinstitucional->descricao}}" required>
                 <option value="{{$usuarios->perfil->id_perfil}}">{{$usuarios->perfil->descricao}}</option>
                 @foreach ($perfis as $perfil)
-                  @if($usuarios->perfil->id_perfil == 1)
+                  
                     <option value="{{$perfil->id_perfil}}">{{$perfil->descricao}}</option>
-                  @endif
+                 
                 @endforeach
               
             </select>
@@ -409,7 +409,9 @@
 
   </div>
 </div>
-
+  @if($usuarios->dados_atualizados == 0)
+    <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
+  @endif
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection

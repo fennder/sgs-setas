@@ -3,12 +3,14 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Auth;
+
 
 class CidadeController extends Controller
 {
@@ -52,6 +54,17 @@ class CidadeController extends Controller
             'usuarios' => $usuarios,
             'regioes' => $regioes
         ]);
+    }
+
+    public function getCidades($id_estado)
+    {
+
+        $estado = $this->estado->find($id_estado);
+
+        $cidades = $estado->cidades()->getQuery()->get(['id_cidade', 'nome']);
+
+        return response()->json($cidades);
+
     }
 
     /**

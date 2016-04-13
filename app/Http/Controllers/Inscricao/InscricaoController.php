@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Curso;
 use Gerenciador\User;
+use DB;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Auth;
@@ -34,7 +35,7 @@ class InscricaoController extends Controller
      */
     public function index()
     {
-        $inscricoes = $this->inscricao->paginate(4);
+        $inscricoes = $this->inscricao->paginate(5);
         $usuarios = Auth::user();
 
         $page_title = "SGS";
@@ -91,7 +92,7 @@ class InscricaoController extends Controller
 
         $this->inscricao->create($request->all());
 
-        return redirect()->route('ins.index');
+        return redirect()->route('ins.show');
     }
 
     /**
@@ -100,9 +101,24 @@ class InscricaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        
+        $usuarios = Auth::user();
+    
+        $cursos = $usuarios->cursos;
+        $page_title = "SGS";
+        $page_description = "Meus Cursos";
+        $nav = "Meus Cursos";
+
+        return view('inscricao.show',
+        [
+            'nav' => $nav,
+            'page_title'=> $page_title,
+            'page_description'=> $page_description,
+            'usuarios'=> $usuarios,
+            'cursos' => $cursos
+        ]);
     }
 
     /**

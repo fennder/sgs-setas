@@ -12,7 +12,7 @@ class CreateInscricaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('inscricao', function (Blueprint $table) {
+        Schema::create('curso_user', function (Blueprint $table) {
             $table->increments('id_inscricao');
             $table->integer('id_curso')->unsigned()->nullable();
             $table->foreign('id_curso')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('Set Null');
