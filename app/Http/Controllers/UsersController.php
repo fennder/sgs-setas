@@ -193,37 +193,8 @@ class UsersController extends Controller
 
         $users->save();
 
-        if(true)
-        {
-            $usuarios = $this->user->find($id);
-            $estado_rgs = $this->estado_rg->all();
-            $cidades = $this->cidade->all();
-            $estados = $this->estado->all();
-            $escolaridades = $this->escolaridade->all();
-            $vinculos = $this->vinculo->all();
-            $orgaos = $this->orgao->all();
-            $departamentos = $this->departamento->all();
-            $cargos = $this->cargo->all();
-            $funcoes = $this->funcao->all();
-            $perfis = $this->perfil->all();
+        return redirect()->route('u.index');
 
-            return view('user.admin_editar', 
-            [
-                'usuarios' => $usuarios,
-                'estado_rgs' => $estado_rgs,
-                'cidades' => $cidades,
-                'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
-                'cargos' => $cargos,
-                'funcoes' => $funcoes,
-                'orgaos' => $orgaos,
-                'perfis' => $perfis
-            ]);
-        }else{
-            return redirect()->route('u.index');
-        }
 
     }
 
