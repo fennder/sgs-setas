@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$orgaos->descricao}}" name="descricao" id="descricao" placeholder="Órgão de lotação">
+          <input type="text" class="form-control" value="{{$orgaos->descricao}}" name="descricao" id="descricao" placeholder="Órgão de lotação" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 12 -->

@@ -6,7 +6,7 @@
 <!-- Box formulario dados pessoais -->
 <div class="box">
   <div class="box-header with-border">
-    <h3 class="box-title">Cargo</h3>
+    <h3 class="box-title">Módulo</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
       <i class="fa fa-minus"></i></button>
@@ -21,14 +21,14 @@
         <div class="form-group has-feedback" >
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Módulo do Curso">
+            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Módulo do Curso" required>
           </div>
         </div><!-- Módulo -->
       </div><!-- Col 6 -->
 
       <div class="col-md-6">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_curso" id="id_curso">
+          <select class="form-control" name="id_curso" id="id_curso" required>
             <option disabled selected> - Nome do Curso - </option>
               @foreach($cursos as $curso)
                 <option value="{{ $curso->id_curso }}">{{ $curso->descricao }}</option>

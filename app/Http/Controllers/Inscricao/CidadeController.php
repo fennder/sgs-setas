@@ -35,13 +35,13 @@ class CidadeController extends Controller
      */
     public function index()
     {
-        $cidades = $this->cidade->paginate(4);
+        $cidades = $this->cidade->paginate(25);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Cidades";
+        $page_title = "SGI";
+        $page_description = "(Lista de Cidades)";
         $nav = "Cidades";
 
         return view('cidade.index',
@@ -74,8 +74,8 @@ class CidadeController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Cidades";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Cidades)";
         $nav = "Cidade";
 
         $estados = $this->estado->all();

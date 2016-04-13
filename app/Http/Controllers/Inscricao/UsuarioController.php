@@ -56,10 +56,10 @@ class UsuarioController extends Controller
     {
             
         $page_title = "SGI";
-        $page_description = "Cadastro de Usuários";
-        $nav = "Lista";
+        $page_description = "(Cadastro de Usuários)";
+        $nav = "Lista de usuários";
 
-        $usuarios = $this->usuario->paginate(3);
+        $usuarios = $this->usuario->paginate(25);
         $estado_rgs = $this->estado_rg->all();
         $vinculos =$this->vinculo->all();
 
@@ -92,9 +92,9 @@ class UsuarioController extends Controller
         $cargos =$this->cargo->all();
         $funcoes =$this->funcao->all();
         
-        $page_title = "SGS";
-        $page_description = "Cadastro de Usuários";
-        $nav = "Cadastro";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Usuários)";
+        $nav = "Cadastro de usuários";
 
         return view('inscrito.create',
         [
@@ -114,13 +114,6 @@ class UsuarioController extends Controller
             
         ]);    
     }
-
-    /*public function getCidades($id_estado)
-    {
-        $estado = $this->estado->find($id_estado);
-        $cidades = $estado->cidades()->getQuery->get(['id', 'cidade']);
-        return Response::json($cidades);
-    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -180,7 +173,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $nav = "Editar";
+        $nav = "Editar usuário";
 
         $usuarios = $this->usuario->find($id);
         $estados = $this->estado->all();

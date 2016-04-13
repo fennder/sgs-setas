@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Perfil do Usuário">
+          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Perfil do Usuário" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 12 -->

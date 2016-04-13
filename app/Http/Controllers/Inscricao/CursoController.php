@@ -30,11 +30,11 @@ class CursoController extends Controller
     public function index()
     {
         
-        $cursos = $this->curso->paginate(4);
+        $cursos = $this->curso->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Cursos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Cursos)";
         $nav = "Curso";
 
         return view('curso.index',
@@ -55,8 +55,8 @@ class CursoController extends Controller
     public function create()
     {
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Cursos";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Cursos)";
         $nav = "Curso";
 
         $scursos = $this->scurso->all();

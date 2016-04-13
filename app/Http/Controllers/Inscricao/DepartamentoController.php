@@ -31,11 +31,11 @@ class DepartamentoController extends Controller
     public function index()
     {
 
-        $page_title = "SGS";
-        $page_description = "Lista de Departamentos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Departamentos)";
         $nav = "Departamento";
 
-        $departamentos = $this->departamento->paginate(4);
+        $departamentos = $this->departamento->paginate(25);
         $orgaos = $this->orgao->all();
         $usuarios = Auth::user();
 
@@ -57,8 +57,8 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Departamento";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Departamento)";
         $nav = "Departamento";
 
         $orgaos = $this->orgao->all();

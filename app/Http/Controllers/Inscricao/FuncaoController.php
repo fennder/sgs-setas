@@ -26,11 +26,11 @@ class FuncaoController extends Controller
     public function index()
     {
 
-        $page_title = "SGS";
-        $page_description = "Lista de Funções";
+        $page_title = "SGI";
+        $page_description = "(Lista de Funções)";
         $nav = "Função";
 
-        $funcoes = $this->funcao->paginate(4);
+        $funcoes = $this->funcao->paginate(25);
         $usuarios = Auth::user();
 
         return view('funcao.index',

@@ -27,11 +27,11 @@ class DeficienciaController extends Controller
     public function index()
     {
         
-        $deficiencias = $this->deficiencia->paginate(4);
+        $deficiencias = $this->deficiencia->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Deficiências";
+        $page_title = "SGI";
+        $page_description = "(Lista de Deficiências)";
         $nav = "Deficiência";
 
         return view('deficiencia.index',
@@ -53,8 +53,8 @@ class DeficienciaController extends Controller
     {
         $usuarios = Auth::user();
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Deficiência";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Deficiência)";
         $nav = "Deficiência";
 
         return view('deficiencia.create',

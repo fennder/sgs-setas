@@ -20,7 +20,7 @@
       <div class="col-md-6">
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="id" id="id">
+        <select class="form-control" name="user_id" id="id" required>
          
           <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
 
@@ -32,7 +32,7 @@
     <div class="col-md-6">
         <small class="text-muted">Curso</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_curso" id="id_curso" required>
+        <select class="form-control" name="curso_id" id="id_curso" required>
            
               @foreach($cursos as $curso)
                 

@@ -27,12 +27,12 @@ class StatusCursoController extends Controller
     public function index()
     {
        
-        $scursos = $this->scurso->paginate(4);
+        $scursos = $this->scurso->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Listas de Status de Curso";
-        $nav = "Status Curso";
+        $page_title = "SGI";
+        $page_description = "(Lista de Status de Curso)";
+        $nav = "Status de Curso";
 
         return view('status_curso.index',
         [

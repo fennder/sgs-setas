@@ -21,14 +21,14 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Curso">
+          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Curso" required>
         </div>
       </div><!-- Nome do Curso -->
     </div><!-- Col 12 -->
 
     <div class="col-md-3" >
       <div class="form-group has-feedback">
-        <input type="date" class="form-control" name="data_inicio" id="data_inicio">
+        <input type="date" class="form-control" name="data_inicio" id="data_inicio" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         <small class="text-muted">Data de Inicio</small>
       </div><!--Data Inicio do Curso -->
@@ -36,7 +36,7 @@
 
     <div class="col-md-3" >
       <div class="form-group has-feedback">
-        <input type="date" class="form-control" name="data_termino" id="data_termino">
+        <input type="date" class="form-control" name="data_termino" id="data_termino" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         <small class="text-muted">Data de Término</small>
       </div><!--Data Término do Curso -->
@@ -44,7 +44,7 @@
 
     <div class="col-md-6">
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_status_curso" id="id_status_curso">
+        <select class="form-control" name="id_status_curso" id="id_status_curso" required>
             <option disabled selected> - Status Curso - </option>
               @foreach($scursos as $scurso)
                 <option value="{{ $scurso->id_status_curso }}">{{ $scurso->descricao }}</option>

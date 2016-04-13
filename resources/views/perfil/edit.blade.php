@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$perfis->descricao}}" name="descricao" id="descricao">
+          <input type="text" class="form-control" value="{{$perfis->descricao}}" name="descricao" id="descricao" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 12 -->

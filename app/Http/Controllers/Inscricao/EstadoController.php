@@ -27,11 +27,11 @@ class EstadoController extends Controller
     public function index()
     {
     
-        $page_title = "SGS";
-        $page_description = "Lista de Estados";
+        $page_title = "SGI";
+        $page_description = "(Lista de Estados)";
         $nav = "Estado";
 
-        $estados = $this->estado->paginate(4);
+        $estados = $this->estado->paginate(25);
         $usuarios = Auth::user();
 
         return view('estado.index',

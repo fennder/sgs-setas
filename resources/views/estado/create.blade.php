@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Estado">
+          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Estado" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 6 -->
@@ -30,7 +30,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="uf" id="uf" placeholder="UF">
+          <input type="text" class="form-control" name="uf" id="uf" placeholder="UF" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 4 -->

@@ -26,12 +26,12 @@ class RegiaoController extends Controller
      */
     public function index()
     {
-        $regioes = $this->regiao->paginate(4);
+        $regioes = $this->regiao->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Região";
-        $nav = "Região";
+        $page_title = "SGI";
+        $page_description = "(Lista de Regiões)";
+        $nav = "Regiões";
 
         return view('regiao.index',
         [

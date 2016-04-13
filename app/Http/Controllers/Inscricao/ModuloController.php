@@ -30,12 +30,12 @@ class ModuloController extends Controller
      */
     public function index()
     {
-        $modulos = $this->modulo->paginate(4);
+        $modulos = $this->modulo->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Modulos";
-        $nav = "Modulos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Módulos)";
+        $nav = "Módulos";
 
         return view('modulo.index',
         [

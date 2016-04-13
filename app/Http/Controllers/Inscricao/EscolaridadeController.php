@@ -27,11 +27,11 @@ class EscolaridadeController extends Controller
     public function index()
     {
 
-        $page_title = "SGS";
-        $page_description = "Lista de Escolaridades";
+        $page_title = "SGI";
+        $page_description = "(Lista de Escolaridades)";
         $nav = "Escolaridade";
 
-        $escolaridades = $this->escolaridade->paginate(4);
+        $escolaridades = $this->escolaridade->paginate(25);
         $usuarios = Auth::user();
 
         return view('escolaridade.index',
