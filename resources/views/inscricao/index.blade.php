@@ -33,7 +33,7 @@
                   @if($inscricoes)
                     @foreach($inscricoes as $inscricao)
                       <tr>
-                      {{dd($inscricao->curso->descricao)}}
+                      {{dd($inscricao->curso)}}
                         <td>{{$inscricao->curso->descricao}}</td>
                         <td>{{$inscricao->usuario->name}}</td>
                         <td>{{$inscricao->usuario->funcao->descricao}}</td>
