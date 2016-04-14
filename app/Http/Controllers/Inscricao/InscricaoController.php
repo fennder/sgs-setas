@@ -35,7 +35,7 @@ class InscricaoController extends Controller
      */
     public function index()
     {
-        $inscricoes = $this->inscricao->paginate(50);
+        $inscricoes = $this->inscricao->paginate(25);
         $usuarios = Auth::user();
         $page_title = "SGI";
         $page_description = "(Lista de Inscrições)";
