@@ -77,9 +77,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function cursos()
+    public function curso()
     {
-        return $this->belongsToMany('Gerenciador\Inscricao\Curso'); //Tem vários Cursos
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'id_curso'); //Tem vários Cursos
     }
 
     public function estado()
