@@ -60,8 +60,8 @@ class InscricaoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Inscrições";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Inscrições)";
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();

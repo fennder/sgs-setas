@@ -21,7 +21,7 @@
     <div class="col-md-8">
     <small class="text-muted">Nome Completo</small>
       <div class="form-group has-feedback" >
-        <input disabled type="text" class="form-control" value="{{ $usuarios->name }}" name="name" id="name" required>
+        <input type="text" class="form-control" value="{{ $usuarios->name }}" name="name" id="name" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Completo -->
     </div><!-- Col 7 -->
