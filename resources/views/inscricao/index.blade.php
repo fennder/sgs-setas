@@ -30,19 +30,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  
+                  @if($inscricoes)
                     @foreach($inscricoes as $inscricao)
                       <tr>
-                        <td>{{ $inscricao->id_inscricao }}</td>
-                        <!-- <td>{{$inscricao->curso->descricao}}</td>
+                      {{dd($inscricao->curso->descricao)}}
+                        <td>{{$inscricao->curso->descricao}}</td>
                         <td>{{$inscricao->usuario->name}}</td>
-                        <td>{{$inscricao->usuario->funcao->descricao}}</td> -->
+                        <td>{{$inscricao->usuario->funcao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach
+                  @else
+                    <p>Não há cadastros...</p>
+                  @endif
                   
                 </tbody>
               </table>
