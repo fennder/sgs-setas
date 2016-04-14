@@ -26,35 +26,30 @@
                     <th>Curso</th>
                     <th>Inscrito</th>
                     <th>Função</th>
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <!-- <th style="width: 40px" colspan="2">Ação</th>     -->                
                   </tr>
                 </thead>
                 <tbody>
-                  @if($inscricoes)
-                    @foreach($inscricoes as $inscricao)
+                     @foreach($inscricoes as $inscricao)
                       <tr>
-                      {{dd($inscricao->curso)}}
                         <td>{{$inscricao->curso->descricao}}</td>
                         <td>{{$inscricao->usuario->name}}</td>
                         <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                        <td class="text-center">
+
+<!--                         <td class="text-center">
                           <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                        </td> -->
                       </tr>
                     @endforeach
-                  @else
-                    <p>Não há cadastros...</p>
-                  @endif
-                  
                 </tbody>
               </table>
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
-                <li>{!!$inscricoes->render()!!}</li>
+               <li>{!!$inscricoes->render()!!}</li>
               </ul>
-        </div><!-- /.box-footer-->
+        </div>
       </div><!-- /.box -->
     </div><!-- Col 6 -->
   </div> <!-- Row -->

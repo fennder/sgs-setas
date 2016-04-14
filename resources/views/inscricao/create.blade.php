@@ -20,7 +20,7 @@
       <div class="col-md-3">
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="user_id" id="id" required>
+        <select class="form-control" name="user_id" id="user_id" required>
          
           <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
 
@@ -32,7 +32,7 @@
     <div class="col-md-9">
         <small class="text-muted">Curso</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="curso_id" id="id_curso" required>
+        <select class="form-control" name="curso_id" id="curso_id" required>
             <option disabled selected value=""> - Escolha um curso - </option>
               @foreach($cursos as $curso)
                 @if(!($usuarios->cursos->find($curso->id_curso) != null))

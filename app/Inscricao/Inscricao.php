@@ -26,11 +26,11 @@ class Inscricao extends Model
 
     public function curso()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'curso_id');
+    	return $this->belongsTo('Gerenciador\Inscricao\Curso','curso_id');
     }
 
     public function usuario()
     {
-    	return $this->belongsTo('Gerenciador\User', 'user_id');
+    	return $this->belongsTo('Gerenciador\User','user_id');
     }
 }

@@ -37,7 +37,6 @@ class InscricaoController extends Controller
     {
         $inscricoes = $this->inscricao->paginate(50);
         $usuarios = Auth::user();
-        
         $page_title = "SGI";
         $page_description = "(Lista de Inscrições)";
         $nav = "Inscrição";
@@ -47,8 +46,8 @@ class InscricaoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
-            'usuarios'=>$usuarios,
-            'inscricoes' => $inscricoes
+            'inscricoes' => $inscricoes,
+            'usuarios' => $usuarios
             
         ]); 
     }
