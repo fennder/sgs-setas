@@ -151,7 +151,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="http://localhost:8000/perfil" class="btn btn-default btn-flat">Perfil</a>
+                  <a href="{!! route('u.show') !!}" class="btn btn-default btn-flat">Meus dados</a>
                 </div>
                 <div class="pull-right">
                   <a href="{!! route('a.getLogout') !!}" class="btn btn-default btn-flat">Deslogar</a>

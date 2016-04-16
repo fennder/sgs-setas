@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'fennder@gmail.com', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
+    'from' => ['address' => 'ti@setas.to.gov.br', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
     //'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
 
     /*

@@ -40,6 +40,7 @@ Route::group(['as' => 'u.', 'prefix' => 'users'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'UsersController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'UsersController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
+	Route::post('mostrar', 			['as' => 'show', 	'uses' => 'UsersController@show']);
 	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'UsersController@edit']);
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'UsersController@update']);
 	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
