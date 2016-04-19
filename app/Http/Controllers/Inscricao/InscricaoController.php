@@ -5,6 +5,7 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Curso;
+use Gerenciador\Inscricao\Cidade;
 use Gerenciador\User;
 use DB;
 use Gerenciador\Http\Requests;
@@ -19,11 +20,12 @@ class InscricaoController extends Controller
     private $curso;
     private $usuario;
 
-    public function __construct(Inscricao $inscricao, Curso $curso, User $usuario)
+    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $usuario)
     {
         $this->inscricao = $inscricao;
         $this->curso = $curso;
         $this->usuario = $usuario;
+        $this->cidade = $cidade;
         
         $this->middleware('auth');
     }
@@ -35,11 +37,14 @@ class InscricaoController extends Controller
      */
     public function index()
     {
-        $inscricoes = $this->inscricao->paginate(25);
-        $usuarios = Auth::user();
+
         $page_title = "SGI";
         $page_description = "(Lista de Inscrições)";
         $nav = "Inscrição";
+
+        $inscricoes = $this->inscricao->paginate(25);
+        $usuarios = Auth::user();
+        $cidades = $this->cidade->all();
 
         return view('inscricao.index',
         [
@@ -47,7 +52,8 @@ class InscricaoController extends Controller
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
             'inscricoes' => $inscricoes,
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            'cidades' => $cidades
             
         ]); 
     }
@@ -64,10 +70,8 @@ class InscricaoController extends Controller
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
-        
         $usuarios = Auth::user();
 
-        //$inscricoes = $this->inscricao->all();
 
         return view('inscricao.create',
         [

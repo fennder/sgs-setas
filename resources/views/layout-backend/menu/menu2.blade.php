@@ -16,12 +16,12 @@
       <li><a href="{!! route('sc.index') !!}">Status Curso</a></li>
     </ul>
   </li>
-<!--   <li class="treeview">
+  <li class="treeview">
     <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
       <li><a href="{!! route('u.index') !!}">Relação de Usuários</a></li>
     </ul>
-  </li> -->
+  </li>
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-edit"></i> <span>GERENCIAR INSCRIÇÃO</span> </i></a>
     <ul class="treeview-menu">

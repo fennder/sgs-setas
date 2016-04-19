@@ -60,6 +60,7 @@ class UsersController extends Controller
 
             $users = $this->user->paginate(10);
             $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
 
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
@@ -70,7 +71,8 @@ class UsersController extends Controller
                     'nav' => $nav, 
                     'users' => $users, 
                     'page_title'=>$page_title, 
-                    'usuarios'=>$usuarios, 
+                    'usuarios'=>$usuarios,
+                    'perfis'=>$perfis,
                     'page_description'=>$page_description
                 ]);
 

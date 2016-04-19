@@ -34,6 +34,7 @@
                 <tbody>
                   @if($cidades)
                     @foreach($cidades as $cidade)
+                      
                       <tr>
                         <td>{{$cidade->id_cidade}}.</td>
                         <td>{{$cidade->nome}}</td>
@@ -45,6 +46,7 @@
                           <!-- <a href="{{route('cid.destroy', ['id' => $cidade->id_cidade])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
                         </td>
                       </tr>
+                      
                     @endforeach
                   @else
                     <p>Nenhum registro encontrado!</p>

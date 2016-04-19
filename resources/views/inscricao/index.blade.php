@@ -25,24 +25,28 @@
                   <tr>
                     <th>Curso</th>
                     <th>Inscrito</th>
+                    <th>CPF</th>
+                    <th>Município</th>
                     <th>Função</th>
-                    <!-- <th style="width: 40px" colspan="2">Ação</th>     -->                
+                    <th style="width: 40px" colspan="2">Ação</th>                
                   </tr>
                 </thead>
                 <tbody>
-                     @foreach($inscricoes as $inscricao)
-                      <tr>
-                        <td>{{$inscricao->curso->descricao}}</td>
-                        <td>{{$inscricao->usuario->name}}</td>
-                        <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                        @if($usuarios->id_perfil <= 2)
-                          <td class="text-center">
-                            <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                          </td>
-                        @endif
-                      </tr>
-                    @endforeach
+                  @foreach($inscricoes as $inscricao)
+                  <tr>
+                    <td>{{$inscricao->curso->descricao}}</td>
+                    <td>{{$inscricao->usuario->name}}</td>
+                    <td>{{$inscricao->usuario->cpf}}</td>
+                    <td>{{$inscricao->usuario->cidade->nome}}</td>
+                    <td>{{$inscricao->usuario->funcao->descricao}}</td>
+                    @if($usuarios->id_perfil <= 2)
+                      <td class="text-center">
+                        <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                      </td>
+                    @endif
+                  </tr>
+                  @endforeach
                 </tbody>
               </table>
         </div><!-- /.box-body -->

@@ -31,6 +31,6 @@ class Perfil extends Model
 
     public function usuario()
     {
-    	return $this->hasMany('Gerenciador\User');//Tem vários usuários
+    	return $this->hasMany('Gerenciador\User', 'id');//Tem vários usuários
     }
 }

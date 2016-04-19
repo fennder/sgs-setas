@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title">Lista de usuários cadastrados</h3>
@@ -20,8 +20,10 @@
                     <th style="width: 10px">Id</th>
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Acesso</th>
+                    @if($usuarios->id_perfil == 1)
                     <th style="width: 40px" colspan="2">Ação</th>
-                    <!--th style="width: 40px">Excluir</th-->
+                    @endif
                   </tr>
                 </thead>
                 <tbody>
@@ -31,10 +33,13 @@
                         <td>{{$user->id}}.</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
+                        <td>{{$user->perfil->descricao}}</td>
+                        @if($usuarios->id_perfil == 1)
                         <td class="text-center">
                           <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
+                        @endif
                       </tr>
                     @endforeach
                   @else
@@ -53,7 +58,7 @@
           <!-- /.box -->
   </div>
         <!-- /.col -->
-  <div class="col-md-4">
+  <!-- <div class="col-md-4">
     <div class="box">
       <div class="box-header with-border">
           <h3 class="box-title">Mais informações</h3>
@@ -63,8 +68,8 @@
           </div>
       </div>
     </div>
-    <!-- /.col -->
-  </div>
+  </div> -->
+  <!-- /.col -->
 </div>
 
 @endsection
