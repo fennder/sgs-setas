@@ -16,7 +16,6 @@
           <!-- <a href="#"><i class="fa fa-circle text-success"></i> Disponível</a -->
         </div>
       </div>
-
       <!-- search form (Optional) -->
       <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">

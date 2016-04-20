@@ -34,7 +34,6 @@
         <div class="form-group has-feedback">
         <select class="form-control" name="curso_id" id="curso_id" required>
             <option disabled selected value=""> - Escolha um curso - </option>
-              
               @foreach($cursos as $curso)
                 @if(!($usuarios->cursos->find($curso->id_curso) != null))
                   @if($curso->statuscurso->id_status_curso == 1)
@@ -42,13 +41,10 @@
                   @endif
                 @endif
               @endforeach
-              
           </select>
 
       </div><!-- Curso -->
     </div><!-- Col 6 -->
-
-
 
   </div><!-- row -->
 

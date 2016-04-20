@@ -59,7 +59,7 @@ class UsuarioController extends Controller
         $page_description = "(Cadastro de Usuários)";
         $nav = "Lista de usuários";
 
-        $usuarios = $this->usuario->paginate(25);
+        $usuarios = $this->usuario->paginate(15);
         $estado_rgs = $this->estado_rg->all();
         $vinculos =$this->vinculo->all();
 

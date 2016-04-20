@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="col-md-12">
-<!-- Default box -->
+      <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
           <h3 class="box-title">Lista de Escolaridades</h3>
@@ -41,15 +41,17 @@
                       </tr>
                     @endforeach
                   @else
-                    <p>Nenhum registro encontrado!</p>
+                    <tr>
+                      <td>Nenhum registro encontrado!</td>
+                    </tr>
                   @endif
                 </tbody>
               </table>
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
           <ul class="pagination pagination-sm no-margin pull-right">
-                <li>{!!$escolaridades->render()!!}</li>
-              </ul>
+            <li>{!!$escolaridades->render()!!}</li>
+          </ul>
         </div><!-- /.box-footer-->
       </div><!-- /.box -->
     </div><!-- Col 6 -->

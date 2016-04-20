@@ -23,6 +23,8 @@
                     <th>Acesso</th>
                     @if($usuarios->id_perfil == 1)
                     <th style="width: 40px" colspan="2">Ação</th>
+                    @elseif($usuarios->id_perfil == 2)
+                    <th style="width: 40px" colspan="2">Ação</th>
                     @endif
                   </tr>
                 </thead>
@@ -38,6 +40,10 @@
                         <td class="text-center">
                           <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
                           <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                        @elseif($usuarios->id_perfil == 2)
+                        <td class="text-center">
+                          <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
                         </td>
                         @endif
                       </tr>

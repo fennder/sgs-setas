@@ -58,7 +58,7 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $users = $this->user->paginate(10);
+            $users = $this->user->paginate(15);
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
 
