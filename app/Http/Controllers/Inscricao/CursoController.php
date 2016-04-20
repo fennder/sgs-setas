@@ -68,6 +68,7 @@ class CursoController extends Controller
             'scursos'=>$scursos,
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
+            'scursos' => $scursos, 
             'page_description' => $page_description
         ]);
     }
