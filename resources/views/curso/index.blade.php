@@ -28,12 +28,12 @@
               <th>Data Início</th>
               <th>Data Término</th>
               <th>Status do Curso</th>
-              <th style="width: 40px" colspan="2">Ação</th>                    
+              <th style="width: 40px" colspan="2">Ação</th>                   
             </tr>
           </thead>
           <tbody>
             @if($cursos)
-              @foreach($cursos as $curso)
+              @foreach($cursos as $curso)  
                 <tr>
                   <td>{{$curso->id_curso}}.</td>
                   <td>{{$curso->descricao}}</td>
@@ -41,10 +41,11 @@
                   <td>{{$curso->data_termino}}</td>
                   <td>{{$curso->statuscurso->descricao}}</td>
                   <td class="text-center">
-                    <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
+                    || <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                    || <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
-                </tr>
+                </tr>                
               @endforeach
             @else
               <p>Não há registros</p>

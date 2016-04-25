@@ -49,7 +49,9 @@
                       </tr>
                     @endforeach
                   @else
-                    <p>Nenhum registro encontrado!</p>
+                    <tr>
+                      <td>Nenhum registro encontrado!</td>
+                    </tr>
                   @endif
                 </tbody>
               </table>

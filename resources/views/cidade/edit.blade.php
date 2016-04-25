@@ -39,7 +39,7 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_estado" id="id_estado" required>
+          <select disabled class="form-control" name="id_estado" id="id_estado" required>
             <option value="{{$cidades->id_estado}}">{{$cidades->estado->nome}}</option>
             @foreach ($estados as $estado)
               @if($cidades->id_estado != $estado->id_estado)

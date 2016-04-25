@@ -7,17 +7,20 @@ use Gerenciador\Inscricao\Curso;
 use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\User;
 use Auth;
 
 class CursoController extends Controller
 {
     private $curso;
     private $scurso;
+    private $usuario;
 
-    public function __construct(Curso $curso, StatusCurso $scurso)
+    public function __construct(User $usuario, Curso $curso, StatusCurso $scurso)
     {
         $this->curso = $curso;
         $this->scurso = $scurso;
+        $this->usuario = $usuario;
 
         $this->middleware('auth');
     }
@@ -29,13 +32,13 @@ class CursoController extends Controller
      */
     public function index()
     {
-        
-        $cursos = $this->curso->paginate(25);
-        $usuarios = Auth::user();
     
         $page_title = "SGI";
         $page_description = "(Lista de Cursos)";
         $nav = "Curso";
+
+        $cursos = $this->curso->paginate(25);
+        $usuarios = Auth::user();
 
         return view('curso.index',
         [
@@ -95,7 +98,22 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        //
+        $page_title = "SGI";
+        $nav = "Mostrar";
+        $page_description = "Turma do Curso";
+
+        $cursos = $this->curso->find($id);
+        $scursos = $this->scurso->all();
+        $usuarios = $this->usuario->all();
+        
+        return view('curso.show',
+        [
+            'nav' => $nav,
+            'page_description' => $page_description,
+            'cursos' => $cursos, 
+            'scursos' => $scursos, 
+            'usuarios' => $usuarios
+        ]);
     }
 
     /**

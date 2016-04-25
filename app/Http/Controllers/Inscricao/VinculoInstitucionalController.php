@@ -16,7 +16,7 @@ class VinculoInstitucionalController extends Controller
     {
         $this->vinculo = $vinculo;
         
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -26,12 +26,13 @@ class VinculoInstitucionalController extends Controller
      */
     public function index()
     {
-        $vinculos = $this->vinculo->paginate(4);
-        $usuarios = Auth::user();
     
         $page_title = "SGI";
         $page_description = "(Lista de Vínculos Institucionais)";
         $nav = "Vínculos Institucionais";
+
+        $vinculos = $this->vinculo->paginate(4);
+        $usuarios = Auth::user();
 
         return view('vinculo.index',
         [

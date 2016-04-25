@@ -35,7 +35,7 @@ class CidadeController extends Controller
      */
     public function index()
     {
-        $cidades = $this->cidade->paginate(25);
+        $cidades = $this->cidade->paginate(6000);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();

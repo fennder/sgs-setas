@@ -31,7 +31,7 @@ class EstadoController extends Controller
         $page_description = "(Lista de Estados)";
         $nav = "Estado";
 
-        $estados = $this->estado->paginate(25);
+        $estados = $this->estado->paginate(30);
         $usuarios = Auth::user();
 
         return view('estado.index',

@@ -4,10 +4,10 @@
 
   <div class="row">
     <div class="col-md-12">
-<!-- Default box -->
+      <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Lista de Inscrições</h3>
+          <h3 class="box-title">Minhas Inscrições</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -17,19 +17,25 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a>
+          <!-- <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a> -->
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
                     <th>Meus Cursos</th>                    
+                    <th>Data início do curso</th>                    
+                    <th>Data fim do curso</th>                    
+                    <th>Status</th>                    
                   </tr>
                 </thead>
                 <tbody>
                     @foreach($cursos as $curso)
                       <tr>
                         <td>{{$curso->descricao}}</td> 
+                        <td>{{$curso->data_inicio}}</td> 
+                        <td>{{$curso->data_termino}}</td> 
+                        <td>{{$curso->statuscurso->descricao}}</td> 
                       </tr>
                     @endforeach
                 </tbody>
