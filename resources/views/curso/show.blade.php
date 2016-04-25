@@ -17,7 +17,6 @@
         </div>
       </div>
       <div class="box-body">
-        <a class="btn btn-primary" href="{{ route('cs.create')}}">Novo</a>
         </br>
         </br>
         <table class="table table-bordered table-striped table-hover table-condensed">
@@ -34,20 +33,17 @@
           <tbody>
             @if($cursos)
               @foreach($cursos as $curso)
-                @for($i; $i>$curso.length; $i++)
+               
                   <tr>
                     <td>{{$i}}.</td>
                     <td>{{$curso->descricao}}</td>
                     <td>{{$curso->data_inicio}}</td>
                     <td>{{$curso->data_termino}}</td>
                     <td>{{$curso->statuscurso->descricao}}</td>
-                    <td class="text-center">
-                      <a href="{{route('cs.show')}}"><i class="glyphicon glyphicon-th-list"></i></a> 
-                      | <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      | <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                    </td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td></td>
                   </tr>
-                @endfor
+                
               @endforeach
             @else
               <p>Não há registros</p>

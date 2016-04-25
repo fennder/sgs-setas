@@ -108,6 +108,7 @@ class CursoController extends Controller
         
         return view('curso.show',
         [
+            'page_title'  => $page_title,
             'nav' => $nav,
             'page_description' => $page_description,
             'cursos' => $cursos, 

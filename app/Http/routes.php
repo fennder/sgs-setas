@@ -180,6 +180,7 @@ Route::group(['as' => 'vi.', 'prefix' => 'vinculo_institucional'], function()
 Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
+	Route::post('', 				['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\InscricaoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\InscricaoController@store']);
 	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\InscricaoController@show']);

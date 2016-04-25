@@ -35,7 +35,7 @@ class InscricaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         $page_title = "SGI";
@@ -46,6 +46,15 @@ class InscricaoController extends Controller
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
 
+        $cursos = $this->curso->all();
+
+        if ($request->isMethod('post')){
+
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(25);
+
+
+        }
+
         return view('inscricao.index',
         [
             'nav' => $nav, 
@@ -53,7 +62,8 @@ class InscricaoController extends Controller
             'page_description'=>$page_description,
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
-            'cidades' => $cidades
+            'cidades' => $cidades,
+            'cursos' => $cursos
             
         ]); 
     }
