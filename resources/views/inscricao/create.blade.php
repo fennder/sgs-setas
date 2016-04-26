@@ -27,7 +27,7 @@
           </select>
 
       </div><!-- Curso -->
-    </div><!-- Col 6 -->
+    </div><!-- Col 3 -->
 
     <div class="col-md-9">
         <small class="text-muted">Curso</small>

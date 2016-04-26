@@ -34,6 +34,7 @@
           <tbody>
             @if($cursos)
               @foreach($cursos as $curso)  
+                
                 <tr>
                   <td>{{$curso->id_curso}}.</td>
                   <td>{{$curso->descricao}}</td>
@@ -45,7 +46,8 @@
                     <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
                     <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
-                </tr>                
+                </tr>            
+                
               @endforeach
             @else
               <p>Não há registros</p>

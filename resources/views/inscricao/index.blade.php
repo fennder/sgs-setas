@@ -21,22 +21,20 @@
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <div class="row">
 
-        <div class="col-md-10">
-          <div class="form-group has-feedback">
-          <select class="form-control" name="id_curso" id="id_curso" required>
-           <option  value=""></option>
-           @foreach($cursos as $curso)
-            <option  value="{{$curso->id_curso}}">{{$curso->descricao}}</option>
-            @endforeach
-            </select>
-
-        </div><!-- Curso -->
-      </div><!-- Col 6 -->
+            <div class="col-md-10">
+              <div class="form-group has-feedback">
+                <select class="form-control" name="id_curso" id="id_curso" required>
+                  <option  value=""></option>
+                  @foreach($cursos as $curso)
+                    <option  value="{{$curso->id_curso}}">{{$curso->descricao}}</option>
+                  @endforeach
+                </select>
+              </div><!-- Curso -->
+            </div><!-- Col 6 -->
             <input type="submit" class="btn btn-primary" value="Buscar"></input>
             </div>
             </form>
                
-
           <table class="table table-bordered table-striped table-hover table-condensed">
                   <thead>
                     <tr>

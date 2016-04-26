@@ -42,7 +42,7 @@ class InscricaoController extends Controller
         $page_description = "(Lista de Inscrições)";
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->paginate(25);
+        $inscricoes = $this->inscricao->paginate(1000);
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
 
@@ -50,8 +50,7 @@ class InscricaoController extends Controller
 
         if ($request->isMethod('post')){
 
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(25);
-
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
 
         }
 
@@ -86,10 +85,11 @@ class InscricaoController extends Controller
         return view('inscricao.create',
         [
             'nav' => $nav,
-            'cursos' => $cursos,
-            'usuarios' => $usuarios,
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'cursos' => $cursos,
+            'usuarios' => $usuarios
+            
         ]);      
 
     }
@@ -116,13 +116,12 @@ class InscricaoController extends Controller
      */
     public function show()
     {
-        
-        $usuarios = Auth::user();
-    
-        $cursos = $usuarios->cursos;
-        $page_title = "SGS";
+        $page_title = "SGI";
         $page_description = "Meus Cursos";
         $nav = "Meus Cursos";
+
+        $usuarios = Auth::user();
+        $cursos = $usuarios->cursos;
 
         return view('inscricao.show',
         [
@@ -142,8 +141,10 @@ class InscricaoController extends Controller
      */
     public function edit($id)
     {
+        $page_title = "SGI";
         $nav = "Editar";
         $page_description = "Editar Inscrição";
+
         $inscricoes = $this->inscricao->find($id);
         $usuarios = Auth::user();
         $cursos = $this->curso->all();
@@ -151,10 +152,12 @@ class InscricaoController extends Controller
         return view('inscricao.edit',
         [
             'nav' => $nav,
+            'page_title' => $page_title,
+            'page_description' => $page_description,
             'inscricoes' => $inscricoes, 
             'usuarios' => $usuarios, 
-            'cursos' => $cursos, 
-            'page_description' => $page_description
+            'cursos' => $cursos 
+            
         ]);
     }
 

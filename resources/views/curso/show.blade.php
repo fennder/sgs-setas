@@ -33,7 +33,6 @@
           <tbody>
             @if($cursos)
               @foreach($cursos as $curso)
-               
                   <tr>
                     <td>{{$i}}.</td>
                     <td>{{$curso->descricao}}</td>
@@ -43,7 +42,6 @@
                     <td>{{$curso->statuscurso->descricao}}</td>
                     <td></td>
                   </tr>
-                
               @endforeach
             @else
               <p>Não há registros</p>
