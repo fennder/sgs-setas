@@ -22,7 +22,14 @@ class Inscricao extends Model
      */
     protected $primaryKey = 'id_inscricao';
 
-    protected $fillable = ['user_id', 'curso_id'];
+    protected $fillable = [
+        'user_id',
+        'curso_id',
+        'status',
+        'motivo',
+        'login',
+        
+    ];
 
     public function curso()
     {

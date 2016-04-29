@@ -14,10 +14,10 @@ class CreateInscricaoTable extends Migration
     {
         Schema::create('curso_user', function (Blueprint $table) {
             $table->increments('id_inscricao');
-            $table->integer('id_curso')->unsigned()->nullable();
-            $table->foreign('id_curso')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('Set Null');
-            $table->integer('id')->unsigned()->nullable();
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade')->onUpdate('Set Null');
+            $table->integer('curso_id')->unsigned()->nullable();
+            $table->foreign('curso_id')->references('id_curso')->on('curso')->onDelete('cascade')->onUpdate('Set Null');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('Set Null');
             $table->timestamps();
         });
     }

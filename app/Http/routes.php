@@ -131,7 +131,7 @@ Route::group(['as' => 'cs.', 'prefix' => 'curso'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CursoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CursoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CursoController@store']);
-	Route::post('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\CursoController@show']);
+	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\CursoController@show']);
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CursoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CursoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CursoController@destroy']);

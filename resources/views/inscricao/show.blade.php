@@ -24,19 +24,25 @@
                 <thead>
                   <tr>
                     <th>Meus Cursos</th>                    
-                    <th>Data início do curso</th>                    
-                    <th>Data fim do curso</th>                    
-                    <th>Status</th>                    
+                    <th>Período do curso</th>                                        
+                    <th>Status da inscrição</th>                                      
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach($cursos as $curso)
-                      <tr>
-                        <td>{{$curso->descricao}}</td> 
-                        <td>{{$curso->data_inicio}}</td> 
-                        <td>{{$curso->data_termino}}</td> 
-                        <td>{{$curso->statuscurso->descricao}}</td> 
-                      </tr>
+                    @foreach($inscricoes as $inscricao)
+                      @if($inscricao->status == "Deferido")
+                        <tr class="success">
+                          <td>{{$inscricao->curso->descricao}}</td> 
+                          <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
+                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
+                        </tr>
+                      @else
+                        <tr class="danger">
+                          <td>{{$inscricao->curso->descricao}}</td> 
+                          <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
+                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
+                        </tr>
+                      @endif
                     @endforeach
                 </tbody>
               </table>

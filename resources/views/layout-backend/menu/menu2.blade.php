@@ -13,7 +13,7 @@
     </ul>
   </li>
   <li class="treeview">
-    <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <a href="#"><i class="glyphicon glyphicon-user"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
       <li><a href="{!! route('u.index') !!}">Relação de Usuários</a></li>
     </ul>

@@ -21,10 +21,8 @@
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="user_id" id="user_id" required>
-         
           <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
-
-          </select>
+        </select>
 
       </div><!-- Curso -->
     </div><!-- Col 3 -->
@@ -33,15 +31,15 @@
         <small class="text-muted">Curso</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="curso_id" id="curso_id" required>
-            <option disabled selected value=""> - Escolha um curso - </option>
-              @foreach($cursos as $curso)
-                @if(!($usuarios->cursos->find($curso->id_curso) != null))
-                  @if($curso->statuscurso->id_status_curso == 1)
-                  <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - {{$curso->statuscurso->descricao}}</option>
-                  @endif
+          <option disabled selected value=""> - Escolha um curso - </option>
+            @foreach($cursos as $curso)
+              @if(!($usuarios->cursos->find($curso->id_curso) != null))
+                @if($curso->statuscurso->id_status_curso == 1)
+                  <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} -( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{$curso->statuscurso->descricao}}</option>
                 @endif
-              @endforeach
-          </select>
+              @endif
+            @endforeach
+        </select>
 
       </div><!-- Curso -->
     </div><!-- Col 6 -->
@@ -50,7 +48,8 @@
 
   </div>
 </div>
-
+  <input type="hidden" class="form-control" name="status" value="Deferido" id="status">
+  <input type="hidden" class="form-control" name="motivo" value="Sem alteração" id="status">
   <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
 </form><!-- Form -->
 @endsection

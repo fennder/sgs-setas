@@ -28,26 +28,52 @@
               <th>Data Início</th>
               <th>Data Término</th>
               <th>Status do Curso</th>
-              <th style="width: 40px" colspan="2">Ação</th>                   
+              <th class="text-center" style="width: 40px" colspan="2">Ação</th>                   
             </tr>
           </thead>
           <tbody>
             @if($cursos)
               @foreach($cursos as $curso)  
-                
-                <tr>
-                  <td>{{$curso->id_curso}}.</td>
-                  <td>{{$curso->descricao}}</td>
-                  <td>{{$curso->data_inicio}}</td>
-                  <td>{{$curso->data_termino}}</td>
-                  <td>{{$curso->statuscurso->descricao}}</td>
-                  <td class="text-center">
-                    <!-- <a href="{{route('cs.show')}}"><i class="glyphicon glyphicon-th-list"></i></a> --> 
-                    <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                  </td>
-                </tr>            
-                
+                @if($curso->id_status_curso == 1)
+                  <tr class="success">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> --> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                  </tr>            
+                @elseif($curso->id_status_curso == 2)
+                  <tr class="warning">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> --> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                  </tr>        
+                @else
+                  <tr class="danger">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> --> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                  </tr>        
+                @endif
               @endforeach
             @else
               <p>Não há registros</p>

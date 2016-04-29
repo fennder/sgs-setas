@@ -29,30 +29,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @if($users)
-                    @foreach($users as $user)
-                      <tr>
-                        <td>{{$user->id}}.</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->perfil->descricao}}</td>
-                        @if($usuarios->id_perfil == 1)
-                        <td class="text-center">
-                          <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
-                        @elseif($usuarios->id_perfil == 2)
-                        <td class="text-center">
-                          <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                        </td>
-                        @endif
-                      </tr>
-                    @endforeach
-                  @else
+                  @foreach($users as $user)
                     <tr>
-                      <td>Nenhum registro encontrado!</td>
+                      <td>{{$user->id}}.</td>
+                      <td>{{$user->name}}</td>
+                      <td>{{$user->email}}</td>
+                      <td>{{$user->perfil->descricao}}</td>
+                      @if($usuarios->id_perfil == 1)
+                      <td class="text-center">
+                        <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                      </td>
+                      @elseif($usuarios->id_perfil == 2)
+                      <td class="text-center">
+                        <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      </td>
+                      @endif
                     </tr>
-                  @endif
+                  @endforeach
+                  
                 </tbody>
               </table>
         </div>

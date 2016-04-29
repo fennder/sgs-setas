@@ -18,13 +18,13 @@ class InscricaoController extends Controller
 {
     private $inscricao;
     private $curso;
-    private $usuario;
+    private $user;
 
-    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $usuario)
+    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $user)
     {
         $this->inscricao = $inscricao;
         $this->curso = $curso;
-        $this->usuario = $usuario;
+        $this->user = $user;
         $this->cidade = $cidade;
         
         $this->middleware('auth');
@@ -121,7 +121,8 @@ class InscricaoController extends Controller
         $nav = "Meus Cursos";
 
         $usuarios = Auth::user();
-        $cursos = $usuarios->cursos;
+        $cursos = $usuarios->cursos->all();
+        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(25);
 
         return view('inscricao.show',
         [
@@ -129,6 +130,7 @@ class InscricaoController extends Controller
             'page_title'=> $page_title,
             'page_description'=> $page_description,
             'usuarios'=> $usuarios,
+            'inscricoes'=> $inscricoes,
             'cursos' => $cursos
         ]);
     }
@@ -144,18 +146,20 @@ class InscricaoController extends Controller
         $page_title = "SGI";
         $nav = "Editar";
         $page_description = "Editar Inscrição";
-
+        
         $inscricoes = $this->inscricao->find($id);
         $usuarios = Auth::user();
         $cursos = $this->curso->all();
-        
+
+        //dd($users);
+
         return view('inscricao.edit',
         [
-            'nav' => $nav,
             'page_title' => $page_title,
             'page_description' => $page_description,
+            'nav' => $nav,
             'inscricoes' => $inscricoes, 
-            'usuarios' => $usuarios, 
+            'usuarios' => $usuarios,
             'cursos' => $cursos 
             
         ]);
@@ -172,7 +176,7 @@ class InscricaoController extends Controller
     {
         $inscricoes = $this->inscricao->find($id);
         $inscricoes->update($request->all());
-
+        //dd($request->all());
         return redirect()->route('ins.index');
     }
 

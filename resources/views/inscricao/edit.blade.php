@@ -16,43 +16,78 @@
   <div class="box-body clearfix">
 
   <div class="row">
-
-      <div class="col-md-3">
-        <small class="text-muted">Nome do Inscrito</small>
+    <div class="col-md-3">
+      <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
-        <select class="form-control" name="user_id" id="id" required>
-         
-          <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
-
+          <select disabled class="form-control" name="user_id" id="user_id">       
+            <option  value="{{$inscricoes->user_id}}">{{$inscricoes->usuario->name}}</option>
           </select>
-
-      </div><!-- Curso -->
+        </div><!-- Curso -->
     </div><!-- Col 3 -->
 
     <div class="col-md-9">
-        <small class="text-muted">Curso</small>
-        <div class="form-group has-feedback">
-        <select class="form-control" name="curso_id" id="id_curso" required>
-              @foreach($cursos as $curso)
-                @if(!($usuarios->cursos->find($curso->id_curso) != null))
-                  @if($curso->statuscurso->id_status_curso == 1)
-                    <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - {{$curso->statuscurso->descricao}}</option>
-                  @endif
-                @endif
-              @endforeach
-          </select>
+      <small class="text-muted">Curso</small>
+      <div class="form-group has-feedback">
+      <select disabled class="form-control" name="curso_id" id="curso_id" required>
+      <option value="{{ $inscricoes->curso->id_curso }}">{{ $inscricoes->curso->descricao }} - ( {{$inscricoes->curso->data_inicio}} - {{$inscricoes->curso->data_termino}} ) - {{$inscricoes->curso->statuscurso->descricao}}</option>   
+        @foreach($cursos as $curso)
+          @if($usuarios->cursos->find($curso->id_curso) != null)
+            @if($curso->statuscurso->id_status_curso == 1)
+              <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{$curso->data_inicio}} - {{$curso->data_termino}} ) - {{$curso->statuscurso->descricao}}</option>
+            @endif
+          @endif
+        @endforeach
+      </select>
 
       </div><!-- Curso -->
     </div><!-- Col 9 -->
 
+  </div><!-- row -->
+  <div class="row">
+    <div class="col-md-3">
+      <small class="text-muted">Status do inscrito</small>
+      <div class="form-group has-feedback">
+        <select class="form-control" name="status" id="status">
+          <option value="{{$inscricoes->status}}">{{$inscricoes->status}}</option>
+            @if($inscricoes->status == "Deferido")
+              <option value="Indeferido">Indeferido</option>
+            @endif
+            
+           
+        </select>
+      </div> <!-- Motivo -->
+    </div>
 
+    <div class="col-md-6">
+      <!-- textarea -->
+      <div class="form-group">
+        <small class="text-muted">Motivo</small>
+        <textarea class="form-control" rows="4" name="motivo" id="motivo" placeholder="Digite aqui o motivo ... " value="{{ $inscricoes->motivo }}">{{ $inscricoes->motivo }}</textarea>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <small class="text-muted">Alterado por</small>
+      <div class="form-group has-feedback">
+        <input disabled type="text" class="form-control" value="{{ $usuarios->nome_cracha }}" name="nome_cracha" id="nome_cracha">
+        <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
+        
+      </div><!-- Login -->
+
+      <small class="text-muted">Alterado em</small>
+      <div class="form-group has-feedback">
+        <input disabled type="text" class="form-control" value="{{ $usuarios->updated_at }}">
+      </div><!-- Login -->
+
+    </div><!-- Col 3 -->
 
   </div><!-- row -->
+
 
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
 

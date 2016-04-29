@@ -30,16 +30,27 @@
       @if($usuarios->dados_atualizados == 0)
         
         @include('layout-backend.menu.menu')
+
       @else
+
         @if($usuarios->id_perfil == 1)
+
           @include('layout-backend.menu.menu1')
+
         @endif
+
         @if($usuarios->id_perfil == 2)
+
           @include('layout-backend.menu.menu2')
+
         @endif
+
         @if($usuarios->id_perfil == 3)
+
           @include('layout-backend.menu.menu3')
+          
         @endif
+
       @endif
       
     </section>

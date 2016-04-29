@@ -99,8 +99,8 @@ class CursoController extends Controller
     public function show($id)
     {
         $page_title = "SGI";
-        $nav = "Mostrar";
         $page_description = "Turma do Curso";
+        $nav = "Mostrar";
 
         $cursos = $this->curso->find($id);
         $scursos = $this->scurso->all();
@@ -109,8 +109,8 @@ class CursoController extends Controller
         return view('curso.show',
         [
             'page_title'  => $page_title,
-            'nav' => $nav,
             'page_description' => $page_description,
+            'nav' => $nav,
             'cursos' => $cursos, 
             'scursos' => $scursos, 
             'usuarios' => $usuarios
@@ -135,10 +135,10 @@ class CursoController extends Controller
         return view('curso.edit',
         [
             'nav' => $nav,
+            'page_description' => $page_description,
             'cursos' => $cursos, 
             'scursos' => $scursos, 
-            'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'usuarios' => $usuarios
         ]);
     }
 

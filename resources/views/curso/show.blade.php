@@ -34,7 +34,7 @@
             @if($cursos)
               @foreach($cursos as $curso)
                   <tr>
-                    <td>{{$i}}.</td>
+                    <td>{{$curso->id_curso}}.</td>
                     <td>{{$curso->descricao}}</td>
                     <td>{{$curso->data_inicio}}</td>
                     <td>{{$curso->data_termino}}</td>
