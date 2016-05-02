@@ -45,8 +45,8 @@ class InscricaoController extends Controller
         $inscricoes = $this->inscricao->paginate(1000);
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
-
         $cursos = $this->curso->all();
+        $i = 0;
 
         if ($request->isMethod('post')){
 
@@ -62,6 +62,7 @@ class InscricaoController extends Controller
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
             'cidades' => $cidades,
+            'i' => $i,
             'cursos' => $cursos
             
         ]); 

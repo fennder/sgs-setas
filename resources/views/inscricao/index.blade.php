@@ -39,6 +39,7 @@
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
+              <th>Nr.</th>
               <th>Município</th>
               <th>Inscrito</th>
               <th>CPF</th>
@@ -51,6 +52,7 @@
             @foreach($inscricoes as $inscricao)
               @if($inscricao->status == "Deferido")
               <tr class="success">
+                <td>{{ $i=$i+1 }}</td>
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
                 <td>{{$inscricao->usuario->name}}</td>
                 <td>{{$inscricao->usuario->cpf}}</td>
@@ -65,18 +67,19 @@
               </tr>
               @else
                 <tr class="danger">
-                <td>{{$inscricao->usuario->cidade->nome}}</td>
-                <td>{{$inscricao->usuario->name}}</td>
-                <td>{{$inscricao->usuario->cpf}}</td>
-                <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                <td>{{$inscricao->status}}</td>
-                @if($usuarios->id_perfil <= 2)
-                  <td class="text-center">
-                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                  </td>
-                @endif
-              </tr>
+                  <td>{{ $i=$i+1 }}</td>
+                  <td>{{$inscricao->usuario->cidade->nome}}</td>
+                  <td>{{$inscricao->usuario->name}}</td>
+                  <td>{{$inscricao->usuario->cpf}}</td>
+                  <td>{{$inscricao->usuario->funcao->descricao}}</td>
+                  <td>{{$inscricao->status}}</td>
+                  @if($usuarios->id_perfil <= 2)
+                    <td class="text-center">
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    </td>
+                  @endif
+                </tr>
               @endif
             @endforeach
           </tbody>
