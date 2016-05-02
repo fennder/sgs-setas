@@ -51,6 +51,8 @@
           <option value="{{$inscricoes->status}}">{{$inscricoes->status}}</option>
             @if($inscricoes->status == "Deferido")
               <option value="Indeferido">Indeferido</option>
+            @else
+              <option value="Deferido">Deferido</option>
             @endif
             
            
