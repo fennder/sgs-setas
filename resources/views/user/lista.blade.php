@@ -22,30 +22,32 @@
                     <th>E-mail</th>
                     <th>Acesso</th>
                     @if($usuarios->id_perfil == 1)
-                    <th style="width: 40px" colspan="2">Ação</th>
+                      <th style="width: 40px" colspan="2">Ação</th>
                     @elseif($usuarios->id_perfil == 2)
-                    <th style="width: 40px" colspan="2">Ação</th>
+                      <th style="width: 40px" colspan="2">Ação</th>
                     @endif
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($users as $user)
-                    <tr>
-                      <td>{{$user->id}}.</td>
-                      <td>{{$user->name}}</td>
-                      <td>{{$user->email}}</td>
-                      <td>{{$user->perfil->descricao}}</td>
-                      @if($usuarios->id_perfil == 1)
-                      <td class="text-center">
-                        <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                        <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                      </td>
-                      @elseif($usuarios->id_perfil == 2)
-                      <td class="text-center">
-                        <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      </td>
-                      @endif
-                    </tr>
+                    @if($user->dados_atualizados == 1)
+                      <tr>
+                        <td>{{$user->id}}.</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->perfil->descricao}}</td>
+                        @if($usuarios->id_perfil == 1)
+                          <td class="text-center">
+                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          </td>
+                        @elseif($usuarios->id_perfil == 2)
+                          <td class="text-center">
+                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          </td>
+                        @endif
+                      </tr>
+                    @endif
                   @endforeach
                   
                 </tbody>
