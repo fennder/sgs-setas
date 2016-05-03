@@ -15,7 +15,9 @@
   </div>
 
   <div class="box-body clearfix">
-  <input type="hidden" class="form-control" name="dados_atualizados" value="1">
+  @if($usuarios->dados_atualizados == null)
+    <input type="hidden" class="form-control" name="dados_atualizados" value="1">
+  @endif
   <div class="row">
 
     <div class="col-md-8">

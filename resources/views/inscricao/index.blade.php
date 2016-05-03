@@ -45,7 +45,7 @@
               <th>CPF</th>
               <th>Função</th>
               <th>Status do Inscrito</th>
-              <th style="width: 40px" colspan="2">Ação</th>                
+              <th style="width: 40px" colspan="2">Ação</th>
             </tr>
           </thead>
           <tbody>

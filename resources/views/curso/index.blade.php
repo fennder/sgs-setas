@@ -19,7 +19,6 @@
       <div class="box-body">
         <a class="btn btn-primary" href="{{ route('cs.create')}}">Novo</a>
         </br>
-        </br>
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
