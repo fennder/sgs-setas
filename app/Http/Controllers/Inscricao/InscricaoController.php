@@ -42,7 +42,7 @@ class InscricaoController extends Controller
         $page_description = "(Lista de Inscrições)";
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->paginate(1000);
+        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
