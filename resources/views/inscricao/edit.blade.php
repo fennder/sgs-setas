@@ -71,7 +71,7 @@
     <div class="col-md-3">
       <small class="text-muted">Alterado por</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" value="{{ $usuarios->nome_cracha }}" name="nome_cracha" id="nome_cracha">
+        <input disabled type="text" class="form-control" value="{{ $users->nome_cracha }}" name="nome_cracha" id="nome_cracha">
         <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
         
       </div><!-- Login -->

@@ -46,7 +46,7 @@
                         <td>{{$usuario->email_institucional}}</td>                 
                         <td class="text-center">
                           <a href="{{route('i.edit'), ['id' => $usuario->id]}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="inscritos/remover/{{$usuario->id}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <!-- <a href="{{route('i.destroy'), ['id' => $usuario->id]}}"><i class="glyphicon glyphicon-trash"></i></a> -->
                         </td>
                       </tr>
                     @endforeach

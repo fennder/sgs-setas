@@ -61,7 +61,6 @@ class UsersController extends Controller
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $nav = "Lista";
-
             
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();

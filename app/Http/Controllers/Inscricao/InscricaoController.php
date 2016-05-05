@@ -46,6 +46,7 @@ class InscricaoController extends Controller
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
+        $users = $this->user->all();
         $i = 0;
 
         if ($request->isMethod('post')){
@@ -62,6 +63,7 @@ class InscricaoController extends Controller
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
             'cidades' => $cidades,
+            'users' => $users,
             'i' => $i,
             'cursos' => $cursos
             

@@ -36,7 +36,7 @@
                         <td>{{$escolaridade->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('e.edit', ['id' => $escolaridade->id_escolaridade])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('e.destroy', ['id' => $escolaridade->id_escolaridade])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <!-- <a href="{{route('e.destroy', ['id' => $escolaridade->id_escolaridade])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
                         </td>
                       </tr>
                     @endforeach

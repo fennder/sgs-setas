@@ -38,7 +38,7 @@
                         <td>{{$departamento->orgao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('dep.edit', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <!-- <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
                         </td>
                       </tr>
                     @endforeach
