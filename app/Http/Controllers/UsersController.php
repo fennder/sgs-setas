@@ -58,13 +58,18 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $users = $this->user->orderBy('id_perfil', 'asc')->paginate(15);
-            $usuarios = Auth::user();
-            $perfis = $this->perfil->all();
-
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $nav = "Lista";
+
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '=',3)->paginate(15);
+            }else{
+                $users = $this->user->orderBy('id_perfil', 'asc')->paginate(15);
+            }
 
             return view('user.lista',
                 [

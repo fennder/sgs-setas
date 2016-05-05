@@ -213,7 +213,7 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        /*dd($request->all());*/
         $usuarios = $this->usuario->find($id);
         $usuarios->update($request->all());
 

@@ -20,6 +20,7 @@
                     <th style="width: 10px">Id</th>
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Setor</th>
                     <th>Acesso</th>
                     @if($usuarios->id_perfil == 1)
                       <th style="width: 40px" colspan="2">Ação</th>
@@ -35,6 +36,7 @@
                         <td>{{$user->id}}.</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
+                        <td>{{$user->departamento->descricao}}</td>
                         <td>{{$user->perfil->descricao}}</td>
                         @if($usuarios->id_perfil == 1)
                           <td class="text-center">
@@ -48,8 +50,7 @@
                         @endif
                       </tr>
                     @endif
-                  @endforeach
-                  
+                  @endforeach  
                 </tbody>
               </table>
         </div>
