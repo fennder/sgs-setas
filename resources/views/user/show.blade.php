@@ -10,7 +10,7 @@
             <div class="box-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" alt="User profile picture">
 
-              <h3 class="profile-username text-center">{{ $users->name or "Servidor"}}</h3>
+              <h3 class="profile-username text-center">{{ $usuarios->nome_cracha or "Servidor"}}</h3>
 
               <p class="text-muted text-center">Web Developer</p>
 

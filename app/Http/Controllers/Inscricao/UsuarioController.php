@@ -44,7 +44,7 @@ class UsuarioController extends Controller
         $this->cargo = $cargo;
         $this->funcao = $funcao;
 
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -123,7 +123,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        
         $usuarios = $this->usuario->create($request->all());
 
         return redirect()->route('i.index');
@@ -137,10 +137,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        /*$usuarios = $this->usuario->find($id);
+        /*$usuarios = Auth::user();
 
         $estados = $this->estado->all();
-        $usuarios = $this->usuario->all();
         $cidades = $this->cidade->all();
         $estado_rgs = $this->estado_rg->all();
         $escolaridades = $this->escolaridade->all(); 

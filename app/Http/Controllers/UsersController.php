@@ -117,9 +117,37 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrição";
+        $nav = "Meus dados";
+
+        $usuarios = Auth::user();
+
+        $estados = $this->estado->all();
+        $cidades = $this->cidade->all();
+        $estado_rgs = $this->estado_rg->all();
+        $escolaridades = $this->escolaridade->all(); 
+        $vinculos =$this->vinculo->all();
+        $orgaos =$this->orgao->all();
+        $departamentos =$this->departamento->all();
+        $cargos =$this->cargo->all();
+        $funcoes =$this->funcao->all();
+
+        return view('user.show',
+        [
+            'escolaridades' => $escolaridades, 
+            'estados' => $estados, 
+            'cidades' => $cidades,
+            'usuarios' => $usuarios,
+            'vinculos' => $vinculos,
+            'orgaos' => $orgaos,
+            'departamentos' => $departamentos,
+            'cargos' => $cargos,
+            'funcoes' => $funcoes,
+            'estado_rgs' => $estado_rgs
+        ]);
     }
 
     /**
