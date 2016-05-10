@@ -107,11 +107,10 @@ class CursoController extends Controller
         $nav = "Mostrar";
 
         $i = 0;
-        $cursos = $this->curso->find($id);
-        $scursos = $this->scurso->all();
-        $usuarios = $this->usuario->all();
-        $regioes = $this->regiao->all();
-        $cidades = $this->cidade->all();
+        $curso = $this->curso->find($id);
+        $usuarios = Auth::user();
+        $inscritos = $curso->usuarios->all();
+        
 
         return view('curso.show',
         [
@@ -119,11 +118,10 @@ class CursoController extends Controller
             'page_description' => $page_description,
             'nav' => $nav,
             'i' => $i, 
-            'cursos' => $cursos, 
-            'cidades' => $cidades, 
-            'scursos' => $scursos, 
-            'regioes' => $regioes, 
+            'inscritos' => $inscritos,
             'usuarios' => $usuarios
+
+            
         ]);
     }
 

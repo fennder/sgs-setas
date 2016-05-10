@@ -38,7 +38,7 @@ class Curso extends Model
 
     public function usuarios()
     {
-        return $this->belongsToMany('Gerenciador\User', 'id'); 
+        return $this->belongsToMany('Gerenciador\User'); 
     }
 
     public function statuscurso()

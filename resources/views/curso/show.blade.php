@@ -27,21 +27,21 @@
               <th>Município</th>
               <th>Nome</th>
               <th>CPF</th>
-              <th style="width: 40px" colspan="6">Assinatura</th>                   
+              <th style="width: 100px" colspan="1">Presença Manhã</th>
+              <th style="width: 100px" colspan="1">Presença Tarde</th>                  
             </tr>
           </thead>
           <tbody>
             
-              @foreach($cursos as $curso)
+              @foreach($inscritos as $inscrito)
                   <tr>
                     <td>{{ $i=$i+1 }}.</td>
+                    <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                    <td>{{ $inscrito->cidade->nome }}</td>
+                    <td>{{ $inscrito->name }}</td>
+                    <td>{{ $inscrito->cpf }}</td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td></td>                    
                   </tr>
               @endforeach
            
