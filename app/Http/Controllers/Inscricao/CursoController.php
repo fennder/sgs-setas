@@ -37,7 +37,7 @@ class CursoController extends Controller
         $page_description = "(Lista de Cursos)";
         $nav = "Curso";
 
-        $cursos = $this->curso->paginate(25);
+        $cursos = $this->curso->orderBy('id_status_curso', 'asc')->paginate(25);
         $usuarios = Auth::user();
 
         return view('curso.index',

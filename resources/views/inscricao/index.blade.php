@@ -21,21 +21,20 @@
         <form action="{!! route('ins.index') !!}" method="POST">
           <input type="hidden" name="_token" value="{!! csrf_token() !!}">
           <div class="row">
-
-            <div class="col-md-11">
-          <div class="form-group has-feedback">
-            <select class="form-control" name="id_curso" id="id_curso" required>
-              <option  value="">- Para obter a relação de inscritos selecione o curso aqui -</option>
-              @foreach($cursos as $curso)
-                <option  value="{{$curso->id_curso}}">{{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}</option>
-              @endforeach
-            </select>
-          </div><!-- Curso -->
-            </div><!-- Col 11 -->
+            <div class="col-md-10">
+              <div class="form-group has-feedback">
+                <select class="form-control" name="id_curso" id="id_curso" required>
+                  <option  value="">- Para obter a relação de inscritos selecione o curso aqui -</option>
+                  @foreach($cursos as $curso)
+                    <option  value="{{$curso->id_curso}}">{{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}</option>
+                  @endforeach
+                </select>
+              </div><!-- Curso -->
+            </div><!-- Col 10 -->
             <input type="submit" class="btn btn-primary" value="Buscar"></input>
           </div>
-        </form> 
 
+        </form> 
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
@@ -61,7 +60,7 @@
                 @if($usuarios->id_perfil <= 2)
                   <td class="text-center">
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                    <!-- <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
                   </td>
                 @endif
               </tr>
@@ -84,7 +83,6 @@
             @endforeach
           </tbody>
         </table>
-      
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
