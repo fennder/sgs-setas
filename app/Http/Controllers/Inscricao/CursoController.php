@@ -5,6 +5,8 @@ namespace Gerenciador\Http\Controllers\Inscricao;
 use Illuminate\Http\Request;
 use Gerenciador\Inscricao\Curso;
 use Gerenciador\Inscricao\StatusCurso;
+use Gerenciador\Inscricao\Regiao;
+use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\User;
@@ -16,11 +18,13 @@ class CursoController extends Controller
     private $scurso;
     private $usuario;
 
-    public function __construct(User $usuario, Curso $curso, StatusCurso $scurso)
+    public function __construct(Cidade $cidade, Regiao $regiao, User $usuario, Curso $curso, StatusCurso $scurso)
     {
         $this->curso = $curso;
         $this->scurso = $scurso;
         $this->usuario = $usuario;
+        $this->regiao = $regiao;
+        $this->cidade = $cidade;
 
         $this->middleware('auth');
     }
@@ -102,17 +106,23 @@ class CursoController extends Controller
         $page_description = "Turma do Curso";
         $nav = "Mostrar";
 
+        $i = 0;
         $cursos = $this->curso->find($id);
         $scursos = $this->scurso->all();
         $usuarios = $this->usuario->all();
-        
+        $regioes = $this->regiao->all();
+        $cidades = $this->cidade->all();
+
         return view('curso.show',
         [
             'page_title'  => $page_title,
             'page_description' => $page_description,
             'nav' => $nav,
+            'i' => $i, 
             'cursos' => $cursos, 
+            'cidades' => $cidades, 
             'scursos' => $scursos, 
+            'regioes' => $regioes, 
             'usuarios' => $usuarios
         ]);
     }

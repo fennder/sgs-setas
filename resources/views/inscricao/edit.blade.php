@@ -71,15 +71,15 @@
     <div class="col-md-3">
       <small class="text-muted">Alterado por</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" value="{{ $usuarios->nome_cracha }}" name="nome_cracha" id="nome_cracha">
         <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
+        {{ $usuarios->nome_cracha }}
         
       </div><!-- Login -->
 
       <small class="text-muted">Alterado em</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" value="{{ $usuarios->updated_at }}">
-      </div><!-- Login -->
+        {{ $usuarios->updated_at }}
+      </div><!-- data alteração -->
 
     </div><!-- Col 3 -->
 

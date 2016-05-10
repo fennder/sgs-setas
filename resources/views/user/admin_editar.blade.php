@@ -415,3 +415,33 @@
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
+
+@section('post-script')
+  <script type="text/javascript">
+    $('select[name=id_estado]').change(function () {
+        var idEstado = $(this).val();
+
+        //$('select[name=id_cidade]').html('').append('<option value="">  Carregando...  </option>');
+        $.get('/get-cidades/' + idEstado, function (cidades) {
+            $('select[name=id_cidade]').empty();
+            $.each(cidades, function (key, value) {
+                $('select[name=id_cidade]').append('<option value=' + value.id_cidade + '>' + value.nome + '</option>');
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $('select[name=id_orgao]').change(function () {
+        var idOrgao = $(this).val();
+
+        $.get('/get-departamentos/' + idOrgao, function (departamento) {
+            $('select[name=id_departamento]').empty();
+            $.each(departamento, function (key, value) {
+                $('select[name=id_departamento]').append('<option value=' + value.id_departamento + '>' + value.descricao + '</option>');
+            });
+        });
+    });
+</script>
+
+@endsection()

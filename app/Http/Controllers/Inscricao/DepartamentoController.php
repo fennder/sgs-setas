@@ -50,6 +50,17 @@ class DepartamentoController extends Controller
         ]);
     }
 
+    public function getDepartamento($id_orgao)
+    {
+
+        $orgao = $this->orgao->find($id_orgao);
+
+        $departamentos = $orgao->departamento()->getQuery()->get(['id_departamento', 'descricao']);
+
+        return response()->json($departamentos);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -291,22 +291,22 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Função</small>
+        <small class="text-muted">Cargo</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_funcao" id="id_funcao" required>
-              @if($usuarios->funcao)
-                <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
+            <select class="form-control" name="id_cargo" id="id_cargo" required>
+              @if($usuarios->cargo)
+                <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($funcoes as $funcao)
-                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
+              @foreach ($cargos as $cargo)
+                  <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Função -->
+        </div><!-- Cargo -->
       </div><!-- Col 4 -->
     
     </div><!-- row -->
@@ -344,22 +344,22 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Departamento</small>
+        <small class="text-muted">Função</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_departamento" id="id_departamento" required>
-              @if($usuarios->departamento)
-                <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
+            <select class="form-control" name="id_funcao" id="id_funcao" required>
+              @if($usuarios->funcao)
+                <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($departamentos as $departamento)
-                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+              @foreach ($funcoes as $funcao)
+                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Departamento -->
+        </div><!-- Função -->
       </div><!-- Col 4 -->
 
     </div><!-- row -->
@@ -388,23 +388,23 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Cargo</small>
+        <small class="text-muted">Departamento</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_cargo" id="id_cargo" required>
-              @if($usuarios->cargo)
-                <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
+            <select class="form-control" name="id_departamento" id="id_departamento" required>
+              @if($usuarios->departamento)
+                <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($cargos as $cargo)
-                  <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
+              @foreach ($departamentos as $departamento)
+                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Cargo -->
-      </div><!-- Col 3 -->
+        </div><!-- Departamento -->
+      </div><!-- Col 4 -->
 
     </div><!-- row -->
 
@@ -432,5 +432,17 @@
     });
 </script>
 
-@endsection()
+<script type="text/javascript">
+    $('select[name=id_orgao]').change(function () {
+        var idOrgao = $(this).val();
 
+        $.get('/get-departamentos/' + idOrgao, function (departamento) {
+            $('select[name=id_departamento]').empty();
+            $.each(departamento, function (key, value) {
+                $('select[name=id_departamento]').append('<option value=' + value.id_departamento + '>' + value.descricao + '</option>');
+            });
+        });
+    });
+</script>
+
+@endsection()

@@ -151,7 +151,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{!! route('u.show') !!}" class="btn btn-primary btn-flat">Meus dados</a>
+                  <a href="{!! route('u.show') !!}" class="btn btn-success btn-flat">Meus dados</a>
                 </div>
                 <div class="pull-right">
                   <a href="{!! route('a.getLogout') !!}" class="btn btn-danger btn-flat">Deslogar</a>

@@ -6,6 +6,7 @@ Route::get('', function()
 });
 
 Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
+Route::get('get-departamentos/{idOrgao}','Inscricao\DepartamentoController@getDepartamento');
 
 Route::group(['as' => 'h.', 'prefix' => 'home'], function()
 {
@@ -130,7 +131,7 @@ Route::group(['as' => 'cs.', 'prefix' => 'curso'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CursoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CursoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CursoController@store']);
-	Route::post('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\CursoController@show']);
+	Route::get('mostrar/{id}', 		['as' => 'show', 	'uses' => 'Inscricao\CursoController@show']);
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CursoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CursoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CursoController@destroy']);

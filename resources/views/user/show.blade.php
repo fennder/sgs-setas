@@ -10,11 +10,11 @@
             <div class="box-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" alt="User profile picture">
 
-              <h3 class="profile-username text-center">{{ $usuarios->nome_cracha or "Servidor"}}</h3>
+              <h3 class="profile-username text-center">{{ $usuarios->nome_cracha}}</h3>
 
-              <p class="text-muted text-center">Web Developer</p>
+              <p class="text-muted text-center">{{ $usuarios->perfil->descricao}}</p>
 
-              <ul class="list-group list-group-unbordered">
+              <!-- <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
                   <b>Followers</b> <a class="pull-right">1,322</a>
                 </li>
@@ -24,9 +24,9 @@
                 <li class="list-group-item">
                   <b>Friends</b> <a class="pull-right">13,287</a>
                 </li>
-              </ul>
+              </ul> -->
 
-              <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+             <!--  <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
             </div>
             <!-- /.box-body -->
           </div>
@@ -35,24 +35,24 @@
           <!-- About Me Box -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">About Me</h3>
+              <h3 class="box-title">Sobre mim</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+              <strong><i class="fa fa-book margin-r-5"></i> Formação</strong>
 
               <p class="text-muted">
-                B.S. in Computer Science from the University of Tennessee at Knoxville
+                {{ $usuarios->escolaridade->descricao }}, {{ $usuarios->vinculoinstitucional->descricao}}, {{ $usuarios->cargo->descricao}}
               </p>
               <hr>
 
-              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+              <!-- <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
               <p class="text-muted">Malibu, California</p>
 
-              <hr>
+              <hr> -->
 
-              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+              <!-- <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
 
               <p>
                 <span class="label label-danger">UI Design</span>
@@ -62,11 +62,11 @@
                 <span class="label label-primary">Node.js</span>
               </p>
 
-              <hr>
+              <hr> -->
 
-              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+              <!-- <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p> -->
             </div>
             <!-- /.box-body -->
           </div>
@@ -85,7 +85,7 @@
                 <!-- Post -->
                 <div class="post">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user1-128x128.jpg") }}" alt="user image">
+                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" alt="user image">
                         <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -116,7 +116,7 @@
                 <!-- Post -->
                 <div class="post clearfix">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user7-128x128.jpg") }}" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" alt="User Image">
                         <span class="username">
                           <a href="#">Sarah Ross</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -148,7 +148,7 @@
                 <!-- Post -->
                 <div class="post">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user6-128x128.jpg" ) }}" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg" ) }}" alt="User Image">
                         <span class="username">
                           <a href="#">Adam Jones</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>

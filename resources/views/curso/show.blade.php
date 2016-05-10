@@ -23,35 +23,34 @@
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th>Participante</th>
-              <th>CPF</th>
-              <th>Município</th>
               <th>Região</th>
+              <th>Município</th>
+              <th>Nome</th>
+              <th>CPF</th>
               <th style="width: 40px" colspan="6">Assinatura</th>                   
             </tr>
           </thead>
           <tbody>
-            @if($cursos)
+            
               @foreach($cursos as $curso)
                   <tr>
-                    <td>{{$curso->id_curso}}.</td>
-                    <td>{{$curso->descricao}}</td>
-                    <td>{{$curso->data_inicio}}</td>
-                    <td>{{$curso->data_termino}}</td>
-                    <td>{{$curso->statuscurso->descricao}}</td>
-                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td>{{ $i=$i+1 }}.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                   </tr>
               @endforeach
-            @else
-              <p>Não há registros</p>
-            @endif
+           
           </tbody>
         </table>
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
-              <li>{!!$cursos->render()!!}</li>
+              
             </ul>
       </div><!-- /.box-footer-->
     </div><!-- /.box -->
