@@ -10,7 +10,7 @@
         <div class="pull-left" align="center">
           <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="40%"></p>
         </div>
-        <h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2> - 
+        <p><h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2></p>
         <h3 class="box-title">Lista de Presença</h3>
         
         <!-- <div class="box-tools pull-right">
@@ -29,8 +29,8 @@
               <th style="width: 100px">Município</th>
               <th style="width: 100px">Nome</th>
               <th style="width: 100px" >CPF</th>
-              <th style="width: 100px" >Presença Manhã</th>
-              <th style="width: 100px" >Presença Tarde</th>                  
+              <th style="width: 50px" >Manhã</th>
+              <th style="width: 50px" >Tarde</th>                  
             </tr>
           </thead>
           <tbody>

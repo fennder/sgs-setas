@@ -11,6 +11,7 @@ use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\User;
+use DB;
 use Auth;
 
 class CursoController extends Controller
@@ -113,7 +114,7 @@ class CursoController extends Controller
         $usuarios = Auth::user();
         $inscricoes = $this->inscricao->where('status','=','Deferido')->get();
         $inscritos = $curso->usuarios->all();
-                
+        
         return view('curso.show',
         [
             'page_title'  => $page_title,
