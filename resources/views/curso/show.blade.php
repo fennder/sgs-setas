@@ -23,12 +23,12 @@
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th>Região</th>
-              <th>Município</th>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th style="width: 100px" colspan="1">Presença Manhã</th>
-              <th style="width: 100px" colspan="1">Presença Tarde</th>                  
+              <th style="width: 100px">Região</th>
+              <th style="width: 100px">Município</th>
+              <th style="width: 100px">Nome</th>
+              <th style="width: 100px" >CPF</th>
+              <th style="width: 100px" >Presença Manhã</th>
+              <th style="width: 100px" >Presença Tarde</th>                  
             </tr>
           </thead>
           <tbody>

@@ -173,7 +173,7 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-
+            
             return view('user.admin_editar', 
             [
                 'usuarios' => $usuarios,

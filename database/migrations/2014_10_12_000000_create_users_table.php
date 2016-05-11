@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
 
             //$table->string('nome', 100);
             $table->string('nome_cracha', 50);
-            $table->string('sexo', 1)->nullable();
-            $table->string('foto', 200)->nullable();
+            $table->string('sexo', 10)->nullable();
+            $table->string('foto', 200)->nullable();    
             $table->string('cpf', 14);
             $table->string('rg', 45);
             $table->string('nis')->nullable();
