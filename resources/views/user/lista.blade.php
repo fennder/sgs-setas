@@ -18,14 +18,14 @@
                 <thead>
                   <tr>
                     <th style="width: 10px">Id</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Setor</th>
-                    <th>Acesso</th>
+                    <th style="width: 200px">Nome</th>
+                    <th style="width: 200px">E-mail</th>
+                    <th>Função</th>
+                    <th>Tipo de acesso</th>
                     @if($usuarios->id_perfil == 1)
-                      <th style="width: 40px" colspan="2">Ação</th>
+                      <th style="width: 50px" colspan="2">Ação</th>
                     @elseif($usuarios->id_perfil == 2)
-                      <th style="width: 40px" colspan="2">Ação</th>
+                      <th style="width: 50px" colspan="2">Ação</th>
                     @endif
                   </tr>
                 </thead>
@@ -36,7 +36,7 @@
                         <td>{{$user->id}}.</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->departamento->descricao}}</td>
+                        <td>{{$user->funcao->descricao}}</td>
                         <td>{{$user->perfil->descricao}}</td>
                         @if($usuarios->id_perfil == 1)
                           <td class="text-center">

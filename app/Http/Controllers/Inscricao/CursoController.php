@@ -111,10 +111,9 @@ class CursoController extends Controller
         $i = 0;
         $curso = $this->curso->find($id);
         $usuarios = Auth::user();
+        $inscricoes = $this->inscricao->where('status','=','Deferido')->get();
         $inscritos = $curso->usuarios->all();
-        $inscricoes = $this->inscricao->all();
-        
-
+                
         return view('curso.show',
         [
             'page_title'  => $page_title,
@@ -123,6 +122,7 @@ class CursoController extends Controller
             'i' => $i, 
             'inscritos' => $inscritos,
             'usuarios' => $usuarios,
+            'curso' => $curso,
             'inscricoes' => $inscricoes
        
         ]);

@@ -6,19 +6,21 @@
   <div class="col-md-12">
     <!-- Default box -->
     <div class="box">
-      <div class="box-header with-border">
+      <div class="box-header with-border" align="center">
+        <div class="pull-left" align="center">
+          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="40%"></p>
+        </div>
+        <h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2> - 
         <h3 class="box-title">Lista de Presença</h3>
-
-        <div class="box-tools pull-right">
+        
+        <!-- <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
             <i class="fa fa-minus"></i></button>
           <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
             <i class="fa fa-times"></i></button>
-        </div>
+        </div> -->
       </div>
       <div class="box-body">
-        </br>
-        </br>
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
