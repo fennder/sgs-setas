@@ -46,6 +46,14 @@
               </p>
               <hr>
 
+              <strong><i class="fa fa-pencil margin-r-5"></i> Trabalho</strong>
+
+              <p>
+                {{ $usuarios->orgao->descricao }}, {{ $usuarios->departamento->descricao}}
+                
+              </p>
+
+              <hr>
               <!-- <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
 
               <p class="text-muted">Malibu, California</p>

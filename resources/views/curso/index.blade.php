@@ -24,11 +24,11 @@
           <thead>
             <tr>
               <th style="width: 10px">Id</th>
-              <th>Descrição</th>
-              <th style="width: 60px">Data Início</th>
-              <th style="width: 60px">Data Término</th>
-              <th>Status do Curso</th>
-              <th class="text-center" style="width: 60px" colspan="2">Ação</th>                   
+              <th style="width: 540px">Descrição</th>
+              <th style="width: 90px">Data Início</th>
+              <th style="width: 100px">Data Término</th>
+              <th>Status</th>
+              <th class="text-center" style="width: 100px" colspan="2">Ação</th>                   
             </tr>
           </thead>
           <tbody>

@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'correio.setas.to.gov.br'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     */
 
     //'port' => env('MAIL_PORT', 465),
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,8 +55,8 @@ return [
     |
     */
 
-    'from' => ['address' => 'ti@setas.to.gov.br', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
-    //'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
+    //'from' => ['address' => 'teste_ti@setas.to.gov.br', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
+    'from' => ['address' => env('MAIL_FROM', 'teste_ti@setas.to.gov.br'), 'name' => env('MAIL_NAME', 'SGS - Sistema de Gerenciamente de Inscrição')],
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME', 'teste_ti@setas.to.gov.br'),
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD', 'setas123'),
 
     /*
     |--------------------------------------------------------------------------

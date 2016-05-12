@@ -27,25 +27,25 @@
               <th style="width: 10px">Nr.</th>
               <th style="width: 100px">Região</th>
               <th style="width: 100px">Município</th>
-              <th style="width: 100px">Nome</th>
-              <th style="width: 100px" >CPF</th>
-              <th style="width: 50px" >Manhã</th>
-              <th style="width: 50px" >Tarde</th>                  
+              <th style="width: 100px">Nome do Crachá</th>
+              <th style="width: 100px">CPF</th>
+              <th style="width: 100px">Manhã</th>
+              <th style="width: 100px">Tarde</th>                  
             </tr>
           </thead>
           <tbody>
             
-              @foreach($inscritos as $inscrito)
-                  <tr>
-                    <td>{{ $i=$i+1 }}.</td>
-                    <td>{{ $inscrito->cidade->regiao->descricao }}</td>
-                    <td>{{ $inscrito->cidade->nome }}</td>
-                    <td>{{ $inscrito->name }}</td>
-                    <td>{{ $inscrito->cpf }}</td>
-                    <td></td>
-                    <td></td>                    
-                  </tr>
-              @endforeach
+            @foreach($inscritos as $inscrito)
+              <tr>
+                <td>{{ $i=$i+1 }}.</td>
+                <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                <td>{{ $inscrito->cidade->nome }}</td>
+                <td>{{ $inscrito->nome_cracha }}</td>
+                <td>{{ $inscrito->cpf }}</td>
+                <td></td>
+                <td></td>
+              </tr>
+            @endforeach
             
           </tbody>
         </table>
