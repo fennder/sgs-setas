@@ -240,4 +240,15 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
+    public function sendEmailReminder(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+            $m->from('setasgti@gmail.com', 'SGI - Sistema de Gerencimento de Inscrição');
+
+            $m->to($user->email, $user->name)->subject('Teste!');
+        });
+    }
+
 }

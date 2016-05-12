@@ -53,7 +53,7 @@
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block ">Refazer</button>
+            <button type="submit" class="btn btn-primary btn-block ">Refazer Senha</button>
           </div>
           <!-- /.col -->
         </div>

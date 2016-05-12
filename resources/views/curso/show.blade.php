@@ -25,12 +25,12 @@
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th style="width: 100px">Região</th>
-              <th style="width: 100px">Município</th>
+              <th style="width: 150px">Região</th>
+              <th style="width: 200px">Município</th>
               <th style="width: 100px">Nome do Crachá</th>
               <th style="width: 100px">CPF</th>
-              <th style="width: 100px">Manhã</th>
-              <th style="width: 100px">Tarde</th>                  
+              <th style="width: 100px">Presença Manhã</th>
+              <th style="width: 100px">Presença Tarde</th>                  
             </tr>
           </thead>
           <tbody>
