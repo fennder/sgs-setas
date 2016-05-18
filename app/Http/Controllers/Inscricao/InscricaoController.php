@@ -153,8 +153,7 @@ class InscricaoController extends Controller
         $inscricoes = $this->inscricao->find($id);
         $usuarios = Auth::user();
         $cursos = $this->curso->all();
-
-        //dd($users);
+        $users = $this->user->all();
 
         return view('inscricao.edit',
         [
@@ -163,6 +162,7 @@ class InscricaoController extends Controller
             'nav' => $nav,
             'inscricoes' => $inscricoes, 
             'usuarios' => $usuarios,
+            'users' => $users,
             'cursos' => $cursos 
             
         ]);

@@ -11,7 +11,7 @@
           <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="40%"></p>
         </div>
         <p><h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2></p>
-        <h3 class="box-title">Lista de Presença</h3>
+        <h3 class="box-title">Lista de Presença - ____/__________/______ - Período: ________________________</h3>
         
         <!-- <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -29,24 +29,22 @@
               <th style="width: 200px">Município</th>
               <th style="width: 100px">Nome do Crachá</th>
               <th style="width: 100px">CPF</th>
-              <th style="width: 100px">Presença Manhã</th>
-              <th style="width: 100px">Presença Tarde</th>                  
+              <th style="width: 100px">Assinatura</th>                  
             </tr>
           </thead>
           <tbody>
-            
-            @foreach($inscritos as $inscrito)
-              <tr>
-                <td>{{ $i=$i+1 }}.</td>
-                <td>{{ $inscrito->cidade->regiao->descricao }}</td>
-                <td>{{ $inscrito->cidade->nome }}</td>
-                <td>{{ $inscrito->nome_cracha }}</td>
-                <td>{{ $inscrito->cpf }}</td>
-                <td></td>
-                <td></td>
-              </tr>
-            @endforeach
-            
+           
+              @foreach($inscritos as $inscrito) 
+                <tr>
+                  <td>{{ $i=$i+1 }}.</td>
+                  <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                  <td>{{ $inscrito->cidade->nome }}</td>
+                  <td>{{ $inscrito->name }}</td>
+                  <td>{{ $inscrito->cpf }}</td>
+                  <td></td>
+                </tr>
+              @endforeach  
+                
           </tbody>
         </table>
       </div><!-- /.box-body -->

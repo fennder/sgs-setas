@@ -19,6 +19,9 @@ class CursoController extends Controller
     private $curso;
     private $scurso;
     private $usuario;
+    private $inscricao;
+    private $regiao;
+    private $cidade;
 
     public function __construct(Inscricao $inscricao, Cidade $cidade, Regiao $regiao, User $usuario, Curso $curso, StatusCurso $scurso)
     {
@@ -112,7 +115,7 @@ class CursoController extends Controller
         $i = 0;
         $curso = $this->curso->find($id);
         $usuarios = Auth::user();
-        $inscricoes = $this->inscricao->where('status','=','Deferido')->get();
+        $inscricoes = $this->inscricao->where('status','=','Deferido')->get()->all();
         $inscritos = $curso->usuarios->all();
         
         return view('curso.show',
