@@ -27,7 +27,7 @@
               <th style="width: 10px">Nr.</th>
               <th style="width: 110px">Região</th>
               <th style="width: 150px">Município</th>
-              <th style="width: 150px">Nome do Inscrito</th>
+              <th style="width: 180px">Nome do Inscrito</th>
               <th style="width: 80px">CPF</th>
               <th style="width: 150px">Assinatura</th>                  
             </tr>
