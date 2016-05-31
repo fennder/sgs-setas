@@ -57,10 +57,15 @@
                 <td>{{$inscricao->usuario->cpf}}</td>
                 <td>{{$inscricao->usuario->funcao->descricao}}</td>
                 <td>{{$inscricao->status}}</td>
-                @if($usuarios->id_perfil <= 2)
+                @if($usuarios->id_perfil == 2)
                   <td class="text-center">
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                     <!-- <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                  </td>
+                @elseif($usuarios->id_perfil == 1)
+                  <td class="text-center">
+                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
                   </td>
                 @endif
               </tr>
@@ -72,10 +77,15 @@
                   <td>{{$inscricao->usuario->cpf}}</td>
                   <td>{{$inscricao->usuario->funcao->descricao}}</td>
                   <td>{{$inscricao->status}}</td>
-                  @if($usuarios->id_perfil <= 2)
+                  @if($usuarios->id_perfil == 2)
                     <td class="text-center">
                       <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
                       <!-- <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                    </td>
+                  @elseif($usuarios->id_perfil == 1)
+                    <td class="text-center">
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a>
                     </td>
                   @endif
                 </tr>
