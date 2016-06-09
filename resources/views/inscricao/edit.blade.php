@@ -28,16 +28,17 @@
     <div class="col-md-9">
       <small class="text-muted">Curso</small>
       <div class="form-group has-feedback">
-      <select disabled class="form-control" name="curso_id" id="curso_id" required>
-      <option value="{{ $inscricoes->curso->id_curso }}">{{ $inscricoes->curso->descricao }} - ( {{$inscricoes->curso->data_inicio}} - {{$inscricoes->curso->data_termino}} ) - {{$inscricoes->curso->statuscurso->descricao}}</option>   
-        @foreach($cursos as $curso)
-          @if($usuarios->cursos->find($curso->id_curso) != null)
-            @if($curso->statuscurso->id_status_curso == 1)
-              <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{$curso->data_inicio}} - {{$curso->data_termino}} ) - {{$curso->statuscurso->descricao}}</option>
-            @endif
-          @endif
-        @endforeach
-      </select>
+
+        <select disabled class="form-control" name="curso_id" id="curso_id" required>
+          <option value="{{ $inscricoes->curso->id_curso }}">{{ $inscricoes->curso->descricao }} - ( {{$inscricoes->curso->data_inicio}} - {{$inscricoes->curso->data_termino}} ) - {{$inscricoes->curso->statuscurso->descricao}}</option>   
+            @foreach($cursos as $curso)
+              @if($usuarios->cursos->find($curso->id_curso) != null)
+                @if($curso->statuscurso->id_status_curso == 1)
+                  <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{$curso->data_inicio}} - {{$curso->data_termino}} ) - {{$curso->statuscurso->descricao}}</option>
+                @endif
+              @endif
+            @endforeach
+        </select>
 
       </div><!-- Curso -->
     </div><!-- Col 9 -->
@@ -47,6 +48,7 @@
     <div class="col-md-3">
       <small class="text-muted">Status do inscrito</small>
       <div class="form-group has-feedback">
+
         <select class="form-control" name="status" id="status">
           <option value="{{$inscricoes->status}}">{{$inscricoes->status}}</option>
             @if($inscricoes->status == "Deferido")
@@ -54,9 +56,8 @@
             @else
               <option value="Deferido">Deferido</option>
             @endif
-            
-           
         </select>
+
       </div> <!-- Motivo -->
     </div>
 
@@ -73,7 +74,6 @@
       <div class="form-group has-feedback">
         <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
         {{ $inscricoes->login }}
-        
       </div><!-- Login -->
 
       <small class="text-muted">Alterado em</small>
