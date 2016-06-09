@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
-  <link href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
   <!-- Font Awesome -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Ionicons -->
@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
         <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
   -->
-  <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css") }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css') }}" rel="stylesheet" type="text/css" />
 
   <!-- iCheck -->
   <link href="{{ asset("/bower_components/AdminLTE/plugins/iCheck/flat/blue.css") }}" rel="stylesheet" type="text/css" >
@@ -104,9 +104,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js") }}" type="text/javascript"></script>
+<script src="{{ asset('/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js') }}" type="text/javascript"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="{{ asset("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js") }}"></script>
+<script src="{{ asset('/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

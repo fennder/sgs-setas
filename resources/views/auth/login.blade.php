@@ -3,8 +3,8 @@
 @section('content')
 <div class="login-box">
 <div class="login-logo">
-  <img src="{{ asset("/imagens/logo_estado-150x150.png") }}">
-  </div>
+  <img src="{{ asset('/imagens/logo_estado-150x150.png') }}">
+</div>
   <div class="login-logo">
     <a href="{!! route('a.getLogin') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
   </div>

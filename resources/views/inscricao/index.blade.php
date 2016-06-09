@@ -42,9 +42,11 @@
               <th>Município</th>
               <th>Inscrito</th>
               <th>CPF</th>
+              <th>E-mail</th>
+              <th>Telefone</th>
               <th>Função</th>
               <th>Status do Inscrito</th>
-              <th style="width: 40px" colspan="2">Ação</th>
+              <th style="width: 60px" colspan="2"><center>Ação</center></th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +57,8 @@
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
                 <td>{{$inscricao->usuario->name}}</td>
                 <td>{{$inscricao->usuario->cpf}}</td>
+                <td>{{$inscricao->usuario->email}}</td>
+                <td>{{$inscricao->usuario->telefone_pessoal}}</td>
                 <td>{{$inscricao->usuario->funcao->descricao}}</td>
                 <td>{{$inscricao->status}}</td>
                 @if($usuarios->id_perfil == 2)
