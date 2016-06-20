@@ -4,8 +4,8 @@ namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
 use Gerenciador\Inscricao\StatusCurso;
-use Gerenciador\Inscricao\Usuario;
 use Gerenciador\Inscricao\Inscricao;
+use Gerenciador\Inscricao\Usuario;
 use Gerenciador\Inscricao\Modulo;
 
 class Curso extends Model

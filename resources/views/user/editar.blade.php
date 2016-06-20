@@ -92,7 +92,8 @@
         <small class="text-muted">UF - RG</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_estado_rg" id="id_estado_rg" required>  
+          <select class="form-control" name="id_estado_rg" id="id_estado_rg" required> 
+          
             @if($usuarios->estado_rg)
               <option value="{{$usuarios->estado_rg->id_estado}}">{{$usuarios->estado_rg->uf}}</option>
             @else
@@ -210,7 +211,7 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '## ####-####')" maxlength="12" class="form-control" placeholder="99 9999-9999"required>
+        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '(##) #####-####')" maxlength="12" class="form-control" placeholder="99 99999-9999"required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
@@ -240,7 +241,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input onkeypress="mascara(this, '## ####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 9999-9999" maxlength="12" required>
+          <input onkeypress="mascara(this, '## #####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
         </div><!-- Telefone Trabalho -->
         
       </div><!-- Col 3 -->

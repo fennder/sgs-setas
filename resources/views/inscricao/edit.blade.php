@@ -85,12 +85,12 @@
 
   </div><!-- row -->
 
-
   </div>
 </div>
 
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
-  <a class="btn btn-success" href="{{route('ins.edit', ['id' => $inscricoes->id_inscricao])}}">Editar Usuário</a>
+  <a class="btn btn-success" href="{{route('u.edit', ['id' => $inscricoes->user_id])}}">Editar Usuário</a><!-- colocar a rota do user/edir e passar inscricao->user_id -->
+
 </form><!-- Form -->
 @endsection
 

@@ -2,17 +2,16 @@
 
 namespace Gerenciador\Inscricao;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Gerenciador\Inscricao\VinculoInstitucional;
+use Gerenciador\Inscricao\Escolaridade;
+use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
-use Gerenciador\Inscricao\Deficiencia;
-use Gerenciador\Inscricao\Escolaridade;
-use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Inscricao\Funcao;
-use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Inscricao\Cargo;
 

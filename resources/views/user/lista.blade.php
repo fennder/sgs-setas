@@ -17,9 +17,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th style="width: 200px">Nome</th>
-                    <th style="width: 200px">E-mail</th>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
                     <th>Função</th>
                     <th>Tipo de acesso</th>
                     @if($usuarios->id_perfil == 1)

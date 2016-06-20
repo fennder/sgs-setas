@@ -2,19 +2,19 @@
 
 namespace Gerenciador\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Gerenciador\Http\Requests;
+use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Http\Controllers\Controller;
-use Gerenciador\User;
+use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
-use Gerenciador\Inscricao\Orgao;
-use Gerenciador\Inscricao\Escolaridade;
-use Gerenciador\Inscricao\VinculoInstitucional;
-use Gerenciador\Inscricao\Departamento;
-use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Inscricao\Funcao;
 use Gerenciador\Inscricao\Perfil;
+use Gerenciador\Inscricao\Cargo;
+use Gerenciador\Inscricao\Orgao;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
+use Gerenciador\User;
 use Session;
 use Auth;
 
@@ -65,16 +65,16 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=',2)->orderBy('name', 'asc')->paginate(15);
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(15);
             }else{
                 $users = $this->user->orderBy('name', 'asc')->paginate(15);
             }
 
             return view('user.lista',
                 [
-                    'nav' => $nav, 
-                    'users' => $users, 
-                    'page_title'=>$page_title, 
+                    'nav' => $nav,
+                    'users' => $users,
+                    'page_title'=>$page_title,
                     'usuarios'=>$usuarios,
                     'perfis'=>$perfis,
                     'page_description'=>$page_description

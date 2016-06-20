@@ -40,16 +40,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="{{ asset("/bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}" rel="stylesheet" type="text/css" >
 
     <script type="text/javascript">
-     function mascara(t, mask){
-       var i = t.value.length;
-       var saida = mask.substring(1,0);
-       var texto = mask.substring(i)
+    function mascara(t, mask){
+      var i = t.value.length;
+      var saida = mask.substring(1,0);
+      var texto = mask.substring(i)
+      
       if (texto.substring(0,1) != saida){
         t.value += texto.substring(0,1);
       }
-      }
+    }
   </script>
-
 
 </head>
 

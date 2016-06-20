@@ -2,16 +2,16 @@
 
 namespace Gerenciador\Http\Controllers\Inscricao;
 
-use Illuminate\Http\Request;
-use Gerenciador\Inscricao\Inscricao;
-use Gerenciador\Inscricao\Curso;
-use Gerenciador\Inscricao\Cidade;
-use Gerenciador\User;
-use DB;
-use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
-use Auth;
+use Gerenciador\Inscricao\Inscricao;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Curso;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
+use Gerenciador\User;
 Use Session;
+use Auth;
+use DB;
 
 
 class InscricaoController extends Controller

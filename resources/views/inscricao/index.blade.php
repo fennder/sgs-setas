@@ -46,7 +46,7 @@
               <th>Telefone</th>
               <th>Função</th>
               <th>Status do Inscrito</th>
-              <th style="width: 60px" colspan="2"><center>Ação</center></th>
+              <th style="width: 50px" colspan="4"><center>Ação</center></th>
             </tr>
           </thead>
           <tbody>
