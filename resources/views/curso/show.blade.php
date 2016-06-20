@@ -11,7 +11,7 @@
           <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="40%"></p>
         </div>
         <p><h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2></p>
-        <h3 class="box-title">Lista de Presença - ____/__________/______ - Período: ________________________</h3>
+        <h3 class="box-title">Lista de Presença - Data: ____/__________/______ - Período: Manhã (__) ou Tarde (__)</h3>
         
         <!-- <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -25,7 +25,7 @@
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th style="width: 110px">Região</th>
+              <th style="width: 110px">Regional</th>
               <th style="width: 150px">Município</th>
               <th style="width: 200px">Nome do Inscrito</th>
               <th style="width: 80px">CPF</th>

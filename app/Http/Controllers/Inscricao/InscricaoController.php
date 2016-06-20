@@ -53,6 +53,7 @@ class InscricaoController extends Controller
         if ($request->isMethod('post')){
 
             $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
+            //$inscricoes = $inscricao->usuarios->orderBy('name', 'asc');
 
         }
 

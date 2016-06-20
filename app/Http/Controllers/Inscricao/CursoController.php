@@ -2,35 +2,35 @@
 
 namespace Gerenciador\Http\Controllers\Inscricao;
 
-use Illuminate\Http\Request;
-use Gerenciador\Inscricao\Curso;
+use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\Inscricao\StatusCurso;
-use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Regiao;
+use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
-use Gerenciador\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Gerenciador\User;
-use DB;
 use Auth;
+use DB;
 
 class CursoController extends Controller
 {
-    private $curso;
-    private $scurso;
-    private $usuario;
     private $inscricao;
+    private $usuario;
+    private $scurso;
     private $regiao;
     private $cidade;
+    private $curso;
 
     public function __construct(Inscricao $inscricao, Cidade $cidade, Regiao $regiao, User $usuario, Curso $curso, StatusCurso $scurso)
     {
-        $this->curso = $curso;
-        $this->scurso = $scurso;
+        $this->inscricao = $inscricao;
         $this->usuario = $usuario;
+        $this->scurso = $scurso;
         $this->regiao = $regiao;
         $this->cidade = $cidade;
-        $this->inscricao = $inscricao;
+        $this->curso = $curso;
 
         $this->middleware('auth');
     }
