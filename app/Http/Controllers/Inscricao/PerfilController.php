@@ -26,10 +26,10 @@ class PerfilController extends Controller
      */
     public function index()
     {
-        $perfis = $this->perfil->paginate(4);
+        $perfis = $this->perfil->paginate(10);
     
         $page_title = "SGI";
-        $page_description = "Lista de Perfis";
+        $page_description = "(Lista de Perfis)";
         $nav = "Perfil";
 
         return view('perfil.index',

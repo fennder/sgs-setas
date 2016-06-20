@@ -1,7 +1,20 @@
 <?php
+
 Route::get('', function()
 {
 	return redirect()->route('h.index');
+});
+
+Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
+Route::get('get-departamentos/{idOrgao}','Inscricao\DepartamentoController@getDepartamento');
+
+Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
+{
+	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
+	Route::post('login', 	['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //envio login formulário
+	Route::get('logout', 	['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //saída logout
+	Route::get('register', 	['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register formulário
+	Route::post('register',	['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //envio register formulário
 });
 
 Route::group(['as' => 'h.', 'prefix' => 'home'], function()
@@ -12,15 +25,6 @@ Route::group(['as' => 'h.', 'prefix' => 'home'], function()
 	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'HomeController@edit']);
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'HomeController@update']);
 	Route::delete('remover/{id}', 	['as' => 'destroy', 'uses' => 'HomeController@destroy']);
-});
-
-Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
-{
-	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
-	Route::post('login', 	['as' => 'postLogin', 		'uses' => 'Auth\AuthController@postLogin']); //envio login formulário
-	Route::get('logout', 	['as' => 'getLogout', 		'uses' => 'Auth\AuthController@getLogout']); //saída logout
-	Route::get('register', 	['as' => 'getRegister', 	'uses' => 'Auth\AuthController@getRegister']); //register formulário
-	Route::post('register',	['as' => 'postRegister', 	'uses' => 'Auth\AuthController@postRegister']); //envio register formulário
 });
 
 Route::group(['as' => 'p.', 'prefix' => 'password'], function()
@@ -36,6 +40,7 @@ Route::group(['as' => 'u.', 'prefix' => 'users'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'UsersController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'UsersController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
+	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'UsersController@show']);
 	Route::get('editar/{id}', 		['as' => 'edit', 	'uses' => 'UsersController@edit']);
 	Route::post('atualizar/{id}', 	['as' => 'update', 	'uses' => 'UsersController@update']);
 	Route::get('remover/{id}', 		['as' => 'destroy', 'uses' => 'UsersController@destroy']);
@@ -126,6 +131,7 @@ Route::group(['as' => 'cs.', 'prefix' => 'curso'], function()
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\CursoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\CursoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\CursoController@store']);
+	Route::get('mostrar/{id}', 		['as' => 'show', 	'uses' => 'Inscricao\CursoController@show']);
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\CursoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\CursoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\CursoController@destroy']);
@@ -174,8 +180,10 @@ Route::group(['as' => 'vi.', 'prefix' => 'vinculo_institucional'], function()
 Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
+	Route::post('', 				['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\InscricaoController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\InscricaoController@store']);
+	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\InscricaoController@show']);
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\InscricaoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\InscricaoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\InscricaoController@destroy']);

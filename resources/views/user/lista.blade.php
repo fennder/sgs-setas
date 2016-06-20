@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title">Lista de usuários cadastrados</h3>
@@ -17,29 +17,40 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
+                    <th>Id</th>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th style="width: 40px" colspan="2">Ação</th>
-                    <!--th style="width: 40px">Excluir</th-->
+                    <th>Função</th>
+                    <th>Tipo de acesso</th>
+                    @if($usuarios->id_perfil == 1)
+                      <th style="width: 50px" colspan="2">Ação</th>
+                    @elseif($usuarios->id_perfil == 2)
+                      <th style="width: 50px" colspan="2">Ação</th>
+                    @endif
                   </tr>
                 </thead>
                 <tbody>
-                  @if($users)
-                    @foreach($users as $user)
+                  @foreach($users as $user)
+                    @if($user->dados_atualizados == 1)
                       <tr>
                         <td>{{$user->id}}.</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td class="text-center">
-                          <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                        <td>{{$user->funcao->descricao}}</td>
+                        <td>{{$user->perfil->descricao}}</td>
+                        @if($usuarios->id_perfil == 1)
+                          <td class="text-center">
+                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          </td>
+                        @elseif($usuarios->id_perfil == 2)
+                          <td class="text-center">
+                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                          </td>
+                        @endif
                       </tr>
-                    @endforeach
-                  @else
-                    <p>Nenhum registro encontrado!</p>
-                  @endif
+                    @endif
+                  @endforeach  
                 </tbody>
               </table>
         </div>
@@ -53,7 +64,7 @@
           <!-- /.box -->
   </div>
         <!-- /.col -->
-  <div class="col-md-4">
+  <!-- <div class="col-md-4">
     <div class="box">
       <div class="box-header with-border">
           <h3 class="box-title">Mais informações</h3>
@@ -63,8 +74,8 @@
           </div>
       </div>
     </div>
-    <!-- /.col -->
-  </div>
+  </div> -->
+  <!-- /.col -->
 </div>
 
 @endsection

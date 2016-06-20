@@ -26,11 +26,11 @@ class OrgaoController extends Controller
      */
     public function index()
     {
-        $orgaos = $this->orgao->paginate(4);
+        $orgaos = $this->orgao->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Órgaos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Órgaos)";
         $nav = "Órgao";
 
         return view('orgao.index',

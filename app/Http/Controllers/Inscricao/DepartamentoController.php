@@ -31,11 +31,11 @@ class DepartamentoController extends Controller
     public function index()
     {
 
-        $page_title = "SGS";
-        $page_description = "Lista de Departamentos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Departamentos)";
         $nav = "Departamento";
 
-        $departamentos = $this->departamento->paginate(4);
+        $departamentos = $this->departamento->paginate(25);
         $orgaos = $this->orgao->all();
         $usuarios = Auth::user();
 
@@ -50,6 +50,17 @@ class DepartamentoController extends Controller
         ]);
     }
 
+    public function getDepartamento($id_orgao)
+    {
+
+        $orgao = $this->orgao->find($id_orgao);
+
+        $departamentos = $orgao->departamento()->getQuery()->get(['id_departamento', 'descricao']);
+
+        return response()->json($departamentos);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,8 +68,8 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Departamento";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Departamento)";
         $nav = "Departamento";
 
         $orgaos = $this->orgao->all();

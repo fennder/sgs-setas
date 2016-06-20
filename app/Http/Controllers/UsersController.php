@@ -2,20 +2,19 @@
 
 namespace Gerenciador\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Gerenciador\Http\Requests;
+use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Http\Controllers\Controller;
-use Gerenciador\User;
+use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
-use Gerenciador\Inscricao\Orgao;
-use Gerenciador\Inscricao\Escolaridade;
-use Gerenciador\Inscricao\VinculoInstitucional;
-use Gerenciador\Inscricao\Departamento;
-use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Inscricao\Funcao;
 use Gerenciador\Inscricao\Perfil;
+use Gerenciador\Inscricao\Cargo;
+use Gerenciador\Inscricao\Orgao;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
+use Gerenciador\User;
 use Session;
 use Auth;
 
@@ -47,7 +46,7 @@ class UsersController extends Controller
         $this->funcao = $funcao;
         $this->perfil = $perfil;
 
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
     
     /**
@@ -59,19 +58,25 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $users = $this->user->paginate(10);
-            $usuarios = Auth::user();
-
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $nav = "Lista";
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(15);
+            }else{
+                $users = $this->user->orderBy('name', 'asc')->paginate(15);
+            }
 
             return view('user.lista',
                 [
-                    'nav' => $nav, 
-                    'users' => $users, 
-                    'page_title'=>$page_title, 
-                    'usuarios'=>$usuarios, 
+                    'nav' => $nav,
+                    'users' => $users,
+                    'page_title'=>$page_title,
+                    'usuarios'=>$usuarios,
+                    'perfis'=>$perfis,
                     'page_description'=>$page_description
                 ]);
 
@@ -101,6 +106,9 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
+        /*if($validator->fails()){
+            $validator->messages()->first();
+        }*/
     }
 
     /**
@@ -109,19 +117,37 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
-    }
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrição";
+        $nav = "Meus dados";
 
-    public function getCidades($id_estado)
-    {
+        $usuarios = Auth::user();
 
-        $estados = $this->estado->find($id_estado);
-        $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);
+        $estados = $this->estado->all();
+        $cidades = $this->cidade->all();
+        $estado_rgs = $this->estado_rg->all();
+        $escolaridades = $this->escolaridade->all(); 
+        $vinculos =$this->vinculo->all();
+        $orgaos =$this->orgao->all();
+        $departamentos =$this->departamento->all();
+        $cargos =$this->cargo->all();
+        $funcoes =$this->funcao->all();
 
-        return Response::json($cidades);
-        dd($cidades);
+        return view('user.show',
+        [
+            'escolaridades' => $escolaridades, 
+            'estados' => $estados, 
+            'cidades' => $cidades,
+            'usuarios' => $usuarios,
+            'vinculos' => $vinculos,
+            'orgaos' => $orgaos,
+            'departamentos' => $departamentos,
+            'cargos' => $cargos,
+            'funcoes' => $funcoes,
+            'estado_rgs' => $estado_rgs
+        ]);
     }
 
     /**
@@ -138,7 +164,7 @@ class UsersController extends Controller
         if($verifica->id_perfil == 1){
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            //$cidades = $this->cidade->all();
+            $cidades = $this->cidade->all();
             $estados = $this->estado->all();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
@@ -147,23 +173,21 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-
-            $cidades = getCidades();
-                return view('user.admin_editar', 
-                [
-                    'usuarios' => $usuarios,
-                    'estado_rgs' => $estado_rgs,
-                    'cidades' => $cidades,
-                    'estados' => $estados,
-                    'escolaridades' => $escolaridades,
-                    'vinculos' => $vinculos,
-                    'departamentos' => $departamentos,
-                    'cargos' => $cargos,
-                    'funcoes' => $funcoes,
-                    'orgaos' => $orgaos,
-                    'perfis' => $perfis,
-                    'verifica' => $verifica
-                ]);
+            
+            return view('user.admin_editar', 
+            [
+                'usuarios' => $usuarios,
+                'estado_rgs' => $estado_rgs,
+                'cidades' => $cidades,
+                'estados' => $estados,
+                'escolaridades' => $escolaridades,
+                'vinculos' => $vinculos,
+                'departamentos' => $departamentos,
+                'cargos' => $cargos,
+                'funcoes' => $funcoes,
+                'orgaos' => $orgaos,
+                'perfis' => $perfis
+            ]);
     
         }else{
             $usuarios = $this->user->find($id);
@@ -177,12 +201,6 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-
-            /*$estados = $this->estado->find($id_estado);
-            dd($estados);
-            $cidades = $estados->cidades()->getQuery()->get(['id_estado', 'nome']);*/
-
-            /*$cidades = getCidades();*/
 
             return view('user.editar', 
             [
@@ -202,35 +220,35 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        
         $users = User::findOrFail($id);
         $users->fill($request->all());
 
         $users->save();
 
         return redirect()->route('h.index');
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         
         User::destroy($id);
 
         return redirect()->back();
-    }    
+    }
+
+    public function sendEmailReminder(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+            $m->from('setasgti@gmail.com', 'SGI - Sistema de Gerencimento de Inscrição');
+
+            $m->to($user->email, $user->name)->subject('Teste!');
+        });
+    }
+
 }

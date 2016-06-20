@@ -24,7 +24,7 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">10997</span>
+              <span class="label label-success">0</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">Você tem mensagens</li>
@@ -35,7 +35,7 @@
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+                        <img src="{{ asset('/bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -60,10 +60,10 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">You have 0 notifications</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
@@ -83,7 +83,7 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
+              <span class="label label-danger">0</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
@@ -95,13 +95,13 @@
                       <!-- Task title and progress text -->
                       <h3>
                         Design some buttons
-                        <small class="pull-right">20%</small>
+                        <small class="pull-right">50%</small>
                       </h3>
                       <!-- The progress bar -->
                       <div class="progress xs">
                         <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
+                        <div class="progress-bar progress-bar-aqua" style="width: 50%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">50% Complete</span>
                         </div>
                       </div>
                     </a>
@@ -119,14 +119,14 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image">
+              <img src="{{ asset('/bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">{{ $usuarios->nome_cracha or "Servidor"}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+                <img src="{{ asset('/bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                 <p>
                   {{ $usuarios->nome_cracha or "Servidor"}} - {{ $usuarios->perfil->descricao or "Ocupação"}}
@@ -151,10 +151,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="http://localhost:8000/perfil" class="btn btn-default btn-flat">Perfil</a>
+                  <a href="{!! route('u.show') !!}" class="btn btn-success btn-flat">Meus dados</a>
                 </div>
                 <div class="pull-right">
-                  <a href="{!! route('a.getLogout') !!}" class="btn btn-default btn-flat">Deslogar</a>
+                  <a href="{!! route('a.getLogout') !!}" class="btn btn-danger btn-flat">Deslogar</a>
                 </div>
               </li>
             </ul>

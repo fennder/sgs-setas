@@ -3,12 +3,14 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
 use Auth;
+
 
 class CidadeController extends Controller
 {
@@ -33,13 +35,13 @@ class CidadeController extends Controller
      */
     public function index()
     {
-        $cidades = $this->cidade->paginate(4);
+        $cidades = $this->cidade->where('id_estado', 27)->orderBy('nome', 'asc')->paginate(12);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Cidades";
+        $page_title = "SGI";
+        $page_description = "(Lista de Cidades)";
         $nav = "Cidades";
 
         return view('cidade.index',
@@ -54,6 +56,17 @@ class CidadeController extends Controller
         ]);
     }
 
+    public function getCidades($id_estado)
+    {
+
+        $estado = $this->estado->find($id_estado);
+
+        $cidades = $estado->cidades()->getQuery()->get(['id_cidade', 'nome']);
+
+        return response()->json($cidades);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -61,8 +74,8 @@ class CidadeController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Cidades";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Cidades)";
         $nav = "Cidade";
 
         $estados = $this->estado->all();

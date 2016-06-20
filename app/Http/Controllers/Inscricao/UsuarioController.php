@@ -44,7 +44,7 @@ class UsuarioController extends Controller
         $this->cargo = $cargo;
         $this->funcao = $funcao;
 
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -56,10 +56,10 @@ class UsuarioController extends Controller
     {
             
         $page_title = "SGI";
-        $page_description = "Cadastro de Usuários";
-        $nav = "Lista";
+        $page_description = "(Cadastro de Usuários)";
+        $nav = "Lista de usuários";
 
-        $usuarios = $this->usuario->paginate(3);
+        $usuarios = $this->usuario->paginate(15);
         $estado_rgs = $this->estado_rg->all();
         $vinculos =$this->vinculo->all();
 
@@ -92,9 +92,9 @@ class UsuarioController extends Controller
         $cargos =$this->cargo->all();
         $funcoes =$this->funcao->all();
         
-        $page_title = "SGS";
-        $page_description = "Cadastro de Usuários";
-        $nav = "Cadastro";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Usuários)";
+        $nav = "Cadastro de usuários";
 
         return view('inscrito.create',
         [
@@ -115,13 +115,6 @@ class UsuarioController extends Controller
         ]);    
     }
 
-    /*public function getCidades($id_estado)
-    {
-        $estado = $this->estado->find($id_estado);
-        $cidades = $estado->cidades()->getQuery->get(['id', 'cidade']);
-        return Response::json($cidades);
-    }*/
-
     /**
      * Store a newly created resource in storage.
      *
@@ -130,7 +123,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        
         $usuarios = $this->usuario->create($request->all());
 
         return redirect()->route('i.index');
@@ -144,10 +137,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        /*$usuarios = $this->usuario->find($id);
+        /*$usuarios = Auth::user();
 
         $estados = $this->estado->all();
-        $usuarios = $this->usuario->all();
         $cidades = $this->cidade->all();
         $estado_rgs = $this->estado_rg->all();
         $escolaridades = $this->escolaridade->all(); 
@@ -180,7 +172,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $nav = "Editar";
+        $nav = "Editar usuário";
 
         $usuarios = $this->usuario->find($id);
         $estados = $this->estado->all();
@@ -220,7 +212,7 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
+        /*dd($request->all());*/
         $usuarios = $this->usuario->find($id);
         $usuarios->update($request->all());
 

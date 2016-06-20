@@ -2,22 +2,35 @@
 
 namespace Gerenciador\Http\Controllers\Inscricao;
 
-use Illuminate\Http\Request;
-use Gerenciador\Inscricao\Curso;
-use Gerenciador\Inscricao\StatusCurso;
-use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Inscricao\StatusCurso;
+use Gerenciador\Inscricao\Inscricao;
+use Gerenciador\Inscricao\Cidade;
+use Gerenciador\Inscricao\Regiao;
+use Gerenciador\Inscricao\Curso;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
+use Gerenciador\User;
 use Auth;
+use DB;
 
 class CursoController extends Controller
 {
-    private $curso;
+    private $inscricao;
+    private $usuario;
     private $scurso;
+    private $regiao;
+    private $cidade;
+    private $curso;
 
-    public function __construct(Curso $curso, StatusCurso $scurso)
+    public function __construct(Inscricao $inscricao, Cidade $cidade, Regiao $regiao, User $usuario, Curso $curso, StatusCurso $scurso)
     {
-        $this->curso = $curso;
+        $this->inscricao = $inscricao;
+        $this->usuario = $usuario;
         $this->scurso = $scurso;
+        $this->regiao = $regiao;
+        $this->cidade = $cidade;
+        $this->curso = $curso;
 
         $this->middleware('auth');
     }
@@ -29,13 +42,13 @@ class CursoController extends Controller
      */
     public function index()
     {
-        
-        $cursos = $this->curso->paginate(4);
-        $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Cursos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Cursos)";
         $nav = "Curso";
+
+        $cursos = $this->curso->orderBy('id_status_curso', 'asc')->paginate(25);
+        $usuarios = Auth::user();
 
         return view('curso.index',
         [
@@ -55,8 +68,8 @@ class CursoController extends Controller
     public function create()
     {
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Cursos";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Cursos)";
         $nav = "Curso";
 
         $scursos = $this->scurso->all();
@@ -68,6 +81,7 @@ class CursoController extends Controller
             'scursos'=>$scursos,
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
+            'scursos' => $scursos, 
             'page_description' => $page_description
         ]);
     }
@@ -94,7 +108,28 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        //
+        $page_title = "SGI";
+        $page_description = "Turma do Curso";
+        $nav = "Mostrar";
+
+        $i = 0;
+        $curso = $this->curso->find($id);
+        $usuarios = Auth::user();
+        $inscricoes = $this->inscricao->where('status','=','Deferido')->get()->all();
+        $inscritos = $curso->usuarios->all();
+        
+        return view('curso.show',
+        [
+            'page_title'  => $page_title,
+            'page_description' => $page_description,
+            'nav' => $nav,
+            'i' => $i, 
+            'inscritos' => $inscritos,
+            'usuarios' => $usuarios,
+            'curso' => $curso,
+            'inscricoes' => $inscricoes
+       
+        ]);
     }
 
     /**
@@ -115,10 +150,10 @@ class CursoController extends Controller
         return view('curso.edit',
         [
             'nav' => $nav,
+            'page_description' => $page_description,
             'cursos' => $cursos, 
             'scursos' => $scursos, 
-            'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'usuarios' => $usuarios
         ]);
     }
 

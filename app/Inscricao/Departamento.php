@@ -2,11 +2,11 @@
 
 namespace Gerenciador\Inscricao;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Gerenciador\Inscricao\Orgao;
+use Illuminate\Database\Eloquent\Model;
 use Gerenciador\Inscricao\Usuario;
+use Gerenciador\Inscricao\Orgao;
 
 class Departamento extends Model
 {

@@ -26,11 +26,11 @@ class CargoController extends Controller
      */
     public function index()
     {
-        $cargos = $this->cargo->paginate(4);
+        $cargos = $this->cargo->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGS";
-        $page_description = "Lista de Cargos";
+        $page_title = "SGI";
+        $page_description = "(Lista de Cargos)";
         $nav = "Cargo";
 
         return view('cargo.index',
@@ -52,8 +52,8 @@ class CargoController extends Controller
     {
         $usuarios = Auth::user();
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Cargo";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Cargo)";
         $nav = "Cargo";
 
         return view('cargo.create',

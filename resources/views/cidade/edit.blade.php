@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->nome}}" name="nome" id="nome">
+          <input type="text" class="form-control" value="{{$cidades->nome}}" name="nome" id="nome" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 6 -->
@@ -30,7 +30,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->cod_ibge}}" name="cod_ibge" id="cod_ibge">
+          <input type="text" class="form-control" value="{{$cidades->cod_ibge}}" name="cod_ibge" id="cod_ibge" required>
         </div>
       </div><!-- Código do IBGE -->
     </div><!-- Col 6 -->
@@ -39,7 +39,7 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_estado" id="id_estado">
+          <select disabled class="form-control" name="id_estado" id="id_estado" required>
             <option value="{{$cidades->id_estado}}">{{$cidades->estado->nome}}</option>
             @foreach ($estados as $estado)
               @if($cidades->id_estado != $estado->id_estado)
@@ -56,7 +56,7 @@
       <div class="form-group has-feedback">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_regiao" id="id_regiao">
+          <select class="form-control" name="id_regiao" id="id_regiao" required>
             <option value="{{$cidades->id_regiao}}">{{$cidades->regiao->descricao}}</option>
             @foreach ($regioes as $regiao)
               @if($cidades->id_regiao != $regiao->id_regiao)

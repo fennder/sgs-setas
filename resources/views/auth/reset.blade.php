@@ -41,7 +41,7 @@
         </div>
         <div class="form-group has-feedback">
           <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
-          <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
           <div class="col-xs-8">
@@ -52,14 +52,13 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block ">Refazer</button>
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block ">Refaça sua Senha</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a>
+      <!-- <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a> -->
     </div>
     <!-- /.form-box -->
   </div>  

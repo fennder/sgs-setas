@@ -14,7 +14,7 @@ return [
     */
 
     //'debug' => 'true',
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------

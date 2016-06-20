@@ -21,7 +21,7 @@
         <div class="form-group has-feedback" >
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao">
+            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao" required>
           </div>
           <small class="text-muted">Nome do Modulo</small>
         </div><!-- Nome do Módulo -->
@@ -31,7 +31,7 @@
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_curso" id="id_curso">
+            <select class="form-control" name="id_curso" id="id_curso" required>
               <option value="{{$modulos->id_curso}}">{{$modulos->curso->descricao}}</option>
               @foreach ($cursos as $curso)
                 @if($modulos->id_curso != $curso->id_curso)
@@ -72,8 +72,3 @@
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
-
-<!-- 
-  <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-  <input type="file" class="form-control" name="foto" value="{{ old('foto') }}/>
--->

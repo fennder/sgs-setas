@@ -24,27 +24,56 @@
           <thead>
             <tr>
               <th style="width: 10px">Id</th>
-              <th>Descrição</th>
-              <th>Data Início</th>
-              <th>Data Término</th>
-              <th>Status do Curso</th>
-              <th style="width: 40px" colspan="2">Ação</th>                    
+              <th style="width: 500px">Descrição</th>
+              <th style="width: 90px">Data Início</th>
+              <th style="width: 120px">Data Término</th>
+              <th>Status</th>
+              <th class="text-center" style="width: 100px" colspan="2">Ação</th>                   
             </tr>
           </thead>
           <tbody>
             @if($cursos)
-              @foreach($cursos as $curso)
-                <tr>
-                  <td>{{$curso->id_curso}}.</td>
-                  <td>{{$curso->descricao}}</td>
-                  <td>{{$curso->data_inicio}}</td>
-                  <td>{{$curso->data_termino}}</td>
-                  <td>{{$curso->statuscurso->descricao}}</td>
-                  <td class="text-center">
-                    <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                  </td>
-                </tr>
+              @foreach($cursos as $curso)  
+                @if($curso->id_status_curso == 1)
+                  <tr class="success">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                    </td>
+                  </tr>            
+                @elseif($curso->id_status_curso == 2)
+                  <tr class="warning">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                    </td>
+                  </tr>        
+                @else
+                  <tr class="danger">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                    </td>
+                  </tr>        
+                @endif
               @endforeach
             @else
               <p>Não há registros</p>
@@ -60,52 +89,5 @@
     </div><!-- /.box -->
   </div><!-- Col 8 -->
 </div> <!-- Row -->
-
-<div class="row">
-  <div class="col-md-8">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Informações Complementares</h3>
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-        </div>
-      </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-              
-        </div><!-- /.box-body -->
-        
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination-sm no-margin pull-right">
-            <li>#</li>
-          </ul>
-        </div>
-    </div><!-- /.box -->
-          
-  </div><!-- /.col 8 -->
-
-  <div class="col-md-4">
-    <div class="box">
-      <div class="box-header with-border">
-        <h3 class="box-title">Mais informações</h3>
-        <!-- Inserir conteúdo aqui -->
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-        </div>
-      </div>
-      <div class="box-body">
-              
-      </div><!-- /.box-body -->
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination-sm no-margin pull-right">
-            <li>#</li>
-          </ul>
-        </div>
-    </div><!-- /.col -->
-    
-  </div>
-</div>
 
 @endsection

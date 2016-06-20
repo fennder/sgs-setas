@@ -95,10 +95,10 @@ class HomeController extends Controller
 
             }else{
 
-                $page_title = "SGS";
+                $page_title = "SGI";
                 $page_description = "Sistema de Gerenciamento de Inscrições";
 
-                $lotacao = "Secretaria do Trabalho e da Assistência Social";
+                $lotacao = "Secretaria do Trabalho e Assistência Social";
 
                 return view('home', 
                     [

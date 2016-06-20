@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Departamento">
+          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Departamento" required>
         </div>
         <small class="text-muted">Departamento</small>
       </div><!-- Nome Departamento -->
@@ -29,7 +29,7 @@
 
     <div class="col-md-6">
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_orgao" id="id_orgao">
+        <select class="form-control" name="id_orgao" id="id_orgao" required>
             <option disabled selected> - Orgao - </option>
               @foreach($orgaos as $orgao)
                 <option value="{{ $orgao->id_orgao }}">{{ $orgao->descricao }}</option>

@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Estado">
+          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Estado" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 6 -->
@@ -30,14 +30,14 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="cod_ibge" id="cod_ibge" placeholder="Código do IBGE">
+          <input type="text" class="form-control" name="cod_ibge" id="cod_ibge" placeholder="Código do IBGE" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 4 -->
 
     <div class="col-md-6">
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_estado" id="id_estado">
+        <select class="form-control" name="id_estado" id="id_estado" required>
             <option disabled selected> - Estado - </option>
               @foreach($estados as $estado)
                 <option value="{{ $estado->id_estado }}">{{ $estado->nome }}</option>
@@ -49,7 +49,7 @@
 
     <div class="col-md-6">
         <div class="form-group has-feedback">
-        <select class="form-control" name="id_regiao" id="id_regiao">
+        <select class="form-control" name="id_regiao" id="id_regiao" required>
             <option disabled selected> - Regiao - </option>
               @foreach($regioes as $regiao)
                 <option value="{{ $regiao->id_regiao }}">{{ $regiao->descricao }}</option>

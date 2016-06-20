@@ -2,11 +2,7 @@
 <!-- Sidebar Menu -->
 <ul class="sidebar-menu">
   <li class="header">OPÇÕES</li>
-  <!-- Optionally, you can add icons to the links >
-  <li class="active"><a href="auth/lista"><i class="fa fa-link"></i> <span>GERENCIADOR</span></a></li>
   
-  <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li-->
-
   <li class="active"><a href="{!! route('h.index') !!}"><i class="glyphicon glyphicon-home"></i> <span>HOME</span></a></li>
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-education"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -17,7 +13,7 @@
     </ul>
   </li>
   <li class="treeview">
-    <a href="#"><i class="fa fa-users"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <a href="#"><i class="glyphicon glyphicon-user"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
       <li><a href="{!! route('u.index') !!}">Relação de Usuários</a></li>
     </ul>
@@ -27,7 +23,7 @@
     <ul class="treeview-menu">
       <li><a href="{!! route('ins.index') !!}">Relação de Inscritos</a></li>
       <li><a href="{!! route('ins.create') !!}">Inscrever</a></li>
-      
+      <li><a href="{!! route('ins.show') !!}">Minhas Inscrições</a></li>
     </ul>
   </li>
   <li class="treeview">

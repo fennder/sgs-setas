@@ -16,7 +16,7 @@ class VinculoInstitucionalController extends Controller
     {
         $this->vinculo = $vinculo;
         
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -26,12 +26,13 @@ class VinculoInstitucionalController extends Controller
      */
     public function index()
     {
+    
+        $page_title = "SGI";
+        $page_description = "(Lista de Vínculos Institucionais)";
+        $nav = "Vínculos Institucionais";
+
         $vinculos = $this->vinculo->paginate(4);
         $usuarios = Auth::user();
-    
-        $page_title = "SGS";
-        $page_description = "Lista de Vinculos Institucionais";
-        $nav = "Vinculo Institucional";
 
         return view('vinculo.index',
         [
@@ -52,9 +53,9 @@ class VinculoInstitucionalController extends Controller
     {
         $usuarios = Auth::user();
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Vinculo Institucional";
-        $nav = "Vinculo Institucional";
+        $page_title = "SGI";
+        $page_description = "(Cadastro de Vínculo Institucional)";
+        $nav = "Vínculo Institucional";
 
         return view('vinculo.create',
         [

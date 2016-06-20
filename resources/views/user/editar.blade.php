@@ -1,6 +1,7 @@
 @extends('layout-backend.admin_template')
 
 @section('content')
+
 <form action="{{ route('u.update', ['id'=>$usuarios->id]) }}" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 <!-- Box formulario dados pessoais -->
@@ -14,21 +15,23 @@
   </div>
 
   <div class="box-body clearfix">
-  <input type="hidden" class="form-control" name="dados_atualizados" value="1" placeholder="Email">
+  @if($usuarios->dados_atualizados == null)
+    <input type="hidden" class="form-control" name="dados_atualizados" value="1">
+  @endif
   <div class="row">
 
-    <div class="col-md-7">
+    <div class="col-md-8">
     <small class="text-muted">Nome Completo</small>
       <div class="form-group has-feedback" >
-        <input disabled type="text" class="form-control" value="{{ $usuarios->name }}" name="name" id="name" required>
+        <input type="text" class="form-control" value="{{ $usuarios->name }}" name="name" id="name" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Completo -->
     </div><!-- Col 7 -->
 
-    <div class="col-md-5">
+    <div class="col-md-4">
     <small class="text-muted">Nome para o crachá</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}" required>
+        <input type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{ $usuarios->nome_cracha }}"  maxlength="20" placeholder="Ex.: Paulo Silva" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Nome Crachá -->
     </div><!-- Col 5 -->
@@ -40,7 +43,7 @@
     <div class="col-md-4">
     <small class="text-muted">CPF</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" required>
+        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
@@ -89,11 +92,12 @@
         <small class="text-muted">UF - RG</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_estado_rg" id="id_estado_rg" >  
+          <select class="form-control" name="id_estado_rg" id="id_estado_rg" required> 
+          
             @if($usuarios->estado_rg)
               <option value="{{$usuarios->estado_rg->id_estado}}">{{$usuarios->estado_rg->uf}}</option>
             @else
-              <option value=""></option>
+              <option value="">- Selecione -</option>
             @endif
             @foreach ($estado_rgs as $estado_rg)              
                 <option value="{{$estado_rg->id_estado}}">{{$estado_rg->uf}}</option>
@@ -110,7 +114,7 @@
             @if($usuarios->sexo)
               <option value="{{$usuarios->sexo}}">{{$usuarios->sexo}}</option>
             @else
-              <option value=""></option>
+              <option value="">- Selecione -</option>
             @endif
             <option value="Feminino">Feminino</option>
             <option value="Masculino">Masculino</option>
@@ -126,7 +130,7 @@
     <div class="col-md-3">
     <small class="text-muted">CEP Residencial</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
+        <input type="text" onkeypress="mascara(this, '##.###-###')" maxlength="10"class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
         
       </div><!-- CEP -->
@@ -161,7 +165,7 @@
             @if($usuarios->estado)
               <option value="{{$usuarios->estado->id_estado}}">{{$usuarios->estado->nome}}</option>
             @else
-              <option value=""></option>
+              <option value="">- Selecione -</option>
             @endif
             @foreach ($estados as $estado)
               
@@ -183,7 +187,7 @@
               @if($usuarios->cidade)
                 <option value="{{$usuarios->cidade->id_cidade}}">{{$usuarios->cidade->nome}}</option>
               @else
-              <option value=""></option>
+                <option value="">- Selecione -</option>
               @endif
               @foreach ($cidades as $cidade)
                 
@@ -207,7 +211,7 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" required>
+        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '(##) #####-####')" maxlength="12" class="form-control" placeholder="99 99999-9999"required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
@@ -237,7 +241,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
+          <input onkeypress="mascara(this, '## #####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
         </div><!-- Telefone Trabalho -->
         
       </div><!-- Col 3 -->
@@ -270,7 +274,7 @@
       <div class="col-md-4">
       <small class="text-muted">Número de Identificação Social</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" >
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9999.999.9999-9">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
@@ -288,22 +292,22 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Função</small>
+        <small class="text-muted">Cargo</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_funcao" id="id_funcao" required>
-              @if($usuarios->funcao)
-                <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
+            <select class="form-control" name="id_cargo" id="id_cargo" required>
+              @if($usuarios->cargo)
+                <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($funcoes as $funcao)
-                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
+              @foreach ($cargos as $cargo)
+                  <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Função -->
+        </div><!-- Cargo -->
       </div><!-- Col 4 -->
     
     </div><!-- row -->
@@ -341,22 +345,22 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Departamento</small>
+        <small class="text-muted">Função</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_departamento" id="id_departamento" required>
-              @if($usuarios->departamento)
-                <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
+            <select class="form-control" name="id_funcao" id="id_funcao" required>
+              @if($usuarios->funcao)
+                <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($departamentos as $departamento)
-                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+              @foreach ($funcoes as $funcao)
+                  <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Departamento -->
+        </div><!-- Função -->
       </div><!-- Col 4 -->
 
     </div><!-- row -->
@@ -385,29 +389,61 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Cargo</small>
+        <small class="text-muted">Departamento</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <select class="form-control" name="id_cargo" id="id_cargo" required>
-              @if($usuarios->cargo)
-                <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
+            <select class="form-control" name="id_departamento" id="id_departamento" required>
+              @if($usuarios->departamento)
+                <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
               @else
               <option value="">- Selecione -</option>
               @endif
-              @foreach ($cargos as $cargo)
-                  <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
+              @foreach ($departamentos as $departamento)
+                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
               @endforeach
             </select>
           </div>
           
-        </div><!-- Cargo -->
-      </div><!-- Col 3 -->
+        </div><!-- Departamento -->
+      </div><!-- Col 4 -->
 
     </div><!-- row -->
 
   </div>
 </div>
-  <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
+  @if($usuarios->dados_atualizados == 0)
+    <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
+  @endif
   <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
 </form><!-- Form -->
 @endsection
+
+@section('post-script')
+  <script type="text/javascript">
+    $('select[name=id_estado]').change(function () {
+        var idEstado = $(this).val();
+
+        //$('select[name=id_cidade]').html('').append('<option value="">  Carregando...  </option>');
+        $.get('/get-cidades/' + idEstado, function (cidades) {
+            $('select[name=id_cidade]').empty();
+            $.each(cidades, function (key, value) {
+                $('select[name=id_cidade]').append('<option value=' + value.id_cidade + '>' + value.nome + '</option>');
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $('select[name=id_orgao]').change(function () {
+        var idOrgao = $(this).val();
+
+        $.get('/get-departamentos/' + idOrgao, function (departamento) {
+            $('select[name=id_departamento]').empty();
+            $.each(departamento, function (key, value) {
+                $('select[name=id_departamento]').append('<option value=' + value.id_departamento + '>' + value.descricao + '</option>');
+            });
+        });
+    });
+</script>
+
+@endsection()

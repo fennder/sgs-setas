@@ -2,10 +2,10 @@
 
 namespace Gerenciador\Inscricao;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Inscricao\Departamento;
+use Illuminate\Database\Eloquent\Model;
+use Gerenciador\Inscricao\Orgao;
 use Gerenciador\User;
 
 class Orgao extends Model

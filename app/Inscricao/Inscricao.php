@@ -2,8 +2,8 @@
 
 namespace Gerenciador\Inscricao;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Model;
 
 class Inscricao extends Model
 {
@@ -13,7 +13,7 @@ class Inscricao extends Model
      *
      * @var string
      */
-    protected $table = 'inscricao';
+    protected $table = 'curso_user';
     
     /**
      * The primary key for the model.
@@ -22,15 +22,22 @@ class Inscricao extends Model
      */
     protected $primaryKey = 'id_inscricao';
 
-    protected $fillable = ['id', 'id_curso'];
+    protected $fillable = [
+        'user_id',
+        'curso_id',
+        'status',
+        'motivo',
+        'login',
+        
+    ];
 
     public function curso()
     {
-    	return $this->belongsTo('Gerenciador\Inscricao\Curso', 'id_curso'); // Tem apenas um curso
+    	return $this->belongsTo('Gerenciador\Inscricao\Curso','curso_id');
     }
 
     public function usuario()
     {
-    	return $this->belongsTo('Gerenciador\User', 'id'); // Tem apenas um usuario
+    	return $this->belongsTo('Gerenciador\User','user_id');
     }
 }

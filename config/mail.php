@@ -42,7 +42,7 @@ return [
     */
 
     //'port' => env('MAIL_PORT', 465),
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,8 +55,8 @@ return [
     |
     */
 
-    'from' => ['address' => 'fennder@gmail.com', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
-    //'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
+    //'from' => ['address' => 'teste_ti@setas.to.gov.br', 'name' => 'SGS - Sistema de Gerenciamente de Inscrição'],
+    'from' => ['address' => env('MAIL_FROM', 'setasgti@gmail.com'), 'name' => env('MAIL_NAME', 'SGI - Sistema de Gerenciamente de Inscrição')],
 
     /*
     |--------------------------------------------------------------------------
@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME', 'setasgti@gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD', 'setasti@123'),
 
     /*
     |--------------------------------------------------------------------------
