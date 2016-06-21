@@ -67,7 +67,7 @@ class UsersController extends Controller
             if($usuarios->id_perfil == 2){
                 $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(15);
             }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(15);
+                $users = $this->user->orderBy('name', 'asc')->paginate(10);
             }
 
             return view('user.lista',
