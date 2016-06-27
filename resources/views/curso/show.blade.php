@@ -40,7 +40,6 @@
                 <td>{{ $inscrito->cidade->nome }}</td>
                 <td>{{ $inscrito->name }}</td>
                 <td>{{ $inscrito->cpf }}</td>
-                <td>{{ $inscrito-> }}</td>
                 <td></td>
               </tr>
             @endforeach   
