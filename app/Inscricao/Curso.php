@@ -46,6 +46,11 @@ class Curso extends Model
     	return $this->belongsTo('Gerenciador\Inscricao\StatusCurso', 'id_status_curso'); //O curso tem apenas um status
     }
 
+    public function inscricao()
+    {
+        return $this->hasMany('Gerenciador\Inscricao\Inscricao', 'id_inscricao');
+    }
+
     public function modulo()
     {
     	return $this->hasMany('Gerenciador\Inscricao\Modulo', 'id_modulo'); //O Curso tem vários modulos

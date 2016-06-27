@@ -189,6 +189,7 @@
               @else
                 <option value="">- Selecione -</option>
               @endif
+
               @foreach ($cidades as $cidade)
                 
                   <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
@@ -211,7 +212,7 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '(##) #####-####')" maxlength="12" class="form-control" placeholder="99 99999-9999"required>
+        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '## #####-####')" maxlength="13" class="form-control" placeholder="99 99999-9999"required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
@@ -241,7 +242,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input onkeypress="mascara(this, '## #####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
+          <input onkeypress="mascara(this, '## ####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
         </div><!-- Telefone Trabalho -->
         
       </div><!-- Col 3 -->

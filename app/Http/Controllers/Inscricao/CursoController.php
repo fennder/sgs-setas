@@ -77,12 +77,12 @@ class CursoController extends Controller
 
         return view('curso.create',
         [
-            'nav' => $nav,
-            'scursos'=>$scursos,
-            'page_title' => $page_title, 
+            'page_description' => $page_description,
+            'page_title' => $page_title,
             'usuarios' => $usuarios, 
             'scursos' => $scursos, 
-            'page_description' => $page_description
+            'scursos'=>$scursos,
+            'nav' => $nav
         ]);
     }
 
@@ -115,19 +115,24 @@ class CursoController extends Controller
         $i = 0;
         $curso = $this->curso->find($id);
         $usuarios = Auth::user();
-        $inscricoes = $this->inscricao->where('status','=','Deferido')->get()->all();
+        $inscricoes = $this->inscricao->where('status','=','Deferido')->get();
         $inscritos = $curso->usuarios->all();
-        
+
+        /*$inscrito->cidade->regiao->descricao
+        $inscrito->cidade->nome
+        $inscrito->name
+        $inscrito->cpf
+       */ 
         return view('curso.show',
         [
-            'page_title'  => $page_title,
             'page_description' => $page_description,
-            'nav' => $nav,
-            'i' => $i, 
+            'page_title'  => $page_title,
+            'inscricoes' => $inscricoes,
             'inscritos' => $inscritos,
             'usuarios' => $usuarios,
             'curso' => $curso,
-            'inscricoes' => $inscricoes
+            'nav' => $nav,
+            'i' => $i
        
         ]);
     }
@@ -149,11 +154,11 @@ class CursoController extends Controller
         
         return view('curso.edit',
         [
-            'nav' => $nav,
             'page_description' => $page_description,
-            'cursos' => $cursos, 
-            'scursos' => $scursos, 
-            'usuarios' => $usuarios
+            'usuarios' => $usuarios,
+            'scursos' => $scursos,
+            'cursos' => $cursos,
+            'nav' => $nav
         ]);
     }
 

@@ -59,6 +59,7 @@
                 <td>{{$inscricao->usuario->email}}</td>
                 <td>{{$inscricao->usuario->funcao->descricao}}</td>
                 <td>{{$inscricao->status}}</td>
+                
                 @if($usuarios->id_perfil == 2)
                   <td class="text-center">
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
@@ -80,6 +81,7 @@
                   <td>{{$inscricao->usuario->email}}</td>
                   <td>{{$inscricao->usuario->funcao->descricao}}</td>
                   <td>{{$inscricao->status}}</td>
+                 
                   @if($usuarios->id_perfil == 2)
                     <td class="text-center">
                       <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>
