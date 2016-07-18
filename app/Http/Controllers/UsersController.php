@@ -60,6 +60,7 @@ class UsersController extends Controller
 
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
             $nav = "Lista";
             
             $usuarios = Auth::user();
@@ -77,7 +78,8 @@ class UsersController extends Controller
                     'page_title'=>$page_title,
                     'usuarios'=>$usuarios,
                     'perfis'=>$perfis,
-                    'page_description'=>$page_description
+                    'page_description'=>$page_description,
+                    'lotacao'=>$lotacao
                 ]);
 
         }else{
@@ -121,6 +123,7 @@ class UsersController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrição";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Meus dados";
 
         $usuarios = Auth::user();

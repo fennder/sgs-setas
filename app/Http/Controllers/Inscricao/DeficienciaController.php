@@ -32,6 +32,7 @@ class DeficienciaController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Deficiências)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
         return view('deficiencia.index',
@@ -40,7 +41,8 @@ class DeficienciaController extends Controller
             'deficiencias' => $deficiencias, 
             'page_title'=>$page_title, 
             'usuarios'=>$usuarios, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao
         ]);
     }
 
@@ -55,6 +57,7 @@ class DeficienciaController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Cadastro de Deficiência)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
         return view('deficiencia.create',
@@ -62,7 +65,8 @@ class DeficienciaController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -100,6 +104,8 @@ class DeficienciaController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Deficência";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $deficiencias = $this->deficiencia->find($id);
 
         $usuarios = Auth::user();
@@ -109,7 +115,8 @@ class DeficienciaController extends Controller
             'nav' => $nav,
             'deficiencias' => $deficiencias, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 

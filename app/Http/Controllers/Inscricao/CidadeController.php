@@ -42,6 +42,7 @@ class CidadeController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Cidades)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidades";
 
         return view('cidade.index',
@@ -49,6 +50,7 @@ class CidadeController extends Controller
             'nav' => $nav,
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
             'cidades' => $cidades,
             'estados' => $estados,
             'usuarios' => $usuarios,
@@ -76,6 +78,7 @@ class CidadeController extends Controller
     {
         $page_title = "SGI";
         $page_description = "(Cadastro de Cidades)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidade";
 
         $estados = $this->estado->all();
@@ -87,6 +90,7 @@ class CidadeController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'estados' => $estados,
             'usuarios' => $usuarios,
             'regioes' => $regioes
@@ -128,6 +132,7 @@ class CidadeController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Cidade";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $cidades = $this->cidade->find($id);
         $estados = $this->estado->all();
@@ -139,6 +144,7 @@ class CidadeController extends Controller
             'nav' => $nav,
             'cidades' => $cidades, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'estados' => $estados,
             'usuarios' => $usuarios,
             'regioes' => $regioes

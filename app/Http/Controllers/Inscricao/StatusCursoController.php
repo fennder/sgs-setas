@@ -32,6 +32,8 @@ class StatusCursoController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Status de Curso)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Status de Curso";
 
         return view('status_curso.index',
@@ -39,6 +41,7 @@ class StatusCursoController extends Controller
             'nav' => $nav,
             'scursos' => $scursos, 
             'page_title'=>$page_title, 
+            'lotacao'=>$lotacao, 
             'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);
@@ -53,6 +56,8 @@ class StatusCursoController extends Controller
     {
         $page_title = "SGS";
         $page_description = "Cadastro de Status do Curso";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Status Curso";
         $usuarios = Auth::user();
 
@@ -61,6 +66,7 @@ class StatusCursoController extends Controller
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'lotacao' => $lotacao, 
             'page_description' => $page_description,
             'usuarios'=> $usuarios
         ]);
@@ -101,6 +107,8 @@ class StatusCursoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Status de Curso";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $scursos = $this->scurso->find($id);
         $usuarios = Auth::user();
 
@@ -110,6 +118,7 @@ class StatusCursoController extends Controller
             'nav' => $nav,
             'scursos' => $scursos, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios
         ]);
     }

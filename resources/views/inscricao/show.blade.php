@@ -49,6 +49,11 @@
               </table>
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                <li>{!! $inscricoes->render() !!}</li>
+              </ul>
+        </div>
+        <div class="box-footer clearfix">
         </div><!-- /.box-footer-->
       </div><!-- /.box -->
     </div><!-- Col 6 -->

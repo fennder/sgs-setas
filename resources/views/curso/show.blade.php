@@ -25,31 +25,31 @@
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th style="width: 110px">Regional</th>
-              <th style="width: 150px">Município</th>
-              <th style="width: 200px">Nome do Inscrito</th>
-              <th style="width: 80px">CPF</th>
-              <th style="width: 150px">Assinatura</th>                  
+              <th>Regional</th>
+              <th>Município</th>
+              <th>Nome do Inscrito</th>
+              <th>CPF</th>
+              <th style="width: 200px">Assinatura</th>                  
             </tr>
           </thead>
-          <tbody>
+          <tbody>            
             @foreach($inscritos as $inscrito)
-              <tr>
-                <td>{{ $i=$i+1 }}.</td>
-                <td>{{ $inscrito->cidade->regiao->descricao }}</td>
-                <td>{{ $inscrito->cidade->nome }}</td>
-                <td>{{ $inscrito->name }}</td>
-                <td>{{ $inscrito->cpf }}</td>
-                <td></td>
-              </tr>
-            @endforeach   
+                <tr>
+                  <td>{{ $i=$i+1 }}.</td>
+                  <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                  <td>{{ $inscrito->cidade->nome }}</td>
+                  <td>{{ $inscrito->name }}</td>
+                  <td>{{ $inscrito->cpf }}</td>
+                  <td></td>
+                </tr>
+            @endforeach
           </tbody>
         </table>
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
               
-            </ul>
+        </ul>
       </div><!-- /.box-footer-->
     </div><!-- /.box -->
   </div><!-- Col 8 -->

@@ -191,9 +191,7 @@
               @endif
 
               @foreach ($cidades as $cidade)
-                
                   <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
-                
               @endforeach
           </select>
           

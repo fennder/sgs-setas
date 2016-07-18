@@ -31,6 +31,7 @@ class CargoController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Cargos)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 
         return view('cargo.index',
@@ -39,7 +40,8 @@ class CargoController extends Controller
             'cargos' => $cargos,
             'usuarios' => $usuarios, 
             'page_title' => $page_title, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);    
     }
 
@@ -54,6 +56,7 @@ class CargoController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Cadastro de Cargo)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 
         return view('cargo.create',
@@ -61,7 +64,8 @@ class CargoController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -86,6 +90,8 @@ class CargoController extends Controller
      */
     public function show($id)
     {
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $cargos = $this->cargo->find($id);
         $usuarios = Auth::user();
 
@@ -95,7 +101,8 @@ class CargoController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -111,6 +118,8 @@ class CargoController extends Controller
 
         $nav = "Editar";
         $page_description = "Editar Cargo";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $cargos = $this->cargo->find($id);
         
         return view('cargo.edit',
@@ -118,7 +127,8 @@ class CargoController extends Controller
             'nav' => $nav,
             'cargos' => $cargos, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
 
     }

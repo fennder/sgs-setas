@@ -2,10 +2,10 @@
 
 namespace Gerenciador\Http\Controllers\Inscricao;
 
-use Illuminate\Http\Request;
 use Gerenciador\Inscricao\VinculoInstitucional;
-use Gerenciador\Http\Requests;
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Http\Requests;
+use Illuminate\Http\Request;
 use Auth;
 
 class VinculoInstitucionalController extends Controller
@@ -29,6 +29,7 @@ class VinculoInstitucionalController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Vínculos Institucionais)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Vínculos Institucionais";
 
         $vinculos = $this->vinculo->paginate(4);
@@ -39,6 +40,7 @@ class VinculoInstitucionalController extends Controller
             'nav' => $nav,
             'vinculos' => $vinculos,
             'page_title'=>$page_title, 
+            'lotacao'=>$lotacao, 
             'usuarios'=>$usuarios, 
             'page_description'=>$page_description
         ]);  
@@ -55,12 +57,14 @@ class VinculoInstitucionalController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Cadastro de Vínculo Institucional)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Vínculo Institucional";
 
         return view('vinculo.create',
         [
             'nav' => $nav, 
             'page_title' => $page_title, 
+            'lotacao' => $lotacao, 
             'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
@@ -102,12 +106,15 @@ class VinculoInstitucionalController extends Controller
 
         $nav = "Editar";
         $page_description = "Editar Vinculo Institucional";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $vinculos = $this->vinculo->find($id);
         
         return view('vinculo.edit',
         [
             'nav' => $nav,
             'vinculos' => $vinculos, 
+            'lotacao' => $lotacao, 
             'usuarios' => $usuarios, 
             'page_description' => $page_description
         ]);
@@ -125,7 +132,6 @@ class VinculoInstitucionalController extends Controller
         $vinculos = $this->vinculo->find($id);
         $vinculos->update($request->all());
 
-        //return redirect()->route('vi.index');
         return redirect()->route('vi.index');
     }
 

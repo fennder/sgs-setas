@@ -45,6 +45,7 @@ class CursoController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Cursos)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 
         $cursos = $this->curso->orderBy('id_status_curso', 'asc')->paginate(25);
@@ -56,7 +57,8 @@ class CursoController extends Controller
             'cursos' => $cursos,  
             'page_title'=>$page_title, 
             'usuarios'=>$usuarios, 
-            'page_description'=>$page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -70,6 +72,7 @@ class CursoController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Cadastro de Cursos)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 
         $scursos = $this->scurso->all();
@@ -78,6 +81,7 @@ class CursoController extends Controller
         return view('curso.create',
         [
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'page_title' => $page_title,
             'usuarios' => $usuarios, 
             'scursos' => $scursos, 
@@ -110,19 +114,15 @@ class CursoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Turma do Curso";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Mostrar";
 
         $i = 0;
         $curso = $this->curso->find($id);
         $usuarios = Auth::user();
-        $inscricoes = $this->inscricao->where('status','=','Deferido')->get();
+        $inscricoes = $this->inscricao->all();
         $inscritos = $curso->usuarios->all();
 
-        /*$inscrito->cidade->regiao->descricao
-        $inscrito->cidade->nome
-        $inscrito->name
-        $inscrito->cpf
-       */ 
         return view('curso.show',
         [
             'page_description' => $page_description,
@@ -130,6 +130,7 @@ class CursoController extends Controller
             'inscricoes' => $inscricoes,
             'inscritos' => $inscritos,
             'usuarios' => $usuarios,
+            'lotacao' => $lotacao,
             'curso' => $curso,
             'nav' => $nav,
             'i' => $i
@@ -147,6 +148,7 @@ class CursoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Curso";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $cursos = $this->curso->find($id);
         $scursos = $this->scurso->all();
@@ -155,6 +157,7 @@ class CursoController extends Controller
         return view('curso.edit',
         [
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios,
             'scursos' => $scursos,
             'cursos' => $cursos,

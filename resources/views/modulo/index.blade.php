@@ -40,7 +40,7 @@
                         <td>{{$modulo->curso->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('m.edit', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('m.destroy', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          <a href="{{route('m.destroy', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-trash"></i></a>
                         </td>
                       </tr>
                     @endforeach

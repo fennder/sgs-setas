@@ -29,6 +29,8 @@ class EstadoController extends Controller
     
         $page_title = "SGI";
         $page_description = "(Lista de Estados)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Estado";
 
         $estados = $this->estado->paginate(30);
@@ -40,7 +42,8 @@ class EstadoController extends Controller
             'estados' => $estados, 
             'page_title'=>$page_title, 
             'usuarios'=>$usuarios, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao
         ]);
     }
 
@@ -53,6 +56,8 @@ class EstadoController extends Controller
     {
         $page_title = "SGS";
         $page_description = "Cadastro de Estado";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Estado";
 
         $usuarios = Auth::user();
@@ -62,7 +67,8 @@ class EstadoController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -100,6 +106,7 @@ class EstadoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Editar Estado";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $estados = $this->estado->find($id);
         $usuarios = Auth::user();
@@ -109,7 +116,8 @@ class EstadoController extends Controller
             'nav' => $nav,
             'estados' => $estados, 
             'estados' => $estados, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 

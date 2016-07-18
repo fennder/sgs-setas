@@ -136,4 +136,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsTo('Gerenciador\Inscricao\Deficiencia', 'id_deficiencia');//Tem apenas um deficiencia
     }
+
+    public function inscricao()
+    {
+        return $this->hasMany('Gerenciador\Inscricao\Inscricao', 'id_inscricao');
+    }
+
 }

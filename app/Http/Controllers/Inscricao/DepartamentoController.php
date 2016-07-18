@@ -33,6 +33,7 @@ class DepartamentoController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Lista de Departamentos)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";
 
         $departamentos = $this->departamento->paginate(25);
@@ -44,6 +45,7 @@ class DepartamentoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
             'departamentos' => $departamentos,
             'usuarios' => $usuarios,
             'orgaos' => $orgaos
@@ -70,6 +72,7 @@ class DepartamentoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "(Cadastro de Departamento)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";
 
         $orgaos = $this->orgao->all();
@@ -80,6 +83,7 @@ class DepartamentoController extends Controller
             'nav' => $nav,
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios,
             'orgaos' => $orgaos
 
@@ -122,6 +126,7 @@ class DepartamentoController extends Controller
 
         $nav = "Editar";
         $page_description = "Editar Departamento";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $departamentos = $this->departamento->find($id);
         $orgaos = $this->orgao->all();
@@ -131,6 +136,7 @@ class DepartamentoController extends Controller
         [
             'nav' => $nav, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'departamentos' => $departamentos,
             'usuarios' => $usuarios,
             'orgaos' => $orgaos

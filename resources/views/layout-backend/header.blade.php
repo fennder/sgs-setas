@@ -19,7 +19,8 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
+          
+          <!-- Messages: style can be found in dropdown.less - Início dos controles de mensagens-->
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -78,6 +79,7 @@
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
+
           <!-- Tasks Menu -->
           <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
@@ -113,7 +115,8 @@
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> <!--Fim dos controles de mensagens -->
+
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->

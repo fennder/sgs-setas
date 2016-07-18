@@ -10,7 +10,7 @@
     	<a href="http://opensetas.setas.to.gov.br/portal">
     		 - SETOR DE DESENVOLVIMENTO DE SISTEMAS - GTI - 
     	</a>
-    	Secretaria do Trabalho e Assitência Social
+    	{{$lotacao or "SETAS"}}
     </strong>
   </footer>
 

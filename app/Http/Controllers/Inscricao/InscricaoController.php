@@ -40,9 +40,11 @@ class InscricaoController extends Controller
 
         $page_title = "SGI";
         $page_description = "(Lista de Inscrições)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
+        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(15);
 
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
@@ -52,7 +54,7 @@ class InscricaoController extends Controller
 
         if ($request->isMethod('post')){
 
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(15);
 
         }
 
@@ -61,6 +63,7 @@ class InscricaoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
             'cidades' => $cidades,
@@ -80,6 +83,8 @@ class InscricaoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "(Cadastro de Inscrições)";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
@@ -91,6 +96,7 @@ class InscricaoController extends Controller
             'nav' => $nav,
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'cursos' => $cursos,
             'usuarios' => $usuarios
             
@@ -122,17 +128,20 @@ class InscricaoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Meus Cursos";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $nav = "Meus Cursos";
 
         $usuarios = Auth::user();
         $cursos = $usuarios->cursos->all();
-        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(25);
+        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(15);
 
         return view('inscricao.show',
         [
             'nav' => $nav,
             'page_title'=> $page_title,
             'page_description'=> $page_description,
+            'lotacao'=> $lotacao,
             'usuarios'=> $usuarios,
             'inscricoes'=> $inscricoes,
             'cursos' => $cursos
@@ -160,6 +169,7 @@ class InscricaoController extends Controller
         [
             'page_title' => $page_title,
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'nav' => $nav,
             'inscricoes' => $inscricoes, 
             'usuarios' => $usuarios,
