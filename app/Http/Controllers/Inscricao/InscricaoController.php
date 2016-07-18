@@ -157,8 +157,8 @@ class InscricaoController extends Controller
     public function edit($id)
     {
         $page_title = "SGI";
-        $nav = "Editar";
         $page_description = "Editar Inscrição";
+        $nav = "Editar";
         
         $inscricoes = $this->inscricao->find($id);
         $usuarios = Auth::user();
