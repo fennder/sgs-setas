@@ -44,7 +44,7 @@
               <th>CPF</th>
               <th>E-mail</th>
               <th>Função</th>
-              <th>Status do Inscrito</th>
+              <th>Status</th>
               <th style="width: 50px" colspan="4"><center>Ação</center></th>
             </tr>
           </thead>

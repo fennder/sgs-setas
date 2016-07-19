@@ -21,7 +21,7 @@
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="user_id" id="user_id" required>
-          <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
+          <option value="{{$usuarios->id}}">{{$usuarios->name}}</option>
         </select>
 
       </div><!-- Curso -->
@@ -39,7 +39,9 @@
             @foreach($cursos as $curso)
               @if(!($usuarios->cursos->find($curso->id_curso) != null))
                 @if($curso->statuscurso->id_status_curso == 1)
-                  <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{$curso->statuscurso->descricao}}</option>
+                  <option value="{{ $curso->id_curso }}">
+                    {{ $curso->descricao }} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{$curso->statuscurso->descricao}}
+                  </option>
                 @endif
               @endif
             @endforeach

@@ -26,7 +26,7 @@
                   <tr>
                     <th>Meus Cursos</th>                    
                     <th>Período do curso</th>                                        
-                    <th>Status da inscrição</th>                                      
+                    <th>Status</th>                                      
                   </tr>
                 </thead>
                 <tbody>

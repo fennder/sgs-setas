@@ -42,21 +42,29 @@
               <strong><i class="fa fa-book margin-r-5"></i> Formação</strong>
 
               <p class="text-muted">
-                {{ $usuarios->escolaridade->descricao }}, {{ $usuarios->vinculoinstitucional->descricao}}, {{ $usuarios->cargo->descricao}}
+                {{ $usuarios->escolaridade->descricao }}
               </p>
               <hr>
 
               <strong><i class="fa fa-pencil margin-r-5"></i> Trabalho</strong>
 
               <p>
-                {{ $usuarios->orgao->descricao }}, {{ $usuarios->departamento->descricao}}
-                
+                {{ $usuarios->orgao->descricao }},</br>
+              
+                {{ $usuarios->departamento->descricao }},</br>
+             
+                {{ $usuarios->vinculoinstitucional->descricao }},</br>
+              
+                {{ $usuarios->cargo->descricao }} 
               </p>
 
               <hr>
-              <strong><i class="fa fa-map-marker margin-r-5"></i> {{ $usuarios->estado->nome}}</strong>
+              <strong><i class="fa fa-map-marker margin-r-5"></i> Localização </strong>
 
-              <p class="text-muted">{{ $usuarios->cidade->nome}}</p>
+              <p class="text-muted">
+                {{ $usuarios->estado->nome }},</br>
+                {{ $usuarios->cidade->nome }}
+              </p>
 
               <hr>
 
