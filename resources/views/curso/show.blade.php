@@ -32,17 +32,25 @@
               <th style="width: 200px">Assinatura</th>                  
             </tr>
           </thead>
-          <tbody>            
+          <tbody>
+          
             @foreach($inscritos as $inscrito)
-                <tr>
-                  <td>{{ $i=$i+1 }}.</td>
-                  <td>{{ $inscrito->cidade->regiao->descricao }}</td>
-                  <td>{{ $inscrito->cidade->nome }}</td>
-                  <td>{{ $inscrito->name }}</td>
-                  <td>{{ $inscrito->cpf }}</td>
-                  <td></td>
-                </tr>
+              @foreach($inscricoes as $inscricao)
+                @if($inscrito->pivot->curso_id == $inscricao->curso_id && $inscrito->pivot->user_id == $inscricao->user_id)
+                  @if($inscricao->status == "Deferido")
+                    <tr>
+                      <td>{{ $i=$i+1 }}.</td>
+                      <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                      <td>{{ $inscrito->cidade->nome }}</td>
+                      <td>{{ $inscrito->name }}</td>
+                      <td>{{ $inscrito->cpf }}</td>
+                      <td></td>
+                    </tr>
+                  @endif
+                @endif
+              @endforeach
             @endforeach
+
           </tbody>
         </table>
       </div><!-- /.box-body -->
