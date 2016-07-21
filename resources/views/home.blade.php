@@ -9,16 +9,4 @@
         Você está na <b>{{$lotacao or "SETAS"}}</b>.</p>
 	</h4>
 
-	
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-    
-
 @endsection

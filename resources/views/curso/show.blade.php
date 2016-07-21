@@ -21,7 +21,7 @@
         </div> -->
       </div>
       <div class="box-body">
-        <table class="table table-bordered table-striped table-hover table-condensed">
+        <table border="3" class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>

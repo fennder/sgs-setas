@@ -158,6 +158,7 @@ class InscricaoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Editar Inscrição";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Editar";
         
         $inscricoes = $this->inscricao->find($id);

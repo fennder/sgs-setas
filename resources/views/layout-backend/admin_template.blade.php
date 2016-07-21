@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <small>{{ $page_description or "Sistema de Gerenciamento de Inscrições" }}</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{!! route('h.index') !!}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{!! route('h.index') !!}"><i class="fa fa-home"></i> Home</a></li>
         <li class="active">{{ $nav or "Here" }}</li>
       </ol>
     </section>
