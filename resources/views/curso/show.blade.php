@@ -34,6 +34,7 @@
           </thead>
           <tbody>
           
+            <!-- Trecho solucionado pelo Belo programador Luan Gomes -->
             @foreach($inscritos as $inscrito)
               @foreach($inscricoes as $inscricao)
                 @if($inscrito->pivot->curso_id == $inscricao->curso_id && $inscrito->pivot->user_id == $inscricao->user_id)

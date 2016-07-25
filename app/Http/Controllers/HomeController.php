@@ -14,6 +14,7 @@ use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Inscricao\Usuario;
+use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
@@ -34,7 +35,7 @@ class HomeController extends Controller
     private $cargo;
     private $funcao;
 
-    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
+    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso)
     {
         $this->usuario = $usuario;
         $this->estado = $estado;
@@ -46,6 +47,7 @@ class HomeController extends Controller
         $this->departamento = $departamento;
         $this->cargo = $cargo;
         $this->funcao = $funcao;
+        $this->curso = $curso;
         
         $this->middleware('auth');
     }
@@ -97,15 +99,19 @@ class HomeController extends Controller
 
                 $page_title = "SGI";
                 $page_description = "Sistema de Gerenciamento de Inscrições";
-
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
 
+                $i = 0;
+                $cursos = $this->curso->all();
+                
                 return view('home', 
                     [
                         'usuarios' => $usuario, 
-                        'lotacao'=>$lotacao, 
-                        'page_title'=>$page_title, 
-                        'page_description'=>$page_description
+                        'cursos' => $cursos, 
+                        'lotacao' => $lotacao, 
+                        'page_title' => $page_title, 
+                        'page_description' => $page_description,
+                        'i' => $i
                     ]);
 
             }

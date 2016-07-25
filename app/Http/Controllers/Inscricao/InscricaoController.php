@@ -44,7 +44,7 @@ class InscricaoController extends Controller
 
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(15);
+        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
 
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
@@ -54,7 +54,7 @@ class InscricaoController extends Controller
 
         if ($request->isMethod('post')){
 
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(15);
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
 
         }
 
@@ -134,7 +134,7 @@ class InscricaoController extends Controller
 
         $usuarios = Auth::user();
         $cursos = $usuarios->cursos->all();
-        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(15);
+        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(1000);
 
         return view('inscricao.show',
         [
