@@ -4,8 +4,8 @@
 	
 	
 	<h4>
-		Bem vindo(a), Sr(a), <b>{{ $usuarios->name or "Servidor"}}</b>, 
-		<small class="text-muted">Você está na <b>{{$lotacao or "SETAS"}}</b>.</small>
+		Bem vindo(a), Sr(a) <b>{{ $usuarios->name or "Servidor"}}</b>, 
+		<small class="text-muted">você está na <b>{{$lotacao or "SETAS"}}</b>.</small>
 	</h4>
 
 	<!-- Info boxes -->
@@ -16,10 +16,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">CURSOS</span>
-              <span class="info-box-number">
-              	0
-              	
-              </span>
+              <span class="info-box-number">{{$cont_curso}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -32,7 +29,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Usuários</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number">{{$cont_user}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -49,7 +46,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Inscrições</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number">{{$cont_ins}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>

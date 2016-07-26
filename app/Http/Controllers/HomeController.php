@@ -8,6 +8,7 @@ use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Inscricao\Funcao;
 use Gerenciador\Inscricao\Departamento;
@@ -35,12 +36,13 @@ class HomeController extends Controller
     private $cargo;
     private $funcao;
 
-    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso)
+    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso, Inscricao $inscricao)
     {
         $this->usuario = $usuario;
         $this->estado = $estado;
         $this->estado_rg = $estado_rg;
         $this->cidade = $cidade;
+        $this->inscricao = $inscricao;
         $this->escolaridade = $escolaridade;
         $this->vinculo = $vinculo;
         $this->orgao = $orgao;
@@ -103,15 +105,32 @@ class HomeController extends Controller
 
                 $i = 0;
                 $cursos = $this->curso->all();
-                
+                for($i=0; $i < count($cursos); $i++){
+                    $cont_curso = $i+1;
+                }
+
+
+                $users = $this->usuario->all();
+                for($i=0; $i < count($users); $i++){
+                    $cont_user = $i+1;
+                }
+
+                $inscricoes = $this->inscricao->all();
+                for($i=0; $i < count($inscricoes); $i++){
+                    $cont_ins = $i+1;
+                }
+
                 return view('home', 
                     [
+                        'page_description' => $page_description,
+                        'page_title' => $page_title, 
+                        'lotacao' => $lotacao, 
+                        'cont_curso' => $cont_curso,
+                        'cont_user' => $cont_user,
+                        'cont_ins' => $cont_ins,
                         'usuarios' => $usuario, 
                         'cursos' => $cursos, 
-                        'lotacao' => $lotacao, 
-                        'page_title' => $page_title, 
-                        'page_description' => $page_description,
-                        'i' => $i
+                        'inscricoes' => $inscricoes 
                     ]);
 
             }
