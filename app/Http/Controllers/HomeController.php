@@ -103,7 +103,6 @@ class HomeController extends Controller
                 $page_description = "Sistema de Gerenciamento de Inscrições";
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
 
-                $i = 0;
                 $cursos = $this->curso->all();
                 for($i=0; $i < count($cursos); $i++){
                     $cont_curso = $i+1;
@@ -129,8 +128,7 @@ class HomeController extends Controller
                         'cont_user' => $cont_user,
                         'cont_ins' => $cont_ins,
                         'usuarios' => $usuario, 
-                        'cursos' => $cursos, 
-                        'inscricoes' => $inscricoes 
+                        'cursos' => $cursos
                     ]);
 
             }

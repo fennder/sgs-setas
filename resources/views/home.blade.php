@@ -7,66 +7,71 @@
 		Bem vindo(a), Sr(a) <b>{{ $usuarios->name or "Servidor"}}</b>, 
 		<small class="text-muted">você está na <b>{{$lotacao or "SETAS"}}</b>.</small>
 	</h4>
+  @if($usuarios->perfil->id_perfil <= 2)
+  	
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+          <div class="inner">
+            <h3>{{$cont_curso}}</h3>
 
-	<!-- Info boxes -->
-      <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-university"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">CURSOS</span>
-              <span class="info-box-number">{{$cont_curso}}</span>
-            </div>
-            <!-- /.info-box-content -->
+            <p>CURSOS</p>
           </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Usuários</span>
-              <span class="info-box-number">{{$cont_user}}</span>
-            </div>
-            <!-- /.info-box-content -->
+          <div class="icon">
+            <i class="ion ion-university"></i>
           </div>
-          <!-- /.info-box -->
+          <a href="{{ route('cs.index') }}" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-        <!-- /.col -->
-
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-share"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Inscrições</span>
-              <span class="info-box-number">{{$cont_ins}}</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">0</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
+      <!-- ./col -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>{{$cont_user}}<!-- <sup style="font-size: 20px">%</sup> --></h3>
 
+            <p>USUÁRIOS</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-ios-people-outline"></i>
+          </div>
+          <a href="{{ route('u.index') }}" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3>{{$cont_ins}}</h3>
+
+            <p>INSCRIÇÕES</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-ios-compose-outline"></i>
+          </div>
+          <a href="{{ route('ins.index') }}" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- small box -->
+        <!-- <div class="small-box bg-red">
+          <div class="inner">
+            <h3>0</h3>
+
+            <p>Unique Visitors</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-pie-graph"></i>
+          </div>
+          <a href="#" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div> -->
+      <!-- ./col -->
+    </div>
+    <!-- /.row -->
+  @endif
 @endsection
