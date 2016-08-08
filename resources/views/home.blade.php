@@ -58,7 +58,7 @@
       <!-- ./col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
-        <!-- <div class="small-box bg-red">
+        <div class="small-box bg-red">
           <div class="inner">
             <h3>0</h3>
 
@@ -69,7 +69,7 @@
           </div>
           <a href="#" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-      </div> -->
+      </div>
       <!-- ./col -->
     </div>
     <!-- /.row -->
