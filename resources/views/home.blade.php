@@ -26,6 +26,7 @@
         </div>
       </div>
       <!-- ./col -->
+
       <div class="col-md-4 col-sm-6 col-xs-12">
         <!-- small box -->
         <div class="small-box bg-green">
@@ -41,6 +42,7 @@
         </div>
       </div>
       <!-- ./col -->
+
       <div class="col-md-4 col-sm-6 col-xs-12">
         <!-- small box -->
         <div class="small-box bg-yellow">
@@ -56,6 +58,7 @@
         </div>
       </div>
       <!-- ./col -->
+      
       <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
         <!-- <div class="small-box bg-red">

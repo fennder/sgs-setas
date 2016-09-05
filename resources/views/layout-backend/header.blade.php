@@ -9,7 +9,7 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>SGI </b>- SETAS</span>
     </a>
-
+    
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
