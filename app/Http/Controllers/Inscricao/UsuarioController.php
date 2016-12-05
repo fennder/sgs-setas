@@ -56,7 +56,7 @@ class UsuarioController extends Controller
     {
             
         $page_title = "SGI";
-        $page_description = "(Cadastro de Usuários)";
+        $page_description = "Cadastro de Usuários";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Lista de usuários";
@@ -96,7 +96,7 @@ class UsuarioController extends Controller
         $funcoes =$this->funcao->all();
         
         $page_title = "SGI";
-        $page_description = "(Cadastro de Usuários)";
+        $page_description = "Cadastro de Usuários";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $nav = "Cadastro de usuários";

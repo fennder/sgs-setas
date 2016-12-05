@@ -28,7 +28,7 @@ class VinculoInstitucionalController extends Controller
     {
     
         $page_title = "SGI";
-        $page_description = "(Lista de Vínculos Institucionais)";
+        $page_description = "Lista de Vínculos Institucionais";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Vínculos Institucionais";
 

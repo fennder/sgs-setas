@@ -29,7 +29,7 @@ class PerfilController extends Controller
         $perfis = $this->perfil->paginate(10);
     
         $page_title = "SGI";
-        $page_description = "(Lista de Perfis)";
+        $page_description = "Lista de Perfis";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Perfil";

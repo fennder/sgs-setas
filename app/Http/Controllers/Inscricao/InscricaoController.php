@@ -39,7 +39,7 @@ class InscricaoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Lista de Inscrições)";
+        $page_description = "Lista de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Inscrição";

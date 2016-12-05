@@ -28,7 +28,7 @@ class EscolaridadeController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Lista de Escolaridades)";
+        $page_description = "Lista de Escolaridades";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Escolaridade";
 

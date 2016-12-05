@@ -31,7 +31,7 @@ class StatusCursoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Status de Curso)";
+        $page_description = "Lista de Status de Curso";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Status de Curso";

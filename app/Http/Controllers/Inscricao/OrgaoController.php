@@ -30,7 +30,7 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Órgaos)";
+        $page_description = "Lista de Órgaos";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Órgao";

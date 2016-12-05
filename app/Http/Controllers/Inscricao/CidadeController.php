@@ -41,7 +41,7 @@ class CidadeController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Cidades)";
+        $page_description = "Lista de Cidades";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidades";
 
@@ -77,7 +77,7 @@ class CidadeController extends Controller
     public function create()
     {
         $page_title = "SGI";
-        $page_description = "(Cadastro de Cidades)";
+        $page_description = "Cadastro de Cidades";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidade";
 

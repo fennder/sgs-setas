@@ -44,7 +44,7 @@ class CursoController extends Controller
     {
     
         $page_title = "SGI";
-        $page_description = "(Lista de Cursos)";
+        $page_description = "Lista de Cursos";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 
@@ -71,7 +71,7 @@ class CursoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Cadastro de Cursos)";
+        $page_description = "Cadastro de Cursos";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 

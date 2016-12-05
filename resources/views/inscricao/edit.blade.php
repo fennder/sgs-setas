@@ -16,16 +16,40 @@
   <div class="box-body clearfix">
 
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
       <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
+          <input disabled type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{$inscricoes->usuario->name}}">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div><!-- Nome Crachá -->
+    </div><!-- Col 6 -->
+
+      <div class="col-md-6">
+      <small class="text-muted">Status do inscrito</small>
+      <div class="form-group has-feedback">
+
+        <select class="form-control" name="status" id="status">
+          <option value="{{$inscricoes->status}}">{{$inscricoes->status}}</option>
+            @if($inscricoes->status == "Deferido")
+              <option value="Indeferido">Indeferido</option>
+            @else
+              <option value="Deferido">Deferido</option>
+            @endif
+        </select>
+
+      </div> <!-- Col 6 -->
+
+        <!-- <div class="form-group has-feedback">
           <select disabled class="form-control" name="user_id" id="user_id">       
             <option  value="{{$inscricoes->user_id}}">{{$inscricoes->usuario->name}}</option>
           </select>
         </div><!-- Curso -->
     </div><!-- Col 3 -->
+  </div>
 
-    <div class="col-md-9">
+  <div class="row">
+
+    <div class="col-md-12">
       <small class="text-muted">Curso</small>
       <div class="form-group has-feedback">
 
@@ -43,25 +67,7 @@
       </div><!-- Curso -->
     </div><!-- Col 9 -->
 
-  </div><!-- row -->
-  <div class="row">
-    <div class="col-md-3">
-      <small class="text-muted">Status do inscrito</small>
-      <div class="form-group has-feedback">
-
-        <select class="form-control" name="status" id="status">
-          <option value="{{$inscricoes->status}}">{{$inscricoes->status}}</option>
-            @if($inscricoes->status == "Deferido")
-              <option value="Indeferido">Indeferido</option>
-            @else
-              <option value="Deferido">Deferido</option>
-            @endif
-        </select>
-
-      </div> <!-- Motivo -->
-    </div>
-
-    <div class="col-md-6">
+    <div class="col-md-8">
       <!-- textarea -->
       <div class="form-group">
         <small class="text-muted">Motivo</small>
@@ -69,7 +75,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <small class="text-muted">Alterado por</small>
       <div class="form-group has-feedback">
         <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
@@ -81,7 +87,7 @@
         {{ $inscricoes->updated_at }}
       </div><!-- data alteração -->
 
-    </div><!-- Col 3 -->
+    </div><!-- Col 4 -->
 
   </div><!-- row -->
 

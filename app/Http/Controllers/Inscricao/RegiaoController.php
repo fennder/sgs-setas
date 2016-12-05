@@ -30,7 +30,7 @@ class RegiaoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Regiões)";
+        $page_description = "Lista de Regiões";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Regiões";

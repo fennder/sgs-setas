@@ -100,7 +100,7 @@ class HomeController extends Controller
             }else{
 
                 $page_title = "SGI";
-                $page_description = "Sistema de Gerenciamento de Inscrições";
+                $page_description = "Página Inicial";
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
 
                 $cursos = $this->curso->all();

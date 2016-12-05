@@ -202,7 +202,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Carbon'    => Carbon\Carbon::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-        
+
     ],
 
 ];

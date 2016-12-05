@@ -28,7 +28,7 @@ class EstadoController extends Controller
     {
     
         $page_title = "SGI";
-        $page_description = "(Lista de Estados)";
+        $page_description = "Lista de Estados";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Estado";

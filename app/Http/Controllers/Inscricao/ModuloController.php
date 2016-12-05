@@ -34,7 +34,7 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Módulos)";
+        $page_description = "Lista de Módulos";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Módulos";

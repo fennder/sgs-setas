@@ -27,7 +27,7 @@ class FuncaoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Lista de Funções)";
+        $page_description = "Lista de Funções";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Função";

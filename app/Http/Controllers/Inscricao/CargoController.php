@@ -30,7 +30,7 @@ class CargoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Cargos)";
+        $page_description = "Lista de Cargos";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 
@@ -55,7 +55,7 @@ class CargoController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGI";
-        $page_description = "(Cadastro de Cargo)";
+        $page_description = "Cadastro de Cargo";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 

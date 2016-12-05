@@ -25,7 +25,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
   -->
   <link href="{{ asset('/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css') }}" rel="stylesheet" type="text/css" />
-
   <!-- iCheck -->
   <link href="{{ asset("/bower_components/AdminLTE/plugins/iCheck/flat/blue.css") }}" rel="stylesheet" type="text/css" >
   <!-- Morris chart -->
@@ -83,7 +82,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Your Page Content Here -->
       @yield('content')
 
-
     </section>
 
     <!-- /.content -->
@@ -95,8 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('layout-backend.footer')
 
   <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
+  <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
@@ -114,7 +111,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- AdminLTE App -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="{{ asset("/bower_components/AdminLTE/plugins/morris/morris.min.js") }}" type="text/javascript"></script>
 <!-- Sparkline -->
