@@ -56,7 +56,7 @@
 </div>
   <input type="hidden" class="form-control" name="status" value="Deferido" id="status">
   <input type="hidden" class="form-control" name="motivo" value="Sem alteração" id="status">
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Fazer Inscrição</button>
 </form><!-- Form -->
 @endsection
 

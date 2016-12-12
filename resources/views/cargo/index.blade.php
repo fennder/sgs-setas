@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{!! route('c.create')!!}">Novo</a>
+          <a class="btn btn-primary" href="{!! route('c.create')!!}">Incluir Cargo</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">

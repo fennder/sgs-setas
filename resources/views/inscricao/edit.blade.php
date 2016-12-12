@@ -94,7 +94,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Inscrição</button>
   <a class="btn btn-success" href="{{route('u.edit', ['id' => $inscricoes->user_id])}}">Editar Usuário</a><!-- colocar a rota do user/edir e passar inscricao->user_id -->
 
 </form><!-- Form -->

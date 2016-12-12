@@ -62,7 +62,7 @@
   </div>
 </div><!--box -->
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Cadastrar Módulo</button>
 </form><!-- Form -->
 @endsection
 

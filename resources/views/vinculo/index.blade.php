@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{!! route('vi.create')!!}">Novo</a>
+          <a class="btn btn-primary" href="{!! route('vi.create')!!}">Incluir Vinculo</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">

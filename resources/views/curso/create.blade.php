@@ -59,7 +59,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Cadastrar Curso</button>
 </form><!-- Form -->
 @endsection
 

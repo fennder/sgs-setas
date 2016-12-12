@@ -25,7 +25,7 @@
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <h4><b><p class="login-box-msg">Já é cadastrado? Faça o login</p></b></h4>
+    <h4><b><p class="login-box-msg">Já é cadastrado? Faça o login!</p></b></h4>
     <form action="{!! route('a.postLogin') !!}" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
@@ -57,7 +57,7 @@
     <div class="row">
         <!-- /.col -->
         <div class="col-xs-12" align="left">
-           <a href="{!! route('p.getEmail') !!}" class="btn btn-success btn-block">Esqueci minha senha</a>
+           <a href="{!! route('p.getEmail') !!}" class="btn btn-success btn-block">Esqueci minha senha!</a>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
     <div class="row">
         <!-- /.col -->
         <div class="col-xs-12" align="rigth">
-           <a href="{!! route('a.getRegister') !!}"  class="btn btn-danger btn-block">Ainda não sou cadastrado</a>
+           <a href="{!! route('a.getRegister') !!}"  class="btn btn-danger btn-block">Ainda não sou cadastrado!</a>
         </div>
     </div>
     

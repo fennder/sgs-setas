@@ -9,7 +9,7 @@
     <ul class="treeview-menu">                  
       <li><a href="{!! route('cs.index') !!}">Cursos</a></li>
       <li><a href="{!! route('m.index') !!}">Módulos</a></li>
-      <li><a href="{!! route('sc.index') !!}">Status Curso</a></li>
+      <!-- <li><a href="{!! route('sc.index') !!}">Status Curso</a></li> -->
     </ul>
   </li>
   <li class="treeview">
@@ -29,16 +29,16 @@
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-cog"></i> <span>CONFIGURAÇÕES</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
-      <li><a href="{!! route('c.index') !!}">Cargo</a></li>
-      <li><a href="{!! route('cid.index') !!}">Cidade</a></li>
-      <li><a href="{!! route('d.index') !!}">Deficiência</a></li>
       <li><a href="{!! route('dep.index') !!}">Departamento</a></li>
       <li><a href="{!! route('e.index') !!}">Escolaridade</a></li>
-      <li><a href="{!! route('est.index') !!}">Estado</a></li>
+      <li><a href="{!! route('d.index') !!}">Deficiência</a></li>
       <li><a href="{!! route('f.index') !!}">Função</a></li>
-      <li><a href="{!! route('o.index') !!}">Órgão</a></li> 
       <li><a href="{!! route('r.index') !!}">Região</a></li>
-      <li><a href="{!! route('vi.index') !!}">Vinculo Institucional</a></li>                   
+      <li><a href="{!! route('c.index') !!}">Cargo</a></li>
+      <li><a href="{!! route('o.index') !!}">Órgão</a></li> 
+      <!-- <li><a href="{!! route('cid.index') !!}">Cidade</a></li> -->
+      <!-- <li><a href="{!! route('est.index') !!}">Estado</a></li> -->
+      <!-- <li><a href="{!! route('vi.index') !!}">Vinculo Institucional</a></li>  -->                  
     </ul>
   </li>
   <li>

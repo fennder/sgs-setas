@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{{ route('m.create')}}">Novo</a>
+          <a class="btn btn-primary" href="{{ route('m.create')}}">Incluir Módulo</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">

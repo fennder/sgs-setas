@@ -69,6 +69,6 @@
   </div>
 </div><!--box -->
 
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Módulo</button>
 </form><!-- Form -->
 @endsection

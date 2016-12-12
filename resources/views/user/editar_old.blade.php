@@ -18,7 +18,7 @@
   <!-- ERROS -->
 
     <div class="register-box-body">
-      <p class="login-box-msg">Alterar usuário</p>
+      <p class="login-box-msg">Alterar Usuário</p>
 
       <form action="{{route('u.update', ['id' => $usuarios->id])}}" method="POST">
         {!! csrf_field() !!}
@@ -39,7 +39,7 @@
           </div>
           <!-- /.col -->
           <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+            <button type="submit" class="btn btn-primary btn-block">Salvar Usuário</button>
           </div>
           <!-- /.col -->
         </div>
