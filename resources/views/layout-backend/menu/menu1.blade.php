@@ -46,7 +46,7 @@
   </li>
   
   <li>
-    <a href="{!! route('a.getLogout') !!}"><i class="glyphicon glyphicon-log-out"></i> <span>Sair</span></a>
+    <a href="{!! route('a.getLogout') !!}"><i class="glyphicon glyphicon-log-out"></i> <span>SAIR</span></a>
   </li>
   
 </ul>
