@@ -44,7 +44,7 @@
                     <td class="text-center">
                       <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
                       <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a>
                     </td>
                   </tr>            
                 @elseif($curso->id_status_curso == 2)

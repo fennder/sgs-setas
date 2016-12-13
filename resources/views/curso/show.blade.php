@@ -29,7 +29,7 @@
               <th>Município</th>
               <th>Nome do Inscrito</th>
               <th>CPF</th>
-              <th style="width: 200px">Assinatura</th>                  
+              <th style="width: 200px">Assinatura</th>                
             </tr>
           </thead>
           <tbody>
