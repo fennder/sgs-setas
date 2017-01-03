@@ -64,7 +64,7 @@
   <!-- /.box-header -->
   <div class="box-body pad">
     
-      <textarea value="{{ $modulos->conteudo }}" name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 260px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $modulos->conteudo }}</textarea>
+      <textarea value="{{ $modulos->conteudo }}" name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 290px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $modulos->conteudo }}</textarea>
     
   </div>
 </div><!--box -->

@@ -143,7 +143,7 @@ return [
          * Instalações efetuadas
          */
         Collective\Html\HtmlServiceProvider::class,
-
+        
         /*
          * Application Service Providers...
          */
@@ -202,7 +202,6 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Carbon'    => Carbon\Carbon::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-
     ],
 
 ];
