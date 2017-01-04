@@ -335,7 +335,7 @@
 
     <div class="row">
 
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="form-group has-feedback">
         <small class="text-muted">Órgão</small>
           <div class="input-group">
@@ -349,9 +349,12 @@
           </div>
           
         </div><!-- Órgão -->
-      </div><!-- Col 8 -->
+      </div><!-- Col 12 -->
 
-      <div class="col-md-4">
+    </div><!-- Row -->
+    <div class="row">
+
+      <div class="col-md-12">
         <div class="form-group has-feedback">
         <small class="text-muted">Departamento</small>
           <div class="input-group">
@@ -365,7 +368,7 @@
           </div>
           
         </div><!-- Departamento -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 12 -->
 
     </div><!-- row -->
 

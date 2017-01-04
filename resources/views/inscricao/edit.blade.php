@@ -16,15 +16,15 @@
   <div class="box-body clearfix">
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
       <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
           <input disabled type="text" class="form-control" name="nome_cracha" id="nome_cracha"value="{{$inscricoes->usuario->name}}">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div><!-- Nome Crachá -->
-    </div><!-- Col 6 -->
+    </div><!-- Col 8 -->
 
-      <div class="col-md-6">
+      <div class="col-md-4">
       <small class="text-muted">Status do inscrito</small>
       <div class="form-group has-feedback">
 
@@ -37,7 +37,7 @@
             @endif
         </select>
 
-      </div> <!-- Col 6 -->
+      </div> <!-- Col 4 -->
 
         <!-- <div class="form-group has-feedback">
           <select disabled class="form-control" name="user_id" id="user_id">       

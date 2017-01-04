@@ -17,27 +17,27 @@
 
   <div class="row">
 
-    <div class="col-md-6">
-      <div class="form-group has-feedback" >
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Departamento" required>
-        </div>
-        <small class="text-muted">Departamento</small>
-      </div><!-- Nome Departamento -->
-    </div><!-- Col 6 -->
-
-    <div class="col-md-6">
+  <div class="col-md-12">
         <div class="form-group has-feedback">
+        <small class="text-muted">Órgão</small>
         <select class="form-control" name="id_orgao" id="id_orgao" required>
             <option disabled selected> - Orgao - </option>
               @foreach($orgaos as $orgao)
                 <option value="{{ $orgao->id_orgao }}">{{ $orgao->descricao }}</option>
               @endforeach
           </select>
-          <small class="text-muted">Órgão</small>
       </div><!-- Curso -->
-    </div><!-- Col 6 -->
+    </div><!-- Col 12 -->
+
+    <div class="col-md-12">
+      <div class="form-group has-feedback" >
+        <small class="text-muted">Departamento</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Departamento" required>
+        </div>
+      </div><!-- Nome Departamento -->
+    </div><!-- Col 12 -->
 
   </div><!-- row -->
 

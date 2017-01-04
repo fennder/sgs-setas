@@ -17,7 +17,7 @@
 
   <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-12">
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="user_id" id="user_id" required>
@@ -25,7 +25,7 @@
         </select>
 
       </div><!-- Curso -->
-    </div><!-- Col 6 -->
+    </div><!-- Col 12 -->
 
   </div><!-- row -->
 

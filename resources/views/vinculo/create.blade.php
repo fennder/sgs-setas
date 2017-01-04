@@ -26,13 +26,13 @@
       </div><!-- Vinculo Institucional -->
     </div><!-- Col 12 -->
 
-    <div class="col-md-3" >
+    <!-- <div class="col-md-3" >
       <div class="form-group has-feedback">
         <input type="date" class="form-control" name="inicio_vinculo" id="inicio_vinculo" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         <small class="text-muted">Data de Vinculo</small>
-      </div><!--Data Inicio do Curso -->
-    </div><!-- Col 3 -->
+      </div>
+    </div> --><!-- Data Inicio do Curso Col 3 -->
 
   </div><!-- row -->
 

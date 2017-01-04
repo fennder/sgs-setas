@@ -17,17 +17,7 @@
 
     <div class="row">
 
-      <div class="col-md-6">
-        <div class="form-group has-feedback" >
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao" required>
-          </div>
-          <small class="text-muted">Nome do Modulo</small>
-        </div><!-- Nome do Módulo -->
-      </div><!-- Col 6 -->
-
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
@@ -42,7 +32,18 @@
           </div><!-- Input -->
           <small class="text-muted">Nome do Curso</small>
         </div><!-- Form -->
-      </div><!-- Col 6 -->
+      </div><!-- Col 12 -->
+
+      <div class="col-md-12">
+        <div class="form-group has-feedback" >
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao" required>
+          </div>
+          <small class="text-muted">Nome do Modulo</small>
+        </div><!-- Nome do Módulo -->
+      </div><!-- Col 12 -->
+
     </div><!-- row -->    
   </div>
 </div>

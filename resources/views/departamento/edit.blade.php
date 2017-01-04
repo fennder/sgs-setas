@@ -17,18 +17,9 @@
 
   <div class="row">
 
-    <div class="col-md-6">
-      <div class="form-group has-feedback" >
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$departamentos->descricao}}" name="descricao" id="descricao" required>
-        </div>
-        <small class="text-muted">Departamento</small>
-      </div><!-- Nome do Departamento -->
-    </div><!-- Col 6 -->
-
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="form-group has-feedback">
+        <small class="text-muted">Órgão</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
           <select class="form-control" name="id_orgao" id="id_orgao" required>
@@ -40,9 +31,18 @@
             @endforeach
           </select>
         </div>
-        <small class="text-muted">Órgão</small>
       </div><!-- Órgão -->
-    </div><!-- Col 6 -->
+    </div><!-- Col 12 -->
+
+    <div class="col-md-12">
+      <div class="form-group has-feedback" >
+      <small class="text-muted">Departamento</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <input type="text" class="form-control" value="{{$departamentos->descricao}}" name="descricao" id="descricao" required>
+        </div>
+      </div><!-- Nome do Departamento -->
+    </div><!-- Col 12 -->
 
   </div><!-- row -->
 
