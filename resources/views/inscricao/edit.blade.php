@@ -71,17 +71,17 @@
       <!-- textarea -->
       <div class="form-group">
         <small class="text-muted">Motivo</small>
-        <textarea class="form-control" rows="4" name="motivo" id="motivo" placeholder="Digite aqui o motivo ... " value="{{ $inscricoes->motivo }}">{{ $inscricoes->motivo }}</textarea>
+        <textarea class="form-control" rows="4" name="motivo" id="motivo" value="{{ $inscricoes->motivo }}">{{ $inscricoes->motivo }}</textarea>
       </div>
     </div>
-
+    <br>
     <div class="col-md-4">
       <small class="text-muted">Alterado por</small>
       <div class="form-group has-feedback">
         <input type="hidden" class="form-control" value="{{ $usuarios->nome_cracha }}" name="login" id="login">
         {{ $inscricoes->login }}
       </div><!-- Login -->
-
+      <br>
       <small class="text-muted">Alterado em</small>
       <div class="form-group has-feedback">
         {{ $inscricoes->updated_at }}

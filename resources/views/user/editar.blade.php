@@ -271,7 +271,7 @@
     <div class="row">    
 
       <div class="col-md-4">
-      <small class="text-muted">Número de Identificação Social</small>
+      <small class="text-muted">Número de Identificação Social - NIS(PIS/PASEP)</small>
         <div class="form-group has-feedback">
           <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9999.999.9999-9">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -368,7 +368,7 @@
 
       <div class="col-md-12">
         <div class="form-group has-feedback">
-        <small class="text-muted">Órgão</small>
+        <small class="text-muted">Órgão em que está lotado</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_orgao" id="id_orgao" required>

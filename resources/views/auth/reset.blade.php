@@ -43,6 +43,7 @@
           <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
+
         <div class="row">
           <div class="col-xs-8">
             <div class="checkbox icheck">
@@ -57,6 +58,7 @@
           </div>
           <!-- /.col -->
         </div>
+        
       </form>
       <!-- <a href="{!! route('a.getLogin') !!}" class="text-center">Já é usuário clique aqui</a> -->
     </div>
