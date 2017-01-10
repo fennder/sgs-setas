@@ -36,10 +36,19 @@
                         <td>{{$vinculo->id_vinculo_institucional}}.</td>
                         <td>{{$vinculo->descricao}}</td>
                         <td>{{$vinculo->inicio_vinculo}}</td>
-                        <td class="text-center">
-                          <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
-                        </td>
+
+                        @if($usuarios->id_perfil == 2)
+                          <td class="text-center">
+                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <!-- <a href="{{route('ins.destroy', ['id'   => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          </td>
+                        @elseif($usuarios->id_perfil == 1)
+                          <td class="text-center">
+                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          </td>
+                        @endif
+
                       </tr>
                     @endforeach
                   @else

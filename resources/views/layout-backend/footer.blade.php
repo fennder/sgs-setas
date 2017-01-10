@@ -6,9 +6,9 @@
     </div>
     <!-- Padrão alinhado a esquerda -->
     <strong>
-    	Copyright &copy; 2016 
+    	Todos os direitos reservados &copy; 2016 - 2017,
     	<a href="http://opensetas.setas.to.gov.br/portal">
-    		 - SETOR DE DESENVOLVIMENTO DE SISTEMAS - GTI - 
+    		 SDS-GTI- 
     	</a>
     	{{$lotacao or "SETAS"}}
     </strong>

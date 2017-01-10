@@ -16,14 +16,14 @@
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-user"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
-      <li><a href="{!! route('u.index') !!}">Relação de Usuários</a></li>
+      <li><a href="{!! route('u.index') !!}">Listagem de Usuários</a></li>
     </ul>
   </li>
   
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-edit"></i> <span>GERENCIAR INSCRIÇÃO</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
-      <li><a href="{!! route('ins.index') !!}">Relação de Inscritos</a></li>
+      <li><a href="{!! route('ins.index') !!}">Listagem de Inscritos</a></li>
       <li><a href="{!! route('ins.create') !!}">Inscrever</a></li>
       <li><a href="{!! route('ins.show') !!}">Minhas Inscrições</a></li>
     </ul>

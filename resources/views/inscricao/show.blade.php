@@ -25,7 +25,7 @@
                     <th>Meus Cursos</th>                    
                     <th>Período</th>                                        
                     <th>Status</th>
-                    <th>Diploma</th>                                    
+                    <!-- <th>Diploma</th> -->                                    
                   </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
-                          <td class="glyphicon glyphicon-education">Imprimir Certificado</td> 
+                          <!-- <td class="glyphicon glyphicon-education">Imprimir Certificado</td> --> 
                         </tr>
                       @else
                         <tr class="danger">
