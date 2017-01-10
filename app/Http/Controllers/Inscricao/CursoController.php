@@ -120,8 +120,8 @@ class CursoController extends Controller
         $i = 0;
         $curso = $this->curso->find($id);
         $usuarios = Auth::user();
-        $inscricoes = $this->inscricao->all();
         $inscritos = $curso->usuarios->all();
+        $inscricoes = $this->inscricao->all();
 
         return view('curso.show',
         [

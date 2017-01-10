@@ -206,5 +206,43 @@ class InscricaoController extends Controller
         $this->inscricao->destroy($id);
 
         return redirect()->back();
+
+    }
+
+    public function certificado(Request $request)
+    {
+
+        $page_title = "SGI";
+        $page_description = "Certificado";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
+        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
+
+        $usuarios = Auth::user();
+        $cidades = $this->cidade->all();
+        $cursos = $this->curso->all();
+        $users = $this->user->all();
+        $i = 0;
+
+        if ($request->isMethod('post')){
+
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
+
+        }
+
+        return view('inscricao.certificado',
+        [
+            'nav' => $nav, 
+            'page_title'=>$page_title, 
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
+            'inscricoes' => $inscricoes,
+            'usuarios' => $usuarios,
+            'cidades' => $cidades,
+            'users' => $users,
+            'i' => $i,
+            'cursos' => $cursos
+            
+        ]); 
     }
 }

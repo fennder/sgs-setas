@@ -8,6 +8,8 @@ Route::get('', function()
 Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
 Route::get('get-departamentos/{idOrgao}','Inscricao\DepartamentoController@getDepartamento');
 
+
+
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
 	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
@@ -187,6 +189,7 @@ Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
 	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\InscricaoController@edit']);
 	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\InscricaoController@update']);
 	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\InscricaoController@destroy']);
+	Route::get('certificado',		['as' => 'certificado', 'uses' => 'Inscricao\InscricaoController@certificado']);
 });
 
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()

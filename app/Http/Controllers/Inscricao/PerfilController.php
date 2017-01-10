@@ -27,6 +27,7 @@ class PerfilController extends Controller
     public function index()
     {
         $perfis = $this->perfil->paginate(10);
+        $usuarios = Auth::user();
     
         $page_title = "SGI";
         $page_description = "Lista de Perfis";
@@ -41,6 +42,7 @@ class PerfilController extends Controller
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
             'lotacao'=>$lotacao,
+            'usuarios'=>$usuarios,
         ]);
     }
 
@@ -51,6 +53,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
+        $usuarios = Auth::user();
 
         $page_title = "SGI";
         $page_description = "Cadastro de Perfil";
@@ -63,7 +66,8 @@ class PerfilController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title,  
             'page_description' => $page_description,
-            'lotacao' => $lotacao
+            'lotacao' => $lotacao,
+            'usuarios' => $usuarios,
         ]);
     }
 
@@ -99,6 +103,7 @@ class PerfilController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = Auth::user();
 
         $nav = "Editar";
         $page_description = "Editar Perfil";
@@ -111,7 +116,8 @@ class PerfilController extends Controller
             'nav' => $nav,
             'perfis' => $perfis, 
             'page_description' => $page_description,
-            'lotacao' => $lotacao
+            'lotacao' => $lotacao,
+            'usuarios' => $usuarios,
         ]);
     }
 

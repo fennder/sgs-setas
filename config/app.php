@@ -151,6 +151,11 @@ return [
         Gerenciador\Providers\EventServiceProvider::class,
         Gerenciador\Providers\RouteServiceProvider::class,
 
+        /*
+            Instalação de criado de PDF
+        */
+        Vsmoraes\Pdf\PdfServiceProvider::class,
+
     ],
 
     /*
@@ -202,6 +207,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Carbon'    => Carbon\Carbon::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'PDF'       => Vsmoraes\Pdf\PdfFacade::class,
     ],
 
 ];

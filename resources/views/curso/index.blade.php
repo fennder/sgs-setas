@@ -26,9 +26,9 @@
               <th style="width: 10px">Id</th>
               <th style="width: 500px">Descrição</th>
               <th style="width: 90px">Data Início</th>
-              <th style="width: 120px">Data Término</th>
-              <th>Status</th>
-              <th class="text-center" style="width: 100px" colspan="2">Ação</th>                   
+              <th style="width: 100px">Data Término</th>
+              <th style="width: 70px">Status</th>
+              <th class="text-center" style="width: 120px" colspan="2">Ação</th>                   
             </tr>
           </thead>
           <tbody>

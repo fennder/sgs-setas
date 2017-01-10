@@ -42,6 +42,7 @@
       <li><a href="{!! route('r.index') !!}">Região</a></li>
       <li><a href="{!! route('c.index') !!}">Cargo</a></li>
       <li><a href="{!! route('o.index') !!}">Órgão</a></li> 
+      <li><a href="{!! route('pf.index') !!}">Perfil</a></li> 
     </ul>
   </li>
   

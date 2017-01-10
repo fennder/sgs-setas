@@ -23,8 +23,9 @@
                 <thead>
                   <tr>
                     <th>Meus Cursos</th>                    
-                    <th>Período do curso</th>                                        
-                    <th>Status</th>                                      
+                    <th>Período</th>                                        
+                    <th>Status</th>
+                    <th>Diploma</th>                                    
                   </tr>
                 </thead>
                 <tbody>
@@ -33,7 +34,8 @@
                         <tr class="success">
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
-                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
+                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
+                          <td class="glyphicon glyphicon-education">Imprimir Certificado</td> 
                         </tr>
                       @else
                         <tr class="danger">
