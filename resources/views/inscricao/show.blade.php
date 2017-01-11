@@ -23,7 +23,7 @@
                 <thead>
                   <tr>
                     <th>Meus Cursos</th>                    
-                    <th>Período</th>                                        
+                    <th>Período</th>
                     <th>Status</th>
                     <!-- <th>Diploma</th> -->                                    
                   </tr>

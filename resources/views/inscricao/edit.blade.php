@@ -52,17 +52,19 @@
     <div class="col-md-12">
       <small class="text-muted">Curso</small>
       <div class="form-group has-feedback">
-
-        <select disabled class="form-control" name="curso_id" id="curso_id" required>
-          <option value="{{ $inscricoes->curso->id_curso }}">{{ $inscricoes->curso->descricao }} - ( {{$inscricoes->curso->data_inicio}} - {{$inscricoes->curso->data_termino}} ) - {{$inscricoes->curso->statuscurso->descricao}}</option>   
+        
+          <select class="form-control" name="curso_id" id="curso_id" required>
+            <option value="{{ $inscricoes->curso->id_curso }}">
+              {{ $inscricoes->curso->descricao }} - ( {{$inscricoes->curso->data_inicio}} - {{$inscricoes->curso->data_termino}} ) - {{$inscricoes->curso->statuscurso->descricao}}
+            </option>   
             @foreach($cursos as $curso)
-              @if($usuarios->cursos->find($curso->id_curso) != null)
+              @if($cursos->find($curso->id_curso) != null)
                 @if($curso->statuscurso->id_status_curso == 1)
                   <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{$curso->data_inicio}} - {{$curso->data_termino}} ) - {{$curso->statuscurso->descricao}}</option>
                 @endif
               @endif
             @endforeach
-        </select>
+          </select>
 
       </div><!-- Curso -->
     </div><!-- Col 9 -->
