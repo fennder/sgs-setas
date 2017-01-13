@@ -38,14 +38,14 @@
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
-              <th>Nr.</th>
+              <th style="width: 5px">Nr.</th>
               <th>Região</th>
               <th>Município</th>
               <th>Inscrito</th>
               <th>CPF</th>
               <th>E-mail</th>
               <th>Função</th>
-              <th>Status</th>
+              <th style="width: 20px">Status</th>
               <th style="width: 90px" colspan="4"><center>Ação</center></th>
             </tr>
           </thead>
@@ -84,7 +84,6 @@
                   <td>{{$inscricao->usuario->email}}</td>
                   <td>{{$inscricao->usuario->funcao->descricao}}</td>
                   <td>{{$inscricao->status}}</td>
-                 
                   @if($usuarios->id_perfil == 2)
                     <td class="text-center">
                       <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-edit"></i></a>

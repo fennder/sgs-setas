@@ -11,7 +11,7 @@
   	
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
@@ -27,7 +27,7 @@
       </div>
       <!-- ./col -->
 
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
@@ -43,7 +43,7 @@
       </div>
       <!-- ./col -->
 
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
@@ -61,18 +61,18 @@
       
       <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
-        <!-- <div class="small-box bg-red">
+        <div class="small-box bg-red">
           <div class="inner">
-            <h3>0</h3>
+            <h3>{{$cont_ins}}</h3>
 
-            <p>Unique Visitors</p>
+            <p>RELATÓRIOS</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
           <a href="#" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
         </div>
-      </div> -->
+      </div>
       <!-- ./col -->
     </div>
     <!-- /.row -->
