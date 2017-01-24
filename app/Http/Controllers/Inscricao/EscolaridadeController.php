@@ -28,7 +28,7 @@ class EscolaridadeController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "Lista de Escolaridades";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Escolaridade";
 
@@ -53,8 +53,8 @@ class EscolaridadeController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Escolaridade";
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Escolaridade";
 
@@ -104,7 +104,7 @@ class EscolaridadeController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Escolaridade";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $escolaridades = $this->escolaridade->find($id);

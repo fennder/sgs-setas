@@ -22,10 +22,10 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>Meus Cursos</th>                    
+                    <th style="width: 50%">Meus Cursos</th>                    
                     <th>Período</th>
                     <th>Status</th>
-                    <!-- <th>Diploma</th> -->                                    
+                    <!-- <th style="width: 5%">Certificado</th>  -->                                   
                   </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,11 @@
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
-                          <!-- <td class="glyphicon glyphicon-education">Imprimir Certificado</td> --> 
+                          <!-- <td align="center">
+                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="55%">
+                            </a>
+                          </td>  -->
                         </tr>
                       @else
                         <tr class="danger">

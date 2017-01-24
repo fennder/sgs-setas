@@ -32,7 +32,7 @@ class DepartamentoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "Lista de Departamentos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";
 
@@ -71,7 +71,7 @@ class DepartamentoController extends Controller
     public function create()
     {
         $page_title = "SGI";
-        $page_description = "Cadastro de Departamento";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";
 
@@ -125,7 +125,7 @@ class DepartamentoController extends Controller
     {
 
         $nav = "Editar";
-        $page_description = "Editar Departamento";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $departamentos = $this->departamento->find($id);

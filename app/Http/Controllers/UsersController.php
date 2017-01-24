@@ -162,9 +162,16 @@ class UsersController extends Controller
     public function edit($id)
     {
 
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $nav = "Meus dados";
+
         $verifica = Auth::user();
 
         if($verifica->id_perfil == 1){
+
+            $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->all();
@@ -189,10 +196,15 @@ class UsersController extends Controller
                 'cargos' => $cargos,
                 'funcoes' => $funcoes,
                 'orgaos' => $orgaos,
+                'verifica' => $verifica,
+                'page_description' => $page_description,
+                'nav' => $nav,
                 'perfis' => $perfis
             ]);
     
         }else{
+
+            $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->all();

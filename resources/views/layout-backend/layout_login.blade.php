@@ -27,6 +27,31 @@
 <body class="hold-transition register-page">
     @yield('content')
 <!-- /.register-box -->
+  <div class="row">
+
+    <div class="col-md-12" align="center">
+      <!-- Default box -->
+      <div>
+        <strong>
+
+        <!-- Copyright -->Todos os direitos reservados &copy; 2016 - 2017
+        <a href="http://opensetas.setas.to.gov.br/portal">
+           SD-GTI 
+        </a>
+        da Secretaria do Trabalho e Assistência Social
+      </strong>
+        <div class="box-header with-border">
+          <div align="center">
+            <i class="ion ion-social-tux"></i>
+            <i class="ion ion-social-chrome"></i>
+            <i class="ion ion-social-github"></i>
+          </div>
+        </div>
+        
+      </div><!-- /.box -->
+    </div><!-- Col 12 -->
+
+  </div> <!-- Row -->
 
 <!-- jQuery 2.1.4 -->
 <script src="{{ asset('bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js') }}" type="text/javascript"></script>

@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Usuario;

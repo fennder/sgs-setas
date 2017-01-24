@@ -25,9 +25,15 @@
               <div class="form-group has-feedback">
                 <select class="form-control" name="id_curso" id="id_curso" required>
                   <option  value="">- Para obter a relação de inscritos selecione o curso aqui -</option>
-                  @foreach($cursos as $curso)
-                    <option  value="{{$curso->id_curso}}">{{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}</option>
-                  @endforeach
+                    
+                    @foreach($cursos as $curso)
+                      @if($curso->statuscurso->id_status_curso == 1)    
+                        <option value="{{$curso->id_curso}}">
+                          {{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}
+                        </option>
+                      @endif  
+                    @endforeach
+                  
                 </select>
               </div><!-- Curso -->
             </div><!-- Col 10 -->

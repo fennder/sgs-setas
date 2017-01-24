@@ -67,7 +67,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'id_cargo',
         'id_funcao',
         'possui_deficiencia',
-        'id_deficiencia'
+        'id_deficiencia'/*,
+        'curso_id'*/
     ];
 
     /**
@@ -80,6 +81,11 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function cursos()
     {
         return $this->belongsToMany('Gerenciador\Inscricao\Curso'); //Tem vários Cursos
+    }
+
+    public function curso()
+    {
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'id_curso'); //Tem vários Cursos
     }
 
     public function estado()

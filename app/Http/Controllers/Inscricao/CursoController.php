@@ -44,7 +44,7 @@ class CursoController extends Controller
     {
     
         $page_title = "SGI";
-        $page_description = "Lista de Cursos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 
@@ -54,9 +54,9 @@ class CursoController extends Controller
         return view('curso.index',
         [
             'nav' => $nav,
-            'cursos' => $cursos,  
-            'page_title'=>$page_title, 
-            'usuarios'=>$usuarios, 
+            'cursos' => $cursos,
+            'page_title'=>$page_title,
+            'usuarios'=>$usuarios,
             'page_description' => $page_description,
             'lotacao' => $lotacao
         ]);
@@ -71,7 +71,7 @@ class CursoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "Cadastro de Cursos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
 
@@ -83,8 +83,8 @@ class CursoController extends Controller
             'page_description' => $page_description,
             'lotacao' => $lotacao,
             'page_title' => $page_title,
-            'usuarios' => $usuarios, 
-            'scursos' => $scursos, 
+            'usuarios' => $usuarios,
+            'scursos' => $scursos,
             'scursos'=>$scursos,
             'nav' => $nav
         ]);
@@ -113,7 +113,7 @@ class CursoController extends Controller
     public function show($id)
     {
         $page_title = "SGI";
-        $page_description = "Turma do Curso";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Mostrar";
 
@@ -147,7 +147,7 @@ class CursoController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Curso";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $cursos = $this->curso->find($id);

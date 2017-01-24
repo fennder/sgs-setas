@@ -30,7 +30,7 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "Lista de Órgaos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Órgao";
@@ -56,7 +56,7 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGS";
-        $page_description = "Cadastro de Órgão";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Órgão";
@@ -106,7 +106,7 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Órgão";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $orgaos = $this->orgao->find($id);

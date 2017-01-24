@@ -28,7 +28,7 @@ class EstadoController extends Controller
     {
     
         $page_title = "SGI";
-        $page_description = "Lista de Estados";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Estado";
@@ -54,8 +54,8 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Estado";
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Estado";
@@ -105,7 +105,7 @@ class EstadoController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Estado";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $estados = $this->estado->find($id);

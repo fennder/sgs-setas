@@ -34,7 +34,7 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "Lista de Módulos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Módulos";
@@ -59,8 +59,8 @@ class ModuloController extends Controller
     {
         $usuarios = Auth::user();
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Modulos";
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Modulos";
@@ -113,7 +113,7 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Módulo";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $modulos = $this->modulo->find($id);

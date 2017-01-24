@@ -30,7 +30,7 @@ class PerfilController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "Lista de Perfis";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Perfil";
@@ -56,7 +56,7 @@ class PerfilController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGI";
-        $page_description = "Cadastro de Perfil";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Perfil";
@@ -106,7 +106,7 @@ class PerfilController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Perfil";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $perfis = $this->perfil->find($id);

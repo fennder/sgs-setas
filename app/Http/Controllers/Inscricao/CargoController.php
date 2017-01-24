@@ -30,7 +30,7 @@ class CargoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "Lista de Cargos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 
@@ -55,7 +55,7 @@ class CargoController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGI";
-        $page_description = "Cadastro de Cargo";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cargo";
 
@@ -117,7 +117,7 @@ class CargoController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Cargo";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $cargos = $this->cargo->find($id);

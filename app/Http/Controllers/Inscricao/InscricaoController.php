@@ -9,6 +9,7 @@ use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Gerenciador\User;
+use Vsmoraes\Pdf\Pdf;
 Use Session;
 use Auth;
 use DB;
@@ -19,13 +20,15 @@ class InscricaoController extends Controller
     private $inscricao;
     private $curso;
     private $user;
+    private $pdf;
 
-    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $user)
+    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $user, Pdf $pdf)
     {
         $this->inscricao = $inscricao;
+        $this->cidade = $cidade;
         $this->curso = $curso;
         $this->user = $user;
-        $this->cidade = $cidade;
+        $this->pdf = $pdf;
         
         $this->middleware('auth');
     }
@@ -39,7 +42,7 @@ class InscricaoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "Lista de Inscrições";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Inscrição";
@@ -82,7 +85,7 @@ class InscricaoController extends Controller
     public function create()
     {
         $page_title = "SGI";
-        $page_description = "(Cadastro de Inscrições)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $nav = "Inscrição";
@@ -127,14 +130,14 @@ class InscricaoController extends Controller
     public function show()
     {
         $page_title = "SGI";
-        $page_description = "Meus Cursos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $nav = "Meus Cursos";
 
         $usuarios = Auth::user();
         $cursos = $usuarios->cursos->all();
-        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(1000);
+        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(10000);
 
         return view('inscricao.show',
         [
@@ -157,7 +160,7 @@ class InscricaoController extends Controller
     public function edit($id)
     {
         $page_title = "SGI";
-        $page_description = "Editar Inscrição";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Editar";
         
@@ -209,40 +212,37 @@ class InscricaoController extends Controller
 
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function certificado(Request $request)
     {
 
         $page_title = "SGI";
-        $page_description = "Certificado";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $nav = "Certificado";
 
-        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
-
+        $curso = $this->curso->all();
         $usuarios = Auth::user();
-        $cidades = $this->cidade->all();
-        $cursos = $this->curso->all();
-        $users = $this->user->all();
-        $i = 0;
+        $inscricoes = $this->inscricao->all();
 
-        if ($request->isMethod('post')){
-
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
-
-        }
-
-        return view('inscricao.certificado',
+        return view('pdf.certificado',
         [
-            'nav' => $nav, 
-            'page_title'=>$page_title, 
-            'page_description'=>$page_description,
-            'lotacao'=>$lotacao,
+            'page_description' => $page_description,
+            'page_title'  => $page_title,
+            'lotacao' => $lotacao,
+            'nav' => $nav,
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
-            'cidades' => $cidades,
-            'users' => $users,
-            'i' => $i,
-            'cursos' => $cursos
-            
-        ]); 
+            'curso' => $curso
+        ]);
+
+        /*$html = view('pdf.certificado')->render();
+
+        return $this->pdf->load($html)->show(); */
     }
 }

@@ -31,7 +31,7 @@ class DeficienciaController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "Lista de Deficiências";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
@@ -56,7 +56,7 @@ class DeficienciaController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGI";
-        $page_description = "Cadastro de Deficiência";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
@@ -103,7 +103,7 @@ class DeficienciaController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Deficência";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $deficiencias = $this->deficiencia->find($id);

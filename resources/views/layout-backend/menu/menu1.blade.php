@@ -2,11 +2,11 @@
 <ul class="sidebar-menu">
   <li class="header">OPÇÕES</li>
 
-  <li class="active"><a href="{!! route('h.index') !!}"><i class="glyphicon glyphicon-home"></i> <span>HOME</span></a></li>
+  <li class="active"><a href="{!! route('h.index') !!}"><i class="glyphicon glyphicon-home"></i> <span>PÁGINA INICIAL</span></a></li>
   
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-education"></i> <span>GERENCIAR CURSOS</span> <i class="fa fa-angle-left pull-right"></i></a>
-    <ul class="treeview-menu">                  
+    <ul class="treeview-menu">
       <li><a href="{!! route('cs.index') !!}"><i class="fa fa-angle-right"></i>Cursos</a></li>
       <li><a href="{!! route('m.index') !!}"><i class="fa fa-angle-right"></i>Módulos</a></li>
       <li><a href="{!! route('sc.index') !!}"><i class="fa fa-angle-right"></i>Status Curso</a></li>
@@ -28,10 +28,24 @@
       <li><a href="{!! route('ins.show') !!}"><i class="fa fa-angle-right"></i>Minhas Inscrições</a></li>
     </ul>
   </li>
+
   <li class="treeview">
-    <a href="#"><i class="ion ion-pie-graph"></i> <span>RELATÓRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <a href="#"><i class="ion ion-pie-graph"></i> <span>MOSTRAR RELATÓRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
-      <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Listagem</a></li>                  
+      <li class="treeview">
+        <a href="#"><i class="ion ion-map"></i>MOSTRAR REGIONAIS<i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+        
+          <li><a href="{!! route('o.index') !!}"><i class="fa fa-angle-right"></i>Norte I</a></li> 
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Norte II</a></li>
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Norte III</a></li>
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Centro Leste</a></li>
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Centro Oeste</a></li>
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Sudeste</a></li>
+          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Sudoeste</a></li>
+    
+        </ul>
+      </li>                 
     </ul>
   </li>
   
@@ -39,16 +53,16 @@
     <a href="#"><i class="glyphicon glyphicon-cog"></i> <span>CONFIGURAÇÕES</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
       <li class="treeview">
-        <a href="#"><i class="glyphicon glyphicon-unchecked"></i>ENTIDADE <i class="fa fa-angle-left pull-right"></i></a>
+        <a href="#"><i class="glyphicon glyphicon-tasks"></i>ENTIDADE <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
         
           <li><a href="{!! route('o.index') !!}"><i class="fa fa-angle-right"></i>Órgão</a></li> 
           <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Departamento</a></li>
-    
+            
         </ul>
       </li>
       <li class="treeview">
-        <a href="#"><i class="glyphicon glyphicon-road"></i>LOCALIDADE<i class="fa fa-angle-left pull-right"></i></a>
+        <a href="#"><i class="glyphicon glyphicon-map-marker"></i>LOCALIDADE<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
         
           <li><a href="{!! route('cid.index') !!}"><i class="fa fa-angle-right"></i>Cidade</a></li>
@@ -70,7 +84,7 @@
     
         </ul>
       </li>              
-      
+     
       <li class="treeview">
         <a href="#"><i class="glyphicon glyphicon-lock"></i>SEGURANÇA<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
@@ -84,7 +98,7 @@
   </li>
   
   <li>
-    <a href="{!! route('a.getLogout') !!}"><i class="glyphicon glyphicon-log-out"></i> <span>SAIR</span></a>
+    <a href="{!! route('a.getLogout') !!}"><i class="ion ion-power"></i> <span>SAIR</span></a>
   </li>
   
 </ul>
