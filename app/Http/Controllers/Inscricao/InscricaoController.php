@@ -47,12 +47,12 @@ class InscricaoController extends Controller
 
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
+        $inscricoes = $this->inscricao->all();
 
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
-        $users = $this->user->all();
+        $users = $this->user->orderBy('name', 'asc')->paginate(1000);
         $i = 0;
 
         if ($request->isMethod('post')){
@@ -194,7 +194,7 @@ class InscricaoController extends Controller
     {
         $inscricoes = $this->inscricao->find($id);
         $inscricoes->update($request->all());
-        //dd($request->all());
+        
         return redirect()->route('ins.index');
     }
 
@@ -226,7 +226,7 @@ class InscricaoController extends Controller
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Certificado";
 
-        $curso = $this->curso->all();
+        $cursos = $this->curso->all();
         $usuarios = Auth::user();
         $inscricoes = $this->inscricao->all();
 

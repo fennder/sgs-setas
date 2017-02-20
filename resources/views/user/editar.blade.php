@@ -273,7 +273,7 @@
       <div class="col-md-4">
       <small class="text-muted">Número de Identificação Social - NIS(PIS/PASEP)</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9">
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->

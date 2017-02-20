@@ -3,12 +3,14 @@
 @section('content')
 	
 	<h4>
-		Bem  
-    @if($usuarios->sexo == "Feminino")
-      vinda Senhora
-    @else
-      vindo Senhor
-    @endif 
+    <small>
+  		Bem  
+      @if($usuarios->sexo == "Feminino")
+        vinda Senhora
+      @else
+        vindo Senhor
+      @endif
+    </small>
     <b>{{ $usuarios->name or "Servidor"}}</b>, 
 		<small class="text-muted">você está na <b>{{$lotacao or "SETAS"}}</b>.</small>
 	</h4>

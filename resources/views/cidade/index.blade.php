@@ -28,7 +28,7 @@
                     <th>Cód. IBGE</th> 
                     <th>Estado</th>
                     <th>Região</th>               
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -42,8 +42,8 @@
                         <td>{{$cidade->estado->nome}}</td>
                         <td>{{$cidade->regiao->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('cid.edit', ['id' => $cidade->id_cidade])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('cid.destroy', ['id' => $cidade->id_cidade])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          <a href="{{route('cid.edit', ['id' => $cidade->id_cidade])}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('cid.destroy', ['id' => $cidade->id_cidade])}}" class="btn btn-primary" role="button">Excluir</a> -->
                         </td>
                       </tr>
                       

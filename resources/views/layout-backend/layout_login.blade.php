@@ -42,9 +42,9 @@
       </strong>
         <div class="box-header with-border">
           <div align="center">
-            <i class="ion ion-social-tux"></i>
-            <i class="ion ion-social-chrome"></i>
-            <i class="ion ion-social-github"></i>
+            <a href="https://www.ubuntu.com/"><i class="ion ion-social-tux"></i></a>
+            <a href="https://www.google.com/chrome/browser/desktop/index.html"><i class="ion ion-social-chrome"></i></a>
+            <a href="https://about.gitlab.com/"><i class="ion ion-social-github"></i></a>
           </div>
         </div>
         

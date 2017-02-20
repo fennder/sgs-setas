@@ -66,9 +66,9 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(15);
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(150);
             }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(10);
+                $users = $this->user->orderBy('name', 'asc')->paginate(150);
             }
 
             return view('user.lista',
@@ -253,6 +253,41 @@ class UsersController extends Controller
         User::destroy($id);
 
         return redirect()->back();
+    }
+
+    public function listadmin()
+    {
+        if(Auth::check()){
+
+            $page_title = "SGI";
+            $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Lista";
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(100);
+            }else{
+                $users = $this->user->orderBy('name', 'asc')->paginate(10);
+            }
+
+            return view('user.lista',
+                [
+                    'nav' => $nav,
+                    'users' => $users,
+                    'page_title'=>$page_title,
+                    'usuarios'=>$usuarios,
+                    'perfis'=>$perfis,
+                    'page_description'=>$page_description,
+                    'lotacao'=>$lotacao
+                ]);
+
+        }else{
+
+            return view('auth/login');
+
+        }     
     }
 
     public function sendEmailReminder(Request $request, $id)

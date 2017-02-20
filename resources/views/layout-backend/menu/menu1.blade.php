@@ -16,7 +16,9 @@
   <li class="treeview">
     <a href="#"><i class="glyphicon glyphicon-user"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
-      <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Listagem de Usuários</a></li>
+      <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Todos</a></li>
+      <!-- <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Gerentes</a></li>
+      <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Usuários</a></li> -->
     </ul>
   </li>
   
@@ -34,17 +36,17 @@
     <ul class="treeview-menu">
       <li class="treeview">
         <a href="#"><i class="ion ion-map"></i>MOSTRAR REGIONAIS<i class="fa fa-angle-left pull-right"></i></a>
-        <ul class="treeview-menu">
         
-          <li><a href="{!! route('o.index') !!}"><i class="fa fa-angle-right"></i>Norte I</a></li> 
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Norte II</a></li>
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Norte III</a></li>
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Centro Leste</a></li>
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Centro Oeste</a></li>
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Sudeste</a></li>
-          <li><a href="{!! route('dep.index') !!}"><i class="fa fa-angle-right"></i>Sudoeste</a></li>
-    
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-angle-right"></i>Norte I</a></li> 
+          <li><a href="#"><i class="fa fa-angle-right"></i>Norte II</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i>Norte III</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i>Centro Leste</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i>Centro Oeste</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i>Sudeste</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i>Sudoeste</a></li>
         </ul>
+        
       </li>                 
     </ul>
   </li>

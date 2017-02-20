@@ -26,7 +26,7 @@
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>                    
                     <th>Início</th>                    
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -39,13 +39,13 @@
 
                         @if($usuarios->id_perfil == 2)
                           <td class="text-center">
-                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                            <!-- <a href="{{route('ins.destroy', ['id'   => $inscricao->id_inscricao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-danger" role="button">Excluir</a> -->
                           </td>
                         @elseif($usuarios->id_perfil == 1)
                           <td class="text-center">
-                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                            <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-primary" role="button">Editar</a>
+                          <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-danger" role="button">Excluir</a>
                           </td>
                         @endif
 

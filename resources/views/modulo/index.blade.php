@@ -27,7 +27,7 @@
                     <th>Descrição</th>
                     <th>Conteúdo</th>
                     <th>Curso</th>
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -39,8 +39,8 @@
                         <td>{!!$modulo->conteudo!!}</td>
                         <td>{{$modulo->curso->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('m.edit', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('m.destroy', ['id' => $modulo->id_modulo])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('m.edit', ['id' => $modulo->id_modulo])}}" class="btn btn-primary" role="button">Editar</a>
+                          <a href="{{route('m.destroy', ['id' => $modulo->id_modulo])}}" class="btn btn-danger" role="button">Excluir</a>
                         </td>
                       </tr>
                     @endforeach

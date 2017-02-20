@@ -35,11 +35,13 @@
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
-                          <!-- <td align="center">
+                          @if($usuarios->id = 1)
+                          <td align="center">
                             <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
                               <img src="{{ asset('/imagens/pdf-printer.png') }}" width="55%">
                             </a>
-                          </td>  -->
+                          </td> 
+                          @endif
                         </tr>
                       @else
                         <tr class="danger">

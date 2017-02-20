@@ -39,8 +39,11 @@
                         <td>{{$estado->uf}}</td>
                         <td>{{$estado->status}}</td>
                         <!-- <td class="text-center">
-                          <a href="{{route('est.edit', ['id' => $estado->id_estado])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <a href="{{route('est.destroy', ['id' => $estado->id_estado])}}"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="{{route('est.edit', ['id' => $estado->id_estado])}}" class="btn btn-primary" role="button">Editar</a>
+                          <a href="{{route('est.destroy', ['id' => $estado->id_estado])}}" class="btn btn-danger" role="button">Excluir</a>
+
+                          <a href=""><i class="glyphicon glyphicon-edit"></i></a>
+                          <a href=""><i class="glyphicon glyphicon-trash"></i></a>
                         </td> -->
                       </tr>
                     @endforeach

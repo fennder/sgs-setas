@@ -25,7 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -35,8 +35,8 @@
                         <td>{{$funcao->id_funcao}}.</td>
                         <td>{{$funcao->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('f.edit', ['id' => $funcao->id_funcao])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('f.destroy', ['id' => $funcao->id_funcao])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          <a href="{{route('f.edit', ['id' => $funcao->id_funcao])}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('f.destroy', ['id' => $funcao->id_funcao])}}" class="btn btn-danger" role="button">Excluir</a> -->
                         </td>
                       </tr>
                     @endforeach
