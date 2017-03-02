@@ -51,6 +51,6 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Cadastrar Estado</button>
 </form><!-- Form -->
 @endsection

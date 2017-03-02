@@ -14,7 +14,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
-    // use EntrustUserTrait;
+    //use EntrustUserTrait;
 
     /**
      * The database table used by the model.w
@@ -67,7 +67,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'id_cargo',
         'id_funcao',
         'possui_deficiencia',
-        'id_deficiencia'
+        'id_deficiencia'/*,
+        'curso_id'*/
     ];
 
     /**
@@ -80,6 +81,11 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function cursos()
     {
         return $this->belongsToMany('Gerenciador\Inscricao\Curso'); //Tem vários Cursos
+    }
+
+    public function curso()
+    {
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'id_curso'); //Tem vários Cursos
     }
 
     public function estado()
@@ -136,4 +142,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsTo('Gerenciador\Inscricao\Deficiencia', 'id_deficiencia');//Tem apenas um deficiencia
     }
+
+    public function inscricao()
+    {
+        return $this->hasMany('Gerenciador\Inscricao\Inscricao', 'id_inscricao');
+    }
+
 }

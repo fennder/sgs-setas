@@ -14,45 +14,43 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
-              <table class="table table-bordered table-striped table-hover table-condensed">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Função</th>
-                    <th>Tipo de acesso</th>
-                    @if($usuarios->id_perfil == 1)
-                      <th style="width: 50px" colspan="2">Ação</th>
-                    @elseif($usuarios->id_perfil == 2)
-                      <th style="width: 50px" colspan="2">Ação</th>
-                    @endif
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($users as $user)
-                    @if($user->dados_atualizados == 1)
-                      <tr>
-                        <td>{{$user->id}}.</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->funcao->descricao}}</td>
-                        <td>{{$user->perfil->descricao}}</td>
-                        @if($usuarios->id_perfil == 1)
-                          <td class="text-center">
-                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a href="{{route('u.destroy', ['id' => $user->id])}}"><i class="glyphicon glyphicon-trash"></i></a>
-                          </td>
-                        @elseif($usuarios->id_perfil == 2)
-                          <td class="text-center">
-                            <a href="{{route('u.edit', ['id' => $user->id])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          </td>
-                        @endif
-                      </tr>
-                    @endif
-                  @endforeach  
-                </tbody>
-              </table>
+          <table class="table table-bordered table-striped table-hover table-condensed">
+            <thead>
+              <tr>              
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Função</th>
+                <th>Permissão</th>
+                <th style="width: 10%" colspan="2"><center>Ação</center></th>                   
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($users as $user)
+                
+                  @if($user->dados_atualizados == 1)
+                    <tr>     
+                      <td>{{$user->name}}</td>
+                      <td>{{$user->email}}</td>
+                      <td>{{$user->funcao->descricao}}</td>
+                      <td>{{$user->perfil->descricao}}</td>
+                      @if($usuarios->id_perfil == 1)
+                        <td class="text-center">
+                          <a href="{{route('u.edit', ['id' => $user->id])}}" class="btn btn-primary" role="button">Editar</a>
+                        </td>
+                        <td class="text-center">
+                          <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                        </td>
+                      @elseif($usuarios->id_perfil == 2)
+                        <td class="text-center">
+                          <a href="{{route('u.edit', ['id' => $user->id])}}" class="btn btn-primary" role="button">Editar</a>
+                        </td>
+                      @endif
+                    </tr>
+                  @endif
+                
+              @endforeach  
+            </tbody>
+          </table>
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">

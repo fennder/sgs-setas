@@ -3,6 +3,7 @@
 namespace Gerenciador\Inscricao;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Gerenciador\Inscricao\StatusCurso;
 use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Usuario;
@@ -44,6 +45,11 @@ class Curso extends Model
     public function statuscurso()
     {
     	return $this->belongsTo('Gerenciador\Inscricao\StatusCurso', 'id_status_curso'); //O curso tem apenas um status
+    }
+
+    public function inscricao()
+    {
+        return $this->hasMany('Gerenciador\Inscricao\Inscricao', 'id_inscricao');
     }
 
     public function modulo()

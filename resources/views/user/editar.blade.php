@@ -189,10 +189,9 @@
               @else
                 <option value="">- Selecione -</option>
               @endif
+
               @foreach ($cidades as $cidade)
-                
                   <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
-                
               @endforeach
           </select>
           
@@ -211,7 +210,7 @@
       <div class="input-group-addon">
         <i class="fa fa-phone"></i>
       </div>
-        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '(##) #####-####')" maxlength="12" class="form-control" placeholder="99 99999-9999"required>
+        <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '## #####-####')" maxlength="13" class="form-control" placeholder="99 99999-9999"required>
       </div><!-- Telefone Pessoal -->
     </div> <!-- Col 3-->
 
@@ -241,7 +240,7 @@
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
           </div>
-          <input onkeypress="mascara(this, '## #####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
+          <input onkeypress="mascara(this, '## ####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
         </div><!-- Telefone Trabalho -->
         
       </div><!-- Col 3 -->
@@ -272,9 +271,9 @@
     <div class="row">    
 
       <div class="col-md-4">
-      <small class="text-muted">Número de Identificação Social</small>
+      <small class="text-muted">Número de Identificação Social - NIS(PIS/PASEP)</small>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9999.999.9999-9">
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
@@ -292,7 +291,7 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Cargo</small>
+        <small class="text-muted">Cargo se Servidor Efetivo</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_cargo" id="id_cargo" required>
@@ -314,7 +313,7 @@
 
     <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="form-group has-feedback">
         <small class="text-muted">Vinculo</small>
           <div class="input-group">
@@ -332,20 +331,20 @@
           </div>
           
         </div><!-- Vinculo Institucional -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 5 -->
 
-      <div class="col-md-4" >
+      <div class="col-md-3" >
       <small class="text-muted">Data de Início do Serviço</small>
         <div class="form-group has-feedback">
           <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
           <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico}}" required>
           
         </div><!--Data Início de Serviço -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 3 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Função</small>
+        <small class="text-muted">Função se Comissionado</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_funcao" id="id_funcao" required>
@@ -367,9 +366,9 @@
 
     <div class="row">
 
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="form-group has-feedback">
-        <small class="text-muted">Órgão</small>
+        <small class="text-muted">Órgão em que está lotado</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_orgao" id="id_orgao" required>
@@ -385,9 +384,12 @@
           </div>
           
         </div><!-- Órgão -->
-      </div><!-- Col 8 -->
+      </div><!-- Col 12 -->
 
-      <div class="col-md-4">
+    </div><!-- Row -->
+    <div class="row">
+
+      <div class="col-md-12">
         <div class="form-group has-feedback">
         <small class="text-muted">Departamento</small>
           <div class="input-group">
@@ -405,7 +407,7 @@
           </div>
           
         </div><!-- Departamento -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 12 -->
 
     </div><!-- row -->
 
@@ -414,7 +416,7 @@
   @if($usuarios->dados_atualizados == 0)
     <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
   @endif
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Usuário</button>
 </form><!-- Form -->
 @endsection
 

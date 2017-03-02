@@ -30,7 +30,9 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Órgaos)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Órgao";
 
         return view('orgao.index',
@@ -39,7 +41,8 @@ class OrgaoController extends Controller
             'orgaos' => $orgaos,
             'usuarios' => $usuarios,
             'page_title'=>$page_title, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao
         ]);
     }
 
@@ -53,7 +56,9 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGS";
-        $page_description = "Cadastro de Órgão";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Órgão";
 
         return view('orgao.create',
@@ -61,7 +66,8 @@ class OrgaoController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -100,7 +106,9 @@ class OrgaoController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Órgão";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $orgaos = $this->orgao->find($id);
         
         return view('orgao.edit',
@@ -108,7 +116,8 @@ class OrgaoController extends Controller
             'nav' => $nav,
             'orgaos' => $orgaos, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 

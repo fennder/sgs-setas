@@ -31,7 +31,7 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Cadastrar Função</button>
 </form><!-- Form -->
 @endsection
 

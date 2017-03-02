@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{!! route('d.create')!!}">Novo</a>
+          <a class="btn btn-primary" href="{!! route('d.create')!!}">Incluir Deficiência</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
@@ -25,7 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>                    
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -35,8 +35,8 @@
                         <td>{{$deficiencia->id_deficiencia}}.</td>
                         <td>{{$deficiencia->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('d.edit', ['id' => $deficiencia->id_deficiencia])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('d.destroy', ['id' => $deficiencia->id_deficiencia])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          <a href="{{route('d.edit', ['id' => $deficiencia->id_deficiencia])}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('d.destroy', ['id' => $deficiencia->id_deficiencia])}}" class="btn btn-danger" role="button">Excluir</a> -->
                         </td>
                       </tr>
                     @endforeach

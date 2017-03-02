@@ -31,6 +31,6 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Cargo</button>
 </form><!-- Form -->
 @endsection

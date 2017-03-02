@@ -8,7 +8,7 @@
     <div class="box">
       <div class="box-header with-border" align="center">
         <div class="pull-left" align="center">
-          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="40%"></p>
+          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="50%"></p>
         </div>
         <p><h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2></p>
         <h3 class="box-title">Lista de Presença - Data: ____/__________/______ - Período: Manhã (__) ou Tarde (__)</h3>
@@ -20,36 +20,44 @@
             <i class="fa fa-times"></i></button>
         </div> -->
       </div>
+
       <div class="box-body">
-        <table class="table table-bordered table-striped table-hover table-condensed">
+        <table border="3" class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
               <th style="width: 10px">Nr.</th>
-              <th style="width: 110px">Regional</th>
-              <th style="width: 150px">Município</th>
-              <th style="width: 200px">Nome do Inscrito</th>
-              <th style="width: 80px">CPF</th>
-              <th style="width: 150px">Assinatura</th>                  
+              <th>Regional</th>
+              <th>Município</th>
+              <th>Nome do Inscrito</th>
+              <th>CPF</th>
+              <th style="width: 200px">Assinatura</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($inscritos as $inscrito) 
-              <tr>
-                <td>{{ $i=$i+1 }}.</td>
-                <td>{{ $inscrito->cidade->regiao->descricao }}</td>
-                <td>{{ $inscrito->cidade->nome }}</td>
-                <td>{{ $inscrito->name }}</td>
-                <td>{{ $inscrito->cpf }}</td>
-                <td></td>
-              </tr>
-            @endforeach   
+          
+            <!-- Trecho solucionado pelo Belo Programador Luan Gomes -->
+            @foreach($inscritos as $inscrito)
+              @foreach($inscricoes as $inscricao)
+                @if($inscrito->pivot->curso_id == $inscricao->curso_id && $inscrito->pivot->user_id == $inscricao->user_id)
+                  @if($inscricao->status == "Deferido")
+                    <tr>
+                      <td>{{ $i=$i+1 }}.</td>
+                      <td>{{ $inscrito->cidade->regiao->descricao }}</td>
+                      <td>{{ $inscrito->cidade->nome }}</td>
+                      <td>{{ $inscrito->name }}</td>
+                      <td>{{ $inscrito->cpf }}</td>
+                    </tr>
+                  @endif
+                @endif
+              @endforeach
+            @endforeach
+
           </tbody>
         </table>
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
-              
-            </ul>
+        </ul>
       </div><!-- /.box-footer-->
     </div><!-- /.box -->
   </div><!-- Col 8 -->

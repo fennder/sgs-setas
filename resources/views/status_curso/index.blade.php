@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{{ route('sc.create')}}">Novo</a>
+          <a class="btn btn-primary" href="{{ route('sc.create')}}">Incluir Status</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
@@ -25,7 +25,7 @@
                   <tr>
                     <th style="width: 10px">Id</th>
                     <th>Descrição</th>
-                    <th style="width: 40px" colspan="2">Ação</th>                    
+                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -35,8 +35,8 @@
                         <td>{{$scurso->id_status_curso}}.</td>
                         <td>{{$scurso->descricao}}</td>
                         <td class="text-center">
-                          <a href="{{route('sc.edit', ['id' => $scurso->id_status_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('sc.destroy', ['id' => $scurso->id_status_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                          <a href="{{route('sc.edit', ['id' => $scurso->id_status_curso])}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('sc.destroy', ['id' => $scurso->id_status_curso])}}" class="btn btn-danger" role="button">Excluir</a> -->
                         </td>
                       </tr>
                     @endforeach

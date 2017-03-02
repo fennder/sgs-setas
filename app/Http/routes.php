@@ -8,6 +8,8 @@ Route::get('', function()
 Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
 Route::get('get-departamentos/{idOrgao}','Inscricao\DepartamentoController@getDepartamento');
 
+
+
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
 	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário
@@ -179,14 +181,15 @@ Route::group(['as' => 'vi.', 'prefix' => 'vinculo_institucional'], function()
 
 Route::group(['as' => 'ins.', 'prefix' => 'inscricao'], function()
 {
-	Route::get('', 					['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
-	Route::post('', 				['as' => 'index', 	'uses' => 'Inscricao\InscricaoController@index']);
-	Route::get('novo', 				['as' => 'create', 	'uses' => 'Inscricao\InscricaoController@create']);
-	Route::post('inserir', 			['as' => 'store', 	'uses' => 'Inscricao\InscricaoController@store']);
-	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'Inscricao\InscricaoController@show']);
-	Route::get('editar/{id}',		['as' => 'edit', 	'uses' => 'Inscricao\InscricaoController@edit']);
-	Route::post('atualizar/{id}',	['as' => 'update', 	'uses' => 'Inscricao\InscricaoController@update']);
-	Route::get('remover/{id}',		['as' => 'destroy', 'uses' => 'Inscricao\InscricaoController@destroy']);
+	Route::get('', 					['as' => 'index', 		'uses' => 'Inscricao\InscricaoController@index']);
+	Route::post('', 				['as' => 'index', 		'uses' => 'Inscricao\InscricaoController@index']);
+	Route::get('novo', 				['as' => 'create', 		'uses' => 'Inscricao\InscricaoController@create']);
+	Route::post('inserir', 			['as' => 'store', 		'uses' => 'Inscricao\InscricaoController@store']);
+	Route::get('mostrar', 			['as' => 'show', 		'uses' => 'Inscricao\InscricaoController@show']);
+	Route::get('editar/{id}',		['as' => 'edit', 		'uses' => 'Inscricao\InscricaoController@edit']);
+	Route::post('atualizar/{id}',	['as' => 'update', 		'uses' => 'Inscricao\InscricaoController@update']);
+	Route::get('remover/{id}',		['as' => 'destroy', 	'uses' => 'Inscricao\InscricaoController@destroy']);
+	Route::get('certificado',		['as' => 'certificado', 'uses' => 'Inscricao\InscricaoController@certificado']);
 });
 
 Route::group(['as' => 'i.', 'prefix' => 'inscritos'], function()

@@ -11,7 +11,7 @@
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-  <h4><b><p class="login-box-msg">Digite aqui o se email</p></b></h4>
+  <h4><b><p class="login-box-msg">Digite aqui o seu email</p></b></h4>
     <form action="{!! route('p.postEmail') !!}" method="POST">
     {{ csrf_field() }}
     
