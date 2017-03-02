@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="box-body">
-          <a class="btn btn-primary" href="{{route('i.create')}}">Novo</a>
+          <a class="btn btn-primary" href="{{route('i.create')}}">Incluir Usuário</a>
           </br>
           </br>
               <table class="table table-bordered table-striped table-hover table-condensed">
@@ -29,7 +29,7 @@
                     <th>DATA NASCIMENTO</th>            
                     <th>EMAIL PESSOAL</th> 
                     <th>EMAIL TRABALHO</th>                      
-                    <th style="width: 40px" colspan="2">AÇÃO</th>                    
+                    <th style="width: 40px" colspan="2"><center>AÇÃO</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -45,9 +45,8 @@
                         <td>{{$usuario->email}}</td>
                         <td>{{$usuario->email_institucional}}</td>                 
                         <td class="text-center">
-                          <a href="{{route('i.edit'), ['id' => $usuario->id]}}"><i class="glyphicon glyphicon-edit"></i></a>
-                          <!-- <a href="{{route('i.destroy'), ['id' => $usuario->id]}}"><i class="glyphicon glyphicon-trash"></i></a> -->
-                        </td>
+                          <a href="{{route('i.edit'), ['id' => $usuario->id]}}" class="btn btn-primary" role="button">Editar</a>
+                          <!-- <a href="{{route('i.destroy'), ['id' => $usuario->id]}}" class="btn btn-danger" role="button">Excluir</a> -->
                       </tr>
                     @endforeach
                   @else

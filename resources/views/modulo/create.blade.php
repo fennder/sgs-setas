@@ -17,16 +17,7 @@
 
     <div class="row">
 
-      <div class="col-md-6">
-        <div class="form-group has-feedback" >
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Módulo do Curso" required>
-          </div>
-        </div><!-- Módulo -->
-      </div><!-- Col 6 -->
-
-      <div class="col-md-6">
+    <div class="col-md-12">
         <div class="form-group has-feedback">
           <select class="form-control" name="id_curso" id="id_curso" required>
             <option disabled selected> - Nome do Curso - </option>
@@ -36,7 +27,17 @@
           </select>
           <small class="text-muted">Curso</small>
         </div><!-- Curso -->
-      </div><!-- Col 6 -->
+      </div><!-- Col 12 -->
+
+      <div class="col-md-12">
+        <div class="form-group has-feedback" >
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Módulo do Curso" required>
+          </div>
+        </div><!-- Módulo -->
+      </div><!-- Col 12 -->
+
     </div><!-- row -->
   </div><!-- box Body -->
 </div><!-- box -->
@@ -62,7 +63,7 @@
   </div>
 </div><!--box -->
 
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Cadastrar Módulo</button>
 </form><!-- Form -->
 @endsection
 

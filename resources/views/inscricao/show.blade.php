@@ -17,16 +17,15 @@
           </div>
         </div>
         <div class="box-body">
-          <!-- <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a> -->
-
-          </br>
-          </br>
+         <!--  <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a> -->
+          
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th>Meus Cursos</th>                    
-                    <th>Período do curso</th>                                        
-                    <th>Status da inscrição</th>                                      
+                    <th style="width: 50%">Meus Cursos</th>                    
+                    <th>Período</th>
+                    <th>Status</th>
+                    <!-- <th style="width: 5%">Certificado</th>  -->                                   
                   </tr>
                 </thead>
                 <tbody>
@@ -35,7 +34,14 @@
                         <tr class="success">
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
-                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
+                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
+                          @if($usuarios->id = 1)
+                          <td align="center">
+                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="55%">
+                            </a>
+                          </td> 
+                          @endif
                         </tr>
                       @else
                         <tr class="danger">
@@ -49,10 +55,13 @@
               </table>
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
+              <ul class="pagination pagination-sm no-margin pull-right">
+                <li>{!! $inscricoes->render() !!}</li>
+              </ul>
+        </div>
+        <div class="box-footer clearfix">
         </div><!-- /.box-footer-->
       </div><!-- /.box -->
     </div><!-- Col 6 -->
   </div> <!-- Row -->
 @endsection
-
-

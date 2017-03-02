@@ -21,7 +21,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->nome}}" name="nome" id="nome" required>
+          <input disabled type="text" class="form-control" value="{{$cidades->nome}}" name="nome" id="nome" required>
         </div>
       </div><!-- Nome Completo -->
     </div><!-- Col 6 -->
@@ -30,7 +30,7 @@
       <div class="form-group has-feedback" >
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <input type="text" class="form-control" value="{{$cidades->cod_ibge}}" name="cod_ibge" id="cod_ibge" required>
+          <input disabled type="text" class="form-control" value="{{$cidades->cod_ibge}}" name="cod_ibge" id="cod_ibge" required>
         </div>
       </div><!-- Código do IBGE -->
     </div><!-- Col 6 -->
@@ -74,6 +74,6 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Cidade</button>
 </form><!-- Form -->
 @endsection

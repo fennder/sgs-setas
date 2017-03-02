@@ -17,18 +17,18 @@
         </div>
       </div>
       <div class="box-body">
-        <a class="btn btn-primary" href="{{ route('cs.create')}}">Novo</a>
+        <a class="btn btn-primary" href="{{ route('cs.create')}}">Incluir Curso</a>
         </br>
         </br>
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
               <th style="width: 10px">Id</th>
-              <th style="width: 500px">Descrição</th>
-              <th style="width: 90px">Data Início</th>
-              <th style="width: 120px">Data Término</th>
+              <th>Descrição</th>
+              <th>Início</th>
+              <th>Término</th>
               <th>Status</th>
-              <th class="text-center" style="width: 100px" colspan="2">Ação</th>                   
+              <th align="text-center" class="text-center" style="width: 120px" colspan="3">Ação</th>                   
             </tr>
           </thead>
           <tbody>
@@ -42,9 +42,15 @@
                     <td>{{$curso->data_termino}}</td>
                     <td>{{$curso->statuscurso->descricao}}</td>
                     <td class="text-center">
-                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
-                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}" class="btn btn-success" role="button">Lista</a>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                     </td>
                   </tr>            
                 @elseif($curso->id_status_curso == 2)
@@ -55,9 +61,15 @@
                     <td>{{$curso->data_termino}}</td>
                     <td>{{$curso->statuscurso->descricao}}</td>
                     <td class="text-center">
-                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
-                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}" class="btn btn-success" role="button">Lista</a>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-danger" role="button">Excluir</a> -->
                     </td>
                   </tr>        
                 @else
@@ -68,9 +80,15 @@
                     <td>{{$curso->data_termino}}</td>
                     <td>{{$curso->statuscurso->descricao}}</td>
                     <td class="text-center">
-                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-th-list"></i></a> 
-                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-edit"></i></a>
-                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}"><i class="glyphicon glyphicon-trash"></i></a> -->
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}" class="btn btn-success" role="button">Lista</a>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-danger" role="button">Excluir</a> -->
                     </td>
                   </tr>        
                 @endif

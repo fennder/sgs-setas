@@ -17,17 +17,21 @@
 
   <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-12">
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="user_id" id="user_id" required>
-          <option  value="{{$usuarios->id}}">{{$usuarios->name}}</option>
+          <option value="{{$usuarios->id}}">{{$usuarios->name}}</option>
         </select>
 
       </div><!-- Curso -->
-    </div><!-- Col 3 -->
+    </div><!-- Col 12 -->
 
-    <div class="col-md-9">
+  </div><!-- row -->
+
+  <div class="row">
+
+    <div class="col-md-12">
         <small class="text-muted">Curso</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="curso_id" id="curso_id" required>
@@ -35,14 +39,16 @@
             @foreach($cursos as $curso)
               @if(!($usuarios->cursos->find($curso->id_curso) != null))
                 @if($curso->statuscurso->id_status_curso == 1)
-                  <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} -( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{$curso->statuscurso->descricao}}</option>
+                  <option value="{{ $curso->id_curso }}">
+                    {{ $curso->descricao }} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{$curso->statuscurso->descricao}}
+                  </option>
                 @endif
               @endif
             @endforeach
         </select>
 
       </div><!-- Curso -->
-    </div><!-- Col 9 -->
+    </div><!-- Col 12 -->
 
   </div><!-- row -->
 
@@ -50,7 +56,7 @@
 </div>
   <input type="hidden" class="form-control" name="status" value="Deferido" id="status">
   <input type="hidden" class="form-control" name="motivo" value="Sem alteração" id="status">
-  <button type="submit" class="btn btn-primary btn-large">Cadastrar</button>
+  <button type="submit" class="btn btn-primary btn-large">Fazer Inscrição</button>
 </form><!-- Form -->
 @endsection
 

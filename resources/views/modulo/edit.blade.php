@@ -17,17 +17,7 @@
 
     <div class="row">
 
-      <div class="col-md-6">
-        <div class="form-group has-feedback" >
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao" required>
-          </div>
-          <small class="text-muted">Nome do Modulo</small>
-        </div><!-- Nome do Módulo -->
-      </div><!-- Col 6 -->
-
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="form-group has-feedback">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
@@ -42,7 +32,18 @@
           </div><!-- Input -->
           <small class="text-muted">Nome do Curso</small>
         </div><!-- Form -->
-      </div><!-- Col 6 -->
+      </div><!-- Col 12 -->
+
+      <div class="col-md-12">
+        <div class="form-group has-feedback" >
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <input type="text" class="form-control" value="{{ $modulos->descricao }}" name="descricao" id="descricao" required>
+          </div>
+          <small class="text-muted">Nome do Modulo</small>
+        </div><!-- Nome do Módulo -->
+      </div><!-- Col 12 -->
+
     </div><!-- row -->    
   </div>
 </div>
@@ -64,11 +65,11 @@
   <!-- /.box-header -->
   <div class="box-body pad">
     
-      <textarea value="{{ $modulos->conteudo }}" name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+      <textarea value="{{ $modulos->conteudo }}" name="conteudo" id="conteudo" onKeyPress class="textarea" style="width: 100%; height: 290px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $modulos->conteudo }}</textarea>
     
   </div>
 </div><!--box -->
 
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Módulo</button>
 </form><!-- Form -->
 @endsection

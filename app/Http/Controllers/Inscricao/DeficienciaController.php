@@ -31,7 +31,8 @@ class DeficienciaController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Deficiências)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
         return view('deficiencia.index',
@@ -40,7 +41,8 @@ class DeficienciaController extends Controller
             'deficiencias' => $deficiencias, 
             'page_title'=>$page_title, 
             'usuarios'=>$usuarios, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao
         ]);
     }
 
@@ -54,7 +56,8 @@ class DeficienciaController extends Controller
         $usuarios = Auth::user();
 
         $page_title = "SGI";
-        $page_description = "(Cadastro de Deficiência)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Deficiência";
 
         return view('deficiencia.create',
@@ -62,7 +65,8 @@ class DeficienciaController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 
@@ -99,7 +103,9 @@ class DeficienciaController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Deficência";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $deficiencias = $this->deficiencia->find($id);
 
         $usuarios = Auth::user();
@@ -109,7 +115,8 @@ class DeficienciaController extends Controller
             'nav' => $nav,
             'deficiencias' => $deficiencias, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 

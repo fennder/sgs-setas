@@ -40,7 +40,7 @@
     <div class="col-md-4">
     <small class="text-muted">CPF</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" required>
+        <input disabled type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
@@ -48,7 +48,7 @@
     <div class="col-md-3" >
     <small class="text-muted">Data de Nascimento</small>
       <div class="form-group has-feedback">
-        <input disabled type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento" required>
+        <input type="date" class="form-control" value="{{ $usuarios->data_nascimento }}" name="data_nascimento" id="data_nascimento" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         
       </div><!--Data Nascimento -->
@@ -71,7 +71,7 @@
     <div class="col-md-3">
     <small class="text-muted">Identidade</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}" required>
+        <input type="text" class="form-control" name="rg" id="rg" value="{{ $usuarios->rg }}" onkeypress="mascara(this, '############-#')" maxlength="14" placeholder="999999999999-9" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Identidade -->
     </div><!-- Col 4 -->
@@ -79,7 +79,7 @@
      <div class="col-md-3" > 
      <small class="text-muted">Órgão Emissor</small>
       <div class="form-group has-feedback">
-        <input disabled type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor" required>
+        <input type="text" class="form-control" value="{{ $usuarios->orgao_emissor }}" name="orgao_emissor" id="orgao_emissor" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- Órgão Emissor -->
     </div><!-- Col 3 -->
@@ -252,9 +252,9 @@
     <div class="row">    
 
       <div class="col-md-4">
-      <small class="text-muted">Número de Identificação Social</small>
+      <small class="text-muted">Número de Identificação Social - NIS(PIS/PASEP)</small>
         <div class="form-group has-feedback">
-          <input disabled type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" required>
+          <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
           
         </div><!-- NIS -->
@@ -272,7 +272,7 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Cargo</small>
+        <small class="text-muted">Cargo se Servidor Efetivo</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_cargo" id="id_cargo" required>
@@ -290,7 +290,7 @@
 
     <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="form-group has-feedback">
         <small class="text-muted">Vinculo</small>
           <div class="input-group">
@@ -304,20 +304,20 @@
           </div>
           
         </div><!-- Vinculo Institucional -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 5 -->
 
-      <div class="col-md-4" >
+      <div class="col-md-3" >
       <small class="text-muted">Data de Início do Serviço</small>
         <div class="form-group has-feedback">
           <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-          <input disabled type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico}}" required>
+          <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico}}" required>
           
         </div><!--Data Início de Serviço -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 3 -->
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-        <small class="text-muted">Função</small>
+        <small class="text-muted">Função se Comissionado</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_funcao" id="id_funcao" required>
@@ -335,9 +335,9 @@
 
     <div class="row">
 
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="form-group has-feedback">
-        <small class="text-muted">Órgão</small>
+        <small class="text-muted">Órgão em que está lotado</small>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-clone"></i></span>
             <select class="form-control" name="id_orgao" id="id_orgao">
@@ -349,9 +349,12 @@
           </div>
           
         </div><!-- Órgão -->
-      </div><!-- Col 8 -->
+      </div><!-- Col 12 -->
 
-      <div class="col-md-4">
+    </div><!-- Row -->
+    <div class="row">
+
+      <div class="col-md-12">
         <div class="form-group has-feedback">
         <small class="text-muted">Departamento</small>
           <div class="input-group">
@@ -365,7 +368,7 @@
           </div>
           
         </div><!-- Departamento -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 12 -->
 
     </div><!-- row -->
 
@@ -411,7 +414,7 @@
   @if($usuarios->dados_atualizados == 0)
     <input type="hidden" class="form-control" name="id_perfil" value="3" id="id_perfil">
   @endif
-  <button type="submit" class="btn btn-primary btn-large">Atualizar</button>
+  <button type="submit" class="btn btn-primary btn-large">Atualizar Usuário</button>
 </form><!-- Form -->
 @endsection
 

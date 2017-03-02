@@ -9,6 +9,7 @@ use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Gerenciador\User;
+use Vsmoraes\Pdf\Pdf;
 Use Session;
 use Auth;
 use DB;
@@ -19,13 +20,15 @@ class InscricaoController extends Controller
     private $inscricao;
     private $curso;
     private $user;
+    private $pdf;
 
-    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $user)
+    public function __construct(Cidade $cidade, Inscricao $inscricao, Curso $curso, User $user, Pdf $pdf)
     {
         $this->inscricao = $inscricao;
+        $this->cidade = $cidade;
         $this->curso = $curso;
         $this->user = $user;
-        $this->cidade = $cidade;
+        $this->pdf = $pdf;
         
         $this->middleware('auth');
     }
@@ -39,21 +42,22 @@ class InscricaoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Lista de Inscrições)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->orderBy('user_id', 'asc')->paginate(1000);
+        $inscricoes = $this->inscricao->all();
 
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
-        $users = $this->user->all();
+        $users = $this->user->orderBy('name', 'asc')->paginate(1000);
         $i = 0;
 
         if ($request->isMethod('post')){
 
             $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
-            //$inscricoes = $inscricao->usuarios->orderBy('name', 'asc');
 
         }
 
@@ -62,6 +66,7 @@ class InscricaoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
             'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
             'cidades' => $cidades,
@@ -80,7 +85,9 @@ class InscricaoController extends Controller
     public function create()
     {
         $page_title = "SGI";
-        $page_description = "(Cadastro de Inscrições)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
@@ -92,6 +99,7 @@ class InscricaoController extends Controller
             'nav' => $nav,
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'cursos' => $cursos,
             'usuarios' => $usuarios
             
@@ -122,18 +130,21 @@ class InscricaoController extends Controller
     public function show()
     {
         $page_title = "SGI";
-        $page_description = "Meus Cursos";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $nav = "Meus Cursos";
 
         $usuarios = Auth::user();
         $cursos = $usuarios->cursos->all();
-        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(25);
+        $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(10000);
 
         return view('inscricao.show',
         [
             'nav' => $nav,
             'page_title'=> $page_title,
             'page_description'=> $page_description,
+            'lotacao'=> $lotacao,
             'usuarios'=> $usuarios,
             'inscricoes'=> $inscricoes,
             'cursos' => $cursos
@@ -149,8 +160,9 @@ class InscricaoController extends Controller
     public function edit($id)
     {
         $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Editar";
-        $page_description = "Editar Inscrição";
         
         $inscricoes = $this->inscricao->find($id);
         $usuarios = Auth::user();
@@ -161,6 +173,7 @@ class InscricaoController extends Controller
         [
             'page_title' => $page_title,
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'nav' => $nav,
             'inscricoes' => $inscricoes, 
             'usuarios' => $usuarios,
@@ -181,7 +194,7 @@ class InscricaoController extends Controller
     {
         $inscricoes = $this->inscricao->find($id);
         $inscricoes->update($request->all());
-        //dd($request->all());
+        
         return redirect()->route('ins.index');
     }
 
@@ -196,5 +209,40 @@ class InscricaoController extends Controller
         $this->inscricao->destroy($id);
 
         return redirect()->back();
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function certificado(Request $request)
+    {
+
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $nav = "Certificado";
+
+        $cursos = $this->curso->all();
+        $usuarios = Auth::user();
+        $inscricoes = $this->inscricao->all();
+
+        return view('pdf.certificado',
+        [
+            'page_description' => $page_description,
+            'page_title'  => $page_title,
+            'lotacao' => $lotacao,
+            'nav' => $nav,
+            'inscricoes' => $inscricoes,
+            'usuarios' => $usuarios,
+            'curso' => $curso
+        ]);
+
+        /*$html = view('pdf.certificado')->render();
+
+        return $this->pdf->load($html)->show(); */
     }
 }

@@ -60,14 +60,15 @@ class UsersController extends Controller
 
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
             $nav = "Lista";
             
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(15);
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(150);
             }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(15);
+                $users = $this->user->orderBy('name', 'asc')->paginate(150);
             }
 
             return view('user.lista',
@@ -77,7 +78,8 @@ class UsersController extends Controller
                     'page_title'=>$page_title,
                     'usuarios'=>$usuarios,
                     'perfis'=>$perfis,
-                    'page_description'=>$page_description
+                    'page_description'=>$page_description,
+                    'lotacao'=>$lotacao
                 ]);
 
         }else{
@@ -121,6 +123,7 @@ class UsersController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrição";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Meus dados";
 
         $usuarios = Auth::user();
@@ -159,9 +162,16 @@ class UsersController extends Controller
     public function edit($id)
     {
 
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $nav = "Meus dados";
+
         $verifica = Auth::user();
 
         if($verifica->id_perfil == 1){
+
+            $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->all();
@@ -186,10 +196,15 @@ class UsersController extends Controller
                 'cargos' => $cargos,
                 'funcoes' => $funcoes,
                 'orgaos' => $orgaos,
+                'verifica' => $verifica,
+                'page_description' => $page_description,
+                'nav' => $nav,
                 'perfis' => $perfis
             ]);
     
         }else{
+
+            $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->all();
@@ -238,6 +253,41 @@ class UsersController extends Controller
         User::destroy($id);
 
         return redirect()->back();
+    }
+
+    public function listadmin()
+    {
+        if(Auth::check()){
+
+            $page_title = "SGI";
+            $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Lista";
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(100);
+            }else{
+                $users = $this->user->orderBy('name', 'asc')->paginate(10);
+            }
+
+            return view('user.lista',
+                [
+                    'nav' => $nav,
+                    'users' => $users,
+                    'page_title'=>$page_title,
+                    'usuarios'=>$usuarios,
+                    'perfis'=>$perfis,
+                    'page_description'=>$page_description,
+                    'lotacao'=>$lotacao
+                ]);
+
+        }else{
+
+            return view('auth/login');
+
+        }     
     }
 
     public function sendEmailReminder(Request $request, $id)

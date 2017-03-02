@@ -56,10 +56,12 @@ class UsuarioController extends Controller
     {
             
         $page_title = "SGI";
-        $page_description = "(Cadastro de Usuários)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Lista de usuários";
 
-        $usuarios = $this->usuario->paginate(15);
+        $usuarios = $this->usuario->paginate(10);
         $estado_rgs = $this->estado_rg->all();
         $vinculos =$this->vinculo->all();
 
@@ -69,6 +71,7 @@ class UsuarioController extends Controller
             'page_title'=>$page_title, 
             'page_description'=>$page_description,
             'usuarios' => $usuarios, 
+            'lotacao' => $lotacao,
             'estado_rgs' => $estado_rgs,
             'vinculos' => $vinculos
         ]);
@@ -93,7 +96,9 @@ class UsuarioController extends Controller
         $funcoes =$this->funcao->all();
         
         $page_title = "SGI";
-        $page_description = "(Cadastro de Usuários)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        
         $nav = "Cadastro de usuários";
 
         return view('inscrito.create',
@@ -105,6 +110,7 @@ class UsuarioController extends Controller
             'estados' => $estados, 
             'cidades' => $cidades,
             'usuarios' => $usuarios,
+            'lotacao' => $lotacao,
             'vinculos' => $vinculos,
             'orgaos' => $orgaos,
             'departamentos' => $departamentos,
@@ -193,6 +199,7 @@ class UsuarioController extends Controller
             'estados' => $estados, 
             'cidades' => $cidades,
             'vinculos' => $vinculos,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios,
             'orgaos' => $orgaos,
             'departamentos' => $departamentos,
@@ -230,5 +237,35 @@ class UsuarioController extends Controller
         $this->usuario->destroy($id);
 
         return redirect()->back();
+    }
+
+    /**
+     * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function listadmin()
+    {
+            
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
+        $nav = "Lista de usuários";
+
+        $usuarios = $this->usuario->paginate(15);
+        $estado_rgs = $this->estado_rg->all();
+        $vinculos =$this->vinculo->all();
+
+        return view('inscrito.index',
+        [
+            'nav' => $nav,
+            'page_title'=>$page_title, 
+            'page_description'=>$page_description,
+            'usuarios' => $usuarios, 
+            'lotacao' => $lotacao,
+            'estado_rgs' => $estado_rgs,
+            'vinculos' => $vinculos
+        ]);
     }
 }

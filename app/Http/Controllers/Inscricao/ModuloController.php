@@ -34,7 +34,9 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
     
         $page_title = "SGI";
-        $page_description = "(Lista de Módulos)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Módulos";
 
         return view('modulo.index',
@@ -43,7 +45,8 @@ class ModuloController extends Controller
             'modulos' => $modulos, 
             'page_title'=>$page_title, 
             'usuarios'=>$usuarios, 
-            'page_description'=>$page_description
+            'page_description'=>$page_description,
+            'lotacao'=>$lotacao
         ]);
     }
 
@@ -56,8 +59,10 @@ class ModuloController extends Controller
     {
         $usuarios = Auth::user();
 
-        $page_title = "SGS";
-        $page_description = "Cadastro de Modulos";
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Modulos";
 
         $cursos = $this->curso->all();
@@ -67,6 +72,7 @@ class ModuloController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios,
             'cursos' => $cursos
         ]);
@@ -107,7 +113,8 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
-        $page_description = "Editar Módulo";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
         
         $modulos = $this->modulo->find($id);
         $cursos = $this->curso->all();
@@ -118,7 +125,8 @@ class ModuloController extends Controller
             'cursos' => $cursos,
             'modulos' => $modulos, 
             'usuarios' => $usuarios, 
-            'page_description' => $page_description
+            'page_description' => $page_description,
+            'lotacao' => $lotacao
         ]);
     }
 

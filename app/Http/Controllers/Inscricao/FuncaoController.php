@@ -27,7 +27,9 @@ class FuncaoController extends Controller
     {
 
         $page_title = "SGI";
-        $page_description = "(Lista de Funções)";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Função";
 
         $funcoes = $this->funcao->paginate(25);
@@ -38,6 +40,7 @@ class FuncaoController extends Controller
             'nav' => $nav, 
             'page_title'=>$page_title,  
             'page_description'=>$page_description,
+            'lotacao'=>$lotacao,
             'funcoes' => $funcoes,
             'usuarios'=>$usuarios
         ]);
@@ -50,8 +53,10 @@ class FuncaoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGS";
-        $page_description = "Cadastro de Função";
+        $page_title = "SGI";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
+
         $nav = "Função";
 
         $usuarios = Auth::user();
@@ -61,6 +66,7 @@ class FuncaoController extends Controller
             'nav' => $nav, 
             'page_title' => $page_title, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios
         ]);
     }
@@ -98,7 +104,8 @@ class FuncaoController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
-        $page_description = "Editar Função";
+        $page_description = "Sistema de Gerenciamento de Inscrições";
+        $lotacao = "Secretaria do Trabalho e Assistência Social";
 
         $funcoes = $this->funcao->find($id);
         $usuarios = Auth::user();
@@ -108,6 +115,7 @@ class FuncaoController extends Controller
             'nav' => $nav,
             'funcoes' => $funcoes, 
             'page_description' => $page_description,
+            'lotacao' => $lotacao,
             'usuarios' => $usuarios
         ]);
     }

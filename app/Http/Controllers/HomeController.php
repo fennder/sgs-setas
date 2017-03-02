@@ -8,12 +8,15 @@ use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Inscricao\Escolaridade;
+use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Inscricao\Funcao;
 use Gerenciador\Inscricao\Departamento;
 use Gerenciador\Inscricao\Orgao;
 use Gerenciador\Inscricao\Cargo;
 use Gerenciador\Inscricao\Usuario;
+use Gerenciador\Inscricao\Curso;
+use Gerenciador\Inscricao\Regiao;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
@@ -33,19 +36,25 @@ class HomeController extends Controller
     private $departamento;
     private $cargo;
     private $funcao;
+    private $regiao;
 
-    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
+    public function __construct(
+        Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso, Inscricao $inscricao, Regiao $regiao
+        )
     {
         $this->usuario = $usuario;
         $this->estado = $estado;
         $this->estado_rg = $estado_rg;
         $this->cidade = $cidade;
+        $this->inscricao = $inscricao;
         $this->escolaridade = $escolaridade;
         $this->vinculo = $vinculo;
         $this->orgao = $orgao;
         $this->departamento = $departamento;
         $this->cargo = $cargo;
         $this->funcao = $funcao;
+        $this->curso = $curso;
+        $this->regiao = $regiao;
         
         $this->middleware('auth');
     }
@@ -76,6 +85,7 @@ class HomeController extends Controller
                 $departamentos = $this->departamento->all();
                 $cargos = $this->cargo->all();
                 $funcoes = $this->funcao->all();
+                $regionais = $this->regiao->all();
 
                
                 return view('user.editar',
@@ -90,22 +100,48 @@ class HomeController extends Controller
                     'departamentos' => $departamentos,
                     'cargos' => $cargos,
                     'funcoes' => $funcoes,
-                    'estado_rgs' => $estado_rgs
+                    'estado_rgs' => $estado_rgs,
                 ]);
 
             }else{
 
                 $page_title = "SGI";
-                $page_description = "Sistema de Gerenciamento de Inscrições";
-
+                $page_description = "Página Inicial";
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
+
+                $cursos = $this->curso->all();
+                for($i=0; $i < count($cursos); $i++){
+                    $cont_curso = $i+1;
+                }
+
+                $users = $this->usuario->all();
+                for($i=0; $i < count($users); $i++){
+                    $cont_user = $i+1;
+                }
+
+                $inscricoes = $this->inscricao->all();
+                for($i=0; $i < count($inscricoes); $i++){
+                    $cont_ins = $i+1;
+                }
+
+                $regionais = $this->regiao->all();
+                
+                for($i=0; $i < count($regionais); $i++){
+                    $cont_reg = $i+1;
+                }
 
                 return view('home', 
                     [
+                        'page_description' => $page_description,
+                        'page_title' => $page_title, 
+                        'lotacao' => $lotacao, 
+                        'cont_curso' => $cont_curso,
+                        'cont_user' => $cont_user,
+                        'cont_ins' => $cont_ins,
+                        'cont_reg' => $cont_reg,
                         'usuarios' => $usuario, 
-                        'lotacao'=>$lotacao, 
-                        'page_title'=>$page_title, 
-                        'page_description'=>$page_description
+                        'cursos' => $cursos,
+                        'regionais' => $regionais
                     ]);
 
             }
