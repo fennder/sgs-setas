@@ -38,7 +38,7 @@
                           <a href="{{route('u.edit', ['id' => $user->id])}}" class="btn btn-primary" role="button">Editar</a>
                         </td>
                         <td class="text-center">
-                          <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-danger" role="button">Excluir</a>
+                          <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                         </td>
                       @elseif($usuarios->id_perfil == 2)
                         <td class="text-center">

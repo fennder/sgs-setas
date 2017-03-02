@@ -44,12 +44,12 @@
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
-              <th style="width: 10px">Nr.</th>
-              <th>Região</th>
-              <th>Município</th>
-              <th>Inscrito</th>
-              <th style="width: 15%">Contato</th>
-              <th>Função</th>
+              <th style="width: 3%">Nr.</th>
+              <th style="width: 10%">Região</th>
+              <th style="width: 22%">Município</th>
+              <th style="width: 28%">Inscrito</th>
+              <th style="width: 11%">Contato</th>
+              <th style="width: 50%">Função</th>
               <!-- <th>Status</th> -->
               <th colspan="2"><center>Ação</center></th>
             </tr>
@@ -73,7 +73,7 @@
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
                   </td>
                   <!-- <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-danger" role="button">Excluir</a>
+                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                   </td> -->
 
                 @elseif($usuarios->id_perfil == 1)
@@ -82,7 +82,7 @@
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
                   </td>
                   <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-danger" role="button">Excluir</a>
+                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                   </td>
 
                 @endif
@@ -104,7 +104,7 @@
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
                   </td>
                   <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-danger" role="button">Excluir</a>
+                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                   </td>
 
                   @elseif($usuarios->id_perfil == 1)
@@ -113,7 +113,7 @@
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
                   </td>
                   <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-danger" role="button">Excluir</a>
+                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                   </td>
 
                   @endif

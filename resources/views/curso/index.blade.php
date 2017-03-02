@@ -50,7 +50,7 @@
                     </td>
 
                     <td class="text-center">
-                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-danger" role="button">Excluir</a>
+                      <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                     </td>
                   </tr>            
                 @elseif($curso->id_status_curso == 2)

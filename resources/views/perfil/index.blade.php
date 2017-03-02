@@ -23,9 +23,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th>Perfil</th>
-                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
+                    <th style="width: 3%">Id</th>
+                    <th style="width: 100%">Perfil</th>
+                    <th colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -33,11 +33,13 @@
                     @foreach($perfis as $perfil)
                       <tr>
                         <td>{{$perfil->id_perfil}}.</td>
-                        <td>{{$perfil->descricao}}</td>                        
+                        <td>{{$perfil->descricao}}</td>
                           <td class="text-center">
                             <a href="{{route('pf.edit', ['id' => $perfil->id_perfil])}}" class="btn btn-primary" role="button">Editar</a>
-                            <!-- <a href="{{route('pf.destroy', ['id' => $perfil->id_perfil])}}" class="btn btn-danger" role="button">Excluir</a> -->
                           </td>
+                          <!-- <td class="text-center">
+                            <a href="{{route('pf.destroy', ['id' => $perfil->id_perfil])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                          </td> -->
                       </tr>
                     @endforeach
                   @else

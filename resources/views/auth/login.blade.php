@@ -3,10 +3,10 @@
 @section('content')
 <div class="login-box">
 <div class="login-logo">
-  <img src="{{ asset('/imagens/logo_estado-150x150.png') }}">
+  <img src="{{ asset('/imagens/imagem_testa.png') }}" width="100%">
 </div>
   <div class="login-logo">
-    <a href="{!! route('a.getLogin') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
+    <a href="{!! route('a.getLogin') !!}"><b>SGS</b></a>
   </div>
 
   <!-- ERROS -->

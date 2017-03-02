@@ -4,6 +4,7 @@
 
   <div class="row">
     <div class="col-md-12">
+
 <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -23,10 +24,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th>Descrição</th>                    
-                    <th>Início</th>                    
-                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
+                    <th style="width: 3%">Id</th>
+                    <th style="width: 100%" >Descrição</th>                                       
+                    <th colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -35,17 +35,20 @@
                       <tr>
                         <td>{{$vinculo->id_vinculo_institucional}}.</td>
                         <td>{{$vinculo->descricao}}</td>
-                        <td>{{$vinculo->inicio_vinculo}}</td>
 
                         @if($usuarios->id_perfil == 2)
                           <td class="text-center">
                             <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-primary" role="button">Editar</a>
-                          <!-- <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-danger" role="button">Excluir</a> -->
                           </td>
+                          <td class="text-center">
+                          <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                        </td>
                         @elseif($usuarios->id_perfil == 1)
                           <td class="text-center">
                             <a href="{{route('vi.edit', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-primary" role="button">Editar</a>
-                          <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-danger" role="button">Excluir</a>
+                          </td>
+                          <td class="text-center">
+                            <a href="{{route('vi.destroy', ['id' => $vinculo->id_vinculo_institucional])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
                           </td>
                         @endif
 

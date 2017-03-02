@@ -32,7 +32,7 @@ class VinculoInstitucionalController extends Controller
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Vínculos Institucionais";
 
-        $vinculos = $this->vinculo->paginate(4);
+        $vinculos = $this->vinculo->paginate(10);
         $usuarios = Auth::user();
 
         return view('vinculo.index',

@@ -18,13 +18,12 @@
 
     <div class="col-md-2" >
       <div class="pull-right hidden-xs">
-        <a href="https://www.ubuntu.com/"><i class="ion ion-social-tux"></i></a>
-            <a href="https://www.google.com/chrome/browser/desktop/index.html"><i class="ion ion-social-chrome"></i></a>
-            <a href="https://about.gitlab.com/"><i class="ion ion-social-github"></i></a>
+        <a href="#"><i class="ion ion-social-tux"></i></a>
+            <a href="#"><i class="ion ion-social-chrome"></i></a>
+            <a href="#"><i class="ion ion-social-github"></i></a>
         Versão 1.0
       </div>
       <!-- Padrão alinhado a esquerda -->
-      <p><i class="invisible">Edir Pereira dos Santos</i></p>
     </div><!-- Col 2 -->
 
   </div><!-- row -->
