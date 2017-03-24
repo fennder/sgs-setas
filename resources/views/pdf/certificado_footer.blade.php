@@ -20,8 +20,7 @@
       <div class="pull-right hidden-xs">
         <i class="ion ion-social-tux"></i>
         <i class="ion ion-social-chrome"></i>
-        <i class="ion ion-social-github"></i>
-        Versão 1.0
+        <i class="ion ion-social-github"></i> - Versão 1.0
       </div>
       <!-- Padrão alinhado a esquerda -->
       

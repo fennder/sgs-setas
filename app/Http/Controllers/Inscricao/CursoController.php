@@ -42,24 +42,32 @@ class CursoController extends Controller
      */
     public function index()
     {
+        if(Auth::check()){
+
+            $page_title = "Lista de Cursos";
+            $page_description = "Sistema de Gerenciamento de Inscrições";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Curso";
+
+            $cursos = $this->curso->orderBy('id_status_curso', 'asc')->paginate(7);
+            $usuarios = Auth::user();
+
+            return view('curso.index',
+            [
+                'nav' => $nav,
+                'cursos' => $cursos,
+                'page_title'=>$page_title,
+                'usuarios'=>$usuarios,
+                'page_description' => $page_description,
+                'lotacao' => $lotacao
+            ]);        
+
+        }else{
+
+            return view('auth/login');
+
+        }
     
-        $page_title = "SGI";
-        $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
-        $nav = "Curso";
-
-        $cursos = $this->curso->orderBy('id_status_curso', 'asc')->paginate(25);
-        $usuarios = Auth::user();
-
-        return view('curso.index',
-        [
-            'nav' => $nav,
-            'cursos' => $cursos,
-            'page_title'=>$page_title,
-            'usuarios'=>$usuarios,
-            'page_description' => $page_description,
-            'lotacao' => $lotacao
-        ]);
     }
 
     /**
@@ -69,8 +77,9 @@ class CursoController extends Controller
      */
     public function create()
     {
+        if(Auth::check()){
 
-        $page_title = "SGI";
+        $page_title = "Criar Curso";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Curso";
@@ -88,6 +97,13 @@ class CursoController extends Controller
             'scursos'=>$scursos,
             'nav' => $nav
         ]);
+
+        }else{
+
+            return view('auth/login');
+
+        }
+
     }
 
     /**
@@ -112,7 +128,10 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        $page_title = "SGI";
+
+        if(Auth::check()){
+
+        $page_title = "Lista de Presença - SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Mostrar";
@@ -135,7 +154,13 @@ class CursoController extends Controller
             'nav' => $nav,
             'i' => $i
        
-        ]);
+        ]);   
+
+        }else{
+
+            return view('auth/login');
+
+        }
     }
 
     /**

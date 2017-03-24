@@ -66,9 +66,9 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(150);
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(200);
             }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(150);
+                $users = $this->user->orderBy('name', 'asc')->paginate(200);
             }
 
             return view('user.lista',
@@ -174,8 +174,8 @@ class UsersController extends Controller
             $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            $cidades = $this->cidade->all();
-            $estados = $this->estado->all();
+            $cidades = $this->cidade->orderBy('nome', 'asc')->get();
+            $estados = $this->estado->where('id_estado','=', 27)->get();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
             $orgaos = $this->orgao->all();
@@ -207,8 +207,8 @@ class UsersController extends Controller
             $verifica = Auth::user();
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
-            $cidades = $this->cidade->all();
-            $estados = $this->estado->all();
+            $cidades = $this->cidade->orderBy('nome', 'asc')->get();
+            $estados = $this->estado->where('id_estado','=', 27)->get();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
             $orgaos = $this->orgao->all();

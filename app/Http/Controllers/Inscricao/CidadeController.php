@@ -134,7 +134,7 @@ class CidadeController extends Controller
         $page_description = "Editar Cidade";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
-        $cidades = $this->cidade->find($id);
+        $cidades = $this->cidade->orderBy('nome', 'asc')->find($id);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();

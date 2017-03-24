@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SGI - Sistema de Gerenciamento de Inscrições</title>
+  <title>SGS-SD-GTI-SETAS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -42,9 +42,10 @@
       </strong>
         <div class="box-header with-border">
           <div align="center">
-            <a href="https://www.ubuntu.com/"><i class="ion ion-social-tux"></i></a>
-            <a href="https://www.google.com/chrome/browser/desktop/index.html"><i class="ion ion-social-chrome"></i></a>
-            <a href="https://about.gitlab.com/"><i class="ion ion-social-github"></i></a>
+            <a href="https://www.ubuntu.com/" target="_blank"><i class="ion ion-social-tux"></i></a>
+            <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><i class="ion ion-social-chrome"></i></a>
+            <a href="https://about.gitlab.com/" target="_blank"><i class="ion ion-social-github"></i></a>
+            <a href="https://laravel.com/" target="_blank"><img src="{{ asset('/imagens/laravel.png') }}" width="1.2%"></a>
           </div>
         </div>
         

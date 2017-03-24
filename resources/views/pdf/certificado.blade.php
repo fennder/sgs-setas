@@ -5,13 +5,13 @@
 
   <div class="col-md-2">
       <!-- Default box -->  
-    <div class="box-header with-border" align="center">
+    <!-- <div class="box-header with-border" align="center">
       <div class="pull-left" align="center">
         <p></p>
       </div>
       <p><h2 class="box-title"></h2></p>
       <h3 class="box-title"></h3> 
-    </div><!-- /.box -->
+    </div> --><!-- /.box -->
   </div><!-- Col 2 -->
 
   <div class="col-md-8">
@@ -47,7 +47,7 @@
     <div>
       <div class="box-body">
         
-        <em>
+        <em><i>
           <h2 class="text-justify"><p class=""><i class="invisible">Espaco</i>Certificamos que 
           @if($usuarios->sexo == 'Feminino')
             a Senhora
@@ -56,14 +56,14 @@
           @endif
           <strong>{{$usuarios->name}}</strong>
           , participou do(a)
-
           <strong>
+
           
-            {{$inscricoes->id_inscricao}}
+            {{$usuarios->cursos}}
           
           </strong>
         
-          , no período de <strong>###DATA INICIO### à ###DATA TERMINO###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2>
+          , no período de <strong>### data_inicio ### à ### data_termino ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
         </em>
           
       </div><!-- /.box-body -->
