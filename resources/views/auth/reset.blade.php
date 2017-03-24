@@ -4,11 +4,11 @@
 @section('content')
   <div class="register-box">
     <div class="register-logo">
-      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}">
+      <img src="{{ asset('/imagens/imagem_testa.png') }}" width="100%">
     </div>
 
     <div class="register-logo">
-      <a href="{!! route('a.getRegister') !!}"><b>Sistema de Inscrições</b></br>SETAS</a>
+      <a href="{!! route('a.getRegister') !!}"><b>Sistema de Inscrições</b></a>
     </div>
 
     <div class="register-box-body">
@@ -36,7 +36,7 @@
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" name="password" placeholder="Senha, mínimo 6">
+          <input type="password" class="form-control" name="password" placeholder="Digite uma nova senha, mínimo 6">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">

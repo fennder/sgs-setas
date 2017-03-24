@@ -6,7 +6,7 @@
   <img src="{{ asset('/imagens/imagem_testa.png') }}" width="100%">
 </div>
   <div class="login-logo">
-    <a href="{!! route('a.getLogin') !!}"><b>SGS</b></a>
+    <a href="{!! route('a.getLogin') !!}"><b>Sistema de Inscrições</b></a>
   </div>
 
   <!-- ERROS -->
@@ -25,15 +25,15 @@
 
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <h4><b><p class="login-box-msg">Já é cadastrado? Faça o login!</p></b></h4>
+    <h4><b><p class="login-box-msg">Já é cadastrado(a)? Faça o login!</p></b></h4>
     <form action="{!! route('a.postLogin') !!}" method="POST">
     {{ csrf_field() }}
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail">
+        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder=" Digite o seu E-mail">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="password" id="password" placeholder="Senha">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Digite a sua Senha">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -47,7 +47,7 @@
 
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+          <button type="submit" class="btn btn-primary btn-block">ENTRAR</button>
         </div>
         <!-- /.col -->
 
@@ -57,7 +57,7 @@
     <div class="row">
         <!-- /.col -->
         <div class="col-xs-12" align="left">
-           <a href="{!! route('p.getEmail') !!}" class="btn btn-success btn-block">Esqueci minha senha!</a>
+           <a href="{!! route('p.getEmail') !!}" class="btn btn-success btn-block">ESQUECI MINHA SENHA!</a>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
     <div class="row">
         <!-- /.col -->
         <div class="col-xs-12" align="rigth">
-           <a href="{!! route('a.getRegister') !!}"  class="btn btn-danger btn-block">Ainda não sou cadastrado!</a>
+           <a href="{!! route('a.getRegister') !!}"  class="btn btn-danger btn-block">AINDA NÃO SOU CADASTRADO!</a>
         </div>
     </div>
     

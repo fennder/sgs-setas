@@ -105,8 +105,9 @@ class HomeController extends Controller
 
             }else{
 
-                $page_title = "SGI";
-                $page_description = "Página Inicial";
+                $page_title = "Página Inicial";
+                $guia_title = "SGI-SD-GTI-SETAS";
+                $page_description = "Sistema de Gerenciamento de Inscrições";
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
 
                 $cursos = $this->curso->all();
@@ -134,6 +135,7 @@ class HomeController extends Controller
                     [
                         'page_description' => $page_description,
                         'page_title' => $page_title, 
+                        'guia_title' => $guia_title, 
                         'lotacao' => $lotacao, 
                         'cont_curso' => $cont_curso,
                         'cont_user' => $cont_user,

@@ -17,11 +17,11 @@
           <table class="table table-bordered table-striped table-hover table-condensed">
             <thead>
               <tr>              
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Função</th>
-                <th>Permissão</th>
-                <th style="width: 10%" colspan="2"><center>Ação</center></th>                   
+                <th style="width: 40%">Nome</th>
+                <th style="width: 35%">E-mail</th>
+                <th style="width: 25%">Função</th>
+                <th style="width: 10%">Permissão</th>
+                <th colspan="2"><center>Ação</center></th>                   
               </tr>
             </thead>
             <tbody>

@@ -6,7 +6,7 @@
   <div class="col-md-12">
     <!-- Default box -->
     <div class="box">
-      <div class="box-header with-border">
+      <!-- <div class="box-header with-border">
         <h3 class="box-title">Lista de Inscrições</h3>
 
         <div class="box-tools pull-right">
@@ -15,16 +15,17 @@
           <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
             <i class="fa fa-times"></i></button>
         </div>
-      </div>
+      </div> -->
       <div class="box-body">
         
         <form action="{!! route('ins.index') !!}" method="POST">
           <input type="hidden" name="_token" value="{!! csrf_token() !!}">
           <div class="row">
             <div class="col-md-10">
+            <!-- <small class="text-muted">Escolha o curso para obter a relação</small> -->
               <div class="form-group has-feedback">
                 <select class="form-control" name="id_curso" id="id_curso" required>
-                  <option  value="">- Para obter a relação de inscritos selecione o curso aqui -</option>
+                  <option value="">- SELECIONE O CURSO PARA OBTER A RELAÇÃO DE INSCRITOS <b>AQUI</b> -</option>
                     
                     @foreach($cursos as $curso)
                       @if($curso->statuscurso->id_status_curso == 1)    

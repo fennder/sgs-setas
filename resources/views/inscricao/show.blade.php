@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
+        <!-- <div class="box-header with-border">
           <h3 class="box-title">Minhas Inscrições</h3>
 
           <div class="box-tools pull-right">
@@ -15,7 +15,7 @@
             <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
               <i class="fa fa-times"></i></button>
           </div>
-        </div>
+        </div> -->
         <div class="box-body">
          <!--  <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a> -->
           
@@ -25,7 +25,9 @@
                     <th style="width: 50%">Meus Cursos</th>                    
                     <th>Período</th>
                     <th>Status</th>
-                    <!-- <th style="width: 5%">Certificado</th>  -->                                   
+                    @if($usuarios->id == 1)
+                    <th style="width: 5%">Certificado</th>                                    
+                    @endif
                   </tr>
                 </thead>
                 <tbody>
@@ -35,10 +37,10 @@
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
-                          @if($usuarios->id = 1)
+                          @if($usuarios->id == 1)
                           <td align="center">
                             <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
-                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="55%">
+                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
                             </a>
                           </td> 
                           @endif

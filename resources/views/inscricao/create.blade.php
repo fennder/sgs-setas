@@ -16,14 +16,13 @@
   <div class="box-body clearfix">
 
   <div class="row">
-
+    
       <div class="col-md-12">
         <small class="text-muted">Nome do Inscrito</small>
         <div class="form-group has-feedback">
         <select class="form-control" name="user_id" id="user_id" required>
           <option value="{{$usuarios->id}}">{{$usuarios->name}}</option>
         </select>
-
       </div><!-- Curso -->
     </div><!-- Col 12 -->
 
@@ -46,7 +45,6 @@
               @endif
             @endforeach
         </select>
-
       </div><!-- Curso -->
     </div><!-- Col 12 -->
 

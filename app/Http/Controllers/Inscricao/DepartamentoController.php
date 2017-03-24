@@ -31,7 +31,7 @@ class DepartamentoController extends Controller
     public function index()
     {
 
-        $page_title = "SGI";
+        $page_title = "Lista de Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";
@@ -70,7 +70,7 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGI";
+        $page_title = "Criar Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Departamento";

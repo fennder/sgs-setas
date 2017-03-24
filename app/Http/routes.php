@@ -8,8 +8,6 @@ Route::get('', function()
 Route::get('get-cidades/{idEstado}','Inscricao\CidadeController@getCidades');
 Route::get('get-departamentos/{idOrgao}','Inscricao\DepartamentoController@getDepartamento');
 
-
-
 Route::group(['as' => 'a.', 'prefix' => 'auth'], function()
 {
 	Route::get('login', 	['as' => 'getLogin', 		'uses' => 'Auth\AuthController@getLogin']); //login formulário

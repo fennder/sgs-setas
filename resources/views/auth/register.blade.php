@@ -3,11 +3,11 @@
 @section('content')
   <div class="register-box">
     <div class="register-logo">
-      <img src="{{ asset("/imagens/logo_estado-150x150.png") }}">
+      <img src="{{ asset('/imagens/imagem_testa.png') }}" width="100%">
     </div>
 
     <div class="register-logo">
-      <a href="register"><b>Sistema de Inscrições</b></br>SETAS</a>
+      <a href="register"><b>Sistema de Inscrições</b></a>
     </div>
 
     <!-- ERROS -->
@@ -34,7 +34,7 @@
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+          <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Digite seu Email">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -52,14 +52,16 @@
 
         <div class="row">
           <!-- /.col -->
-          <div class="col-xs-12" align="center">
-            <button type="submit" class="btn btn-primary btn-block text-center">Registrar</button>
+          <div class="col-xs-8" align="left">
+            <button type="submit" class="btn btn-primary btn-block text-center">REGISTRAR</button>
           </div>
           <!-- /.col -->
+          <div class="col-xs-4" align="right">
+            <a href="{!! route('a.getLogin') !!}" class="btn btn-default btn-block text-center">VOLTAR</a>
+          </div>
         </div>
-      </form>
-<br>
-      <a href="{!! route('a.getLogin') !!}" class="btn btn-default btn-block text-center">Voltar</a>
+        
+      </form>      
     </div>
     <!-- /.form-box -->
   </div>

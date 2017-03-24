@@ -46,6 +46,7 @@
                       <td>{{ $inscrito->cidade->nome }}</td>
                       <td>{{ $inscrito->name }}</td>
                       <td>{{ $inscrito->cpf }}</td>
+                      <td></td>
                     </tr>
                   @endif
                 @endif
@@ -57,6 +58,7 @@
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
+        <li></li>
         </ul>
       </div><!-- /.box-footer-->
     </div><!-- /.box -->

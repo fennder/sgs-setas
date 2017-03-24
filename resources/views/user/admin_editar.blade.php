@@ -389,7 +389,7 @@
 
     <div class="row">    
 
-      <div class="col-md-4">
+      <div class="col-md-8">
         <div class="form-group has-feedback">
         <small class="text-muted">Perfil do Usuário</small>
           <div class="input-group">
@@ -405,7 +405,14 @@
             </select>
           </div>
         </div><!-- Função -->
-      </div><!-- Col 4 -->
+      </div><!-- Col 8 -->
+
+      <div class="col-md-4">
+      <small class="text-muted">Alterado em</small>
+      <div class="form-group has-feedback">
+        {{ $usuarios->updated_at }}
+      </div><!-- data alteração -->
+    </div><!-- Col 4 -->
     
     </div><!-- row -->
 
