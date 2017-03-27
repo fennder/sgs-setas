@@ -6,6 +6,7 @@ use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\Inscricao\Escolaridade;
 use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Funcao;
@@ -28,17 +29,19 @@ class UsersController extends Controller
     private $vinculo;
     private $orgao;
     private $departamento;
+    private $deficiencia;
     private $cargo;
     private $funcao;
     private $perfil;
 
-    public function __construct(Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
+    public function __construct(Deficiencia $deficiencia, Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
     {
         $this->user = $user;
         $this->estado_rg = $estado_rg;
         $this->cidade = $cidade;
         $this->estado = $estado;
         $this->escolaridade = $escolaridade;
+        $this->deficiencia = $deficiencia;
         $this->vinculo = $vinculo;
         $this->orgao = $orgao;
         $this->departamento = $departamento;
@@ -132,6 +135,7 @@ class UsersController extends Controller
         $cidades = $this->cidade->all();
         $estado_rgs = $this->estado_rg->all();
         $escolaridades = $this->escolaridade->all(); 
+        $deficiencias = $this->deficiencia->all(); 
         $vinculos =$this->vinculo->all();
         $orgaos =$this->orgao->all();
         $departamentos =$this->departamento->all();
@@ -147,6 +151,7 @@ class UsersController extends Controller
             'vinculos' => $vinculos,
             'orgaos' => $orgaos,
             'departamentos' => $departamentos,
+            'deficiencias' => $deficiencias,
             'cargos' => $cargos,
             'funcoes' => $funcoes,
             'estado_rgs' => $estado_rgs
@@ -177,6 +182,7 @@ class UsersController extends Controller
             $cidades = $this->cidade->orderBy('nome', 'asc')->get();
             $estados = $this->estado->where('id_estado','=', 27)->get();
             $escolaridades = $this->escolaridade->all();
+            $deficiencias = $this->deficiencia->all();
             $vinculos = $this->vinculo->all();
             $orgaos = $this->orgao->all();
             $departamentos = $this->departamento->all();
@@ -191,6 +197,7 @@ class UsersController extends Controller
                 'cidades' => $cidades,
                 'estados' => $estados,
                 'escolaridades' => $escolaridades,
+                'deficiencias' => $deficiencias,
                 'vinculos' => $vinculos,
                 'departamentos' => $departamentos,
                 'cargos' => $cargos,
@@ -210,6 +217,7 @@ class UsersController extends Controller
             $cidades = $this->cidade->orderBy('nome', 'asc')->get();
             $estados = $this->estado->where('id_estado','=', 27)->get();
             $escolaridades = $this->escolaridade->all();
+            $deficiencias = $this->deficiencia->all();
             $vinculos = $this->vinculo->all();
             $orgaos = $this->orgao->all();
             $departamentos = $this->departamento->all();
@@ -224,6 +232,7 @@ class UsersController extends Controller
                 'cidades' => $cidades,
                 'estados' => $estados,
                 'escolaridades' => $escolaridades,
+                'deficiencias' => $deficiencias,
                 'vinculos' => $vinculos,
                 'departamentos' => $departamentos,
                 'cargos' => $cargos,

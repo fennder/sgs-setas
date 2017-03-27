@@ -224,7 +224,20 @@
           <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" required>
         </div><!-- Telefone Trabalho -->
         
-      </div><!-- Col 3 -->
+      </div><!-- Col 4 -->
+
+      <div class="col-md-4">
+        <div class="form-group has-feedback">
+        <small class="text-muted">Deficiência</small>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+            <select class="form-control" name="id_deficiencia" id="id_deficiencia">
+              <option value="{{$usuarios->deficiencia->id_deficiencia}}">{{$usuarios->deficiencia->descricao}}</option>
+              @foreach ($deficiencias as $deficiencia)
+                  <option value="{{$deficiencia->id_deficiencia}}">{{$deficiencia->descricao}}</option>
+              @endforeach
+            </select>
+          </div>
 
     <!-- <div class="col-md-4">
       <div class="form-group">
@@ -408,7 +421,7 @@
       </div><!-- Col 8 -->
 
       <div class="col-md-4">
-      <small class="text-muted">Alterado em</small>
+      <small class="text-muted">Atualizado em</small>
       <div class="form-group has-feedback">
         {{ $usuarios->updated_at }}
       </div><!-- data alteração -->

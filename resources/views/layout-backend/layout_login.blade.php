@@ -45,7 +45,7 @@
             <a href="https://www.ubuntu.com/" target="_blank"><i class="ion ion-social-tux"></i></a>
             <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><i class="ion ion-social-chrome"></i></a>
             <a href="https://about.gitlab.com/" target="_blank"><i class="ion ion-social-github"></i></a>
-            <a href="https://laravel.com/" target="_blank"><img src="{{ asset('/imagens/laravel.png') }}" width="1.2%"></a>
+            <a href="https://laravel.com/" target="_blank"><img src="{{ asset('/imagens/laravel.png') }}" width="1.1%"></a>
           </div>
         </div>
         

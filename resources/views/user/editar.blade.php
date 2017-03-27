@@ -1,5 +1,6 @@
 @extends('layout-backend.admin_template')
 
+
 @section('content')
 
 <form action="{{ route('u.update', ['id'=>$usuarios->id]) }}" method="POST" enctype="multipart/form-data">
