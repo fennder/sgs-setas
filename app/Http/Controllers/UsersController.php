@@ -6,6 +6,7 @@ use Gerenciador\Inscricao\VinculoInstitucional;
 use Gerenciador\Http\Controllers\Controller;
 use Gerenciador\Inscricao\Escolaridade;
 use Gerenciador\Inscricao\Departamento;
+use Gerenciador\Inscricao\Deficiencia;
 use Gerenciador\Inscricao\Estado;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Funcao;
@@ -31,8 +32,9 @@ class UsersController extends Controller
     private $cargo;
     private $funcao;
     private $perfil;
+    private $deficiencia;
 
-    public function __construct(Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
+    public function __construct(Deficiencia $deficiencia, Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
     {
         $this->user = $user;
         $this->estado_rg = $estado_rg;
@@ -45,6 +47,8 @@ class UsersController extends Controller
         $this->cargo = $cargo;
         $this->funcao = $funcao;
         $this->perfil = $perfil;
+        $this->deficiencia = $deficiencia;
+;
 
         $this->middleware('auth');
     }
@@ -137,6 +141,8 @@ class UsersController extends Controller
         $departamentos =$this->departamento->all();
         $cargos =$this->cargo->all();
         $funcoes =$this->funcao->all();
+        $deficiencias =$this->deficiencia->all();
+
 
         return view('user.show',
         [
@@ -149,6 +155,7 @@ class UsersController extends Controller
             'departamentos' => $departamentos,
             'cargos' => $cargos,
             'funcoes' => $funcoes,
+            'deficiencias' => $deficiencias,
             'estado_rgs' => $estado_rgs
         ]);
     }
@@ -183,23 +190,25 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
+            $deficiencias = $this->deficiencia->all();
             
             return view('user.admin_editar', 
             [
-                'usuarios' => $usuarios,
+                'page_description' => $page_description,
+                'escolaridades' => $escolaridades,
+                'departamentos' => $departamentos,
+                'deficiencias' => $deficiencias,
                 'estado_rgs' => $estado_rgs,
+                'usuarios' => $usuarios,
+                'vinculos' => $vinculos,
+                'verifica' => $verifica,
+                'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
                 'cargos' => $cargos,
-                'funcoes' => $funcoes,
                 'orgaos' => $orgaos,
-                'verifica' => $verifica,
-                'page_description' => $page_description,
-                'nav' => $nav,
-                'perfis' => $perfis
+                'perfis' => $perfis,
+                'nav' => $nav
             ]);
     
         }else{
@@ -216,21 +225,23 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
+            $deficiencias = $this->deficiencia->all();
 
             return view('user.editar', 
             [
-                'usuarios' => $usuarios,
+                'escolaridades' => $escolaridades,
+                'departamentos' => $departamentos,
+                'deficiencias' => $deficiencias,
                 'estado_rgs' => $estado_rgs,
+                'usuarios' => $usuarios,
+                'vinculos' => $vinculos,
+                'verifica' => $verifica,
+                'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
                 'cargos' => $cargos,
-                'funcoes' => $funcoes,
                 'orgaos' => $orgaos,
-                'perfis' => $perfis,
-                'verifica' => $verifica
+                'perfis' => $perfis
             ]);
         }
     }
@@ -274,13 +285,13 @@ class UsersController extends Controller
 
             return view('user.lista',
                 [
-                    'nav' => $nav,
-                    'users' => $users,
+                    'page_description'=>$page_description,
                     'page_title'=>$page_title,
                     'usuarios'=>$usuarios,
+                    'lotacao'=>$lotacao,
+                    'users' => $users,
                     'perfis'=>$perfis,
-                    'page_description'=>$page_description,
-                    'lotacao'=>$lotacao
+                    'nav' => $nav
                 ]);
 
         }else{
