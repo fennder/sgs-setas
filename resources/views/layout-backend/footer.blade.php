@@ -22,12 +22,12 @@
         <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><i class="ion ion-social-chrome"></i></a>
         <a href="https://about.gitlab.com/" target="_blank"><i class="ion ion-social-github"></i></a>
         <a href="https://laravel.com/" target="_blank"><img src="{{ asset('http://localhost/imagens/laravel.png') }}" width="1.1%"></a> - Versão 1.0
-<<<<<<< HEAD
+
       </div>
       <!-- Padrão alinhado a esquerda -->                     
-=======
+
       </div>                   
->>>>>>> feature/sgs.inscricao
+
     </div><!-- Col 2 -->
 
   </div><!-- row -->
