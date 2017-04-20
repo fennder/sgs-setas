@@ -43,7 +43,9 @@
     <div class="col-md-4">
     <small class="text-muted">CPF</small>
       <div class="form-group has-feedback">
+  
         <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99" required>
+        
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div><!-- CPF -->
     </div><!-- Col 4 -->
@@ -130,7 +132,7 @@
     <div class="col-md-3">
     <small class="text-muted">CEP Residencial</small>
       <div class="form-group has-feedback">
-        <input type="text" onkeypress="mascara(this, '##.###-###')" maxlength="10"class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
+        <input type="text" onkeypress="mascara(this, '##.###-###')" maxlength="10" class="form-control" name="cep" id="cep" value="{{ $usuarios->cep }}" required>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
         
       </div><!-- CEP -->
@@ -151,7 +153,7 @@
     <div class="col-md-3">
     <small class="text-muted">Complemento</small>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}" required>
+        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ $usuarios->complemento }}">
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div><!-- Complemento -->
     </div><!-- Col 5 -->
@@ -194,11 +196,9 @@
                   <option value="{{$cidade->id_cidade}}">{{$cidade->nome}}</option>
               @endforeach
           </select>
-          
         </div>
-        
       </div><!-- Cidade -->
-    </div><!-- Col 4 -->
+    </div><!-- Col 5 -->
 
   </div><!-- row -->
 
@@ -225,7 +225,7 @@
             @else
               <option value="">- Selecione -</option>
             @endif
-            @foreach ($escolaridades as $escolaridade) 
+            @foreach($escolaridades as $escolaridade) 
               <option value="{{$escolaridade->id_escolaridade}}">{{$escolaridade->descricao}}</option> 
             @endforeach
           </select>
@@ -253,6 +253,27 @@
     </div><!-- Col 4 -->
 
   </div><!-- row -->
+
+  <div class="row">
+
+    <div class="col-md-5">
+      <div class="form-group has-feedback">
+      <small class="text-muted">Deficiência</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_deficiencia" id="id_deficiencia">
+            <option value="">- Selecione -</option>
+            @foreach($deficiencias as $deficiencia) 
+              <option value="{{$deficiencia->id_deficiencia}}">{{$deficiencia->descricao}}</option> 
+            @endforeach
+            
+          </select>
+        </div>
+        
+      </div><!-- Deficiencia -->
+    </div><!-- Col 5 -->
+
+  </div>
 
 </div>
 </div>

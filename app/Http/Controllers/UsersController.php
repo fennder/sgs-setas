@@ -182,7 +182,7 @@ class UsersController extends Controller
             $usuarios = $this->user->find($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->orderBy('nome', 'asc')->get();
-            $estados = $this->estado->where('id_estado','=', 27)->get();
+            $estados = $this->estado->all();
             $escolaridades = $this->escolaridade->all();
             $vinculos = $this->vinculo->all();
             $orgaos = $this->orgao->all();
@@ -225,7 +225,7 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-            $deficiencias = $this->deficiencia->all();
+            var_dump($deficiencias = $this->deficiencia->all());
 
             return view('user.editar', 
             [

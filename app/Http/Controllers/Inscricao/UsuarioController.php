@@ -30,8 +30,9 @@ class UsuarioController extends Controller
     private $departamento;
     private $cargo;
     private $funcao;
+    private $deficiencia;
 
-    public function __construct(Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
+    public function __construct(Deficiencia $deficiencia, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade)
     {
         $this->usuario = $usuario;
         $this->estado = $estado;
@@ -43,6 +44,7 @@ class UsuarioController extends Controller
         $this->departamento = $departamento;
         $this->cargo = $cargo;
         $this->funcao = $funcao;
+        $this->deficiencia = $deficiencia;
 
         $this->middleware('auth');
     }
@@ -94,6 +96,7 @@ class UsuarioController extends Controller
         $departamentos =$this->departamento->all();
         $cargos =$this->cargo->all();
         $funcoes =$this->funcao->all();
+        $deficiencias =$this->deficiencia->all();
         
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
@@ -116,6 +119,7 @@ class UsuarioController extends Controller
             'departamentos' => $departamentos,
             'cargos' => $cargos,
             'funcoes' => $funcoes,
+            'deficiencias' => $deficiencias,
             'estado_rgs' => $estado_rgs
             
         ]);    
@@ -178,7 +182,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $nav = "Editar usuário";
+        /*$nav = "Editar usuário";
 
         $usuarios = $this->usuario->find($id);
         $estados = $this->estado->all();
@@ -191,6 +195,7 @@ class UsuarioController extends Controller
         $cargos = $this->cargo->all();
         $funcoes = $this->funcao->all();
         $perfis = $this->perfil->all();
+        $deficiencias = $this->deficiencia->all();
         
         return view('inscrito.edit',
         [
@@ -206,8 +211,9 @@ class UsuarioController extends Controller
             'cargos' => $cargos,
             'funcoes' => $funcoes,
             'estado_rgs' => $estado_rgs,
+            'deficiencias' => $deficiencias,
             'perfis' => $perfis
-        ]);
+        ]);*/
     }
 
     /**
@@ -247,7 +253,7 @@ class UsuarioController extends Controller
     public function listadmin()
     {
             
-        $page_title = "SGI";
+        /*$page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
@@ -266,6 +272,6 @@ class UsuarioController extends Controller
             'lotacao' => $lotacao,
             'estado_rgs' => $estado_rgs,
             'vinculos' => $vinculos
-        ]);
+        ]);*/
     }
 }
