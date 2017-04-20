@@ -75,7 +75,6 @@ class HomeController extends Controller
             if($usuario->dados_atualizados == 0){
                 
                 $nav = "Editar";
-
                 $usuarios = $usuario;
                 $estados = $this->estado->all();
                 $cidades = $this->cidade->all();

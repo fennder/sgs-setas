@@ -7,7 +7,7 @@
     <div class="col-md-10">
       <strong>
 
-        <!-- Copyright -->Todos os direitos reservados &copy; 2016 - 2017
+        <!-- Copyright -->Direitos reservados &copy; 2016 - 2017
         <a href="http://opensetas.setas.to.gov.br/portal">
            SD-GTI 
         </a>

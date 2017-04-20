@@ -101,7 +101,6 @@ class UsuarioController extends Controller
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
-        
         $nav = "Cadastro de usuários";
 
         return view('inscrito.create',

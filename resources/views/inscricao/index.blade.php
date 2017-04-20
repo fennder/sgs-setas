@@ -25,7 +25,7 @@
             <!-- <small class="text-muted">Escolha o curso para obter a relação</small> -->
               <div class="form-group has-feedback">
                 <select class="form-control" name="id_curso" id="id_curso" required>
-                  <option value=""><<<== SELECIONE O CURSO PARA OBTER A RELAÇÃO DE INSCRITOS AQUI ==>>></option>
+                  <option value=""><<<== SELECIONE O CURSO E TENHA A RELAÇÃO DE INSCRITOS AQUI ==>>></option>
                     
                     @foreach($cursos as $curso)
                       @if($curso->statuscurso->id_status_curso == 1)    

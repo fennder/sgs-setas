@@ -41,7 +41,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Volte mais tarde</div>
-                <h3 class="title">Estamos em manutenção...</h3>
+                <h3 class="title">Estamos melhorando o ambiente...</h3>
                 <img src="{{ asset("imagens/manutencao.gif") }}" class="img-circle" alt="User Image">
             </div>
         </div>
