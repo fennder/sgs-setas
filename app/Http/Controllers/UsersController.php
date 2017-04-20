@@ -33,7 +33,6 @@ class UsersController extends Controller
     private $cargo;
     private $funcao;
     private $perfil;
-    private $deficiencia;
 
     public function __construct(Deficiencia $deficiencia, Perfil $perfil, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, User $user, Estado $estado_rg, Cidade $cidade, Estado $estado, Escolaridade $escolaridade, Vinculoinstitucional $vinculo)
     {
@@ -210,13 +209,10 @@ class UsersController extends Controller
                 'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-<<<<<<< HEAD
                 'escolaridades' => $escolaridades,
                 'deficiencias' => $deficiencias,
                 'vinculos' => $vinculos,
                 'departamentos' => $departamentos,
-=======
->>>>>>> feature/sgs.inscricao
                 'cargos' => $cargos,
                 'orgaos' => $orgaos,
                 'perfis' => $perfis,
@@ -252,13 +248,10 @@ class UsersController extends Controller
                 'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-<<<<<<< HEAD
                 'escolaridades' => $escolaridades,
                 'deficiencias' => $deficiencias,
                 'vinculos' => $vinculos,
                 'departamentos' => $departamentos,
-=======
->>>>>>> feature/sgs.inscricao
                 'cargos' => $cargos,
                 'orgaos' => $orgaos,
                 'perfis' => $perfis

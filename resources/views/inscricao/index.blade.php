@@ -64,7 +64,7 @@
 
               <tr class="success">
                 <td>{{$i=$i+1}}</td>
-                <td><!-- {{$inscricao->usuario->cidade->regiao->descricao}} --></td>
+                <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
                 @if($usuarios->perfil->id_perfil <= 1)
                   <td>{{$inscricao->usuario->id}}</td>
