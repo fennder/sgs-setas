@@ -70,9 +70,9 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(200);
+                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(150);
             }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(200);
+                $users = $this->user->orderBy('name', 'asc')->paginate(150);
             }
 
             return view('user.lista',

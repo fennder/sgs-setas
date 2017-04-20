@@ -17,6 +17,7 @@
   <!-- <input type="hidden" class="form-control" name="dados_atualizados" value="1"> -->
   <div class="row">
 
+
     <div class="col-md-7">
     <small class="text-muted">Nome Completo</small>
       <div class="form-group has-feedback" >
