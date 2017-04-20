@@ -52,12 +52,12 @@ class InscricaoController extends Controller
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
-        $users = $this->user->orderBy('name', 'asc')->paginate(1000);
+        $users = $this->user->orderBy('name', 'asc')->paginate(3000);
         $i = 0;
 
         if ($request->isMethod('post')){
 
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(1000);
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(3000);
 
         }
 
