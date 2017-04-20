@@ -25,7 +25,7 @@
             <!-- <small class="text-muted">Escolha o curso para obter a relação</small> -->
               <div class="form-group has-feedback">
                 <select class="form-control" name="id_curso" id="id_curso" required>
-                  <option value="">- SELECIONE O CURSO PARA OBTER A RELAÇÃO DE INSCRITOS <b>AQUI</b> -</option>
+                  <option value=""><<<== SELECIONE O CURSO PARA OBTER A RELAÇÃO DE INSCRITOS AQUI ==>>></option>
                     
                     @foreach($cursos as $curso)
                       @if($curso->statuscurso->id_status_curso == 1)    
@@ -48,8 +48,11 @@
               <th style="width: 3%">Nr.</th>
               <th style="width: 10%">Região</th>
               <th style="width: 22%">Município</th>
+              @if($usuarios->perfil->id_perfil <= 1)
+                <th style="width: 3%">id</th>
+              @endif
               <th style="width: 28%">Inscrito</th>
-              <th style="width: 11%">Contato</th>
+              <th style="width: 12%">Contato</th>
               <th style="width: 50%">Função</th>
               <!-- <th>Status</th> -->
               <th colspan="2"><center>Ação</center></th>
@@ -63,10 +66,12 @@
                 <td>{{$i=$i+1}}</td>
                 <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
+                @if($usuarios->perfil->id_perfil <= 1)
+                  <td>{{$inscricao->usuario->id}}</td>
+                @endif
                 <td>{{$inscricao->usuario->name}}</td>
                 <td>{{$inscricao->usuario->telefone_trabalho}}</td>
                 <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                <!-- <td>{{$inscricao->status}}</td> -->
                 
                 @if($usuarios->id_perfil == 2)
  
@@ -82,9 +87,9 @@
                   <td class="text-center">
                     <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
                   </td>
-                  <td class="text-center">
+                  <!-- <td class="text-center">
                     <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
-                  </td>
+                  </td> -->
 
                 @endif
               </tr>
@@ -97,7 +102,6 @@
                   <td>{{$inscricao->usuario->name}}</td>
                   <td>{{$inscricao->usuario->telefone_trabalho}}</td>
                   <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                  <!-- <td>{{$inscricao->status}}</td> -->
 
                   @if($usuarios->id_perfil == 2)
 

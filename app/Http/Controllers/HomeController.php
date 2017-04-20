@@ -34,12 +34,12 @@ class HomeController extends Controller
     private $vinculo;
     private $orgao;
     private $departamento;
+    private $deficiencia;
     private $cargo;
     private $funcao;
     private $regiao;
 
-    public function __construct(
-        Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso, Inscricao $inscricao, Regiao $regiao
+    public function __construct( Deficiencia $deficiencia, Funcao $funcao, Cargo $cargo, Departamento $departamento, Orgao $orgao, VinculoInstitucional $vinculo, User $usuario, Estado $estado_rg, Estado $estado, Cidade $cidade, Escolaridade $escolaridade, Curso $curso, Inscricao $inscricao, Regiao $regiao
         )
     {
         $this->usuario = $usuario;
@@ -55,6 +55,7 @@ class HomeController extends Controller
         $this->funcao = $funcao;
         $this->curso = $curso;
         $this->regiao = $regiao;
+        $this->deficiencia = $deficiencia;
         
         $this->middleware('auth');
     }
@@ -86,6 +87,7 @@ class HomeController extends Controller
                 $cargos = $this->cargo->all();
                 $funcoes = $this->funcao->all();
                 $regionais = $this->regiao->all();
+                $deficiencias = $this->deficiencia->all();
 
                
                 return view('user.editar',
@@ -100,7 +102,8 @@ class HomeController extends Controller
                     'departamentos' => $departamentos,
                     'cargos' => $cargos,
                     'funcoes' => $funcoes,
-                    'estado_rgs' => $estado_rgs,
+                    'deficiencias' => $deficiencias,
+                    'estado_rgs' => $estado_rgs
                 ]);
 
             }else{
