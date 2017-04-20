@@ -16,7 +16,7 @@
       
     </div><!-- Col 10 -->
 
-    <div class="col-md-2" >
+    <div class="col-md-2">
       <div class="pull-right hidden-xs">
         <a href="https://www.ubuntu.com/" target="_blank"><i class="ion ion-social-tux"></i></a>
         <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><i class="ion ion-social-chrome"></i></a>
