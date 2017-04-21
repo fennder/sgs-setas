@@ -64,11 +64,8 @@
 
               <tr class="success">
                 <td>{{$i=$i+1}}</td>
-                <td>{{var_dump($inscricao->usuario->cidade->regiao->descricao)}}</td>
+                <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
-                @if($usuarios->perfil->id_perfil <= 1)
-                  <td>{{$inscricao->usuario->id}}</td>
-                @endif
                 <td>{{$inscricao->usuario->name}}</td>
                 <td>{{$inscricao->usuario->telefone_trabalho}}</td>
                 <td>{{$inscricao->usuario->funcao->descricao}}</td>

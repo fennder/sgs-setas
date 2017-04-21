@@ -243,9 +243,8 @@
       <small class="text-muted">Deficiência</small>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-          <select class="form-control" name="id_deficiencia" id="id_deficiencia">
-
-            <option value="{{$usuarios}}">{{$usuarios->deficiencia->descricao}}</option> 
+          <select class="form-control" name="id_deficiencia" id="id_deficiencia" required>
+            <option value="{{$usuarios->deficiencia->id_deficiencia}}">{{$usuarios->deficiencia->descricao}}</option>
             @foreach($deficiencias as $deficiencia) 
               <option value="{{$deficiencia->id_deficiencia}}">{{$deficiencia->descricao}}</option> 
             @endforeach
