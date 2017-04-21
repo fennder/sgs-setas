@@ -194,7 +194,6 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-            $deficiencias = $this->deficiencia->all();
             
             return view('user.admin_editar', 
             [
@@ -209,10 +208,6 @@ class UsersController extends Controller
                 'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'deficiencias' => $deficiencias,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
                 'cargos' => $cargos,
                 'orgaos' => $orgaos,
                 'perfis' => $perfis,
@@ -234,7 +229,6 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
-            var_dump($deficiencias = $this->deficiencia->all());
 
             return view('user.editar', 
             [
@@ -248,10 +242,6 @@ class UsersController extends Controller
                 'funcoes' => $funcoes,
                 'cidades' => $cidades,
                 'estados' => $estados,
-                'escolaridades' => $escolaridades,
-                'deficiencias' => $deficiencias,
-                'vinculos' => $vinculos,
-                'departamentos' => $departamentos,
                 'cargos' => $cargos,
                 'orgaos' => $orgaos,
                 'perfis' => $perfis
