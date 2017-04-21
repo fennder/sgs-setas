@@ -249,6 +249,30 @@
 
   </div><!-- row -->
 
+<<<<<<< HEAD
+=======
+  <div class="row">
+
+    <div class="col-md-5">
+      <div class="form-group has-feedback">
+      <small class="text-muted">Deficiência</small>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+          <select class="form-control" name="id_deficiencia" id="id_deficiencia" required>
+            <option value="{{$usuarios->deficiencia->id_deficiencia}}">{{$usuarios->deficiencia->descricao}}</option>
+            @foreach($deficiencias as $deficiencia) 
+              <option value="{{$deficiencia->id_deficiencia}}">{{$deficiencia->descricao}}</option> 
+            @endforeach
+            
+          </select>
+        </div>
+        
+      </div><!-- Deficiencia -->
+    </div><!-- Col 5 -->
+
+  </div>
+
+>>>>>>> develop
 </div>
 </div>
 <!-- Box formulario dados institucionais -->
