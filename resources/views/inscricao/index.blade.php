@@ -48,9 +48,6 @@
               <th style="width: 3%">Nr.</th>
               <th style="width: 10%">Região</th>
               <th style="width: 22%">Município</th>
-              @if($usuarios->perfil->id_perfil <= 1)
-                <th style="width: 3%">id</th>
-              @endif
               <th style="width: 28%">Inscrito</th>
               <th style="width: 12%">Contato</th>
               <th style="width: 50%">Função</th>
