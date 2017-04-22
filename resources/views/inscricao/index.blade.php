@@ -61,7 +61,7 @@
 
               <tr class="success">
                 <td>{{$i=$i+1}}</td>
-                <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
+                <td><!-- {{$inscricao->usuario->cidade->regiao->descricao}} --></td>
                 <td>{{$inscricao->usuario->cidade->nome}}</td>
                 <td>{{$inscricao->usuario->name}}</td>
                 <td>{{$inscricao->usuario->telefone_trabalho}}</td>
