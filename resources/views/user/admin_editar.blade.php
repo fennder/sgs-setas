@@ -299,7 +299,6 @@
         <div class="form-group has-feedback">
           <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          
         </div><!-- NIS -->
       </div><!-- Col 4 -->
 
@@ -325,7 +324,6 @@
               @endforeach
             </select>
           </div>
-          
         </div><!-- Cargo -->
       </div><!-- Col 3 -->
     
@@ -345,7 +343,6 @@
               @endforeach
             </select>
           </div>
-          
         </div><!-- Vinculo Institucional -->
       </div><!-- Col 5 -->
 
