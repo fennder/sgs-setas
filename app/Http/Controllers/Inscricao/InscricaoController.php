@@ -3,11 +3,11 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Gerenciador\Http\Controllers\Controller;
-use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
+use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\User;
 use Vsmoraes\Pdf\Pdf;
 Use Session;
@@ -44,25 +44,25 @@ class InscricaoController extends Controller
         $page_title = "Lista de Inscrições";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
-
         $nav = "Inscrição";
 
-        $inscricoes = $this->inscricao->all();
+        $inscricoes = $this->inscricao->paginate(5000);
 
         $usuarios = Auth::user();
         $cidades = $this->cidade->all();
         $cursos = $this->curso->all();
-        $users = $this->user->orderBy('name', 'asc')->paginate(3000);
+        $users = $this->user->orderBy('name', 'asc')->paginate(5000);
         $i = 0;
 
         if ($request->isMethod('post')){
 
-            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(3000);
+            $inscricoes = $this->inscricao->where('curso_id','=',$request->id_curso)->paginate(5000);
 
         }
 
         return view('inscricao.index',
         [
+            
             'nav' => $nav, 
             'page_title' => $page_title, 
             'page_description' => $page_description,
@@ -87,7 +87,6 @@ class InscricaoController extends Controller
         $page_title = "Fazer Inscrição";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
-
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
