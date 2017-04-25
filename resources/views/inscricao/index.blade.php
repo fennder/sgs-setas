@@ -57,16 +57,22 @@
           </thead>
           <tbody>
             @foreach($inscricoes as $inscricao)
+
+                
               @if($inscricao->status == "Deferido")
 
               <tr class="success">
-                
-                <td>{{$i=$i+1}}</td>
-                <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
-                <td>{{$inscricao->usuario->cidade->nome}}</td>
-                <td>{{$inscricao->usuario->name}}</td>
-                <td>{{$inscricao->usuario->telefone_trabalho}}</td>
-                <td>{{$inscricao->usuario->funcao->descricao}}</td>
+
+                @if($inscricao->usuario)
+
+                  <td>{{ $i=$i+1 }}</td>  
+                  <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
+                  <td>{{$inscricao->usuario->cidade->nome}}</td>
+                  <td>{{$inscricao->usuario->name}}</td>
+                  <td>{{$inscricao->usuario->telefone_trabalho}}</td>
+                  <td>{{$inscricao->usuario->funcao->descricao}}</td>
+
+                @endif 
 
                 @if($usuarios->id_perfil == 2)
  
@@ -91,12 +97,17 @@
               @else
 
                 <tr class="danger">
-                  <td>{{ $i=$i+1 }}</td>
-                  <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
-                  <td>{{$inscricao->usuario->cidade->nome}}</td>
-                  <td>{{$inscricao->usuario->name}}</td>
-                  <td>{{$inscricao->usuario->telefone_trabalho}}</td>
-                  <td>{{$inscricao->usuario->funcao->descricao}}</td>
+
+                  @if($inscricao->usuario)
+
+                    <td>{{ $i=$i+1 }}</td>
+                    <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
+                    <td>{{$inscricao->usuario->cidade->nome}}</td>
+                    <td>{{$inscricao->usuario->name}}</td>
+                    <td>{{$inscricao->usuario->telefone_trabalho}}</td>
+                    <td>{{$inscricao->usuario->funcao->descricao}}</td>
+                    
+                  @endif
 
                   @if($usuarios->id_perfil == 2)
 
