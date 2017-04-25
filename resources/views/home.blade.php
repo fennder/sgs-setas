@@ -98,24 +98,25 @@
                 Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
                 soul, like these sweet mornings of spring which I enjoy with my whole heart.
               </div> -->
-              <div class="alert alert-info alert-dismissible">
+              <!--<div class="alert alert-info alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-info"></i> Aviso!</h4>
                 O sistema está passando por uma leve instabilidade, cajo haja funcionalidades que não podem ser usadas, favor entrar em contato.</br>
                 Setor de Desenvolvimento pelo Chamado Help Desck, informando qual ação deseja fazer.</br>
                 Caso o atendimento seja fora da estrutura da SETAS favor entrar em contato (63) 3218-1951.
               </div>
-              <!-- <div class="alert alert-warning alert-dismissible">
+               <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-warning"></i> Alert!</h4>
                 Warning alert preview. This alert is dismissable.
-              </div>
+              </div>-->
               <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                Success alert preview. This alert is dismissable.
+                <h4><i class="icon fa fa-check"></i> Aviso!</h4>
+                Sistema reestabelecido em suas funções!</br>
+                Caso necessite de algum atendimento, favor abrir um chamado pelo Help Desk ou entrar em contato (63) 3218-1951
               </div>
-            </div> -->
+            </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
