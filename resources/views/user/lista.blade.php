@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="box">
+    <div class="box">     
       <div class="box-header with-border">
         <h3 class="box-title">Lista de usuários cadastrados</h3>
         <div class="box-tools pull-right">
@@ -16,7 +16,10 @@
         <div class="box-body">
           <table class="table table-bordered table-striped table-hover table-condensed">
             <thead>
-              <tr>              
+              <tr>
+                @if($usuarios->id_perfil = 1)
+                <th>Id</th>
+                @endif              
                 <th style="width: 40%">Nome</th>
                 <th style="width: 35%">E-mail</th>
                 <th style="width: 25%">Função</th>
@@ -28,7 +31,10 @@
               @foreach($users as $user)
                 
                   @if($user->dados_atualizados == 1)
-                    <tr>     
+                    <tr>
+                      @if($usuarios->id_perfil = 1)
+                        <td>{{$user->id}}</td>
+                      @endif
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
                       <td>{{$user->funcao->descricao}}</td>

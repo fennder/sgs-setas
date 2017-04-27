@@ -8,7 +8,7 @@
       <strong>
 
         <!-- Copyright -->Direitos reservados &copy; 2016 - 2017
-        <a href="http://opensetas.setas.to.gov.br/portal">
+        <a href="http://opensetas.setas.to.gov.br/portal" target="_blank">
            SD-GTI 
         </a>
         da {{$lotacao or "SETAS"}}
