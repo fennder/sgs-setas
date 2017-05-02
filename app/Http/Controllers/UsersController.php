@@ -63,7 +63,7 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $page_title = "SGI";
+            $page_title = "Lista de Usuários";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $lotacao = "Secretaria do Trabalho e Assistência Social";
             $nav = "Lista";

@@ -30,7 +30,7 @@ class StatusCursoController extends Controller
         $scursos = $this->scurso->paginate(25);
         $usuarios = Auth::user();
     
-        $page_title = "SGI";
+        $page_title = "Lista de status de cursos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
@@ -54,7 +54,7 @@ class StatusCursoController extends Controller
      */
     public function create()
     {
-        $page_title = "SGI";
+        $page_title = "Criar Status";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 

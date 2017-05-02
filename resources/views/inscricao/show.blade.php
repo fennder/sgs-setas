@@ -8,7 +8,6 @@
       <div class="box">
         <!-- <div class="box-header with-border">
           <h3 class="box-title">Minhas Inscrições</h3>
-
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
@@ -22,8 +21,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 50%">Meus Cursos</th>                    
-                    <th>Período</th>
+                    <th>Id</th>
+                    <th style="width: 60%">Meus Cursos</th>                    
+                    <th style="width: 19%" >Período</th>
                     <th>Status</th>
                     @if($usuarios->id == 1)
                     <th style="width: 5%">Certificado</th>                                    
@@ -34,6 +34,7 @@
                     @foreach($inscricoes as $inscricao)
                       @if($inscricao->status == "Deferido")
                         <tr class="success">
+                          <td>{{$inscricao->curso->id_curso}}</td> 
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>

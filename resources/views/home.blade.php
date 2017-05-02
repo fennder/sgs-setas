@@ -93,7 +93,7 @@
             <div class="box-body">
               <!-- <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                <h4><i class="icon fa fa-ban"></i> Aviso!</h4>
                 Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
                 soul, like these sweet mornings of spring which I enjoy with my whole heart.
               </div> -->
@@ -104,19 +104,19 @@
                 Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
                 Caso o atendimento seja fora da estrutura da SETAS favor entrar em contato (63) 3218-1951.
               </div>-->
-              <div class="alert alert-warning alert-dismissible">
+              <!-- <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-warning"></i> Alert!</h4>
+                <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
                   O SGI estará fora ar no período de 28 de abril à 02 de maio, em face de uma manutenção preventiva e suas funcionalidades estarão todas elas desativadas para melhoria do sistema.</br>
                   SD-GTI, abra um chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, com problema.</br>
                   Caso o atendimento seja fora da estrutura da SETAS favor entrar em contato (63) 3218-1951.
-              </div>
-              <!-- <div class="alert alert-success alert-dismissible">
+              </div>-->
+              <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-check"></i> Aviso!</h4>
                 Sistema reestabelecido em suas funções!</br>
                 Caso necessite de algum atendimento, favor abrir um chamado pelo <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a> ou entrar em contato (63) 3218-1951
-              </div>-->
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -151,19 +151,19 @@
               Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
               Caso o atendimento seja fora da estrutura da SETAS favor entrar em contato (63) 3218-1951.
             </div>-->
-            <div class="alert alert-warning alert-dismissible">
+            <!-- <div class="alert alert-warning alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h4><i class="icon fa fa-warning"></i> Alert!</h4>
                 O SGI estará fora ar no período de 28 de abril à 02 de maio, em face de uma manutenção preventiva e suas funcionalidades estarão todas elas desativadas para melhoria do sistema.</br>
                 SD-GTI, abra um chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, com problema.</br>
                 Caso o atendimento seja fora da estrutura da SETAS favor entrar em contato (63) 3218-1951.
-            </div>
-            <!-- <div class="alert alert-success alert-dismissible">
+            </div> -->
+             <div class="alert alert-success alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h4><i class="icon fa fa-check"></i> Aviso!</h4>
               Sistema reestabelecido em suas funções!</br>
               Caso necessite de algum atendimento, favor abrir um chamado pelo <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a> ou entrar em contato (63) 3218-1951
-            </div>-->
+            </div>
           </div>
           <!-- /.box-body -->
         </div>
