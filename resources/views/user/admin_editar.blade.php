@@ -193,9 +193,9 @@
           <div class="form-group has-feedback input-group">
           <div class="input-group-addon">
             <i class="fa fa-phone"></i>
-          </div>
-            <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" required>
-          </div><!-- Telefone Pessoal -->
+            </div>
+              <input data-inputmask='"mask": "(99) 9999-9999"' data-mask type="text" class="form-control" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" required>
+            </div><!-- Telefone Pessoal -->
         </div> <!-- Col 3-->
 
         <div class="col-md-5">

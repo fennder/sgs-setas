@@ -18,8 +18,9 @@
       </div> -->
       <div class="box-body">
         <a class="btn btn-primary" href="{{ route('cs.create')}}">Incluir Curso</a>
-        </br>
-        </br>
+        <ul class="pagination pagination-sm no-margin pull-right">
+          <li>{!!$cursos->render()!!}</li>
+        </ul>
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
