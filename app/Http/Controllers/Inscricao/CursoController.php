@@ -49,7 +49,7 @@ class CursoController extends Controller
             $lotacao = "Secretaria do Trabalho e Assistência Social";
             $nav = "Curso";
 
-            $cursos = $this->curso->orderBy('id_status_curso', 'asc')->orderBy('data_termino', 'desc')->paginate(15);
+            $cursos = $this->curso->orderBy('id_status_curso', 'asc')->orderBy('data_inicio', 'desc')->orderBy('id_curso', 'asc')->paginate(15);
             $usuarios = Auth::user();
 
             return view('curso.index',
