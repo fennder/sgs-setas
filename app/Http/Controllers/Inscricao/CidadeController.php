@@ -40,7 +40,7 @@ class CidadeController extends Controller
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();
     
-        $page_title = "SGI";
+        $page_title = "Listar Cidades";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidades";
@@ -76,7 +76,7 @@ class CidadeController extends Controller
      */
     public function create()
     {
-        $page_title = "SGI";
+        $page_title = "Criar Cidades";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Cidade";
@@ -131,6 +131,7 @@ class CidadeController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
+        $page_title = "Editar Cidades";
         $page_description = "Editar Cidade";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
@@ -142,11 +143,12 @@ class CidadeController extends Controller
         return view('cidade.edit',
         [
             'nav' => $nav,
-            'cidades' => $cidades, 
+            'cidades' => $cidades,
             'page_description' => $page_description,
             'lotacao' => $lotacao,
             'estados' => $estados,
             'usuarios' => $usuarios,
+            'page_title' => $page_title,
             'regioes' => $regioes
         ]);
     }

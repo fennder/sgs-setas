@@ -6,20 +6,13 @@
     <div class="col-md-12">
 <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Lista de Departamentos</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
+      
         <div class="box-body">
+        <ul class="pagination pagination-sm no-margin pull-right">
+            <li>{!!$departamentos->render()!!}</li>
+          </ul>
           <a class="btn btn-primary" href="{!! route('dep.create')!!}">Incluir Departamento</a>
-          </br>
-          </br>
+
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>

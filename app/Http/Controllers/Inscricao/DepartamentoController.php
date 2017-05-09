@@ -125,6 +125,7 @@ class DepartamentoController extends Controller
     {
 
         $nav = "Editar";
+        $page_title = "Editar Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
@@ -139,6 +140,7 @@ class DepartamentoController extends Controller
             'lotacao' => $lotacao,
             'departamentos' => $departamentos,
             'usuarios' => $usuarios,
+            'page_title' => $page_title,
             'orgaos' => $orgaos
         ]);
     }
