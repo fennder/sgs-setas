@@ -9,7 +9,7 @@
 
         <!-- Copyright -->Todos os direitos reservados &copy; 2016 - 2017
         
-           SD-GTI 
+           SDS-GTI 
         
         da {{$lotacao or "SETAS"}}
       </strong>
