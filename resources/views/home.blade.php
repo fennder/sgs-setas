@@ -129,13 +129,14 @@
             Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
             soul, like these sweet mornings of spring which I enjoy with my whole heart.
           </div> -->
-          <div class="alert alert-info alert-dismissible">
+          <!-- <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
             Devido aos ataques acontecidos em todo o mundo, tomaremos mais precauções quanto ao acesso ao sistema, tenha paciência caso ocorra alguma lentidão.</br>
-            Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
+            Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>            
+            Caso o atendimento seja sobre Cursos/Capacitação/Eventos, favor entrar em contato (63) 3218-1931 (Nágila/Eliene).</br>
             Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
-          </div>
+          </div> -->
           <!--  <div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
@@ -143,12 +144,12 @@
               SD-GTI, abra um chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, com problema.</br>
               Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
           </div> -->
-          <!-- <div class="alert alert-success alert-dismissible">
+          <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4><i class="fa fa-check"></i> Aviso!</h4>
-            Sistema reestabelecido em suas funções!</br>
-            Caso necessite de algum atendimento, no sentido técnico do sistema, favor abrir um chamado pelo <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a> ou entrar em contato (63) 3218-1951
-          </div> -->
+            <h4><i class="fa fa-check"></i> Informação!</h4>
+            Anote e guarde o seu E-MAIL e SENHA para acessar com maior facilidade o sistema!</br>
+            Caso necessite de algum atendimento, no sentido técnico do sistema, entrar em contato (63) 3218-1951
+          </div>
             
         </div>
         <!-- /.col -->
