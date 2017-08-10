@@ -118,7 +118,6 @@ class InscricaoController extends Controller
     {
 
         $this->inscricao->create($request->all());
-
         return redirect()->route('ins.show');
     }
 
@@ -176,10 +175,10 @@ class InscricaoController extends Controller
             'page_description' => $page_description,
             'lotacao' => $lotacao,
             'nav' => $nav,
-            'inscricoes' => $inscricoes, 
+            'inscricoes' => $inscricoes,
             'usuarios' => $usuarios,
             'users' => $users,
-            'cursos' => $cursos 
+            'cursos' => $cursos
             
         ]);
     }
@@ -221,26 +220,31 @@ class InscricaoController extends Controller
      */
     public function certificado(Request $request)
     {
+        if(Auth::check()){
+            $page_title = "Certificado";
+            $page_description = "Sistema de Gerenciamento de Inscrições";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Certificado";
 
-        $page_title = "Certificado";
-        $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
-        $nav = "Certificado";
+            $cursos = $this->curso->all();
+            $usuarios = Auth::user();
+            $certificados = $usuarios->cursos->all();
+            $inscricoes = $this->inscricao->all();
 
-        $usuarios = Auth::user();
-        $curso = $this->curso->all();
-        $inscricoes = $this->inscricao->all();
-
-        return view('pdf.certificado',
-        [
-            'page_description' => $page_description,
-            'page_title'  => $page_title,
-            'lotacao' => $lotacao,
-            'nav' => $nav,
-            'inscricoes' => $inscricoes,
-            'usuarios' => $usuarios
-        ]);
-
+            return view('pdf.certificado',
+            [
+                'page_description' => $page_description,
+                'certificados' => $certificados,
+                'page_title'  => $page_title,
+                'inscricoes' => $inscricoes,
+                'usuarios' => $usuarios,
+                'lotacao' => $lotacao,
+                'cursos' => $cursos,
+                'nav' => $nav
+            ]);
+        }else{
+            return redirect()->back();
+        }
         /*$html = view('pdf.certificado')->render();
 
         return $this->pdf->load($html)->show(); */

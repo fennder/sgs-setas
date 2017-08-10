@@ -24,10 +24,10 @@
         <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
-              <th style="width: 10px">Id</th>
+              <th>Id</th>
               <th>Descrição</th>
-              <th>Início</th>
-              <th>Término</th>
+              <th style="width: 10%">Início</th>
+              <th style="width: 20%">Término</th>
               <th>Status</th>
               <th align="text-center" class="text-center" style="width: 120px" colspan="3">Ação</th>                   
             </tr>

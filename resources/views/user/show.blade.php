@@ -50,11 +50,8 @@
 
               <p>
                 {{ $usuarios->orgao->descricao }},</br>
-              
                 {{ $usuarios->departamento->descricao }},</br>
-             
-                {{ $usuarios->vinculoinstitucional->descricao }},</br>
-              
+                {{ $usuarios->vinculoinstitucional->descricao }},</br>       
                 {{ $usuarios->cargo->descricao }} 
               </p>
 
@@ -82,7 +79,6 @@
 
               <!-- <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p> -->
             </div>
             <!-- /.box-body -->
           </div>

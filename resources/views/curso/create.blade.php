@@ -30,7 +30,7 @@
       <div class="form-group has-feedback">
         <input type="date" class="form-control" name="data_inicio" id="data_inicio" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-        <small class="text-muted">Data de Inicio</small>
+        <small class="success" class="text-muted">Data de Inicio do Curso/Evento</small>
       </div><!--Data Inicio do Curso -->
     </div><!-- Col 4 -->
 
@@ -38,7 +38,7 @@
       <div class="form-group has-feedback">
         <input type="date" class="form-control" name="data_termino" id="data_termino" required>
         <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-        <small class="text-muted">Data de Término</small>
+        <small class="text-muted">Data de Término do Curso/Evento</small>
       </div><!--Data Término do Curso -->
     </div><!-- Col 4 -->
 
@@ -50,7 +50,7 @@
                 <option value="{{ $scurso->id_status_curso }}">{{ $scurso->descricao }}</option>
               @endforeach
           </select>
-          <small class="text-muted">Status Curso</small>
+          <small class="text-muted">Status Curso/Evento</small>
       </div><!-- Curso -->
     </div><!-- Col 4 -->
 

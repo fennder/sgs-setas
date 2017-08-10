@@ -22,7 +22,7 @@
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th style="width: 60%">Meus Cursos</th>                    
+                    <th>Meus Cursos</th>                    
                     <th style="width: 19%" >Período</th>
                     <th>Status</th>
                     @if($usuarios->id == 1)
@@ -44,10 +44,16 @@
                               <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
                             </a>
                           </td> 
+                          <!-- <td align="center">
+                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
+                            </a>
+                          </td>  -->
                           @endif
                         </tr>
                       @else
                         <tr class="danger">
+                          <td>{{$inscricao->curso->id_curso}}</td> 
                           <td>{{$inscricao->curso->descricao}}</td> 
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 

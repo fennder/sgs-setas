@@ -22,7 +22,7 @@
           <select class="form-control" name="id_curso" id="id_curso" required>
             <option disabled selected> --- Escolha o Curso --- </option>
               @foreach($cursos as $curso)
-                <option value="{{ $curso->id_curso }}">{{ $curso->descricao }}</option>
+                <option value="{{ $curso->id_curso }}">{{$curso->id_curso}} - {{ $curso->descricao }}</option>
               @endforeach
           </select>
           <small class="text-muted">Curso</small>

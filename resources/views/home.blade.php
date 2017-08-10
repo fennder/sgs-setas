@@ -62,8 +62,6 @@
         </div>
       </div>
       <!-- ./col -->
-      
-      <div class="col-md-3 col-sm-6 col-xs-12">
         <!-- small box -->
         <!-- <div class="small-box bg-red">
           <div class="inner">
@@ -81,8 +79,26 @@
       <!-- ./col -->
     </div>
     <!-- /.row -->
+      <div class="row">
+        <div class="col-md-4">     
+            
+        </div>
+        <div class="col-md-4">     
+            <!-- <video width="100%" height="100%" controls autoplay> -->
+            <video width="100%" height="100%" controls>
+            <source src="{{ asset('/video/institucional.mp4') }}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            O seu navegador não suporta este tipo de midia.
+          </video>
+        </div>
+        <div class="col-md-4">     
+        </div><!-- Row -->
+      </div>
 
       <div class="row">
+        <div class="col-md-3">
+          
+        </div>
         <div class="col-md-6">
                       
           <!-- <div class="alert alert-danger alert-dismissible">
@@ -114,10 +130,29 @@
             
         </div>
         <!-- /.col -->
+        <div class="col-md-3">
+          
+        </div>
       </div>
 
   @endif
   @if($usuarios->perfil->id_perfil == 3)
+
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">     
+        <!-- <video width="100%" height="100%" controls autoplay> -->
+        <video width="100%" height="100%" controls>
+          <source src="{{ asset('/video/institucional.mp4') }}" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+          O seu navegador não suporta este tipo de midia.
+        </video>
+      </div>
+      <div class="col-md-4">           
+      </div><!-- Row -->
+    </div>
+
     <div class="row">
       <div class="col-md-3">
       </div>

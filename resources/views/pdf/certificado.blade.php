@@ -10,7 +10,7 @@
         <p></p>
       </div>
       <p><h2 class="box-title"></h2></p>
-      <h3 class="box-title"></h3> 
+      <h3 class="box-title"></h3>
     </div> --><!-- /.box -->
   </div><!-- Col 2 -->
 
@@ -19,7 +19,7 @@
     <div>
       <div class="box-header with-border">
         <div class="pull-left" align="center">
-          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="Secretaria do Trabalho e Assistência Social" width="55%"></p>
+          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="Secretaria do Trabalho e Assistência Social" width="65%"></p>
         </div>
       </div>
       <div class="box-body">
@@ -54,16 +54,19 @@
           @else
             o Senhor
           @endif
-          <strong>{{$usuarios->name}}</strong>
-          , participou do(a)
-          <strong>
-
+          <strong>{{$usuarios->name}}</strong>,
+          participou do(a)
+         
+            <strong>
+            @if($usuarios->pivot->curso_id == $curso->id_curso && $usuarios->pivot->user_id == $user->id_user)
+              
+              {{$usuarios->cursos}}  
+            
+            @endif
+            </strong>,
+         
+            no período de <strong>### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
           
-            {{$usuarios->cursos}}
-          
-          </strong>
-        
-          , no período de <strong>### data_inicio ### à ### data_termino ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
         </em>
           
       </div><!-- /.box-body -->
