@@ -22,11 +22,11 @@
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Meus Cursos</th>                    
-                    <th style="width: 19%" >Período</th>
+                    <th style="width: 50%">Meus Cursos</th>                    
+                    <th style="width: 15%">Período</th>
                     <th>Status</th>
                     @if($usuarios->id == 1)
-                    <th style="width: 5%">Certificado</th>                                    
+                    <th>Certificado</th>                                    
                     @endif
                   </tr>
                 </thead>
@@ -39,16 +39,18 @@
                           <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
                           <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
                           @if($usuarios->id == 1)
-                          <td align="center">
-                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
-                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
-                            </a>
-                          </td> 
-                          <!-- <td align="center">
-                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
-                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
-                            </a>
-                          </td>  -->
+                            @if($inscricao->curso->id_status_curso == 4)
+                              <td align="center">
+                                <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                                  <img src="{{ asset('/imagens/certificado.png') }}" width="100%">
+                                </a>
+                              </td> 
+                              <!-- <td align="center">
+                                <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                                  <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
+                                </a>
+                              </td>  -->
+                            @endif
                           @endif
                         </tr>
                       @else
