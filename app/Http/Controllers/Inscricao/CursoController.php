@@ -172,6 +172,7 @@ class CursoController extends Controller
     public function edit($id)
     {
         $nav = "Editar";
+        $page_title = "Editar Curso";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
 
@@ -182,6 +183,7 @@ class CursoController extends Controller
         return view('curso.edit',
         [
             'page_description' => $page_description,
+            'page_title' => $page_title,
             'lotacao' => $lotacao,
             'usuarios' => $usuarios,
             'scursos' => $scursos,

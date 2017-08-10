@@ -113,6 +113,7 @@ class ModuloController extends Controller
         $usuarios = Auth::user();
 
         $nav = "Editar";
+        $page_title = "Editar de Módulos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         
@@ -126,6 +127,7 @@ class ModuloController extends Controller
             'modulos' => $modulos, 
             'usuarios' => $usuarios, 
             'page_description' => $page_description,
+            'page_title' => $page_title,
             'lotacao' => $lotacao
         ]);
     }

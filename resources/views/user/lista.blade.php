@@ -42,7 +42,34 @@
                           <a href="{{route('u.edit', ['id' => $user->id])}}" class="btn btn-primary" role="button">Editar</a>
                         </td>
                         <td class="text-center">
-                          <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                          <!-- Trigger the modal with a button -->
+                          <button type="button" class="btn btn-outline btn-danger" data-toggle="modal" data-target="#myModal">Excluir</button>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                            
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h2 class="modal-title">CUIDADO! ESTA AÇÃO NÃO TEM VOLTA!</h2>
+                                </div>
+                                <div class="modal-body">
+                                  <a href="#">
+                                    <img src="{{ asset('/imagens/deletar_usuario.png') }}" width="70%">
+                                  </a>
+                                  <p>Você está prestes a excluir um usuário, tem realmente certeza disto?</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                                  <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir permanente</a>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div><!-- Modal -->
+
                         </td>
                       @elseif($usuarios->id_perfil == 2)
                         <td class="text-center">
@@ -65,19 +92,7 @@
     </div>
           <!-- /.box -->
   </div>
-        <!-- /.col -->
-  <!-- <div class="col-md-4">
-    <div class="box">
-      <div class="box-header with-border">
-          <h3 class="box-title">Mais informações</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-          </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- /.col -->
+
 </div>
 
 @endsection
