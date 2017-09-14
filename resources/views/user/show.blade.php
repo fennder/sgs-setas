@@ -39,20 +39,22 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <strong><i class="fa fa-book margin-r-5"></i> Formação</strong>
+              <strong><i class="fa fa-book margin-r-5"></i> Formação </strong>
 
               <p class="text-muted">
                 {{ $usuarios->escolaridade->descricao }}
               </p>
               <hr>
 
-              <strong><i class="fa fa-pencil margin-r-5"></i> Trabalho</strong>
+              <strong><i class="fa fa-pencil margin-r-5"></i> Trabalho </strong>
 
               <p>
                 {{ $usuarios->orgao->descricao }},</br>
                 {{ $usuarios->departamento->descricao }},</br>
                 {{ $usuarios->vinculoinstitucional->descricao }},</br>       
-                {{ $usuarios->cargo->descricao }} 
+                {{ $usuarios->cargo->descricao }}
+                {{ $usuarios->funcao->descricao }}
+                
               </p>
 
               <hr>

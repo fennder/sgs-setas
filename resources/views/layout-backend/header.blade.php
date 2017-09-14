@@ -133,7 +133,7 @@
 
                 <p>
                   {{ $usuarios->nome_cracha or "Servidor"}} - {{ $usuarios->perfil->descricao or "Ocupação"}}
-                  <small>Usuário desde {{$usuarios->created_at or Null}}</small>
+                  <small>Ultimo acesso {{$usuarios->updated_at or Null}}</small>
                 </p>
               </li>
               <!-- Menu Body -->

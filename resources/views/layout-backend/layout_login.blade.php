@@ -24,11 +24,35 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition register-page">
-    @yield('content')
+<body class="hold-transition register-page"></br>
+
+  <div class="row">
+    <div class="col-md-3" align="center">
+      <a href="{{ asset('/documentacao/MANUAL SGI-USUARIO.pdf') }}" target="_blank"><img src="{{ asset('/imagens/MANUAL.png') }}" width="70%"></a>
+    </div>
+    <div class="col-md-6">
+     
+    </div>
+    <div class="col-md-3">
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3" align="center">
+     
+    </div>
+    <div class="col-md-6">
+      @yield('content')
+    </div>
+    <div class="col-md-3">
+      
+    </div>
+  </div>
+  
 <!-- /.register-box -->
   <div class="row">
-
+    
     <div class="col-md-12" align="center">
       <!-- Default box -->
       <div>

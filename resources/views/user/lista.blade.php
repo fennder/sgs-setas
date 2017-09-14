@@ -33,10 +33,10 @@
                       @if($usuarios->id_perfil = 1)
                         <td>{{$user->id}}</td>
                       @endif
-                      <td>{{$user->name}}</td>
-                      <td>{{$user->email}}</td>
-                      <td>{{$user->funcao->descricao}}</td>
-                      <td>{{$user->perfil->descricao}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->funcao->descricao}}</td>
+                        <td>{{$user->perfil->descricao}}</td>
                       @if($usuarios->id_perfil == 1)
                         <td class="text-center">
                           <a href="{{route('u.edit', ['id' => $user->id])}}" class="btn btn-primary" role="button">Editar</a>
@@ -53,17 +53,17 @@
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h2 class="modal-title">CUIDADO! ESTA AÇÃO NÃO TEM VOLTA!</h2>
+                                  <h2 class="modal-title">ATENÇÃO! NÃO É PERMITIDO EXCLUIR USUÁRIO!</h2>
                                 </div>
                                 <div class="modal-body">
                                   <a href="#">
                                     <img src="{{ asset('/imagens/deletar_usuario.png') }}" width="70%">
                                   </a>
-                                  <p>Você está prestes a excluir um usuário, tem realmente certeza disto?</p>
+                                  <p>Você estava prestes a excluir um usuário, por questões de segurança é proibido exclusão de usuários!</p>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
-                                  <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir permanente</a>
+                                  <!-- <a href="{{route('u.destroy', ['id' => $user->id])}}" class="btn btn-danger" title="Deseja realmente excluir o usuário?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir permanente</a> -->
                                 </div>
                               </div>
                               

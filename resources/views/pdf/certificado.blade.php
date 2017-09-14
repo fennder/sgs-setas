@@ -58,11 +58,7 @@
           participou do(a)
          
             <strong>
-            @if($usuarios->pivot->curso_id == $curso->id_curso && $usuarios->pivot->user_id == $user->id_user)
-              
-              {{$usuarios->cursos}}  
-            
-            @endif
+              {{$certificados}}
             </strong>,
          
             no período de <strong>### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>

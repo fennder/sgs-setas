@@ -113,24 +113,41 @@ class HomeController extends Controller
                 $lotacao = "Secretaria do Trabalho e Assistência Social";
 
                 $cursos = $this->curso->all();
-                for($i=0; $i < count($cursos); $i++){
-                    $cont_curso = $i+1;
+                if(count($cursos) > 0){
+                    for($i=0; $i < count($cursos); $i++){
+                        $cont_curso = $i+1;
+                    }
+                }else{
+                    $cont_curso = "Null";    
                 }
 
                 $users = $this->usuario->all();
-                for($i=0; $i < count($users); $i++){
-                    $cont_user = $i+1;
+                if(count($users) > 0){
+                    for($i=0; $i < count($users); $i++){
+                        $cont_user = $i+1;
+                    }
+                }else{
+                     $cont_user = "Null";   
                 }
+                
 
                 $inscricoes = $this->inscricao->all();
-                for($i=0; $i < count($inscricoes); $i++){
-                    $cont_ins = $i+1;
+                if(count($inscricoes) > 0){
+                    for($i=0; $i < count($inscricoes); $i++){
+                        $cont_ins = $i+1;
+                    }
+                }else{
+                    $cont_ins = "Null";                    
                 }
+                    
 
                 $regionais = $this->regiao->all();
-                
-                for($i=0; $i < count($regionais); $i++){
-                    $cont_reg = $i+1;
+                if(count($regionais) > 0 or $regionais->descricao != "Brasil"){    
+                    for($i=0; $i < count($regionais); $i++){
+                        $cont_reg = $i+1;
+                    }
+                }else{
+                    $cont_ins = "Null";                    
                 }
 
                 return view('home', 

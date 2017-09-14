@@ -41,8 +41,35 @@
 
       <div class="row">
         <!-- /.col -->
-        <div class="col-xs-8" align="left">
-          <button type="submit" class="btn btn-primary ">RECUPERAR SENHA</button>
+        <div class="col-xs-8" align="text-center">
+
+          <!-- Trigger the modal with a button -->
+          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">RECUPERAR SENHA</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog" align="text-center">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h2 class="modal-title">QUASE LÁ! FOI ENVIADO O LINK NO E-MAIL!</h2>
+                </div>
+                <div class="modal-body" align="text-center">
+                  <a href="#">
+                    <img src="{{ asset('/imagens/enviada.gif') }}" width="70%">
+                  </a>
+                  <p>Clique ou copie o link que chegará no seu e-mail.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+              
+            </div>
+          </div><!-- Modal -->
+
         </div>
         <!-- /.col -->
         <div class="col-xs-4" align="right">
@@ -51,7 +78,6 @@
       </div>
 
     </form>
-
 
     <!-- <a href="{!! route('a.getLogin') !!}" class="text-center"><h3 style="color:blue">Tela de login</h3></a>
     <a href="{!! route('a.getRegister') !!}" class="text-center"><h3 style="color:blue">Tela de registro de usuário</h3></a> -->

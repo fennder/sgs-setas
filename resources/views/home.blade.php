@@ -22,7 +22,7 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3>{{$cont_curso}}</h3>
+            <h3>{{$cont_curso or "null"}}</h3>
             <p>CURSOS</p>
           </div>
           <div class="icon">
@@ -37,7 +37,7 @@
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3>{{$cont_user}}<!-- <sup style="font-size: 20px">%</sup> --></h3>
+            <h3>{{$cont_user or "null"}}<!-- <sup style="font-size: 20px">%</sup> --></h3>
             <p>USUÁRIOS</p>
           </div>
           <div class="icon">
@@ -52,7 +52,7 @@
         <!-- small box -->
         <div class="small-box bg-yellow">
           <div class="inner">
-            <h3>{{$cont_ins}}</h3>
+            <h3>{{$cont_ins or null}}</h3>
             <p>INSCRIÇÕES</p>
           </div>
           <div class="icon">
@@ -62,11 +62,13 @@
         </div>
       </div>
       <!-- ./col -->
-        <!-- small box -->
-        <!-- <div class="small-box bg-red">
+
+     <!--  <div class="col-md-3 col-sm-6 col-xs-12">
+        
+        <div class="small-box bg-red">
           <div class="inner">
             
-            <h3>{{$cont_reg}}</h3>
+            <h3>{{$cont_reg or null}}</h3>
             
             <p>RELATÓRIOS</p>
           </div>
@@ -77,7 +79,7 @@
         </div>
       </div> -->
       <!-- ./col -->
-    </div>
+
     <!-- /.row -->
       <div class="row">
         <div class="col-md-4">     

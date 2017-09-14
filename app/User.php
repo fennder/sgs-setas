@@ -80,7 +80,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function cursos()
     {
-        return $this->belongsToMany('Gerenciador\Inscricao\Curso'); //Tem vários Cursos
+        return $this->belongsToMany('Gerenciador\Inscricao\Curso', 'curso_user'); //Tem vários Cursos
     }
 
     public function curso()
