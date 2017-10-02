@@ -36,7 +36,9 @@
                         <td>{{$funcao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('f.edit', ['id' => $funcao->id_funcao])}}" class="btn btn-primary" role="button">Editar</a>
+                          @if($usuarios == 1)
                           <!-- <a href="{{route('f.destroy', ['id' => $funcao->id_funcao])}}" class="btn btn-danger" role="button">Excluir</a> -->
+                          @endif
                         </td>
                       </tr>
                     @endforeach
