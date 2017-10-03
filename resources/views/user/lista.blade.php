@@ -59,7 +59,7 @@
                                   <a href="#">
                                     <img src="{{ asset('/imagens/deletar_usuario.png') }}" width="70%">
                                   </a>
-                                  <p>Você estava prestes a excluir um usuário, por questões de segurança é proibido exclusão de usuários!</p>
+                                  <p>Você estava prestes a excluir um usuário, por questões de segurança é proibido a exclusão de usuários!</p>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>

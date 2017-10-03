@@ -28,7 +28,7 @@
 
   <div class="row">
     <div class="col-md-3" align="center">
-      <a href="{{ asset('/documentacao/MANUAL SGI-USUARIO.pdf') }}" target="_blank"><img src="{{ asset('/imagens/MANUAL.png') }}" width="70%"></a>
+      <a href="{{ asset('/documentacao/MANUAL SGI-USUARIO.pdf') }}" target="_blank"><img src="{{ asset('/imagens/MANUAL.png') }}" width="60%"></a>
     </div>
     <div class="col-md-6">
      

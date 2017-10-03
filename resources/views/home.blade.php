@@ -6,9 +6,9 @@
     <small>
   		Bem  
       @if($usuarios->sexo == "Feminino")
-        Vinda Senhora
+        Vinda! Senhora
       @else
-        Vindo Senhor
+        Vindo! Senhor
       @endif
     </small>
     <b>{{ $usuarios->name or "Servidor"}}</b>, 

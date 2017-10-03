@@ -36,7 +36,9 @@
                         <td>{{$cargo->descricao}}</td>
                         <td class="text-center">
                         <a href="{{route('c.edit', ['id' => $cargo->id_cargo])}}" class="btn btn-primary" role="button">Editar</a>
-                          <!-- <a href="{{route('c.destroy', ['id' => $cargo->id_cargo])}}" class="btn btn-primary" role="button">Excluir</a> -->
+                          @if($usuarios->id_perfil == 1)
+                            <a href="{{route('c.destroy', ['id' => $cargo->id_cargo])}}" class="btn btn-primary" role="button">Excluir</a>
+                          @endif
                         </td>
                       </tr>
                     @endforeach

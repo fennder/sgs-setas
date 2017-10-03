@@ -60,7 +60,7 @@
                   <a href="#">
                     <img src="{{ asset('/imagens/enviada.gif') }}" width="70%">
                   </a>
-                  <p>Clique ou copie o link que chegará no seu e-mail.</p>
+                  <p><center><h3><b>Clique ou copie o link que chegará no seu e-mail.</b></h3></center></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>

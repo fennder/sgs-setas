@@ -14,9 +14,9 @@
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th style="width: 10px">Id</th>
-                    <th>Descrição</th>
-                    <th style="width: 40px" colspan="2"><center>Ação</center></th>                    
+                    <th style="width: 5%">Id</th>
+                    <th style="width: 75%">Descrição</th>
+                    <th style="width: 20%" colspan="2"><center>Ação</center></th>                    
                   </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,9 @@
                         <td>{{$orgao->descricao}}</td>                        
                           <td class="text-center">
                             <a href="{{route('o.edit', ['id' => $orgao->id_orgao])}}" class="btn btn-primary" role="button">Editar</a>
-                            <!-- <a href="{{route('o.destroy', ['id' => $orgao->id_orgao])}}" class="btn btn-danger" role="button">Excluir</a> -->
+                            @if($usuarios->id_perfil == 1)
+                              <a href="{{route('o.destroy', ['id' => $orgao->id_orgao])}}" class="btn btn-danger" role="button">Excluir</a>
+                            @endif
                           </td>
                       </tr>
                     @endforeach

@@ -31,7 +31,9 @@
                         <td>{{$departamento->orgao->descricao}}</td>
                         <td class="text-center">
                           <a href="{{route('dep.edit', ['id' => $departamento->id_departamento])}}" class="btn btn-primary" role="button">Editar</a>
-                          <!-- <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}" class="btn btn-danger" role="button">Excluir</a> -->
+                            @if($usuarios->id_perfil == 1) 
+                             <a href="{{route('dep.destroy', ['id' => $departamento->id_departamento])}}" class="btn btn-danger" role="button">Excluir</a>
+                            @endif
                           
                         </td>
                       </tr>

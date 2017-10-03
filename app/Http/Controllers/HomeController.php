@@ -118,16 +118,16 @@ class HomeController extends Controller
                         $cont_curso = $i+1;
                     }
                 }else{
-                    $cont_curso = "Null";    
+                    $cont_curso = 0;    
                 }
 
-                $users = $this->usuario->all();
+                $users = $this->usuario->where('id_perfil', '=', 3)->get();
                 if(count($users) > 0){
                     for($i=0; $i < count($users); $i++){
                         $cont_user = $i+1;
                     }
                 }else{
-                     $cont_user = "Null";   
+                     $cont_user = 0;   
                 }
                 
 
@@ -137,7 +137,7 @@ class HomeController extends Controller
                         $cont_ins = $i+1;
                     }
                 }else{
-                    $cont_ins = "Null";                    
+                    $cont_ins = 0;                    
                 }
                     
 
@@ -147,7 +147,7 @@ class HomeController extends Controller
                         $cont_reg = $i+1;
                     }
                 }else{
-                    $cont_ins = "Null";                    
+                    $cont_ins = 0;                    
                 }
 
                 return view('home', 
