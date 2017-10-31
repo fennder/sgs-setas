@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="box-body">
-        <em><h2 align="center"><strong>CERTIFICADO DO PARTICIPANTE</strong></h2></em>
+        <em><h1 align="center"><strong>CERTIFICADO</strong></h1></em>
       </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div><!-- Col 6 -->
@@ -58,7 +58,9 @@
           participou do(a)
          
             <strong>
-              {{$certificados}}
+              
+              ### CURSO ###{{$certificados}}
+
             </strong>,
          
             no período de <strong>### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>

@@ -138,7 +138,7 @@ class InscricaoController extends Controller
         $usuarios = Auth::user();
         $cursos = $usuarios->cursos->all();
         $inscricoes = $this->inscricao->where('user_id', $usuarios->id)->paginate(10000);
-
+            
         return view('inscricao.show',
         [
             'nav' => $nav,
@@ -208,7 +208,8 @@ class InscricaoController extends Controller
     {
         $this->inscricao->destroy($id);
 
-        return redirect()->back();
+        /*return redirect()->back();*/
+        return redirect()->route('ins.index');
 
     }
 
@@ -226,21 +227,21 @@ class InscricaoController extends Controller
             $lotacao = "Secretaria do Trabalho e Assistência Social";
             $nav = "Certificado";
 
-            $cursos = $this->curso->all();
             $usuarios = Auth::user();
-            $certificados = $usuarios->cursos->all();
-            $inscricoes = $this->inscricao->all();
+            $cursos = $this->curso->all();
+            $certificados = $cursos->where();
+            
 
             return view('pdf.certificado',
             [
                 'page_description' => $page_description,
                 'certificados' => $certificados,
                 'page_title'  => $page_title,
-                'inscricoes' => $inscricoes,
                 'usuarios' => $usuarios,
                 'lotacao' => $lotacao,
-                'cursos' => $cursos,
                 'nav' => $nav
+
+
             ]);
         }else{
             return redirect()->back();

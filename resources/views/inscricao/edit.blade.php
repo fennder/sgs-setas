@@ -98,6 +98,7 @@
 
   <button type="submit" class="btn btn-primary btn-large">Atualizar Inscrição</button>
   <a class="btn btn-success" href="{{route('u.edit', ['id' => $inscricoes->user_id])}}">Editar Usuário</a><!-- colocar a rota do user/edir e passar inscricao->user_id -->
+  <a href="{{route('ins.destroy', ['id_inscricao' => $inscricoes->id_inscricao])}}" class="btn btn-danger" role="button">Excluir</a>
 
 </form><!-- Form -->
 @endsection

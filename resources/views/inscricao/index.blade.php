@@ -55,81 +55,87 @@
             </tr>
           </thead>
           <tbody>
+
             @foreach($inscricoes as $inscricao)
 
+              @if($inscricao->curso->id_status_curso == 1)
                 
-              @if($inscricao->status == "Deferido")
+                @if($inscricao->status == "Deferido")
 
-              <tr class="success">
-
-                @if($inscricao->usuario)
-
-                  <td>{{ $i=$i+1 }}</td>  
-                  <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
-                  <td>{{$inscricao->usuario->cidade->nome}}</td>
-                  <td>{{$inscricao->usuario->name}}</td>
-                  <td>{{$inscricao->usuario->telefone_trabalho}}</td>
-                  <td>{{$inscricao->usuario->funcao->descricao}}</td>
-
-                @endif 
-
-                @if($usuarios->id_perfil == 2)
- 
-                  <td class="text-center">
-                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
-                  </td>
-                  <!-- <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
-                  </td> -->
-
-                @elseif($usuarios->id_perfil == 1)
-
-                  <td class="text-center">
-                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
-                  </td>
-                  <!-- <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
-                  </td> -->
-
-                @endif
-              </tr>
-              @else
-
-                <tr class="danger">
+                <tr class="success">
 
                   @if($inscricao->usuario)
 
-                    <td>{{ $i=$i+1 }}</td>
+                    <td>{{ $i=$i+1 }}</td>  
                     <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
                     <td>{{$inscricao->usuario->cidade->nome}}</td>
                     <td>{{$inscricao->usuario->name}}</td>
                     <td>{{$inscricao->usuario->telefone_trabalho}}</td>
                     <td>{{$inscricao->usuario->funcao->descricao}}</td>
-                    
-                  @endif
+
+                  @endif 
 
                   @if($usuarios->id_perfil == 2)
-
+   
                     <td class="text-center">
-                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
-                  </td>
-                  <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
-                  </td>
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+                    <!-- <td class="text-center">
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                    </td> -->
 
                   @elseif($usuarios->id_perfil == 1)
 
                     <td class="text-center">
-                    <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
-                  </td>
-                  <td class="text-center">
-                    <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
-                  </td>
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+                    <!-- <td class="text-center">
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                    </td> -->
 
                   @endif
                 </tr>
+                @else
+
+                  <tr class="danger">
+
+                    @if($inscricao->usuario)
+
+                      <td>{{ $i=$i+1 }}</td>
+                      <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
+                      <td>{{$inscricao->usuario->cidade->nome}}</td>
+                      <td>{{$inscricao->usuario->name}}</td>
+                      <td>{{$inscricao->usuario->telefone_trabalho}}</td>
+                      <td>{{$inscricao->usuario->funcao->descricao}}</td>
+                      
+                    @endif
+
+                    @if($usuarios->id_perfil == 2)
+
+                      <td class="text-center">
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+                    <td class="text-center">
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                    </td>
+
+                    @elseif($usuarios->id_perfil == 1)
+
+                      <td class="text-center">
+                      <a href="{{route('ins.edit', ['id' => $inscricao->id_inscricao])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+                    <td class="text-center">
+                      <a href="{{route('ins.destroy', ['id' => $inscricao->id_inscricao])}}" class="btn btn-outline btn-danger" title="Deseja realmente excluir o projeto?" data-toggle="confirmation" data-singleton="true" data-popout="true">Excluir</a>
+                    </td>
+
+                    @endif
+                  </tr>
+                @endif
+
               @endif
+
             @endforeach
+
           </tbody>
         </table>
       </div><!-- /.box-body -->
