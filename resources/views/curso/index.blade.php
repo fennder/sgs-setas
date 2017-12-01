@@ -139,6 +139,25 @@
                       <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-danger" role="button">Excluir</a> -->
                     </td>
                   </tr>
+                @elseif($curso->id_status_curso == 5)
+                  <tr class="alert alert-warning">
+                    <td>{{$curso->id_curso}}.</td>
+                    <td>{{$curso->descricao}}</td>
+                    <td>{{$curso->data_inicio}}</td>
+                    <td>{{$curso->data_termino}}</td>
+                    <td>{{$curso->statuscurso->descricao}}</td>
+                    <td class="text-center">
+                      <a href="{{route('cs.show', ['id' => $curso->id_curso])}}" class="btn btn-success" role="button">Lista</a>
+                    </td>
+
+                    <td class="text-center">
+                      <a href="{{route('cs.edit', ['id' => $curso->id_curso])}}" class="btn btn-primary" role="button">Editar</a>
+                    </td>
+
+                    <td class="text-center">
+                      <!-- <a href="{{route('cs.destroy', ['id' => $curso->id_curso])}}" class="btn btn-danger" role="button">Excluir</a> -->
+                    </td>
+                  </tr>
                 @endif
               @endforeach
             @else

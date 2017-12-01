@@ -3,17 +3,16 @@
 namespace Gerenciador\Http\Controllers\Inscricao;
 
 use Gerenciador\Http\Controllers\Controller;
+use Gerenciador\Inscricao\Inscricao;
 use Gerenciador\Inscricao\Cidade;
 use Gerenciador\Inscricao\Curso;
 use Gerenciador\Http\Requests;
 use Illuminate\Http\Request;
-use Gerenciador\Inscricao\Inscricao;
-use Gerenciador\User;
 use Vsmoraes\Pdf\Pdf;
+use Gerenciador\User;
 Use Session;
 use Auth;
 use DB;
-
 
 class InscricaoController extends Controller
 {

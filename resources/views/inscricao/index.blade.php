@@ -27,7 +27,7 @@
                   <option value=""> --- SELECIONE O CURSO E TENHA A RELAÇÃO DE INSCRITOS AQUI --- </option>
                     
                     @foreach($cursos as $curso)
-                      @if($curso->statuscurso->id_status_curso == 1)    
+                      @if($curso->statuscurso->id_status_curso == 1 || $curso->statuscurso->id_status_curso == 5)    
                         <option value="{{$curso->id_curso}}">
                           {{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}
                         </option>
