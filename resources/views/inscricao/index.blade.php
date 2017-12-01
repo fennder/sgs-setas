@@ -58,7 +58,7 @@
 
             @foreach($inscricoes as $inscricao)
 
-              @if($inscricao->curso->id_status_curso == 1)
+              @if($inscricao->curso->id_status_curso == 1 || $inscricao->curso->id_status_curso == 5)
                 
                 @if($inscricao->status == "Deferido")
 
