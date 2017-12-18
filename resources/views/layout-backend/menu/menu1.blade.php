@@ -106,9 +106,9 @@
         <a href="#"><i class="ion ion-map"></i>MOSTRAR MANUAIS<i class="fa fa-angle-left pull-right"></i></a>
         
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-angle-right"></i>Usuário</a></li> 
-          <li><a href="#"><i class="fa fa-angle-right"></i>Gerente</a></li>
           <li><a href="#"><i class="fa fa-angle-right"></i>Administrador</a></li>
+          <li><a href="{{ asset('/documentacao/MANUAL SGI-GERENTE.pdf') }}" target="_blank""><i class="fa fa-angle-right"></i>Gerente</a></li>
+          <li><a href="{{ asset('/documentacao/MANUAL SGI-USUARIO.pdf') }}" target="_blank"><i class="fa fa-angle-right"></i>Usuário</a></li> 
         </ul>
         
       </li>
