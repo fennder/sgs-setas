@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- bootstrap wysihtml5 - text editor -->
   <link href="{{ asset("/bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}" rel="stylesheet" type="text/css" >
 
-    <script type="text/javascript">
+  <script type="text/javascript">
     function mascara(t, mask){
       var i = t.value.length;
       var saida = mask.substring(1,0);
@@ -55,31 +55,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <!-- Header -->
+  <!-- Header - Conteúdo de cabeçalho bem como painel de usuário! -->
   @include('layout-backend.header')
   
-  <!-- Sidebar -->
+  <!-- Sidebar Menu lateral esquerdo -->
   @include('layout-backend.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) - Localização do sistema em qual view encontra o usuário, no Controller é indicado cada informação da view -->
     <section class="content-header">
+
       <h1>
         {{ $page_title or "SGS" }}
         <small>{{ $page_description or "Sistema de Gerenciamento de Inscrições" }}</small>
       </h1>
+
       <ol class="breadcrumb">
         <li><a href="{!! route('h.index') !!}"><i class="fa fa-home"></i> Página Inicial</a></li>
         <li class="active">{{ $nav or "Here" }}</li>
       </ol>
+
     </section>
 
     <!-- Main content -->
     <section class="content">
 
-      <!-- Your Page Content Here -->
+      <!-- Todas as paginas que mostram resultado incluindo a Home são exibidas aqui! -->
       @yield('content')
 
     </section>
