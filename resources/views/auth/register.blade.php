@@ -37,10 +37,6 @@
           <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Digite seu Email">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
-        <!-- <div class="form-group has-feedback">
-          <input type="cpf" class="form-control" name="cpf" value="{{ old('cpf') }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        </div> -->
         <div class="form-group has-feedback">
           <input type="password" class="form-control" name="password" placeholder="Senha, mínimo 6">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>

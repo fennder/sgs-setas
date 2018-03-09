@@ -7,8 +7,13 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ asset('bower_components/AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+          @if($usuarios->sexo == "Masculino")
+            <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User profile picture">
+          @elseif($usuarios->sexo == "Feminino")
+            <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-1-160x160.jpg") }}" class="img-circle" alt="User profile picture">
+          @endif
         </div>
+
         <div class="pull-left info">
           <p>{{ $usuarios->nome_cracha or "Nome do Servidor"}}</p>
           <small>{{ $usuarios->perfil->descricao or "Tipo de permissão"}}</small>
