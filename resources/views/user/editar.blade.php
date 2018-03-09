@@ -244,7 +244,6 @@
           </div>
           <input onkeypress="mascara(this, '## ####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
         </div><!-- Telefone Trabalho -->
-        
       </div><!-- Col 3 -->
 
     <!-- <div class="col-md-4">
@@ -298,7 +297,6 @@
         <div class="form-group has-feedback">
           <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          
         </div><!-- NIS -->
       </div><!-- Col 4 -->
 
@@ -312,7 +310,7 @@
         </div><!-- Email trabalho -->
       </div><!-- Col 4 -->
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="form-group has-feedback">
         <small class="text-muted">Cargo se Servidor Efetivo</small>
           <div class="input-group">

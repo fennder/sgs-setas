@@ -100,7 +100,7 @@
         <ul class="nav nav-tabs">
           <li class="active"><a href="#activity" data-toggle="tab">Dados Pessoais</a></li>
           <li><a href="#timeline" data-toggle="tab">Dados Profissionais</a></li>
-          <li><a href="#settings" data-toggle="tab">Settings</a></li>
+          <!-- <li><a href="#settings" data-toggle="tab">Settings</a></li> -->
         </ul>
 
         <div class="tab-content">
@@ -372,8 +372,159 @@
             <!-- Post -->
             <form action="{{ route('u.update', ['id'=>$usuarios->id]) }}" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-            
 
+                <div class="row">
+
+                  <div class="col-md-4">
+                    <small class="text-muted">Número de Identificação Social - NIS</small>
+                    <div class="form-group has-feedback">
+                      <input type="text" class="form-control" value="{{ $usuarios->nis }}" name="nis" id="nis" onkeypress="mascara(this, '#.###.###.###-#')" maxlength="15" placeholder="9.9999.999.9999-9" required>
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <small class="text-muted">Telefone do Trabalho</small>
+                    <div class="form-group has-feedback input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                      </div>
+                      <input onkeypress="mascara(this, '## ####-####')" type="text" class="form-control" name="telefone_trabalho" id="telefone_trabalho" value="{{ $usuarios->telefone_trabalho }}" placeholder="99 99999-9999" maxlength="12" required>
+                    </div><!-- Telefone Trabalho -->
+                  </div><!-- Col 3 -->
+
+                  <div class="col-md-4" >
+                    <small class="text-muted">Data de Início do Serviço</small>
+                    <div class="form-group has-feedback">
+                      <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                      <input type="date" class="form-control" name="inicio_servico" id="inicio_servico" value="{{ $usuarios->inicio_servico}}" required>
+                    </div><!--Data Início de Serviço -->
+                  </div><!-- Col 3 -->
+
+
+                </div><!-- row -->
+
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <small class="text-muted">Email Institucional</small>
+                    <div class="form-group has-feedback">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" class="form-control" value="{{ $usuarios->email_institucional }}" name="email_institucional" id="email_institucional" placeholder="e-mail@setas.to.gov.br" required>
+                      </div>
+                    </div><!-- Email trabalho -->
+                  </div><!-- Col 6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group has-feedback">
+                    <small class="text-muted">Vinculo</small>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+                        <select class="form-control" name="id_vinculo_institucional" id="id_vinculo_institucional" required>
+                          @if($usuarios->vinculoinstitucional)
+                            <option value="{{$usuarios->vinculoinstitucional->id_vinculo_institucional}}">{{$usuarios->vinculoinstitucional->descricao}}</option>
+                          @else
+                          <option value="">- Selecione -</option>
+                          @endif
+                          @foreach ($vinculos as $vinculo)
+                              <option value="{{$vinculo->id_vinculo_institucional}}">{{$vinculo->descricao}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div><!-- Vinculo Institucional -->
+                  </div><!-- Col 5 -->
+
+                </div><!-- row -->
+
+                <div class="row">
+                  
+                  <div class="col-md-6">
+                    <div class="form-group has-feedback">
+                    <small class="text-muted">Cargo se Servidor Efetivo</small>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+                        <select class="form-control" name="id_cargo" id="id_cargo" required>
+                          @if($usuarios->cargo)
+                            <option value="{{$usuarios->cargo->id_cargo}}">{{$usuarios->cargo->descricao}}</option>
+                          @else
+                          <option value="">- Selecione -</option>
+                          @endif
+                          @foreach ($cargos as $cargo)
+                              <option value="{{$cargo->id_cargo}}">{{$cargo->descricao}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div><!-- Cargo -->
+                  </div><!-- Col 4 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group has-feedback">
+                    <small class="text-muted">Função se Comissionado</small>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+                        <select class="form-control" name="id_funcao" id="id_funcao" required>
+                          @if($usuarios->funcao)
+                            <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
+                          @else
+                          <option value="">- Selecione -</option>
+                          @endif
+                          @foreach ($funcoes as $funcao)
+                              <option value="{{$funcao->id_funcao}}">{{$funcao->descricao}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div><!-- Função -->
+                  </div><!-- Col 4 -->
+
+                </div><!-- row -->
+
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <div class="form-group has-feedback">
+                    <small class="text-muted">Órgão em que está lotado</small>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+                        <select class="form-control" name="id_orgao" id="id_orgao" required>
+                          @if($usuarios->orgao)
+                            <option value="{{$usuarios->orgao->id_orgao}}">{{$usuarios->orgao->descricao}}</option>
+                          @else
+                          <option value="">- Selecione -</option>
+                          @endif
+                          @foreach ($orgaos as $orgao)
+                              <option value="{{$orgao->id_orgao}}">{{$orgao->descricao}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div><!-- Órgão -->
+                  </div><!-- Col 12 -->
+
+                </div><!-- Row -->
+
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <div class="form-group has-feedback">
+                    <small class="text-muted">Departamento</small>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clone"></i></span>
+                        <select class="form-control" name="id_departamento" id="id_departamento" required>
+                          @if($usuarios->departamento)
+                            <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
+                          @else
+                          <option value="">- Selecione -</option>
+                          @endif
+                          @foreach ($departamentos as $departamento)
+                              <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      
+                    </div><!-- Departamento -->
+                  </div><!-- Col 12 -->
+
+                </div><!-- row -->
 
               <button type="submit" class="btn btn-primary btn-large">ATUALIZAR MEUS DADOS PROFISSIONAIS</button>
             </form><!-- Form -->
