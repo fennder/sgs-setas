@@ -176,7 +176,7 @@ class UsersController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Assistência Social";
         $nav = "Meus dados";
-        $salvo = "Informações devidamente atualizadas";
+        
 
         $verifica = Auth::user();
 
@@ -195,6 +195,7 @@ class UsersController extends Controller
             $cargos = $this->cargo->all();
             $funcoes = $this->funcao->all();
             $perfis = $this->perfil->all();
+            $user = $this->user->all();
             
             return view('user.admin_editar', 
             [
@@ -212,7 +213,7 @@ class UsersController extends Controller
                 'cargos' => $cargos,
                 'orgaos' => $orgaos,
                 'perfis' => $perfis,
-                'salvo' => $salvo,
+                'user' => $user,
                 'nav' => $nav
             ]);
     

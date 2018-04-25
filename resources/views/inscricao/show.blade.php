@@ -18,52 +18,52 @@
         <div class="box-body">
          <!--  <a class="btn btn-primary" href="{!! route('ins.create')!!}">Novo</a> -->
           
-              <table class="table table-bordered table-striped table-hover table-condensed">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th style="width: 50%">Meus Cursos</th>                    
-                    <th style="width: 15%">Período</th>
-                    <th>Status</th>
-                    @if($usuarios->id == 1)
-                    <th>Certificado</th>                                    
-                    @endif
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach($inscricoes as $inscricao)
-                      @if($inscricao->status == "Deferido")
-                        <tr class="success">
-                          <td>{{$inscricao->curso->id_curso}}</td> 
-                          <td>{{$inscricao->curso->descricao}}</td> 
-                          <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
-                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
-                          @if($usuarios->id == 1)
-                            @if($inscricao->curso->id_status_curso == 4)
-                              <td align="center">
-                                <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
-                                  <img src="{{ asset('/imagens/certificado.png') }}" width="100%">
-                                </a>
-                              </td> 
-                              <!-- <td align="center">
-                                <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
-                                  <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
-                                </a>
-                              </td>  -->
-                            @endif
-                          @endif
-                        </tr>
-                      @else
-                        <tr class="danger">
-                          <td>{{$inscricao->curso->id_curso}}</td> 
-                          <td>{{$inscricao->curso->descricao}}</td> 
-                          <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
-                          <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
-                        </tr>
+          <table class="table table-bordered table-striped table-hover table-condensed">
+            <thead>
+              <tr>
+                <th style="width: 3%">Id</th>
+                <th style="width: 40%">Meus Cursos</th>
+                <th style="width: 20%">Período</th>
+                <th style="width: 25%">Status</th>
+                @if($usuarios->id_perfil != 0)
+                <th style="width: 12%">Certificado</th>
+                @endif
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($inscricoes as $inscricao)
+                  @if($inscricao->status = "Deferido")
+                    <tr class="success">
+                      <td>{{$inscricao->curso->id_curso}}</td> 
+                      <td>{{$inscricao->curso->descricao}}</td> 
+                      <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
+                      <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td>
+                      @if($usuarios->id_perfil != 0)
+                        @if($inscricao->curso->id_status_curso == 4)
+                          <td align="center">
+                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                              <img src="{{ asset('/imagens/certificado.png') }}" width="100%">
+                            </a>
+                          </td> 
+                          <!-- <td align="center">
+                            <a href="{{route('ins.certificado', ['id' => $inscricao->id_inscricao])}}">
+                              <img src="{{ asset('/imagens/pdf-printer.png') }}" width="50%">
+                            </a>
+                          </td>  -->
+                        @endif
                       @endif
-                    @endforeach
-                </tbody>
-              </table>
+                    </tr>
+                  @else
+                    <tr class="danger">
+                      <td>{{$inscricao->curso->id_curso}}</td> 
+                      <td>{{$inscricao->curso->descricao}}</td> 
+                      <td>( {{$inscricao->curso->data_inicio}} - {{$inscricao->curso->data_termino}} )</td> 
+                      <td>{{$inscricao->status}} - {{$inscricao->motivo}}</td> 
+                    </tr>
+                  @endif
+                @endforeach
+            </tbody>
+          </table>
         </div><!-- /.box-body -->
         <div class="box-footer clearfix">
               <ul class="pagination pagination-sm no-margin pull-right">

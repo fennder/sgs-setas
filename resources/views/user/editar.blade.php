@@ -40,17 +40,26 @@
   </div><!-- row -->
 
   <div class="row">
-
-    <div class="col-md-4">
-    <small class="text-muted">CPF</small>
-      <div class="form-group has-feedback">
-  
-        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99" required>
-        
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div><!-- CPF -->
-    </div><!-- Col 4 -->
-
+    @if($usuarios->cpf == $user->cpf)
+      <div class="col-md-9">
+          
+        <div class="box-body">
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-ban"></i> Insira um outro CPF!</h4>
+          </div>
+      </div>
+    @elseif
+      <div class="col-md-4">
+      <small class="text-muted">CPF</small>
+        <div class="form-group has-feedback">
+    
+          <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $usuarios->cpf }}" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" placeholder="999.999.999-99" required>
+          
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div><!-- CPF -->
+      </div><!-- Col 4 -->
+    @endif
     <div class="col-md-3" >
     <small class="text-muted">Data de Nascimento</small>
       <div class="form-group has-feedback">

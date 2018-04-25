@@ -17,12 +17,13 @@
               <tr>
                 @if($usuarios->id_perfil = 1)
                 <th>Id</th>
-                @endif              
-                <th style="width: 40%">Nome</th>
-                <th style="width: 35%">E-mail</th>
-                <th style="width: 25%">Função</th>
-                <th style="width: 10%">Permissão</th>
-                <th colspan="2"><center>Ação</center></th>                   
+                @endif
+                <th style="width: 30%">Nome</th>
+                <th style="width: 25%">E-mail</th>
+                <th style="width: 20%">Função</th>
+                <th style="width: 15%">Telefone</th>
+                <th style="width: 10%">Acesso</th>
+                <th colspan="2"><center>Ação</center></th>
               </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->funcao->descricao}}</td>
+                        <td>{{$user->telefone_pessoal}}</td>
                         <td>{{$user->perfil->descricao}}</td>
                       @if($usuarios->id_perfil == 1)
                         <td class="text-center">
@@ -45,7 +47,7 @@
                           <!-- Trigger the modal with a button -->
                           <button type="button" class="btn btn-outline btn-danger" data-toggle="modal" data-target="#myModal">Excluir</button>
 
-                          <!-- Modal -->
+                          <!-- Modal mensagem de exclusão -->
                           <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
                             

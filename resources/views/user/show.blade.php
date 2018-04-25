@@ -40,35 +40,46 @@
 
     <!-- About Me Box -->
     <div class="box box-primary">
+
       <div class="box-header with-border">
+
         <h3 class="box-title">Sobre mim</h3>
+
       </div>
       <!-- /.box-header -->
       <div class="box-body">
+
         <strong><i class="fa fa-book margin-r-5"></i> Formação </strong>
 
         <p class="text-muted">
+
           {{ $usuarios->escolaridade->descricao }}
+
         </p>
+
         <hr>
 
         <strong><i class="fa fa-pencil margin-r-5"></i> Trabalho </strong>
 
         <p>
+
           {{ $usuarios->orgao->descricao }},</br>
           {{ $usuarios->departamento->descricao }},</br>
           {{ $usuarios->vinculoinstitucional->descricao }},</br>       
-          {{ $usuarios->cargo->descricao }}
+          {{ $usuarios->cargo->descricao }},</br>
           {{ $usuarios->funcao->descricao }}
           
         </p>
 
         <hr>
+
         <strong><i class="fa fa-map-marker margin-r-5"></i> Localização </strong>
 
         <p class="text-muted">
+
           {{ $usuarios->estado->nome }},</br>
           {{ $usuarios->cidade->nome }}
+          
         </p>
 
         <!-- <hr>
@@ -94,6 +105,25 @@
     </div>
     <!-- /.col -->
 
+    
+      <!-- <div class="col-md-9">
+          
+        <div class="box-body">
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-ban"></i> Alert! {{ $salvo or Null }}</h4>
+                 Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
+                  soul, like these sweet mornings of spring which I enjoy with my whole heart.
+          </div>
+          
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h4><i class="icon fa fa-check"></i> Dados salvos com sucesso! </h4>
+          </div>
+        </div>
+        
+      </div>  -->         
+    
     <div class="col-md-9">
       <div class="nav-tabs-custom">
 
@@ -298,9 +328,9 @@
               <div class="col-md-5">
               <small class="text-muted">Telefone Pessoal</small>
                 <div class="form-group has-feedback input-group">
-                <div class="input-group-addon">
-                  <i class="fa fa-phone"></i>
-                </div>
+                  <div class="input-group-addon">
+                    <i class="fa fa-phone"></i>
+                  </div>
                   <input  type="text" name="telefone_pessoal" id="telefone_pessoal" value="{{ $usuarios->telefone_pessoal }}" onkeypress="mascara(this, '## #####-####')" maxlength="13" class="form-control" placeholder="99 99999-9999"required>
                 </div><!-- Telefone Pessoal -->
               </div> <!-- Col 3-->
