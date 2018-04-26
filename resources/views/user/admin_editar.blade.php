@@ -37,7 +37,7 @@
       </div><!-- row -->
 
       <div class="row">
-      @if($usuarios->cpf != "cpf")
+      
         <div class="col-md-4">
         <small class="text-muted">CPF</small>
           <div class="form-group has-feedback">
@@ -45,7 +45,7 @@
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div><!-- CPF -->
         </div><!-- Col 4 -->
-      @endif
+      
         <div class="col-md-3" >
         <small class="text-muted">Data de Nascimento</small>
           <div class="form-group has-feedback">
