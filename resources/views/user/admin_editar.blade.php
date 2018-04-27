@@ -454,9 +454,9 @@
             });
         });
     });
-</script>
+  </script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
     $('select[name=id_orgao]').change(function () {
         var idOrgao = $(this).val();
 
@@ -467,6 +467,6 @@
             });
         });
     });
-</script>
+  </script>
 
 @endsection()

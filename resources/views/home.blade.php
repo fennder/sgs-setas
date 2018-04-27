@@ -118,8 +118,8 @@
           <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
-            Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</br>
-            No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.<img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário"></br>
+            <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
+            No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.<img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
             Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
             Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
           </div>
@@ -177,8 +177,8 @@
           <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
-            Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</br>
-            No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.<img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário"></br>
+            <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
+            <p>No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.</p><img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
             Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
             Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
           </div>
