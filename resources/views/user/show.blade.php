@@ -493,7 +493,7 @@
                     <small class="text-muted">Função se Comissionado</small>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-                        <select class="form-control" name="id_funcao" id="id_funcao" required>
+                        <select disabled class="form-control" name="id_funcao" id="id_funcao" required>
                           @if($usuarios->funcao)
                             <option value="{{$usuarios->funcao->id_funcao}}">{{$usuarios->funcao->descricao}}</option>
                           @else
@@ -516,7 +516,7 @@
                     <small class="text-muted">Órgão em que está lotado</small>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-                        <select class="form-control" name="id_orgao" id="id_orgao" required>
+                        <select disabled class="form-control" name="id_orgao" id="id_orgao" required>
                           @if($usuarios->orgao)
                             <option value="{{$usuarios->orgao->id_orgao}}">{{$usuarios->orgao->descricao}}</option>
                           @else
@@ -539,7 +539,7 @@
                     <small class="text-muted">Departamento</small>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-clone"></i></span>
-                        <select class="form-control" name="id_departamento" id="id_departamento" required>
+                        <select disabled class="form-control" name="id_departamento" id="id_departamento" required>
                           @if($usuarios->departamento)
                             <option value="{{$usuarios->departamento->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
                           @else

@@ -112,29 +112,29 @@
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
             Devido aos ataques acontecidos em todo o mundo, tomaremos mais precauções quanto ao acesso ao sistema, tenha paciência caso ocorra alguma lentidão.</br>
-            Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
-            Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
+            <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
+            <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
           </div> -->
           <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
             <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
-            No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.<img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
-            Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
-            Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
+            <p>No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.</p><img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
+            <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
+            <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
           </div>
          <!-- <div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
-              O SGI estará fora ar no período de 28 de abril à 02 de maio, em face de uma manutenção preventiva e suas funcionalidades estarão todas elas desativadas para melhoria do sistema.</br>
+              <p>O SGI estará fora ar no período de 28 de abril à 02 de maio, em face de uma manutenção preventiva e suas funcionalidades estarão todas elas desativadas para melhoria do sistema.</p></br>
               SD-GTI, abra um chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, com problema.</br>
               Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
           </div> -->
           <!-- <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="fa fa-check"></i> Aviso!</h4>
-            Sistema reestabelecido em suas funções!</br>
-            Caso necessite de atendimento técnico do sistema, favor abrir um chamado pelo <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>.
+            <p>Sistema reestabelecido em suas funções!</p></br>
+            <p>Caso necessite de atendimento técnico do sistema, favor abrir um chamado pelo <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>.</p>
           </div> -->
             
         </div>
@@ -177,10 +177,10 @@
           <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
-            <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
+           <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
             <p>No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.</p><img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
-            Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</br>
-            Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.
+            <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
+            <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
           </div>
           <!--  <div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
