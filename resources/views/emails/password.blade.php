@@ -19,7 +19,7 @@
 
     Clique no link abaixo para redefinir sua senha ou copie e cole o link no seu navegador {{ url('password/reset/'.$token) }}</p>
 
-    <p><b>Atenção:</b> O acesso ao link acima apresentado só será permitido, até 3 horas após a realização do seu pedido apresentado neste e-mail. Caso V.Sa. perca o prazo de validade do mesmo, queira repetir a solicitação.</br> 
+    <p><b>Atenção:</b> O acesso ao link acima apresentado só será permitido, até 3 horas após a realização do seu pedido apresentado neste e-mail. Caso V.Sa. perca o prazo de validade do mesmo, queira repetir o procedimento de recuperação de senha.</br> 
 
 <p>Atenciosamente,</p>
 <p>SD-GTI-SETAS</p>

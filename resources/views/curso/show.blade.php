@@ -23,16 +23,18 @@
 
       <div class="box-body">
         <table border="3" class="table table-bordered table-striped table-hover table-condensed">
+          
           <thead>
             <tr>
-              <th style="width: 10px">Nr.</th>
+              <th style="width: 2%">Nr.</th>
               <th>Regional</th>
               <th>Município</th>
               <th>Nome do Inscrito</th>
-              <th>CPF</th>
+              <th style="width: 16%">CPF</th>
               <th style="width: 200px">Assinatura</th>
             </tr>
           </thead>
+
           <tbody>
           
             <!-- Trecho solucionado pelo Belo Programador Luan Gomes -->
@@ -54,7 +56,9 @@
             @endforeach
 
           </tbody>
+
         </table>
+
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
         <ul class="pagination pagination-sm no-margin pull-right">
