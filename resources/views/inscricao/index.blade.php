@@ -31,7 +31,7 @@
                         <option value="{{$curso->id_curso}}">
                           {{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}
                         </option>
-                      @endif  
+                      @endif
                     @endforeach
                   
                 </select>

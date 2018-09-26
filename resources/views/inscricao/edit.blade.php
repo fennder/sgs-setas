@@ -59,7 +59,7 @@
             </option>   
             @foreach($cursos as $curso)
               @if($cursos->find($curso->id_curso) != null)
-                @if($curso->statuscurso->id_status_curso == 2 || $curso->statuscurso->id_status_curso == 5)
+                @if($curso->statuscurso->id_status_curso == 2 || $curso->statuscurso->id_status_curso== 5)
                   <option value="{{ $curso->id_curso }}">{{ $curso->descricao }} - ( {{$curso->data_inicio}} - {{$curso->data_termino}} ) - {{$curso->statuscurso->descricao}}</option>
                 @endif
               @endif
