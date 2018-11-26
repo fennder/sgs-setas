@@ -31,7 +31,7 @@
                         <option value="{{$curso->id_curso}}">
                           {{$curso->descricao}} - ( {{ $curso->data_inicio }} - {{ $curso->data_termino }} ) - {{ $curso->statuscurso->descricao }}
                         </option>
-                      @endif
+                      @endif  
                     @endforeach
                   
                 </select>
@@ -66,14 +66,14 @@
 
                   @if($inscricao->usuario)
 
-                    <td>{{ $i=$i+1 }}</td>  
+                    <td>{{ $i=$i+1 }}</td>
                     <td>{{$inscricao->usuario->cidade->regiao->descricao}}</td>
                     <td>{{$inscricao->usuario->cidade->nome}}</td>
                     <td>{{$inscricao->usuario->name}}</td>
                     <td>{{$inscricao->usuario->telefone_trabalho}}</td>
                     <td>{{$inscricao->usuario->funcao->descricao}}</td>
 
-                  @endif 
+                  @endif
 
                   @if($usuarios->id_perfil == 2)
    

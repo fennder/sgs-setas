@@ -17,8 +17,8 @@
     <a href="#"><i class="glyphicon glyphicon-user"></i> <span>GERENCIAR USUÁRIOS</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
       <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Administradores</a></li>
-      <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Gerentes</a></li>
-      <li><a href="{!! route('u.index') !!}"><i class="fa fa-angle-right"></i>Usuários</a></li>
+      <li><a href="{!! route('u.gerente') !!}"><i class="fa fa-angle-right"></i>Gerentes</a></li>
+      <li><a href="{!! route('u.usuario') !!}"><i class="fa fa-angle-right"></i>Usuários</a></li>
     </ul>
   </li>
   

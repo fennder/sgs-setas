@@ -38,6 +38,8 @@ Route::group(['as' => 'p.', 'prefix' => 'password'], function()
 Route::group(['as' => 'u.', 'prefix' => 'users'], function()
 {
 	Route::get('', 					['as' => 'index', 	'uses' => 'UsersController@index']);
+	Route::get('gerente',			['as' => 'gerente',	'uses' => 'UsersController@gerentelista']);
+	Route::get('usuario',			['as' => 'usuario',	'uses' => 'UsersController@usuariolista']);
 	Route::get('novo', 				['as' => 'create', 	'uses' => 'UsersController@create']);
 	Route::post('inserir', 			['as' => 'store', 	'uses' => 'UsersController@store']);
 	Route::get('mostrar', 			['as' => 'show', 	'uses' => 'UsersController@show']);

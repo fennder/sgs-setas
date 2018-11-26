@@ -63,20 +63,19 @@ class UsersController extends Controller
     {
         if(Auth::check()){
 
-            $page_title = "Lista de Usuários";
+            $page_title = "Lista de Administradores";
             $page_description = "Sistema de Gerenciamento de Inscrição";
             $lotacao = "Secretaria do Trabalho e Assistência Social";
-            $nav = "Lista";
+            $nav = "Lista de Administradores";
             
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
-            if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '>=', 2)->orderBy('name', 'asc')->paginate(100);
-            }else{
-                $users = $this->user->orderBy('name', 'asc')->paginate(100);
-            }
+            //if($usuarios->id_perfil == 1){
+                $users = $this->user->where('id_perfil', '=', 1)->orderBy('name', 'asc')->paginate(100);
 
-            return view('user.lista',
+            //}
+
+            return view('user.adminlista',
                 [
                     'nav' => $nav,
                     'users' => $users,
@@ -85,6 +84,76 @@ class UsersController extends Controller
                     'perfis'=>$perfis,
                     'page_description'=>$page_description,
                     'lotacao'=>$lotacao
+                ]);
+
+        }else{
+
+            return view('auth/login');
+
+        }     
+    }
+
+    public function gerentelista()
+    {
+        if(Auth::check()){
+
+            $page_title = "Lista de Gerentes";
+            $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Lista de Gerentes";
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            //if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '=', 2)->orderBy('name', 'asc')->paginate(100);
+            //}else{
+                //$users = $this->user->orderBy('name', 'asc')->paginate(10);
+            //}
+
+            return view('user.gerentelista',
+                [
+                    'page_description'=>$page_description,
+                    'page_title'=>$page_title,
+                    'usuarios'=>$usuarios,
+                    'lotacao'=>$lotacao,
+                    'users' => $users,
+                    'perfis'=>$perfis,
+                    'nav' => $nav
+                ]);
+
+        }else{
+
+            return view('auth/login');
+
+        }     
+    }
+
+    public function usuariolista()
+    {
+        if(Auth::check()){
+
+            $page_title = "Lista de Usuários";
+            $page_description = "Sistema de Gerenciamento de Inscrição";
+            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $nav = "Lista de Usuários";
+            
+            $usuarios = Auth::user();
+            $perfis = $this->perfil->all();
+            //if($usuarios->id_perfil == 2){
+                $users = $this->user->where('id_perfil', '=', 3)->orderBy('name', 'asc')->paginate(100);
+            //}else{
+                //$users = $this->user->orderBy('name', 'asc')->paginate(10);
+            //}
+
+            return view('user.lista',
+                [
+                    'page_description'=>$page_description,
+                    'page_title'=>$page_title,
+                    'usuarios'=>$usuarios,
+                    'lotacao'=>$lotacao,
+                    'users' => $users,
+                    'perfis'=>$perfis,
+                    'nav' => $nav
                 ]);
 
         }else{
@@ -273,7 +342,7 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
-    public function listadmin()
+    /*public function listadmin()
     {
         if(Auth::check()){
 
@@ -306,7 +375,8 @@ class UsersController extends Controller
             return view('auth/login');
 
         }     
-    }
+    }*/
+
 
     public function sendEmailReminder(Request $request, $id)
     {

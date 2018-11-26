@@ -42,7 +42,7 @@
           <div class="icon">
             <i class="ion ion-ios-people-outline"></i>
           </div>
-          <a href="{{ route('u.index') }}" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="{{ route('u.usuario') }}" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -115,14 +115,14 @@
             <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
             <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
           </div> -->
-          <div class="alert alert-info alert-dismissible">
+          <!-- <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
             <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
             <p>No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.</p><img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
             <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
             <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
-          </div>
+          </div> -->
          <!-- <div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
@@ -174,14 +174,14 @@
             Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
             soul, like these sweet mornings of spring which I enjoy with my whole heart.
           </div> -->
-          <div class="alert alert-info alert-dismissible">
+          <!-- <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
            <p>Informo que foi liberada uma nova funcionalidade. Agora você poderá editar seus dados sem que haja a necessidade de entrar em contato com o corpo técnico da SETAS.</p></br>
             <p>No canto superior direito, onde aparece o seu nome, você deve clicar e escolher a opção "Meus dados", como aparece na figura abaixo.</p><img src="{{ asset("/imagens/acesso a edicao usuario.png") }}" alt="Edição de Usuário" width="100%" height="100%"></br>
             <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
             <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
-          </div>
+          </div> -->
           <!--  <div class="alert alert-warning alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
