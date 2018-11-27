@@ -12,7 +12,7 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table class="table table-bordered table-striped table-hover table-condensed" style="width: 100%">
+          <table class="table table-bordered table-striped table-hover table-condensed">
             <thead>
               <tr>
                 @if($usuarios->id_perfil = 1)
