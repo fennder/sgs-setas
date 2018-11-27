@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="row" style="width: 100%">
+<div class="row">
   <div class="col-md-12">
     <div class="box">     
       <div class="box-header with-border">
@@ -12,7 +12,7 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table class="table table-bordered table-striped table-hover table-condensed">
+          <table class="table table-bordered table-striped table-hover table-condensed" style="width: 100%">
             <thead>
               <tr>
                 @if($usuarios->id_perfil = 1)
