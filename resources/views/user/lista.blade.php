@@ -18,11 +18,11 @@
                 @if($usuarios->id_perfil = 1)
                 <th>Id</th>
                 @endif
-                <th style="width: 30%">Nome</th>
-                <th style="width: 25%">E-mail</th>
-                <th style="width: 20%">Função</th>
-                <th style="width: 15%">Telefone</th>
-                <th style="width: 10%">Acesso</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Função</th>
+                <th>Telefone</th>
+                <th>Acesso</th>
                 <th colspan="2"><center>Ação</center></th>
               </tr>
             </thead>
