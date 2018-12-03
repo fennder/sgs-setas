@@ -8,7 +8,7 @@
     <div class="box">
       <div class="box-header with-border" align="center">
         <div class="pull-left" align="center">
-          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="User Image" width="50%"></p>
+          <p><img src="{{ asset('/imagens/logo_setas.png') }}" alt="User Image" width="50%"></p>
         </div>
         <p><h2 class="box-title">{{ $curso->descricao }} - {{ $curso->data_inicio }} - {{ $curso->data_termino }}</h2></p>
         <h3 class="box-title">Lista de Presença - Data: ____/__________/______ - Período: Manhã (__) ou Tarde (__)</h3>

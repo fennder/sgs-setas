@@ -108,13 +108,13 @@
             Danger alert preview. This alert is dismissable. A wonderful serenity has taken possession of my entire
             soul, like these sweet mornings of spring which I enjoy with my whole heart.
           </div> -->
-          <!-- <div class="alert alert-info alert-dismissible">
+          <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4><i class="icon fa fa-info"></i> Aviso!</h4>
-            Devido aos ataques acontecidos em todo o mundo, tomaremos mais precauções quanto ao acesso ao sistema, tenha paciência caso ocorra alguma lentidão.</br>
+            <h4><i class="icon fa fa-info"></i> Informação!</h4>
+            Foi liberado mais uma função no sistema, que consiste em separadamente visualizar as listas de Gerentes e Usuários, isso para os Gerentes, o acesso para os usuários continuam sem alteração.</br>
             <p>Setor de Desenvolvimento pelo Chamado <a href="http://open.setas.to.gov.br/helpdesk/app_Login/app_Login.php" target="_blank">Help Desk</a>, informando qual ação deseja fazer.</p></br>
-            <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p>
-          </div> -->
+            <!-- <p>Caso o atendimento seja fora da estrutura da SETAS, no sentido técnico do sistema, favor entrar em contato (63) 3218-1951.</p> -->
+          </div>
           <!-- <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Aviso!</h4>
