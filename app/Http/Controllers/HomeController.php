@@ -110,7 +110,7 @@ class HomeController extends Controller
                 $page_title = "Página Inicial";
                 $guia_title = "SGI-SD-GTI-SETAS";
                 $page_description = "Sistema de Gerenciamento de Inscrições";
-                $lotacao = "Secretaria do Trabalho e Assistência Social";
+                $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
                 $cursos = $this->curso->all();
                 if(count($cursos) > 0){

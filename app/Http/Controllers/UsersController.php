@@ -65,7 +65,7 @@ class UsersController extends Controller
 
             $page_title = "Lista de Administradores";
             $page_description = "Sistema de Gerenciamento de Inscrição";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Lista de Administradores";
             
             $usuarios = Auth::user();
@@ -99,7 +99,7 @@ class UsersController extends Controller
 
             $page_title = "Lista de Gerentes";
             $page_description = "Sistema de Gerenciamento de Inscrição";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Lista de Gerentes";
             
             $usuarios = Auth::user();
@@ -134,7 +134,7 @@ class UsersController extends Controller
 
             $page_title = "Lista de Usuários";
             $page_description = "Sistema de Gerenciamento de Inscrição";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Lista de Usuários";
             
             $usuarios = Auth::user();
@@ -197,7 +197,7 @@ class UsersController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrição";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Meus dados";
 
         $usuarios = Auth::user();
@@ -243,7 +243,7 @@ class UsersController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Meus dados";
         
 
@@ -348,7 +348,7 @@ class UsersController extends Controller
 
             $page_title = "SGI";
             $page_description = "Sistema de Gerenciamento de Inscrição";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Lista";
             
             $usuarios = Auth::user();

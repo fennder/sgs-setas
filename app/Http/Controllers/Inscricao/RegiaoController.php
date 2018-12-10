@@ -31,7 +31,7 @@ class RegiaoController extends Controller
     
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Regiões";
 
@@ -57,7 +57,7 @@ class RegiaoController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Região";
 
@@ -107,7 +107,7 @@ class RegiaoController extends Controller
 
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $regioes = $this->regiao->find($id);
         

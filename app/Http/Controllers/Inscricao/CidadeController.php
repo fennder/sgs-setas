@@ -42,7 +42,7 @@ class CidadeController extends Controller
     
         $page_title = "Listar Cidades";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Cidades";
 
         return view('cidade.index',
@@ -78,7 +78,7 @@ class CidadeController extends Controller
     {
         $page_title = "Criar Cidades";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Cidade";
 
         $estados = $this->estado->all();
@@ -133,7 +133,7 @@ class CidadeController extends Controller
         $nav = "Editar";
         $page_title = "Editar Cidades";
         $page_description = "Editar Cidade";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $cidades = $this->cidade->orderBy('nome', 'asc')->find($id);
         $estados = $this->estado->all();

@@ -33,7 +33,7 @@ class DepartamentoController extends Controller
 
         $page_title = "Lista de Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Departamento";
 
         $departamentos = $this->departamento->paginate(25);
@@ -72,7 +72,7 @@ class DepartamentoController extends Controller
     {
         $page_title = "Criar Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Departamento";
 
         $orgaos = $this->orgao->all();
@@ -127,7 +127,7 @@ class DepartamentoController extends Controller
         $nav = "Editar";
         $page_title = "Editar Departamentos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $departamentos = $this->departamento->find($id);
         $orgaos = $this->orgao->all();

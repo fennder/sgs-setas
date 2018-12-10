@@ -29,7 +29,7 @@ class EscolaridadeController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Escolaridade";
 
         $escolaridades = $this->escolaridade->paginate(25);
@@ -55,7 +55,7 @@ class EscolaridadeController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Escolaridade";
 
         $usuarios = Auth::user();
@@ -105,7 +105,7 @@ class EscolaridadeController extends Controller
     {
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $escolaridades = $this->escolaridade->find($id);
 

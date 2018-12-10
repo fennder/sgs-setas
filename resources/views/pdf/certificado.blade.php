@@ -19,7 +19,7 @@
     <div>
       <div class="box-header with-border">
         <div class="pull-left" align="center">
-          <p><img src="{{ asset('/imagens/presenca _setas.png') }}" alt="Secretaria do Trabalho e Assistência Social" width="65%"></p>
+          <p><img src="{{ asset('/imagens/logo_setas.png') }}" alt="Secretaria do Trabalho e Assistência Social" width="50%"></p>
         </div>
       </div>
       <div class="box-body">
@@ -59,9 +59,9 @@
          
             <strong>
               
-              ### CURSO ###{{$certificados}}
+              {{$usuarios->cidade->nome}}, {{$usuarios->cidade->regiao->descricao}},
 
-            </strong>,
+            </strong>
          
             no período de <strong>### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
           
@@ -88,7 +88,7 @@
       <div class="box-body" align="center">
 
         <em><h3><p><strong>Patrícia Rodrigues do Amaral</strong><br>
-        Secretaria do Trabalho e Assistência Social</p></h3></em>
+        Secretaria do Trabalho e Desenvolvimento Social</p></h3></em>
         
       </div><!-- /.box-body -->
       

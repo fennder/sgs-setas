@@ -7,7 +7,7 @@
     <div class="col-md-8">
       <strong>
 
-        <!-- Copyright -->Direitos reservados &copy; 2016 - 2017
+        <!-- Copyright -->Direitos &copy; 2016 - {{ strftime('%Y')}},
         <a href="http://opensetas.setas.to.gov.br/portal" target="_blank">
            SDS-GTI 
         </a>

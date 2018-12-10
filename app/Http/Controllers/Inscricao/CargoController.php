@@ -31,7 +31,7 @@ class CargoController extends Controller
     
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Cargo";
 
         return view('cargo.index',
@@ -56,7 +56,7 @@ class CargoController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Cargo";
 
         return view('cargo.create',
@@ -90,7 +90,7 @@ class CargoController extends Controller
      */
     public function show($id)
     {
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $cargos = $this->cargo->find($id);
         $usuarios = Auth::user();
@@ -118,7 +118,7 @@ class CargoController extends Controller
 
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $cargos = $this->cargo->find($id);
         

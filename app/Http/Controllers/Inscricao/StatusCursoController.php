@@ -32,7 +32,7 @@ class StatusCursoController extends Controller
     
         $page_title = "Lista de status de cursos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Status de Curso";
 
@@ -56,7 +56,7 @@ class StatusCursoController extends Controller
     {
         $page_title = "Criar Status";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Status Curso";
         $usuarios = Auth::user();
@@ -107,7 +107,7 @@ class StatusCursoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $scursos = $this->scurso->find($id);
         $usuarios = Auth::user();

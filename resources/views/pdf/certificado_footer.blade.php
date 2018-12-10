@@ -7,8 +7,10 @@
     <div class="col-md-10">
       <strong>
 
-        <!-- Copyright -->Todos os direitos reservados &copy; 2016 - 2017
-        
+        <!-- Copyright -->Direitos &copy; 2016 - 
+
+          {{ strftime('%Y')}},
+                
            SDS-GTI 
         
         da {{$lotacao or "SETAS"}}

@@ -32,7 +32,7 @@ class DeficienciaController extends Controller
     
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Deficiência";
 
         return view('deficiencia.index',
@@ -57,7 +57,7 @@ class DeficienciaController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Deficiência";
 
         return view('deficiencia.create',
@@ -104,7 +104,7 @@ class DeficienciaController extends Controller
     {
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $deficiencias = $this->deficiencia->find($id);
 

@@ -29,7 +29,7 @@ class EstadoController extends Controller
     
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Estado";
 
@@ -56,7 +56,7 @@ class EstadoController extends Controller
     {
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Estado";
 
@@ -106,7 +106,7 @@ class EstadoController extends Controller
     {
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $estados = $this->estado->find($id);
         $usuarios = Auth::user();

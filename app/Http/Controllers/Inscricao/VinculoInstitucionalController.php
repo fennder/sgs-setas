@@ -29,7 +29,7 @@ class VinculoInstitucionalController extends Controller
     
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Vínculos Institucionais";
 
         $vinculos = $this->vinculo->paginate(10);
@@ -57,7 +57,7 @@ class VinculoInstitucionalController extends Controller
 
         $page_title = "SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Vínculo Institucional";
 
         return view('vinculo.create',
@@ -106,7 +106,7 @@ class VinculoInstitucionalController extends Controller
 
         $nav = "Editar";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $vinculos = $this->vinculo->find($id);
         

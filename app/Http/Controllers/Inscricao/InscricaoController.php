@@ -42,7 +42,7 @@ class InscricaoController extends Controller
 
         $page_title = "Lista de Inscrições";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Inscrição";
 
         $inscricoes = $this->inscricao->paginate(5000);
@@ -85,7 +85,7 @@ class InscricaoController extends Controller
     {
         $page_title = "Fazer Inscrição";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Inscrição";
 
         $cursos = $this->curso->all();
@@ -130,7 +130,7 @@ class InscricaoController extends Controller
     {
         $page_title = "Minhas Inscrições";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $nav = "Meus Cursos";
 
@@ -160,7 +160,7 @@ class InscricaoController extends Controller
     {
         $page_title = "Editar Inscrição";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Editar";
         
         $inscricoes = $this->inscricao->find($id);
@@ -223,18 +223,18 @@ class InscricaoController extends Controller
         if(Auth::check()){
             $page_title = "Certificado";
             $page_description = "Sistema de Gerenciamento de Inscrições";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Certificado";
 
             $usuarios = Auth::user();
             $cursos = $this->curso->all();
-            $certificados = $cursos->where();
+            //$certificados = $cursos->where();
             
 
             return view('pdf.certificado',
             [
                 'page_description' => $page_description,
-                'certificados' => $certificados,
+                //'certificados' => $certificados,
                 'page_title'  => $page_title,
                 'usuarios' => $usuarios,
                 'lotacao' => $lotacao,

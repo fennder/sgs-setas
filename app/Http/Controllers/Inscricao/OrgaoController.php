@@ -31,7 +31,7 @@ class OrgaoController extends Controller
     
         $page_title = "Listar Órgãos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Órgao";
 
@@ -57,7 +57,7 @@ class OrgaoController extends Controller
 
         $page_title = "Criar Órgãos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Órgão";
 
@@ -108,7 +108,7 @@ class OrgaoController extends Controller
         $nav = "Editar";
         $page_title = "Editar Órgãos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $orgaos = $this->orgao->find($id);
         

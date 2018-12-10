@@ -46,7 +46,7 @@ class CursoController extends Controller
 
             $page_title = "Lista de Cursos";
             $page_description = "Sistema de Gerenciamento de Inscrições";
-            $lotacao = "Secretaria do Trabalho e Assistência Social";
+            $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Curso";
 
             $cursos = $this->curso->orderBy('id_status_curso', 'asc')->orderBy('data_inicio', 'desc')->orderBy('id_curso', 'asc')->paginate(15);
@@ -81,7 +81,7 @@ class CursoController extends Controller
 
         $page_title = "Criar Curso";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Curso";
 
         $scursos = $this->scurso->all();
@@ -133,7 +133,7 @@ class CursoController extends Controller
 
         $page_title = "Lista de Presença - SGI";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Mostrar";
 
         $i = 0;
@@ -174,7 +174,7 @@ class CursoController extends Controller
         $nav = "Editar";
         $page_title = "Editar Curso";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $cursos = $this->curso->find($id);
         $scursos = $this->scurso->all();

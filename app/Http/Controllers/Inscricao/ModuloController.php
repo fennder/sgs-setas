@@ -35,7 +35,7 @@ class ModuloController extends Controller
     
         $page_title = "Lista de Módulos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Módulos";
 
@@ -61,7 +61,7 @@ class ModuloController extends Controller
 
         $page_title = "Criar Módulo";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
         $nav = "Modulos";
 
@@ -115,7 +115,7 @@ class ModuloController extends Controller
         $nav = "Editar";
         $page_title = "Editar de Módulos";
         $page_description = "Sistema de Gerenciamento de Inscrições";
-        $lotacao = "Secretaria do Trabalho e Assistência Social";
+        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
         $modulos = $this->modulo->find($id);
         $cursos = $this->curso->all();
