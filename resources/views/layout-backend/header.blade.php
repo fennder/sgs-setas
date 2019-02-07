@@ -2,12 +2,23 @@
   <!-- Main Header -->
   <header class="main-header">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134102013-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-134102013-1');
+    </script>
+
+
     <!-- Logo -->
     <a href="{!! route('h.index') !!}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>GI</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SGI </b>- SETAS</span>
+      <span class="logo-lg"><b>SGI </b>- SETDS</span>
     </a>
     
     <!-- Header Navbar -->
