@@ -12,7 +12,6 @@
       gtag('config', 'UA-134102013-1');
     </script>
 
-
     <!-- Logo -->
     <a href="{!! route('h.index') !!}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->

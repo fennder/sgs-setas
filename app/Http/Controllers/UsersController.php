@@ -72,7 +72,6 @@ class UsersController extends Controller
             $perfis = $this->perfil->all();
             //if($usuarios->id_perfil == 1){
                 $users = $this->user->where('id_perfil', '=', 1)->orderBy('name', 'asc')->paginate(100);
-
             //}
 
             return view('user.adminlista',
@@ -139,9 +138,10 @@ class UsersController extends Controller
             
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
-            //if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '=', 3)->orderBy('name', 'asc')->paginate(100);
-            //}else{
+            //if($usuarios->dados_atualizados != 0){
+                $users = $this->user->where('id_perfil', '=', 3)->where('dados_atualizados', '=', 1)->orderBy('name', 'asc')->paginate(2);
+            //}
+                //else{
                 //$users = $this->user->orderBy('name', 'asc')->paginate(10);
             //}
 
