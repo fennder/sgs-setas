@@ -228,7 +228,7 @@ class InscricaoController extends Controller
 
             $usuarios = Auth::user();
             $cursos = $this->curso->all();
-            //$certificados = $cursos->where();
+            $certificados = $cursos;
             
 
             return view('pdf.certificado',

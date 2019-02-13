@@ -63,7 +63,7 @@
 
             </strong>
          
-            no período de <strong>### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
+            no período de <strong>{{$usuarios->created_at}}### DATA_INICIO ### à ### DATA_TERMINO ###</strong> realizado pelo Governo do Estado do Tocantins, por meio da <strong>{{$lotacao}}</strong> e parceiros.</p></h2></i>
           
         </em>
           
@@ -87,8 +87,8 @@
       
       <div class="box-body" align="center">
 
-        <em><h3><p><strong>Patrícia Rodrigues do Amaral</strong><br>
-        Secretaria do Trabalho e Desenvolvimento Social</p></h3></em>
+        <em><h3><p><strong></strong><br>
+        Secretario(a) do Trabalho e Desenvolvimento Social</p></h3></em>
         
       </div><!-- /.box-body -->
       

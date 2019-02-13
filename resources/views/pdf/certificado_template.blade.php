@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" background="{{ asset('/imagens/fundo.jpg') }}">
 <div class="wrapper">
 
   <!-- Header -->
@@ -90,11 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  @include('pdf.certificado_footer')
-
+  
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
+  <!-- <div class="control-sidebar-bg"></div> -->
 </div>
 <!-- ./wrapper -->
 

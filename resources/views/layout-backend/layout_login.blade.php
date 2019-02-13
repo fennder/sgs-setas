@@ -58,11 +58,11 @@
       <div>
         <strong>
 
-        <!-- Copyright -->Direitos reservados &copy; 2016 - 2017
+        <!-- Copyright -->Direitos &copy; 2016 - {{ strftime('%Y')}}
         <a href="http://opensetas.setas.to.gov.br/portal">
            SD-GTI 
         </a>
-        da Secretaria do Trabalho e Assistência Social
+        da Secretaria do Trabalho e Desenvolvimento Social
       </strong>
         <div class="box-header with-border">
           <div align="center">
