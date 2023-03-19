@@ -15,7 +15,7 @@ O alcance às pessoas por projetos de estado e governo, quanto a melhoria da dig
 
 As aplicações web vem não só para dar esse poder de decisão mais para dar mobilidade as ações. Escolhemos o [PHP](https://secure.php.net/manual/pt_BR/index.php) como linguagem de programação e usamos o [Laravel](http://laravel.com/docs) como Framework para subsidiar o desenvolvimento mais ágil.
 
-## Documentação Oficial do Sistema
+<!-- ## Documentação Oficial do Sistema
 
 Documentação para o framework pode ser encontrado [PHP](https://secure.php.net/manual/pt_BR/index.php).
 
@@ -37,3 +37,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 O Laravel framework é um software open-sourced sob a [MIT license](http://opensource.org/licenses/MIT)
 
+ -->
