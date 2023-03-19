@@ -1,0 +1,90 @@
+version: '3'
+
+networks:
+  laravel:
+
+services:
+  web:
+    build: .
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: 100m
+    restart: always
+    environment:
+      TZ: "America/Araguaina"
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/sites-enabled/default
+      - ./src:/src
+      - ../src:/tmp/storage/src
+
+  db:
+    image: mysql:5.7.29
+    restart: always
+    shm_size: '1gb'
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: 100m
+    environment:
+      MYSQL_DATABASE: sgs
+      MYSQL_USER: edir
+      MYSQL_PASSWORD: setas@123
+      SERVICE_TAG: dev
+      SERVICE_NAME: db
+    networks:
+      - laravel
+    volumes:
+      - ./sgs-data/mysql:/var/lib/mysql/data
+      - ../sgs-data/mysql-backup:/backup
+    ports:
+      - "6306:3306"
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_laravel
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "9005:9005"
+    networks:
+      - laravel
+      
+  composer:
+    image: composer:latest
+    container_name: composer_laravel
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - laravel
+
+  npm: 
+    image: node:13.7
+    container_name: npm_laravel
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ['npm']
+
+  artisan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: artisan_laravel
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    working_dir: /var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']
+    networks:
+      - laravel

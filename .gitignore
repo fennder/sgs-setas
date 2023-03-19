@@ -1,8 +1,7 @@
 /vendor
 /node_modules
 Homestead.yaml
-composer.lock
-.env
+/src/composer.lock
 .php~
 /nbproject/private/
 /nbproject/project.properties
