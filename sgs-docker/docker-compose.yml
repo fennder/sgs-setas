@@ -1,0 +1,60 @@
+version: '3'
+services:
+  web:
+    build: .
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: 100m
+    restart: always
+    environment:
+      TZ: "America/Araguaina"
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/sites-enabled/default
+      - ./src:/src
+      - ../sgs-sd-gti-setas:/tmp/storage/sgs-sd-gti-setas
+      # - ../central3/data-web:/tmp/storage/c3
+
+  db:
+    image: mysql:10.4
+    restart: always
+    shm_size: '1gb'
+    logging:
+        driver: "json-file"
+        options:
+            max-file: "5"
+            max-size: 100m
+    environment:
+      MYSQL_DB: sgs
+      MYSQL_USER: root
+      MYSQL_PASSWORD: eps9001
+    volumes:
+      - ../sgs-data/mysql:/var/lib/mysql/data
+      - ../sgs-data/mysql-backup:/backup
+    ports:
+      - "3306:3306"
+
+  # es:
+  #   image: elasticsearch:1.7
+  #   restart: always
+  #   logging:
+  #       driver: "json-file"
+  #       options:
+  #           max-file: "5"
+  #           max-size: 100m
+  #   environment:
+  #     TZ: "America/Araguaina"
+  #   volumes:
+  #     - ../central4-data/es:/usr/share/elasticsearch/data
+
+  # memcached:
+  #   restart: always
+  #   image: memcached:1.5.6
+  #   logging:
+  #       driver: "json-file"
+  #       options:
+  #           max-file: "5"
+  #           max-size: 100m
