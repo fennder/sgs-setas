@@ -5,7 +5,7 @@ RUN ln -sf /usr/share/zoneinfo/America/Araguaina /etc/localtime
 RUN apt update && apt upgrade -y && apt install -y \
 	ca-certificates mc htop git curl zip nginx
 
-# RUN	add-apt-repository -y ppa:ondrej/php
+RUN	add-apt-repository ppa:ondrej/php
 RUN apt update
 RUN apt install php5.6
 
@@ -24,7 +24,7 @@ RUN apt install php5.6
 RUN curl -L https://getcomposer.org/composer.phar -o /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
 
-# RUN php -v
+RUN php -v
 
 RUN mkdir -m 777 /tmp/storage
 RUN mkdir -m 777 /tmp/storage/logs

@@ -13,9 +13,9 @@ services:
     ports:
       - 8000:80
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/sites-enabled/default
-      - ./src:/src
-      - ./arquivos:/tmp/storage/arquivos
+      - ../nginx/nginx.conf:/etc/nginx/sites-enabled/default
+      - ../src:/src
+      - ../arquivos:/tmp/storage/arquivos
 
   db:
     image: mysql:5.7.29
@@ -33,7 +33,7 @@ services:
       SERVICE_TAG: dev
       SERVICE_NAME: db
     volumes:
-      - ./sgs-data/mysql:/var/lib/mysql/data
+      - ../sgs-data/mysql:/var/lib/mysql
       - ../sgs-data/mysql-backup:/backup
     ports:
       - "6306:3306"
