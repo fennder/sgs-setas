@@ -1,13 +1,13 @@
-FROM ubuntu:18.04
+FROM php:5.6-apache
 
 RUN ln -sf /usr/share/zoneinfo/America/Araguaina /etc/localtime
 
 RUN apt update && apt upgrade -y && apt install -y \
-	ca-certificates mc htop git curl zip nginx
+	mc htop git curl zip nginx
 
-RUN	add-apt-repository ppa:ondrej/php
-RUN apt update
-RUN apt install php5.6
+# RUN	add-apt-repository ppa:ondrej/php
+# RUN apt update
+# RUN apt install php5.6
 
 # apt-get install php5.6.4 php-curl php-memcached php-mbstring php-xml php5.6-mysql php-gd imagemagick graphviz
 	#apt-get install php5.6 -y php-curl php-memcached
