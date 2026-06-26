@@ -1,32 +1,36 @@
-FROM php:5.6
+FROM php:5.6-fpm
 
 RUN ln -sf /usr/share/zoneinfo/America/Araguaina /etc/localtime
 
-RUN apt update && apt upgrade -y && apt install -y \
-	mc htop git curl zip nginx
+RUN printf 'deb [trusted=yes] http://archive.debian.org/debian stretch main contrib non-free\n' > /etc/apt/sources.list \
+    && printf 'deb [trusted=yes] http://archive.debian.org/debian-security stretch/updates main contrib non-free\n' >> /etc/apt/sources.list \
+    && printf 'Acquire::Check-Valid-Until "false";\nAcquire::Retries "3";\n' > /etc/apt/apt.conf.d/99no-check-valid-until \
+    && apt-get update -o Acquire::Check-Valid-Until=false \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        zip \
+        unzip \
+        libpng-dev \
+        libjpeg-dev \
+        libfreetype6-dev \
+        libmcrypt-dev \
+        libxml2-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install mbstring mcrypt pdo_mysql mysqli gd opcache \
+    && rm -rf /var/lib/apt/lists/*
 
-#RUN phpenmod mbstring dom
-#RUN sed -ie 's/upload_max_filesize\ =\ 2M/upload_max_filesize\ =\ 128M/g' /etc/php/5.6/php.ini
-#RUN sed -ie 's/post_max_size\ =\ 8M/post_max_size\ =\ 128M/g' /etc/php/5.6/php.ini
+RUN curl -L https://getcomposer.org/download/latest-1.x/composer.phar -o /usr/local/bin/composer \
+    && chmod +x /usr/local/bin/composer
 
-#RUN sed -ie 's/pm.max_children\ =\ 5/pm.max_children\ =\ 90/g' /etc/php/7.2/fpm/pool.d/www.conf
-#RUN sed -ie 's/pm.start_servers\ =\ 2/pm.start_servers\ =\ 40/g' /etc/php/7.2/fpm/pool.d/www.conf
-#RUN sed -ie 's/pm.min_spare_servers\ =\ 1/pm.min_spare_servers\ =\ 20/g' /etc/php/7.2/fpm/pool.d/www.conf
-#RUN sed -ie 's/pm.max_spare_servers\ =\ 3/pm.max_spare_servers\ =\ 40/g' /etc/php/7.2/fpm/pool.d/www.conf
+WORKDIR /var/www/html
 
-RUN curl -L https://getcomposer.org/download/latest-1.x/composer.phar -o /usr/local/bin/composer
-RUN chmod +x /usr/local/bin/composer
+COPY src /var/www/html
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-RUN php -v
+RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-RUN mkdir -m 777 /tmp/storage
-RUN mkdir -m 777 /tmp/storage/logs
-RUN mkdir -m 777 /tmp/storage/framework
-RUN mkdir -m 777 /tmp/storage/framework/cache
-RUN mkdir -m 777 /tmp/storage/framework/sessions
-RUN mkdir -m 777 /tmp/storage/framework/views
-
-RUN chmod 777 /src/bootstrap/cache -R
-
-#CMD sleep infinity
-CMD nginx -g "daemon off;"
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["php-fpm"]

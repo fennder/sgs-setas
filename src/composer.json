@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
         "nesbot/carbon": "^1.21",
-        "vsmoraes/laravel-pdf": "^1.0"
+        "vsmoraes/laravel-pdf": "^1.0",
+        "symfony/polyfill-mbstring": "1.19.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -51,6 +52,10 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "platform": {
+            "php": "5.6.4",
+            "ext-mbstring": false
+        }
     }
 }
