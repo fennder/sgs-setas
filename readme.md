@@ -8,6 +8,7 @@ Projeto legado em `Laravel 5.1` (PHP >= 5.6.4). Este README descreve como execut
 - **Restauração MySQL**: importar `sgs.sql` ou usar arquivos MyISAM
 - **Acesso**: URLs para navegador e ferramentas de BD (DBeaver, CLI)
 - **E-mail (Mailpit)**: envio de e-mails 100% local, sem Gmail nem rede externa
+- **Git / versionamento**: o que é e o que não é rastreado
 - **Páginas de erro e ações sem retorno**: 404/403/500 e tratamento de ações vazias
 - **Certificado (frente/verso)**: dados reais do curso e conteúdo programático no verso
 - **Busca dinâmica nas listagens**: filtro em tempo real em todas as telas de listagem
@@ -104,6 +105,41 @@ docker compose exec db mysqlcheck -u root -p'setas@123' --databases sgs --check
 	- Limpar a caixa: `curl -X POST http://localhost:8025/api/v1/messages/delete` (ou o botão da UI).
 
 - Migrar para produção (SMTP do órgão): basta alterar as variáveis `MAIL_*` no `src/.env` (host/porta/criptografia/usuário/senha do servidor institucional, ex.: `smtp.<orgao>.gov.br`) e reiniciar o `php-fpm`. Nenhuma alteração de código é necessária.
+
+**Git / versionamento — o que é ignorado**
+
+O `.gitignore` da raiz foi ajustado para este layout (`src/` na raiz do app). **Não estão no Git** (e não devem ser commitados):
+
+| Ignorado | Motivo |
+|---|---|
+| `src/vendor/` | Dependências Composer — gerar via `composer install` (seção acima) |
+| `src/bower_components/`, `src/public/bower_components/` | Dependências frontend (AdminLTE etc.) |
+| `src/.env` | Segredos (senhas DB/SMTP); usar `src/.env.example` como modelo |
+| `src/composer.phar` | Binário do Composer |
+| `sgs-data/mysql-backup/` | Backup binário MySQL + chaves SSL (`.pem`) e tabelas com dados |
+| `sgs-data/sgs/` | Arquivos MyISAM (`.frm/.MYD/.MYI`) com dados de usuários |
+| `src/storage/logs/*`, `cache`, `sessions`, `views` | Runtime do Laravel |
+| `*.mwb.bak`, `institucional.mp4` | Artefatos de backup / mídia grande |
+
+**Estão no Git**: código-fonte (`src/app`, `src/resources`, `src/config`, …), `docker/`, dumps SQL (`sgs-data/sgs.sql`, `Dump20240503.sql`), `Modelagem.mwb`, `src/.env.example`, `composer.json` e este README.
+
+Após clonar o repositório, para deixar o ambiente funcional:
+
+```bash
+# 1) dependências PHP
+docker run --rm -v "$PWD/src":/app -w /app composer:2 composer install --no-interaction --prefer-dist --optimize-autoloader --no-scripts
+
+# 2) arquivo de ambiente (copiar do exemplo e ajustar se necessário)
+cp src/.env.example src/.env
+
+# 3) subir containers e importar o banco (seções Quickstart e Restauração)
+cd docker && docker compose up -d
+```
+
+Observações:
+- Arquivos já rastreado anteriormente (ex.: backup MySQL, `vendor`) foram **removidos do índice** com `git rm --cached` — continuam no disco local, mas não entram em novos commits.
+- `src/composer.lock` deve ser versionado (aplicação, não biblioteca) para reproduzir as mesmas versões de dependências.
+- Alterações em `src/.env` nunca aparecem no `git status` (arquivo ignorado).
 
 **Páginas de erro e ações sem retorno**
 
@@ -202,4 +238,4 @@ docker compose exec php-fpm php /var/www/html/artisan migrate:status
 	- Automatizar a criação do `vendor` durante o build da imagem (bake vendor no image) — diga qual prefere.
 
 ----
-Última atualização: certificado reestruturado (dados reais + conteúdo programático no verso) e busca dinâmica em todas as telas de listagem. Anteriormente: Mailpit (e-mail local sem dependência externa) e tratamento de páginas de erro/ações sem retorno.
+Última atualização: `.gitignore` corrigido (vendor, bower, `.env`, backup MySQL e segredos fora do versionamento) e seção **Git / versionamento** no README. Anteriormente: certificado reestruturado, busca dinâmica, Mailpit e tratamento de páginas de erro/ações sem retorno.
