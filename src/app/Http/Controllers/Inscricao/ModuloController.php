@@ -99,7 +99,7 @@ class ModuloController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -117,7 +117,7 @@ class ModuloController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $modulos = $this->modulo->find($id);
+        $modulos = $this->modulo->findOrFail($id);
         $cursos = $this->curso->all();
         
         return view('modulo.edit',
@@ -141,7 +141,7 @@ class ModuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $modulos = $this->modulo->find($id);
+        $modulos = $this->modulo->findOrFail($id);
         $modulos->update($request->all());
 
         return redirect()->route('m.index'); 

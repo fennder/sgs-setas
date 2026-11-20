@@ -54,7 +54,7 @@ class Curso extends Model
 
     public function modulo()
     {
-    	return $this->hasMany('Gerenciador\Inscricao\Modulo', 'id_modulo'); //O Curso tem vários modulos
+    	return $this->hasMany('Gerenciador\Inscricao\Modulo', 'id_curso'); //O Curso tem vários modulos
     }
 
     

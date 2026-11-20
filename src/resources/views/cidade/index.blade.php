@@ -11,6 +11,7 @@
           <a class="btn btn-primary" href="{{ route('cid.create')}}">Incluir Cidade</a>
           </br>
           </br>
+              @include('layout-backend.busca_tabela')
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>

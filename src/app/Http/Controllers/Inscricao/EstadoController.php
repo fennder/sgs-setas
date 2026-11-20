@@ -93,7 +93,7 @@ class EstadoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -108,7 +108,7 @@ class EstadoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $estados = $this->estado->find($id);
+        $estados = $this->estado->findOrFail($id);
         $usuarios = Auth::user();
         
         return view('estado.edit',
@@ -130,7 +130,7 @@ class EstadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $estados = $this->estado->find($id);
+        $estados = $this->estado->findOrFail($id);
         $estados->update($request->all());
 
         return redirect()->route('est.index');

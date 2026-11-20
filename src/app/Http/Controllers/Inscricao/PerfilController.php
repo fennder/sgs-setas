@@ -92,7 +92,7 @@ class PerfilController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -109,7 +109,7 @@ class PerfilController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $perfis = $this->perfil->find($id);
+        $perfis = $this->perfil->findOrFail($id);
         
         return view('perfil.edit',
         [
@@ -130,7 +130,7 @@ class PerfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $perfis = $this->perfil->find($id);
+        $perfis = $this->perfil->findOrFail($id);
         $perfis->update($request->all());
 
         return redirect()->route('pf.index'); 

@@ -71,7 +71,7 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             //if($usuarios->id_perfil == 1){
-                $users = $this->user->where('id_perfil', '=', 1)->orderBy('name', 'asc')->paginate(10);
+                $users = $this->user->where('id_perfil', '=', 1)->orderBy('name', 'asc')->paginate(1000);
             //}
 
             return view('user.adminlista',
@@ -104,7 +104,7 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             //if($usuarios->id_perfil == 2){
-                $users = $this->user->where('id_perfil', '=', 2)->orderBy('name', 'asc')->paginate(10);
+                $users = $this->user->where('id_perfil', '=', 2)->orderBy('name', 'asc')->paginate(1000);
             //}else{
                 //$users = $this->user->orderBy('name', 'asc')->paginate(10);
             //}
@@ -139,7 +139,7 @@ class UsersController extends Controller
             $usuarios = Auth::user();
             $perfis = $this->perfil->all();
             //if($usuarios->dados_atualizados != 0){
-                $users = $this->user->where('id_perfil', '=', 3)->where('dados_atualizados', '=', 1)->orderBy('name', 'asc')->paginate(10);
+                $users = $this->user->where('id_perfil', '=', 3)->where('dados_atualizados', '=', 1)->orderBy('name', 'asc')->paginate(1000);
             //}
                 //else{
                 //$users = $this->user->orderBy('name', 'asc')->paginate(10);
@@ -170,7 +170,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('u.index');
     }
 
     /**
@@ -181,10 +182,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        /*if($validator->fails()){
-            $validator->messages()->first();
-        }*/
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('u.index');
     }
 
     /**
@@ -252,7 +251,7 @@ class UsersController extends Controller
         if($verifica->id_perfil == 1){
 
             $verifica = Auth::user();
-            $usuarios = $this->user->find($id);
+            $usuarios = $this->user->findOrFail($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->orderBy('nome', 'asc')->get();
             $estados = $this->estado->all();
@@ -289,7 +288,7 @@ class UsersController extends Controller
         }else{
 
             $verifica = Auth::user();
-            $usuarios = $this->user->find($id);
+            $usuarios = $this->user->findOrFail($id);
             $estado_rgs = $this->estado_rg->all();
             $cidades = $this->cidade->orderBy('nome', 'asc')->get();
             $estados = $this->estado->where('id_estado','=', 27)->get();
@@ -383,7 +382,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
-            $m->from('setasgti@gmail.com', 'SGI - Sistema de Gerencimento de Inscrição');
+            $m->from(config('mail.from.address'), config('mail.from.name'));
 
             $m->to($user->email, $user->name)->subject('Teste!');
         });

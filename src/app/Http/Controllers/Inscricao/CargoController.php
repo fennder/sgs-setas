@@ -90,20 +90,7 @@ class CargoController extends Controller
      */
     public function show($id)
     {
-        $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
-
-        $cargos = $this->cargo->find($id);
-        $usuarios = Auth::user();
-
-        return view('cargo.show',
-        [
-            'cargos' => $cargos,
-            'nav' => $nav, 
-            'page_title' => $page_title, 
-            'usuarios' => $usuarios, 
-            'page_description' => $page_description,
-            'lotacao' => $lotacao
-        ]);
+        abort(404);
     }
 
     /**
@@ -120,7 +107,7 @@ class CargoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $cargos = $this->cargo->find($id);
+        $cargos = $this->cargo->findOrFail($id);
         
         return view('cargo.edit',
         [
@@ -142,7 +129,7 @@ class CargoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cargos = $this->cargo->find($id);
+        $cargos = $this->cargo->findOrFail($id);
         $cargos->update($request->all());
 
         return redirect()->route('c.index'); 

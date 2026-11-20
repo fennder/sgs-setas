@@ -181,7 +181,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 
     /**
@@ -191,7 +192,8 @@ class HomeController extends Controller
      */
     public function store()
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 
     /**
@@ -202,7 +204,8 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 
     /**
@@ -213,7 +216,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 
     /**
@@ -224,7 +228,8 @@ class HomeController extends Controller
      */
     public function update($id)
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 
     /**
@@ -235,6 +240,7 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Session::flash('flash_message', 'Ação não disponível.');
+        return redirect()->route('h.index');
     }
 }

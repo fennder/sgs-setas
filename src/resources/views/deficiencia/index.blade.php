@@ -20,6 +20,7 @@
           <a class="btn btn-primary" href="{!! route('d.create')!!}">Incluir Deficiência</a>
           </br>
           </br>
+              @include('layout-backend.busca_tabela')
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>

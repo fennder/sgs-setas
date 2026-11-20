@@ -49,7 +49,7 @@ class CursoController extends Controller
             $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
             $nav = "Curso";
 
-            $cursos = $this->curso->orderBy('id_status_curso', 'asc')->orderBy('data_inicio', 'desc')->orderBy('id_curso', 'asc')->paginate(10);
+            $cursos = $this->curso->orderBy('id_status_curso', 'asc')->orderBy('data_inicio', 'desc')->orderBy('id_curso', 'asc')->paginate(1000);
             $usuarios = Auth::user();
 
             return view('curso.index',
@@ -137,7 +137,7 @@ class CursoController extends Controller
         $nav = "Mostrar";
 
         $i = 0;
-        $curso = $this->curso->find($id);
+        $curso = $this->curso->findOrFail($id);
         $usuarios = Auth::user();
         $inscritos = $curso->usuarios->all();
         $inscricoes = $this->inscricao->all();
@@ -176,7 +176,7 @@ class CursoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
-        $cursos = $this->curso->find($id);
+        $cursos = $this->curso->findOrFail($id);
         $scursos = $this->scurso->all();
         $usuarios = Auth::user();
         
@@ -201,7 +201,7 @@ class CursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cursos = $this->curso->find($id);
+        $cursos = $this->curso->findOrFail($id);
         $cursos->update($request->all());
 
         return redirect()->route('cs.index');

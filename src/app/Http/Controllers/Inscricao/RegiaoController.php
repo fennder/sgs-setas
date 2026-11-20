@@ -92,7 +92,7 @@ class RegiaoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -109,7 +109,7 @@ class RegiaoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $regioes = $this->regiao->find($id);
+        $regioes = $this->regiao->findOrFail($id);
         
         return view('regiao.edit',
         [
@@ -130,7 +130,7 @@ class RegiaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $regioes = $this->regiao->find($id);
+        $regioes = $this->regiao->findOrFail($id);
         $regioes->update($request->all());
 
         return redirect()->route('r.index');

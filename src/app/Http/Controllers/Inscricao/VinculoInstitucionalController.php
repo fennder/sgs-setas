@@ -91,7 +91,7 @@ class VinculoInstitucionalController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -108,7 +108,7 @@ class VinculoInstitucionalController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $vinculos = $this->vinculo->find($id);
+        $vinculos = $this->vinculo->findOrFail($id);
         
         return view('vinculo.edit',
         [
@@ -129,7 +129,7 @@ class VinculoInstitucionalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vinculos = $this->vinculo->find($id);
+        $vinculos = $this->vinculo->findOrFail($id);
         $vinculos->update($request->all());
 
         return redirect()->route('vi.index');

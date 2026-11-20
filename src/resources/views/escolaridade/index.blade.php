@@ -20,6 +20,7 @@
           <a class="btn btn-primary" href="{!! route('e.create')!!}">Incluir Escolaridade</a>
           </br>
           </br>
+              @include('layout-backend.busca_tabela')
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>

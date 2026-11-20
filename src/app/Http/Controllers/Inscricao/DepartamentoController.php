@@ -55,7 +55,7 @@ class DepartamentoController extends Controller
     public function getDepartamento($id_orgao)
     {
 
-        $orgao = $this->orgao->find($id_orgao);
+        $orgao = $this->orgao->findOrFail($id_orgao);
 
         $departamentos = $orgao->departamento()->getQuery()->get(['id_departamento', 'descricao']);
 
@@ -112,7 +112,7 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -129,7 +129,7 @@ class DepartamentoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
-        $departamentos = $this->departamento->find($id);
+        $departamentos = $this->departamento->findOrFail($id);
         $orgaos = $this->orgao->all();
         $usuarios = Auth::user();
         
@@ -155,7 +155,7 @@ class DepartamentoController extends Controller
     public function update(Request $request, $id)
     {
         
-        $departamentos = $this->departamento->find($id);
+        $departamentos = $this->departamento->findOrFail($id);
         $departamentos->update($request->all());
 
         return redirect()->route('dep.index'); 

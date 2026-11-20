@@ -40,8 +40,8 @@
             <input type="submit" class="btn btn-primary" value="Buscar"></input>
           </div>
 
-        </form> 
-        <table class="table table-bordered table-striped table-hover table-condensed">
+        </form>
+          <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
               <th style="width: 3%">Nr.</th>

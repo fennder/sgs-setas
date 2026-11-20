@@ -21,7 +21,8 @@
         <ul class="pagination pagination-sm no-margin pull-right">
           <li>{!!$cursos->render()!!}</li>
         </ul>
-        <table class="table table-bordered table-striped table-hover table-condensed">
+          @include('layout-backend.busca_tabela')
+          <table class="table table-bordered table-striped table-hover table-condensed">
           <thead>
             <tr>
               <th>Id</th>

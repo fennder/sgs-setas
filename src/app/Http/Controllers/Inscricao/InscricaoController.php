@@ -163,7 +163,7 @@ class InscricaoController extends Controller
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Editar";
         
-        $inscricoes = $this->inscricao->find($id);
+        $inscricoes = $this->inscricao->findOrFail($id);
         $usuarios = Auth::user();
         $cursos = $this->curso->all();
         $users = $this->user->all();
@@ -191,7 +191,7 @@ class InscricaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inscricoes = $this->inscricao->find($id);
+        $inscricoes = $this->inscricao->findOrFail($id);
         $inscricoes->update($request->all());
         
         return redirect()->route('ins.index');
@@ -227,16 +227,15 @@ class InscricaoController extends Controller
             $nav = "Certificado";
 
             $usuarios = Auth::user();
-            $cursos = $this->curso->all();
-            $certificados = $cursos;
-            
+
+            $inscricao = $this->inscricao->with('curso.modulo')->findOrFail($request->id);
 
             return view('pdf.certificado',
             [
                 'page_description' => $page_description,
-                //'certificados' => $certificados,
                 'page_title'  => $page_title,
                 'usuarios' => $usuarios,
+                'inscricao' => $inscricao,
                 'lotacao' => $lotacao,
                 'nav' => $nav
 

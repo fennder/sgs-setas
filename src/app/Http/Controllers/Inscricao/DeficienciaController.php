@@ -91,7 +91,7 @@ class DeficienciaController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -106,7 +106,7 @@ class DeficienciaController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $deficiencias = $this->deficiencia->find($id);
+        $deficiencias = $this->deficiencia->findOrFail($id);
 
         $usuarios = Auth::user();
         
@@ -129,7 +129,7 @@ class DeficienciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $deficiencias = $this->deficiencia->find($id);
+        $deficiencias = $this->deficiencia->findOrFail($id);
         $deficiencias->update($request->all());
 
         return redirect()->route('d.index');

@@ -92,7 +92,7 @@ class EscolaridadeController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -107,7 +107,7 @@ class EscolaridadeController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $escolaridades = $this->escolaridade->find($id);
+        $escolaridades = $this->escolaridade->findOrFail($id);
 
         $usuarios = Auth::user();
         
@@ -130,7 +130,7 @@ class EscolaridadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $escolaridades = $this->escolaridade->find($id);
+        $escolaridades = $this->escolaridade->findOrFail($id);
         $escolaridades->update($request->all());
 
         return redirect()->route('e.index');

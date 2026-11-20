@@ -1,11 +1,33 @@
-/vendor
-/node_modules
-Homestead.yaml
-/src/composer.lock
+# Dependências
+/src/vendor/
+/src/node_modules/
+/src/bower_components/
+/src/public/bower_components/
+/src/composer.phar
+
+# Segredos e ambiente
+/src/.env
+.env
+!.env.example
+!/src/.env.example
+
+# Banco de dados / backups
+/sgs-data/mysql-backup/
+/sgs-data/sgs/
+*.mwb.bak
+
+# Laravel runtime
+/src/storage/logs/*
+/src/storage/framework/cache/*
+/src/storage/framework/sessions/*
+/src/storage/framework/views/*
+!/src/storage/**/.gitignore
+
+# Misc
 .php~
 /nbproject/private/
 /nbproject/project.properties
 /nbproject/project.xml
-
+Homestead.yaml
 institucional.mp4
-
+.DS_Store

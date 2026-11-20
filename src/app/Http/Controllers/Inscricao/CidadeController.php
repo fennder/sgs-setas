@@ -61,7 +61,7 @@ class CidadeController extends Controller
     public function getCidades($id_estado)
     {
 
-        $estado = $this->estado->find($id_estado);
+        $estado = $this->estado->findOrFail($id_estado);
 
         $cidades = $estado->cidades()->getQuery()->get(['id_cidade', 'nome']);
 
@@ -119,7 +119,7 @@ class CidadeController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -135,7 +135,7 @@ class CidadeController extends Controller
         $page_description = "Editar Cidade";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
-        $cidades = $this->cidade->orderBy('nome', 'asc')->find($id);
+        $cidades = $this->cidade->orderBy('nome', 'asc')->findOrFail($id);
         $estados = $this->estado->all();
         $regioes = $this->regiao->all();
         $usuarios = Auth::user();
@@ -162,7 +162,7 @@ class CidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cidades = $this->cidade->find($id);
+        $cidades = $this->cidade->findOrFail($id);
         $cidades->update($request->all());
 
         return redirect()->route('cid.index'); 

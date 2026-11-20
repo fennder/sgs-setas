@@ -12,6 +12,7 @@
       </div>
         <!-- /.box-header -->
         <div class="box-body">
+          @include('layout-backend.busca_tabela')
           <table class="table table-bordered table-striped table-hover table-condensed">
             <thead>
               <tr>

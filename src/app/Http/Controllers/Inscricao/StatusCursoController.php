@@ -94,7 +94,7 @@ class StatusCursoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -109,7 +109,7 @@ class StatusCursoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $scursos = $this->scurso->find($id);
+        $scursos = $this->scurso->findOrFail($id);
         $usuarios = Auth::user();
 
         
@@ -132,7 +132,7 @@ class StatusCursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $scursos = $this->scurso->find($id);
+        $scursos = $this->scurso->findOrFail($id);
         $scursos->update($request->all());
 
         return redirect()->route('sc.index');

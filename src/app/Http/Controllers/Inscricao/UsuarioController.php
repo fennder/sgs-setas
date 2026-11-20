@@ -63,7 +63,7 @@ class UsuarioController extends Controller
 
         $nav = "Lista de usuários";
 
-        $usuarios = $this->usuario->paginate(10);
+        $usuarios = $this->usuario->paginate(1000);
         $estado_rgs = $this->estado_rg->all();
         $vinculos =$this->vinculo->all();
 
@@ -146,31 +146,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        /*$usuarios = Auth::user();
-
-        $estados = $this->estado->all();
-        $cidades = $this->cidade->all();
-        $estado_rgs = $this->estado_rg->all();
-        $escolaridades = $this->escolaridade->all(); 
-        $vinculos =$this->vinculo->all();
-        $orgaos =$this->orgao->all();
-        $departamentos =$this->departamento->all();
-        $cargos =$this->cargo->all();
-        $funcoes =$this->funcao->all();
-
-        return view('inscrito.show',
-        [
-            'escolaridades' => $escolaridades, 
-            'estados' => $estados, 
-            'cidades' => $cidades,
-            'usuarios' => $usuarios,
-            'vinculos' => $vinculos,
-            'orgaos' => $orgaos,
-            'departamentos' => $departamentos,
-            'cargos' => $cargos,
-            'funcoes' => $funcoes,
-            'estado_rgs' => $estado_rgs
-        ]);*/
+        abort(404);
     }
 
     /**
@@ -183,7 +159,7 @@ class UsuarioController extends Controller
     {
         /*$nav = "Editar usuário";
 
-        $usuarios = $this->usuario->find($id);
+        $usuarios = $this->usuario->findOrFail($id);
         $estados = $this->estado->all();
         $cidades = $this->cidade->all();
         $estado_rgs = $this->estado_rg->all();
@@ -225,7 +201,7 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         /*dd($request->all());*/
-        $usuarios = $this->usuario->find($id);
+        $usuarios = $this->usuario->findOrFail($id);
         $usuarios->update($request->all());
 
         return redirect()->route('i.index');

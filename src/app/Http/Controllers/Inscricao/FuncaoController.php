@@ -92,7 +92,7 @@ class FuncaoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -107,7 +107,7 @@ class FuncaoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
 
-        $funcoes = $this->funcao->find($id);
+        $funcoes = $this->funcao->findOrFail($id);
         $usuarios = Auth::user();
         
         return view('funcao.edit',
@@ -129,7 +129,7 @@ class FuncaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $funcoes = $this->funcao->find($id);
+        $funcoes = $this->funcao->findOrFail($id);
         $funcoes->update($request->all());
 
         return redirect()->route('f.index');

@@ -92,7 +92,7 @@ class OrgaoController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -110,7 +110,7 @@ class OrgaoController extends Controller
         $page_description = "Sistema de Gerenciamento de Inscrições";
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         
-        $orgaos = $this->orgao->find($id);
+        $orgaos = $this->orgao->findOrFail($id);
         
         return view('orgao.edit',
         [
@@ -131,7 +131,7 @@ class OrgaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $orgaos = $this->orgao->find($id);
+        $orgaos = $this->orgao->findOrFail($id);
         $orgaos->update($request->all());
 
         return redirect()->route('o.index'); 
