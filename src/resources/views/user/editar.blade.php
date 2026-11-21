@@ -431,7 +431,9 @@
               <option value="">- Selecione -</option>
               @endif
               @foreach ($departamentos as $departamento)
-                  <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+                  @if($usuarios->id_orgao == $departamento->id_orgao && (!$usuarios->departamento || $usuarios->departamento->id_departamento != $departamento->id_departamento))
+                    <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
+                  @endif
               @endforeach
             </select>
           </div>
@@ -468,12 +470,21 @@
 <script type="text/javascript">
     $('select[name=id_orgao]').change(function () {
         var idOrgao = $(this).val();
+        var $departamento = $('select[name=id_departamento]');
+        var selected = $departamento.val();
 
-        $.get('/get-departamentos/' + idOrgao, function (departamento) {
-            $('select[name=id_departamento]').empty();
-            $.each(departamento, function (key, value) {
-                $('select[name=id_departamento]').append('<option value=' + value.id_departamento + '>' + value.descricao + '</option>');
+        if (!idOrgao) {
+            return;
+        }
+
+        $.get('/get-departamentos/' + idOrgao, function (departamentos) {
+            $departamento.empty();
+            $.each(departamentos, function (key, value) {
+                $departamento.append('<option value="' + value.id_departamento + '">' + value.descricao + '</option>');
             });
+            if (selected && $departamento.find('option[value="' + selected + '"]').length) {
+                $departamento.val(selected);
+            }
         });
     });
 </script>

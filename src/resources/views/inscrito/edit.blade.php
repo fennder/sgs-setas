@@ -332,7 +332,7 @@
             <select class="form-control" name="id_departamento" id="id_departamento" required>
               <option value="{{$usuarios->id_departamento}}">{{$usuarios->departamento->descricao}}</option>
               @foreach ($departamentos as $departamento)
-                @if($usuarios->id_departamento != $departamento->id_departamento)
+                @if($usuarios->id_orgao == $departamento->id_orgao && $usuarios->id_departamento != $departamento->id_departamento)
                   <option value="{{$departamento->id_departamento}}">{{$departamento->descricao}}</option>
                 @endif
               @endforeach
@@ -385,6 +385,30 @@
 
   <button type="submit" class="btn btn-primary btn-large">Atualizar Inscrito</button>
 </form><!-- Form -->
+@endsection
+
+@section('post-script')
+<script type="text/javascript">
+    $('select[name=id_orgao]').change(function () {
+        var idOrgao = $(this).val();
+        var $departamento = $('select[name=id_departamento]');
+        var selected = $departamento.val();
+
+        if (!idOrgao) {
+            return;
+        }
+
+        $.get('/get-departamentos/' + idOrgao, function (departamentos) {
+            $departamento.empty();
+            $.each(departamentos, function (key, value) {
+                $departamento.append('<option value="' + value.id_departamento + '">' + value.descricao + '</option>');
+            });
+            if (selected && $departamento.find('option[value="' + selected + '"]').length) {
+                $departamento.val(selected);
+            }
+        });
+    });
+</script>
 @endsection
 
 <!-- 

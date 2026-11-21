@@ -252,7 +252,7 @@
       <div class="col-md-4">
         <div class="form-group has-feedback">
           <select class="form-control" name="id_orgao" id="id_orgao">
-            <option disabled selected> - Órgão - </option>
+            <option value="" disabled selected> - Órgão - </option>
               @foreach ($orgaos as $orgao)
                 <option value="{{ $orgao->id_orgao }}">{{ $orgao->descricao }}</option>
               @endforeach
@@ -266,11 +266,8 @@
 
       <div class="col-md-4">
         <div class="form-group has-feedback">
-          <select class="form-control" name="id_departamento" id="id_departamento">
-            <option disabled selected> - Departamento - </option>
-              @foreach ($departamentos as $departamento)
-                <option value="{{ $departamento->id_departamento }}">{{ $departamento->descricao }}</option>
-              @endforeach
+          <select class="form-control" name="id_departamento" id="id_departamento" required>
+            <option value="" disabled selected> - Departamento - </option>
           </select>
         </div><!-- Cidade -->
       </div><!-- Col 3 -->
@@ -304,4 +301,26 @@
 
   <button type="submit" class="btn btn-primary btn-large">Inscrever</button>
 </form><!-- Form -->
+@endsection
+
+@section('post-script')
+<script type="text/javascript">
+    $('select[name=id_orgao]').change(function () {
+        var idOrgao = $(this).val();
+        var $departamento = $('select[name=id_departamento]');
+
+        if (!idOrgao || !/^\d+$/.test(idOrgao)) {
+            $departamento.empty().append('<option value="" disabled selected> - Departamento - </option>');
+            return;
+        }
+
+        $departamento.empty().append('<option value="" disabled selected> Carregando... </option>');
+        $.get('/get-departamentos/' + idOrgao, function (departamentos) {
+            $departamento.empty().append('<option value="" disabled selected> - Departamento - </option>');
+            $.each(departamentos, function (key, value) {
+                $departamento.append('<option value="' + value.id_departamento + '">' + value.descricao + '</option>');
+            });
+        });
+    });
+</script>
 @endsection

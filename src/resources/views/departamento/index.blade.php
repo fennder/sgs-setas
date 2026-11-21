@@ -13,6 +13,21 @@
           </ul>
           <a class="btn btn-primary" href="{!! route('dep.create')!!}">Incluir Departamento</a>
 
+          <form method="GET" action="{{ route('dep.index') }}" class="form-inline" style="margin-left: 10px; display: inline-block;">
+            <select name="id_orgao" class="form-control input-sm">
+              <option value="">Todos os órgãos</option>
+              @foreach($orgaos as $orgao)
+                <option value="{{ $orgao->id_orgao }}" {{ isset($idOrgao) && $idOrgao == $orgao->id_orgao ? 'selected' : '' }}>
+                  {{ $orgao->descricao }}
+                </option>
+              @endforeach
+            </select>
+            <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
+            @if(!empty($idOrgao))
+              <a href="{{ route('dep.index') }}" class="btn btn-default btn-sm">Limpar</a>
+            @endif
+          </form>
+
               @include('layout-backend.busca_tabela')
               <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>

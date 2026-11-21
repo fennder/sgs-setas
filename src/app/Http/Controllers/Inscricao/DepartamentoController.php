@@ -28,7 +28,7 @@ class DepartamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         $page_title = "Lista de Departamentos";
@@ -36,7 +36,18 @@ class DepartamentoController extends Controller
         $lotacao = "Secretaria do Trabalho e Desenvolvimento Social";
         $nav = "Departamento";
 
-        $departamentos = $this->departamento->paginate(25);
+        $idOrgao = $request->get('id_orgao');
+
+        $query = $this->departamento->newQuery();
+        if ($idOrgao) {
+            $query->where('id_orgao', $idOrgao);
+        }
+
+        $departamentos = $query->paginate(25);
+        if ($idOrgao) {
+            $departamentos->appends(['id_orgao' => $idOrgao]);
+        }
+
         $orgaos = $this->orgao->all();
         $usuarios = Auth::user();
 
@@ -48,7 +59,8 @@ class DepartamentoController extends Controller
             'lotacao'=>$lotacao,
             'departamentos' => $departamentos,
             'usuarios' => $usuarios,
-            'orgaos' => $orgaos
+            'orgaos' => $orgaos,
+            'idOrgao' => $idOrgao
         ]);
     }
 
